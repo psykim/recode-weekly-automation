@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 수신자 관리</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .add-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1e3c72;
+        }
+        .recipients-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .recipients-table th,
+        .recipients-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .recipients-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        .recipients-table tr:hover {
+            background: #f8f9fa;
+        }
+        .status-active {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .status-inactive {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        .btn-danger {
+            background: #dc3545;
+        }
+        .btn-warning {
+            background: #ffc107;
+            color: #333;
+        }
+        .message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 300px;
+            display: inline-block;
+        }
+        .export-import {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RECODE WEEKLY</h1>
+        <p>수신자 관리 시스템</p>
+    </div>
+
+    <div class="container">
+        <div id="message"></div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalCount">0</div>
+                <div>전체 수신자</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="activeCount">0</div>
+                <div>활성 수신자</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="inactiveCount">0</div>
+                <div>비활성 수신자</div>
+            </div>
+        </div>
+
+        <div class="export-import">
+            <button onclick="exportRecipients()">📥 수신자 목록 내보내기</button>
+            <button onclick="importRecipients()">📤 수신자 목록 가져오기</button>
+            <input type="file" id="importFile" style="display: none;" accept=".json" onchange="handleImport(event)">
+        </div>
+
+        <div class="add-form">
+            <h2>새 수신자 추가</h2>
+            <form id="addRecipientForm">
+                <div class="form-group">
+                    <label for="name">이름 *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일 *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="organization">소속</label>
+                    <input type="text" id="organization" name="organization">
+                </div>
+                <div class="form-group">
+                    <label for="department">부서</label>
+                    <input type="text" id="department" name="department">
+                </div>
+                <div class="form-group">
+                    <label for="tags">태그 (쉼표로 구분)</label>
+                    <input type="text" id="tags" name="tags" placeholder="예: researcher, internal">
+                </div>
+                <button type="submit">수신자 추가</button>
+            </form>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="이름, 이메일, 소속으로 검색..." onkeyup="searchRecipients()">
+        </div>
+
+        <h2>수신자 목록</h2>
+        <table class="recipients-table">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>이메일</th>
+                    <th>소속</th>
+                    <th>부서</th>
+                    <th>상태</th>
+                    <th>구독일</th>
+                    <th>작업</th>
+                </tr>
+            </thead>
+            <tbody id="recipientsList">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // 전역 변수
+        let recipients = [];
+
+        // 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRecipients();
+            
+            // 폼 제출 이벤트
+            document.getElementById('addRecipientForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                addRecipient();
+            });
+        });
+
+        // 수신자 목록 로드
+        function loadRecipients() {
+            // 로컬 스토리지에서 데이터 로드 (실제로는 서버 API 호출)
+            const savedData = localStorage.getItem('recodeRecipients');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                recipients = data.recipients || [];
+            } else {
+                // 초기 데이터
+                recipients = [
+                    {
+                        id: "1",
+                        name: "홍길동",
+                        email: "example1@email.com",
+                        organization: "분당서울대학교병원",
+                        department: "치매극복연구센터",
+                        active: true,
+                        subscribed_date: "2025-01-01",
+                        tags: ["researcher", "internal"]
+                    }
+                ];
+            }
+            
+            updateDisplay();
+        }
+
+        // 화면 업데이트
+        function updateDisplay() {
+            // 통계 업데이트
+            const totalCount = recipients.length;
+            const activeCount = recipients.filter(r => r.active).length;
+            const inactiveCount = totalCount - activeCount;
+            
+            document.getElementById('totalCount').textContent = totalCount;
+            document.getElementById('activeCount').textContent = activeCount;
+            document.getElementById('inactiveCount').textContent = inactiveCount;
+            
+            // 테이블 업데이트
+            const tbody = document.getElementById('recipientsList');
+            tbody.innerHTML = '';
+            
+            recipients.forEach(recipient => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${recipient.name}</td>
+                    <td>${recipient.email}</td>
+                    <td>${recipient.organization || '-'}</td>
+                    <td>${recipient.department || '-'}</td>
+                    <td class="${recipient.active ? 'status-active' : 'status-inactive'}">
+                        ${recipient.active ? '활성' : '비활성'}
+                    </td>
+                    <td>${recipient.subscribed_date}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-small btn-warning" onclick="toggleStatus('${recipient.id}')">
+                                ${recipient.active ? '비활성화' : '활성화'}
+                            </button>
+                            <button class="btn-small btn-danger" onclick="deleteRecipient('${recipient.id}')">
+                                삭제
+                            </button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+            
+            // 데이터 저장
+            saveRecipients();
+        }
+
+        // 수신자 추가
+        function addRecipient() {
+            const form = document.getElementById('addRecipientForm');
+            const formData = new FormData(form);
+            
+            const newRecipient = {
+                id: Date.now().toString(),
+                name: formData.get('name'),
+                email: formData.get('email'),
+                organization: formData.get('organization'),
+                department: formData.get('department'),
+                active: true,
+                subscribed_date: new Date().toISOString().split('T')[0],
+                tags: formData.get('tags').split(',').map(t => t.trim()).filter(t => t)
+            };
+            
+            // 중복 이메일 체크
+            if (recipients.some(r => r.email === newRecipient.email)) {
+                showMessage('이미 등록된 이메일입니다.', 'error');
+                return;
+            }
+            
+            recipients.push(newRecipient);
+            updateDisplay();
+            form.reset();
+            showMessage('수신자가 추가되었습니다.', 'success');
+        }
+
+        // 상태 토글
+        function toggleStatus(id) {
+            const recipient = recipients.find(r => r.id === id);
+            if (recipient) {
+                recipient.active = !recipient.active;
+                updateDisplay();
+                showMessage('상태가 변경되었습니다.', 'success');
+            }
+        }
+
+        // 수신자 삭제
+        function deleteRecipient(id) {
+            if (confirm('정말로 이 수신자를 삭제하시겠습니까?')) {
+                recipients = recipients.filter(r => r.id !== id);
+                updateDisplay();
+                showMessage('수신자가 삭제되었습니다.', 'success');
+            }
+        }
+
+        // 검색
+        function searchRecipients() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#recipientsList tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+
+        // 데이터 저장
+        function saveRecipients() {
+            const data = {
+                recipients: recipients,
+                last_updated: new Date().toISOString(),
+                total_count: recipients.length
+            };
+            localStorage.setItem('recodeRecipients', JSON.stringify(data));
+        }
+
+        // 메시지 표시
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = text;
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 3000);
+        }
+
+        // 내보내기
+        function exportRecipients() {
+            const data = {
+                recipients: recipients,
+                exported_date: new Date().toISOString(),
+                total_count: recipients.length
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `recode_recipients_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            
+            showMessage('수신자 목록이 내보내졌습니다.', 'success');
+        }
+
+        // 가져오기
+        function importRecipients() {
+            document.getElementById('importFile').click();
+        }
+
+        function handleImport(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (data.recipients && Array.isArray(data.recipients)) {
+                        recipients = data.recipients;
+                        updateDisplay();
+                        showMessage('수신자 목록을 가져왔습니다.', 'success');
+                    } else {
+                        showMessage('잘못된 파일 형식입니다.', 'error');
+                    }
+                } catch (error) {
+                    showMessage('파일을 읽을 수 없습니다.', 'error');
+                }
+            };
+            reader.readAsText(file);
+        }
+    </script>
+</body>
+</html>

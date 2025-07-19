@@ -1,0 +1,26 @@
+{
+  "recipients": [
+    {
+      "id": "1",
+      "name": "홍길동",
+      "email": "example1@email.com",
+      "organization": "분당서울대학교병원",
+      "department": "치매극복연구센터",
+      "active": true,
+      "subscribed_date": "2025-01-01",
+      "tags": ["researcher", "internal"]
+    },
+    {
+      "id": "2",
+      "name": "김철수",
+      "email": "example2@email.com",
+      "organization": "서울대학교",
+      "department": "의과대학",
+      "active": true,
+      "subscribed_date": "2025-01-15",
+      "tags": ["professor", "external"]
+    }
+  ],
+  "last_updated": "2025-01-19",
+  "total_count": 2
+}
