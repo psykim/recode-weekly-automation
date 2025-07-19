@@ -361,29 +361,68 @@
             }
         }
 
-        // GitHub Pages에서 보고서 목록 시뮬레이션
+        // GitHub Pages에서 보고서 목록 가져오기
         async function getReportsFromGitHubPages() {
-            // 실제 구현에서는 GitHub API 또는 Pages의 index.html을 파싱해야 합니다
-            // 여기서는 샘플 데이터를 반환합니다
             const baseUrl = 'https://psykim.github.io/recode-weekly-automation/';
             
-            // 현재 날짜 기준으로 샘플 보고서 생성
-            const now = new Date();
-            const reports = [];
-            
-            for (let i = 0; i < 5; i++) {
-                const date = new Date(now.getTime() - (i * 7 * 24 * 60 * 60 * 1000)); // 일주일씩 이전
-                const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '');
-                const timeStr = '120000'; // 샘플 시간
+            try {
+                // GitHub Pages의 index.html 파일을 가져와서 파싱
+                const response = await fetch(baseUrl);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch reports');
+                }
                 
-                reports.push({
-                    name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
-                    date: date.toLocaleDateString('ko-KR'),
-                    url: `${baseUrl}recode_weekly_${dateStr}_${timeStr}.html`
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // index.html에서 보고서 링크 추출
+                const links = doc.querySelectorAll('a[href*="recode_weekly_"]');
+                const reports = [];
+                
+                links.forEach(link => {
+                    const filename = link.getAttribute('href');
+                    if (filename && filename.endsWith('.html')) {
+                        // 파일명에서 날짜 추출
+                        const match = filename.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
+                        if (match) {
+                            const dateStr = match[1];
+                            const year = dateStr.substring(0, 4);
+                            const month = dateStr.substring(4, 6);
+                            const day = dateStr.substring(6, 8);
+                            const date = new Date(year, month - 1, day);
+                            
+                            reports.push({
+                                name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
+                                date: date.toLocaleDateString('ko-KR'),
+                                url: `${baseUrl}${filename}`
+                            });
+                        }
+                    }
                 });
+                
+                // 최신 보고서가 먼저 오도록 정렬
+                reports.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                // 보고서가 없는 경우 안내 메시지
+                if (reports.length === 0) {
+                    return [{
+                        name: '아직 생성된 보고서가 없습니다',
+                        date: '보고서 생성하기 버튼을 클릭하세요',
+                        url: '#'
+                    }];
+                }
+                
+                return reports;
+            } catch (error) {
+                console.error('Error fetching reports:', error);
+                // 오류 발생 시 기본 메시지 반환
+                return [{
+                    name: '보고서 목록을 불러올 수 없습니다',
+                    date: 'GitHub Pages를 확인해주세요',
+                    url: baseUrl
+                }];
             }
-            
-            return reports;
         }
 
         // 워크플로우 실행
