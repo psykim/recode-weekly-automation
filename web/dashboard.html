@@ -365,48 +365,73 @@
         async function getReportsFromGitHubPages() {
             const baseUrl = 'https://psykim.github.io/recode-weekly-automation/reports/';
             
-            // 하드코딩된 보고서 목록 (GitHub Actions에서 자동 업데이트 필요)
-            const reportFiles = [
-                'recode_weekly_20250719_131636.html',
-                'recode_weekly_20250719_223705.html',
-                'recode_weekly_20250719_224237.html',
-                'recode_weekly_20250719_224257.html',
-                'recode_weekly_20250719_224322.html'
-            ];
-            
-            const reports = [];
-            
-            reportFiles.forEach(filename => {
-                // 파일명에서 날짜 추출
-                const match = filename.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
-                if (match) {
-                    const dateStr = match[1];
-                    const year = dateStr.substring(0, 4);
-                    const month = dateStr.substring(4, 6);
-                    const day = dateStr.substring(6, 8);
-                    const date = new Date(year, month - 1, day);
-                    
-                    reports.push({
-                        name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
-                        date: date.toLocaleDateString('ko-KR'),
-                        url: `${baseUrl}${filename}`
-                    });
+            try {
+                // reports.json 파일에서 보고서 목록 가져오기
+                const response = await fetch('https://psykim.github.io/recode-weekly-automation/web/reports.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch reports.json');
                 }
-            });
-            
-            // 최신 보고서가 먼저 오도록 정렬
-            reports.sort((a, b) => new Date(b.date) - new Date(a.date));
-            
-            // 보고서가 없는 경우 안내 메시지
-            if (reports.length === 0) {
-                return [{
-                    name: '아직 생성된 보고서가 없습니다',
-                    date: '보고서 생성하기 버튼을 클릭하세요',
-                    url: '#'
+                
+                const data = await response.json();
+                const reports = [];
+                
+                if (data.reports && data.reports.length > 0) {
+                    data.reports.forEach(report => {
+                        const date = new Date(report.date);
+                        reports.push({
+                            name: report.title,
+                            date: date.toLocaleDateString('ko-KR'),
+                            url: `${baseUrl}${report.filename}`
+                        });
+                    });
+                    
+                    return reports;
+                } else {
+                    return [{
+                        name: '아직 생성된 보고서가 없습니다',
+                        date: '보고서 생성하기 버튼을 클릭하세요',
+                        url: '#'
+                    }];
+                }
+                
+            } catch (error) {
+                console.error('Error fetching reports:', error);
+                // 오류 발생 시 하드코딩된 목록 사용
+                const reportFiles = [
+                    'recode_weekly_20250719_131636.html',
+                    'recode_weekly_20250719_223705.html',
+                    'recode_weekly_20250719_224237.html',
+                    'recode_weekly_20250719_224257.html',
+                    'recode_weekly_20250719_224322.html'
+                ];
+                
+                const reports = [];
+                
+                reportFiles.forEach(filename => {
+                    const match = filename.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
+                    if (match) {
+                        const dateStr = match[1];
+                        const year = dateStr.substring(0, 4);
+                        const month = dateStr.substring(4, 6);
+                        const day = dateStr.substring(6, 8);
+                        const date = new Date(year, month - 1, day);
+                        
+                        reports.push({
+                            name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
+                            date: date.toLocaleDateString('ko-KR'),
+                            url: `${baseUrl}${filename}`
+                        });
+                    }
+                });
+                
+                reports.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                return reports.length > 0 ? reports : [{
+                    name: '보고서 목록을 불러올 수 없습니다',
+                    date: 'GitHub Pages를 확인해주세요',
+                    url: baseUrl
                 }];
             }
-            
-            return reports;
         }
 
         // 워크플로우 실행
