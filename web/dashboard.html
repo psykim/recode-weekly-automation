@@ -363,63 +363,50 @@
 
         // GitHub Pages에서 보고서 목록 가져오기
         async function getReportsFromGitHubPages() {
-            // GitHub API를 사용하여 main 브랜치의 reports 폴더 파일 목록 가져오기
-            const apiUrl = 'https://api.github.com/repos/psykim/recode-weekly-automation/contents/reports?ref=main';
             const baseUrl = 'https://psykim.github.io/recode-weekly-automation/reports/';
             
-            try {
-                // GitHub API로 main 브랜치의 reports 폴더 파일 목록 가져오기
-                const response = await fetch(apiUrl);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch reports from GitHub API');
+            // 하드코딩된 보고서 목록 (GitHub Actions에서 자동 업데이트 필요)
+            const reportFiles = [
+                'recode_weekly_20250719_131636.html',
+                'recode_weekly_20250719_223705.html',
+                'recode_weekly_20250719_224237.html',
+                'recode_weekly_20250719_224257.html',
+                'recode_weekly_20250719_224322.html'
+            ];
+            
+            const reports = [];
+            
+            reportFiles.forEach(filename => {
+                // 파일명에서 날짜 추출
+                const match = filename.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
+                if (match) {
+                    const dateStr = match[1];
+                    const year = dateStr.substring(0, 4);
+                    const month = dateStr.substring(4, 6);
+                    const day = dateStr.substring(6, 8);
+                    const date = new Date(year, month - 1, day);
+                    
+                    reports.push({
+                        name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
+                        date: date.toLocaleDateString('ko-KR'),
+                        url: `${baseUrl}${filename}`
+                    });
                 }
-                
-                const files = await response.json();
-                const reports = [];
-                
-                // 보고서 파일 필터링
-                files.forEach(file => {
-                    if (file.name && file.name.startsWith('recode_weekly_') && file.name.endsWith('.html')) {
-                        // 파일명에서 날짜 추출
-                        const match = file.name.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
-                        if (match) {
-                            const dateStr = match[1];
-                            const year = dateStr.substring(0, 4);
-                            const month = dateStr.substring(4, 6);
-                            const day = dateStr.substring(6, 8);
-                            const date = new Date(year, month - 1, day);
-                            
-                            reports.push({
-                                name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
-                                date: date.toLocaleDateString('ko-KR'),
-                                url: `${baseUrl}${file.name}`
-                            });
-                        }
-                    }
-                });
-                
-                // 최신 보고서가 먼저 오도록 정렬
-                reports.sort((a, b) => new Date(b.date) - new Date(a.date));
-                
-                // 보고서가 없는 경우 안내 메시지
-                if (reports.length === 0) {
-                    return [{
-                        name: '아직 생성된 보고서가 없습니다',
-                        date: '보고서 생성하기 버튼을 클릭하세요',
-                        url: '#'
-                    }];
-                }
-                
-                return reports;
-            } catch (error) {
-                console.error('Error fetching reports:', error);
-                // 오류 발생 시 기본 메시지 반환
+            });
+            
+            // 최신 보고서가 먼저 오도록 정렬
+            reports.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // 보고서가 없는 경우 안내 메시지
+            if (reports.length === 0) {
                 return [{
-                    name: '보고서 목록을 불러올 수 없습니다',
-                    date: 'GitHub Pages를 확인해주세요',
-                    url: baseUrl
+                    name: '아직 생성된 보고서가 없습니다',
+                    date: '보고서 생성하기 버튼을 클릭하세요',
+                    url: '#'
                 }];
             }
+            
+            return reports;
         }
 
         // 워크플로우 실행
