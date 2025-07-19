@@ -1,0 +1,27 @@
+========================================
+RECODE WEEKLY 자동화 빠른 설정
+========================================
+
+1. 지금 열린 GitHub 페이지에서:
+   - Repository name: recode-weekly-automation
+   - Description: RECODE WEEKLY 자동 생성 및 이메일 발송 시스템
+   - Public 선택
+   - Create repository 클릭
+
+2. 생성 후 나타나는 페이지에서 아래 명령어 복사해서 터미널에 붙여넣기:
+
+cd /Users/kwk/development/recode-weekly-automation
+git remote add origin https://github.com/psykim/recode-weekly-automation.git
+git push -u origin main
+
+3. GitHub Secrets 설정 (Settings → Secrets → Actions):
+   SMTP_SERVER = smtp.gmail.com
+   SMTP_PORT = 587
+   SMTP_USERNAME = 본인 Gmail
+   SMTP_PASSWORD = Gmail 앱 비밀번호
+   SENDER_EMAIL = 본인 Gmail
+
+4. 수신자 관리 페이지 열기:
+   /Users/kwk/development/recode-weekly-automation/web/manage_recipients.html
+
+========================================
