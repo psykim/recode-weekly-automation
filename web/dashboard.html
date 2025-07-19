@@ -363,12 +363,12 @@
 
         // GitHub Pages에서 보고서 목록 가져오기
         async function getReportsFromGitHubPages() {
-            // GitHub API를 사용하여 gh-pages 브랜치의 파일 목록 가져오기
-            const apiUrl = 'https://api.github.com/repos/psykim/recode-weekly-automation/contents/?ref=gh-pages';
-            const baseUrl = 'https://psykim.github.io/recode-weekly-automation/';
+            // GitHub API를 사용하여 main 브랜치의 reports 폴더 파일 목록 가져오기
+            const apiUrl = 'https://api.github.com/repos/psykim/recode-weekly-automation/contents/reports?ref=main';
+            const baseUrl = 'https://psykim.github.io/recode-weekly-automation/reports/';
             
             try {
-                // GitHub API로 gh-pages 브랜치의 파일 목록 가져오기
+                // GitHub API로 main 브랜치의 reports 폴더 파일 목록 가져오기
                 const response = await fetch(apiUrl);
                 if (!response.ok) {
                     throw new Error('Failed to fetch reports from GitHub API');
