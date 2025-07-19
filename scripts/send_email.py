@@ -212,11 +212,28 @@ RECODE WEEKLY 팀 드림
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("사용법: python send_email.py <report_file_path>")
-        sys.exit(1)
+    # 환경 변수에서 보고서 경로 확인 (GitHub Actions 용)
+    report_path = os.environ.get('REPORT_PATH')
     
-    report_path = sys.argv[1]
+    # 환경 변수가 없으면 명령줄 인자 확인
+    if not report_path and len(sys.argv) >= 2:
+        report_path = sys.argv[1]
+    
+    # 보고서 경로가 없으면 가장 최근 보고서 찾기
+    if not report_path:
+        reports_dir = os.path.join(os.path.dirname(__file__), '..', 'reports')
+        if os.path.exists(reports_dir):
+            files = [f for f in os.listdir(reports_dir) if f.endswith('.html')]
+            if files:
+                files.sort(reverse=True)  # 최신 파일이 먼저 오도록 정렬
+                report_path = os.path.join(reports_dir, files[0])
+                print(f"최신 보고서 파일 사용: {report_path}")
+    
+    if not report_path:
+        print("보고서 파일을 찾을 수 없습니다.")
+        print("사용법: python send_email.py <report_file_path>")
+        print("또는 REPORT_PATH 환경 변수를 설정하세요.")
+        sys.exit(1)
     
     if not os.path.exists(report_path):
         print(f"보고서 파일을 찾을 수 없습니다: {report_path}")
