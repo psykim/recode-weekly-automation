@@ -93,8 +93,11 @@ class RecodeWeeklyGenerator:
             root = ET.fromstring(response.text)
             
             papers = []
-            for article in root.findall('.//PubmedArticle'):
+            for i, article in enumerate(root.findall('.//PubmedArticle')):
                 try:
+                    # PubMed ID
+                    pmid = id_list[i] if i < len(id_list) else None
+                    
                     # 제목
                     title = article.find('.//ArticleTitle').text or "제목 없음"
                     
@@ -166,7 +169,8 @@ class RecodeWeeklyGenerator:
                             "authors": authors_str,
                             "date": year,
                             "korean_abstract": korean_abstract,
-                            "english_abstract": abstract_text[:500] + "..." if len(abstract_text) > 500 else abstract_text
+                            "english_abstract": abstract_text[:500] + "..." if len(abstract_text) > 500 else abstract_text,
+                            "pubmed_url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else None
                         })
                     
                 except Exception as e:
@@ -526,6 +530,11 @@ class RecodeWeeklyGenerator:
         
         html = ''
         for idx, paper in enumerate(papers, 1):
+            # PubMed 링크 생성
+            pubmed_link = ''
+            if paper.get('pubmed_url'):
+                pubmed_link = f' | <a href="{paper["pubmed_url"]}" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>'
+            
             html += f"""
             <div class="paper {category}-if">
                 <div class="paper-header">
@@ -539,7 +548,7 @@ class RecodeWeeklyGenerator:
                     </div>
                 </div>
                 <div class="meta-info">
-                    {paper['authors']} ({paper['date']})
+                    {paper['authors']} ({paper['date']}){pubmed_link}
                 </div>
                 <div class="korean-abstract">
                     <h4>📝 한글 번역</h4>

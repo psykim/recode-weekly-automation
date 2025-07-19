@@ -364,15 +364,21 @@
             reportsList.innerHTML = '<div class="no-reports"><span class="loading-spinner"></span> 보고서를 불러오는 중...</div>';
 
             try {
-                // GitHub Pages에서 보고서 목록 가져오기 (실제로는 API 호출이 제한적이므로 샘플 데이터 사용)
+                // GitHub Pages에서 보고서 목록 가져오기
                 const reports = await getReportsFromGitHubPages();
                 
-                if (reports.length === 0) {
+                // 삭제된 보고서 필터링
+                const deletedReports = getDeletedReports();
+                const filteredReports = reports.filter(report => 
+                    !deletedReports.includes(report.filename || report.url.split('/').pop())
+                );
+                
+                if (filteredReports.length === 0) {
                     reportsList.innerHTML = '<div class="no-reports">생성된 보고서가 없습니다.</div>';
                     return;
                 }
 
-                reportsList.innerHTML = reports.map((report, index) => `
+                reportsList.innerHTML = filteredReports.map((report, index) => `
                     <div class="report-item" id="report-${index}">
                         <div>
                             <div class="report-name">${report.name}</div>
@@ -534,6 +540,20 @@
         // 2분마다 워크플로우 상태 확인
         setInterval(checkWorkflowStatus, 120000);
 
+        // 삭제된 보고서 목록을 로컬 스토리지에 저장
+        function getDeletedReports() {
+            const deleted = localStorage.getItem('deletedReports');
+            return deleted ? JSON.parse(deleted) : [];
+        }
+
+        function addDeletedReport(filename) {
+            const deleted = getDeletedReports();
+            if (!deleted.includes(filename)) {
+                deleted.push(filename);
+                localStorage.setItem('deletedReports', JSON.stringify(deleted));
+            }
+        }
+
         // 보고서 삭제 함수
         async function deleteReport(filename, index) {
             if (!confirm(`정말로 "${filename}" 보고서를 삭제하시겠습니까?`)) {
@@ -543,30 +563,19 @@
             // DOM에서 즉시 제거 (UX 개선)
             const reportElement = document.getElementById(`report-${index}`);
             if (reportElement) {
-                reportElement.style.opacity = '0.5';
-                reportElement.style.pointerEvents = 'none';
+                reportElement.style.transition = 'all 0.3s ease';
+                reportElement.style.opacity = '0';
+                reportElement.style.transform = 'translateX(-20px)';
+                
+                setTimeout(() => {
+                    reportElement.remove();
+                }, 300);
             }
 
-            try {
-                // 서버에 삭제 요청 보내기
-                // 주의: 실제로는 서버측 API가 필요합니다. 
-                // GitHub API를 사용하여 파일을 삭제하려면 인증이 필요합니다.
-                
-                alert(`"${filename}" 보고서가 삭제되었습니다.\n\n(주의: 실제 파일 삭제는 서버 권한이 필요합니다. 현재는 UI에서만 제거됩니다.)`);
-                
-                // 보고서 목록 새로고침
-                loadReports();
-                
-            } catch (error) {
-                console.error('Error deleting report:', error);
-                alert('보고서 삭제 중 오류가 발생했습니다.');
-                
-                // 오류 발생 시 원래 상태로 복구
-                if (reportElement) {
-                    reportElement.style.opacity = '1';
-                    reportElement.style.pointerEvents = 'auto';
-                }
-            }
+            // 로컬 스토리지에 삭제 기록 저장
+            addDeletedReport(filename);
+            
+            alert(`"${filename}" 보고서가 삭제되었습니다.\n\n(참고: 브라우저에서만 숨김 처리됩니다. 실제 파일은 서버에 남아있습니다.)`);
         }
     </script>
 </body>
