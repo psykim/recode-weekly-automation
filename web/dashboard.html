@@ -363,28 +363,25 @@
 
         // GitHub Pages에서 보고서 목록 가져오기
         async function getReportsFromGitHubPages() {
+            // GitHub API를 사용하여 gh-pages 브랜치의 파일 목록 가져오기
+            const apiUrl = 'https://api.github.com/repos/psykim/recode-weekly-automation/contents/?ref=gh-pages';
             const baseUrl = 'https://psykim.github.io/recode-weekly-automation/';
             
             try {
-                // GitHub Pages의 index.html 파일을 가져와서 파싱
-                const response = await fetch(baseUrl);
+                // GitHub API로 gh-pages 브랜치의 파일 목록 가져오기
+                const response = await fetch(apiUrl);
                 if (!response.ok) {
-                    throw new Error('Failed to fetch reports');
+                    throw new Error('Failed to fetch reports from GitHub API');
                 }
                 
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                
-                // index.html에서 보고서 링크 추출
-                const links = doc.querySelectorAll('a[href*="recode_weekly_"]');
+                const files = await response.json();
                 const reports = [];
                 
-                links.forEach(link => {
-                    const filename = link.getAttribute('href');
-                    if (filename && filename.endsWith('.html')) {
+                // 보고서 파일 필터링
+                files.forEach(file => {
+                    if (file.name && file.name.startsWith('recode_weekly_') && file.name.endsWith('.html')) {
                         // 파일명에서 날짜 추출
-                        const match = filename.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
+                        const match = file.name.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
                         if (match) {
                             const dateStr = match[1];
                             const year = dateStr.substring(0, 4);
@@ -395,7 +392,7 @@
                             reports.push({
                                 name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
                                 date: date.toLocaleDateString('ko-KR'),
-                                url: `${baseUrl}${filename}`
+                                url: `${baseUrl}${file.name}`
                             });
                         }
                     }
