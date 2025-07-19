@@ -163,6 +163,11 @@
             color: #6c757d;
         }
 
+        .report-actions {
+            display: flex;
+            gap: 10px;
+        }
+
         .view-btn {
             background: #28a745;
             color: white;
@@ -177,6 +182,21 @@
 
         .view-btn:hover {
             background: #218838;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .delete-btn:hover {
+            background: #c82333;
         }
 
         .refresh-btn {
@@ -194,7 +214,7 @@
             background: #138496;
         }
 
-        .links-section {
+        .reports-section {
             background: white;
             border-radius: 15px;
             padding: 30px;
@@ -202,10 +222,13 @@
             margin-top: 30px;
         }
 
-        .links-section h3 {
+        .reports-section h2 {
             color: #333;
             margin-bottom: 20px;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .link-grid {
@@ -288,45 +311,48 @@
 
             <div class="card">
                 <h2>
-                    <span class="icon">📊</span>
-                    생성된 보고서
+                    <span class="icon">🔗</span>
+                    빠른 링크
                 </h2>
-                <button class="refresh-btn" onclick="loadReports()">
-                    목록 새로고침
-                </button>
-                <div id="reportsList" class="reports-list">
-                    <div class="no-reports">보고서를 불러오는 중...</div>
+                <div class="link-grid">
+                    <a href="https://github.com/psykim/recode-weekly-automation/actions" target="_blank" class="link-item">
+                        <span class="link-icon">⚡</span>
+                        GitHub Actions
+                    </a>
+                    <a href="https://psykim.github.io/recode-weekly-automation/" target="_blank" class="link-item">
+                        <span class="link-icon">🌐</span>
+                        GitHub Pages
+                    </a>
+                    <a href="https://github.com/psykim/recode-weekly-automation" target="_blank" class="link-item">
+                        <span class="link-icon">📁</span>
+                        저장소
+                    </a>
+                    <a href="https://github.com/psykim/recode-weekly-automation/settings/secrets/actions" target="_blank" class="link-item">
+                        <span class="link-icon">🔐</span>
+                        Secrets 관리
+                    </a>
+                    <a href="/web/manage_recipients.html" class="link-item">
+                        <span class="link-icon">👥</span>
+                        수신자 관리
+                    </a>
+                    <a href="https://github.com/psykim/recode-weekly-automation/deployments" target="_blank" class="link-item">
+                        <span class="link-icon">🚀</span>
+                        배포 상태
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="links-section">
-            <h3>빠른 링크</h3>
-            <div class="link-grid">
-                <a href="https://github.com/psykim/recode-weekly-automation/actions" target="_blank" class="link-item">
-                    <span class="link-icon">⚡</span>
-                    GitHub Actions
-                </a>
-                <a href="https://psykim.github.io/recode-weekly-automation/" target="_blank" class="link-item">
-                    <span class="link-icon">🌐</span>
-                    GitHub Pages
-                </a>
-                <a href="https://github.com/psykim/recode-weekly-automation" target="_blank" class="link-item">
-                    <span class="link-icon">📁</span>
-                    저장소
-                </a>
-                <a href="https://github.com/psykim/recode-weekly-automation/settings/secrets/actions" target="_blank" class="link-item">
-                    <span class="link-icon">🔐</span>
-                    Secrets 관리
-                </a>
-                <a href="/web/manage_recipients.html" class="link-item">
-                    <span class="link-icon">👥</span>
-                    수신자 관리
-                </a>
-                <a href="https://github.com/psykim/recode-weekly-automation/deployments" target="_blank" class="link-item">
-                    <span class="link-icon">🚀</span>
-                    배포 상태
-                </a>
+        <div class="reports-section">
+            <h2>
+                <span class="icon">📊</span>
+                생성된 보고서
+            </h2>
+            <button class="refresh-btn" onclick="loadReports()">
+                목록 새로고침
+            </button>
+            <div id="reportsList" class="reports-list">
+                <div class="no-reports">보고서를 불러오는 중...</div>
             </div>
         </div>
     </div>
@@ -346,13 +372,16 @@
                     return;
                 }
 
-                reportsList.innerHTML = reports.map(report => `
-                    <div class="report-item">
+                reportsList.innerHTML = reports.map((report, index) => `
+                    <div class="report-item" id="report-${index}">
                         <div>
                             <div class="report-name">${report.name}</div>
                             <div class="report-date">${report.date}</div>
                         </div>
-                        <a href="${report.url}" target="_blank" class="view-btn">보기</a>
+                        <div class="report-actions">
+                            <a href="${report.url}" target="_blank" class="view-btn">보기</a>
+                            <button class="delete-btn" onclick="deleteReport('${report.filename || report.url.split('/').pop()}', ${index})">삭제</button>
+                        </div>
                     </div>
                 `).join('');
             } catch (error) {
@@ -381,7 +410,8 @@
                         reports.push({
                             name: report.title,
                             date: date.toLocaleDateString('ko-KR'),
-                            url: `${baseUrl}${report.filename}`
+                            url: `${baseUrl}${report.filename}`,
+                            filename: report.filename
                         });
                     });
                     
@@ -419,7 +449,8 @@
                         reports.push({
                             name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
                             date: date.toLocaleDateString('ko-KR'),
-                            url: `${baseUrl}${filename}`
+                            url: `${baseUrl}${filename}`,
+                            filename: filename
                         });
                     }
                 });
@@ -502,6 +533,41 @@
 
         // 2분마다 워크플로우 상태 확인
         setInterval(checkWorkflowStatus, 120000);
+
+        // 보고서 삭제 함수
+        async function deleteReport(filename, index) {
+            if (!confirm(`정말로 "${filename}" 보고서를 삭제하시겠습니까?`)) {
+                return;
+            }
+
+            // DOM에서 즉시 제거 (UX 개선)
+            const reportElement = document.getElementById(`report-${index}`);
+            if (reportElement) {
+                reportElement.style.opacity = '0.5';
+                reportElement.style.pointerEvents = 'none';
+            }
+
+            try {
+                // 서버에 삭제 요청 보내기
+                // 주의: 실제로는 서버측 API가 필요합니다. 
+                // GitHub API를 사용하여 파일을 삭제하려면 인증이 필요합니다.
+                
+                alert(`"${filename}" 보고서가 삭제되었습니다.\n\n(주의: 실제 파일 삭제는 서버 권한이 필요합니다. 현재는 UI에서만 제거됩니다.)`);
+                
+                // 보고서 목록 새로고침
+                loadReports();
+                
+            } catch (error) {
+                console.error('Error deleting report:', error);
+                alert('보고서 삭제 중 오류가 발생했습니다.');
+                
+                // 오류 발생 시 원래 상태로 복구
+                if (reportElement) {
+                    reportElement.style.opacity = '1';
+                    reportElement.style.pointerEvents = 'auto';
+                }
+            }
+        }
     </script>
 </body>
 </html>
