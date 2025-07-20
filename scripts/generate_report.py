@@ -16,6 +16,36 @@ class RecodeWeeklyGenerator:
         self.current_date = datetime.now()
         self.report_date = self.current_date.strftime("%Y.%m.%d")
         self.file_timestamp = self.current_date.strftime("%Y%m%d_%H%M%S")
+        self.impact_factors = self._load_impact_factors()
+    
+    def _load_impact_factors(self) -> Dict[str, float]:
+        """Impact Factor 데이터 로드"""
+        if_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'impact_factors.json')
+        
+        if os.path.exists(if_file):
+            try:
+                with open(if_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    return data.get('impact_factors', {})
+            except Exception as e:
+                print(f"Impact Factor 파일 로드 오류: {e}")
+        
+        # 파일이 없거나 오류 발생 시 기본값 반환
+        return {
+            "Nature": 64.8,
+            "Science": 56.9,
+            "Cell": 64.5,
+            "Nature Medicine": 58.7,
+            "Nature Neuroscience": 28.0,
+            "Lancet": 202.7,
+            "The Lancet Neurology": 44.2,
+            "JAMA": 120.7,
+            "JAMA Neurology": 29.9,
+            "New England Journal of Medicine": 176.1,
+            "Neuron": 18.7,
+            "Brain": 15.3,
+            "Alzheimer's & Dementia": 14.0
+        }
         
     def fetch_papers(self) -> List[Dict]:
         """
@@ -129,29 +159,8 @@ class RecodeWeeklyGenerator:
                             abstract_parts.append(abstract.text)
                     abstract_text = " ".join(abstract_parts) if abstract_parts else "No abstract available"
                     
-                    # Impact Factor (예시 값 - 실제로는 별도 데이터베이스 필요)
-                    impact_factors = {
-                        "Nature": 64.8,
-                        "Science": 56.9,
-                        "Cell": 64.5,
-                        "Nature Medicine": 58.7,
-                        "Nature Neuroscience": 28.0,
-                        "Lancet": 202.7,
-                        "The Lancet Neurology": 44.2,
-                        "JAMA": 120.7,
-                        "JAMA Neurology": 29.9,
-                        "New England Journal of Medicine": 176.1,
-                        "Neuron": 18.7,
-                        "Brain": 15.3,
-                        "Alzheimer's & Dementia": 14.0
-                    }
-                    
                     # 저널명에서 IF 찾기
-                    impact_factor = 10.0  # 기본값
-                    for j_name, if_value in impact_factors.items():
-                        if j_name.lower() in journal.lower():
-                            impact_factor = if_value
-                            break
+                    impact_factor = self._get_impact_factor(journal)
                     
                     # 한글 제목 (간단한 번역 - 실제로는 번역 API 사용)
                     korean_title = self._translate_title(title)
@@ -217,6 +226,34 @@ class RecodeWeeklyGenerator:
             korean_title = korean_title.replace(eng, kor)
         
         return korean_title
+    
+    def _get_impact_factor(self, journal_name: str) -> float:
+        """저널명으로 Impact Factor 찾기"""
+        # 정확한 매칭 먼저 시도
+        if journal_name in self.impact_factors:
+            return self.impact_factors[journal_name]
+        
+        # 부분 매칭 시도 (대소문자 무시)
+        journal_lower = journal_name.lower()
+        for stored_journal, if_value in self.impact_factors.items():
+            if stored_journal.lower() in journal_lower or journal_lower in stored_journal.lower():
+                return if_value
+        
+        # 특수 케이스 처리
+        if "lancet" in journal_lower:
+            if "neurology" in journal_lower:
+                return self.impact_factors.get("The Lancet Neurology", 44.2)
+            else:
+                return self.impact_factors.get("Lancet", 202.7)
+        
+        if "new england" in journal_lower or "nejm" in journal_lower:
+            return self.impact_factors.get("New England Journal of Medicine", 176.1)
+        
+        if "alzheimer" in journal_lower and "dementia" in journal_lower:
+            return self.impact_factors.get("Alzheimer's & Dementia", 14.0)
+        
+        # 기본값 반환 (IF가 없는 저널)
+        return 5.0
     
     def _summarize_abstract(self, abstract: str) -> str:
         """초록의 간단한 한글 요약 (실제로는 번역 API 사용)"""
