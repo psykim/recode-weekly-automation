@@ -229,31 +229,85 @@ class RecodeWeeklyGenerator:
     
     def _get_impact_factor(self, journal_name: str) -> float:
         """저널명으로 Impact Factor 찾기"""
-        # 정확한 매칭 먼저 시도
+        # 1. 정확한 매칭 먼저 시도
         if journal_name in self.impact_factors:
             return self.impact_factors[journal_name]
         
-        # 부분 매칭 시도 (대소문자 무시)
+        # 2. 대소문자 무시한 정확한 매칭
         journal_lower = journal_name.lower()
         for stored_journal, if_value in self.impact_factors.items():
-            if stored_journal.lower() in journal_lower or journal_lower in stored_journal.lower():
+            if stored_journal.lower() == journal_lower:
                 return if_value
         
-        # 특수 케이스 처리
+        # 3. The 추가/제거한 매칭
+        if journal_name.startswith("The "):
+            alt_name = journal_name[4:]
+            if alt_name in self.impact_factors:
+                return self.impact_factors[alt_name]
+        else:
+            alt_name = "The " + journal_name
+            if alt_name in self.impact_factors:
+                return self.impact_factors[alt_name]
+        
+        # 4. 약어 확장 매칭 (예: Nat Commun -> Nature Communications)
+        abbreviation_map = {
+            "Nat Commun": "Nature Communications",
+            "Nat Med": "Nature Medicine", 
+            "Nat Neurosci": "Nature Neuroscience",
+            "Nat Genet": "Nature Genetics",
+            "Nat Aging": "Nature Aging",
+            "Sci Transl Med": "Science Translational Medicine",
+            "Mol Psychiatry": "Molecular Psychiatry",
+            "Biol Psychiatry": "Biological Psychiatry",
+            "J Clin Invest": "Journal of Clinical Investigation",
+            "Ann Neurol": "Annals of Neurology",
+            "Mov Disord": "Movement Disorders",
+            "J Neurosci": "Journal of Neuroscience",
+            "Neurobiol Aging": "Neurobiology of Aging",
+            "J Alzheimers Dis": "Journal of Alzheimer's Disease",
+            "Front Aging Neurosci": "Frontiers in Aging Neuroscience",
+            "Acta Neuropathol": "Acta Neuropathologica",
+            "Proc Natl Acad Sci": "Proceedings of the National Academy of Sciences",
+            "N Engl J Med": "New England Journal of Medicine",
+            "Alzheimers Dement": "Alzheimer's & Dementia"
+        }
+        
+        # 약어로 검색
+        for abbrev, full_name in abbreviation_map.items():
+            if abbrev.lower() in journal_lower:
+                if full_name in self.impact_factors:
+                    return self.impact_factors[full_name]
+        
+        # 5. 특수 케이스 처리 (더 구체적인 매칭)
         if "lancet" in journal_lower:
             if "neurology" in journal_lower:
-                return self.impact_factors.get("The Lancet Neurology", 44.2)
+                return self.impact_factors.get("The Lancet Neurology", self.impact_factors.get("Lancet Neurology", 44.2))
+            elif "psychiatry" in journal_lower:
+                return self.impact_factors.get("The Lancet Psychiatry", 30.0)  # 예시값
             else:
-                return self.impact_factors.get("Lancet", 202.7)
+                return self.impact_factors.get("The Lancet", self.impact_factors.get("Lancet", 202.7))
         
-        if "new england" in journal_lower or "nejm" in journal_lower:
+        if ("new england" in journal_lower and "medicine" in journal_lower) or "nejm" in journal_lower:
             return self.impact_factors.get("New England Journal of Medicine", 176.1)
         
         if "alzheimer" in journal_lower and "dementia" in journal_lower:
             return self.impact_factors.get("Alzheimer's & Dementia", 14.0)
         
+        # 6. 최후의 부분 매칭 (길이가 긴 것부터 매칭하여 더 구체적인 저널명 우선)
+        matches = []
+        for stored_journal, if_value in self.impact_factors.items():
+            stored_lower = stored_journal.lower()
+            # 전체 단어 단위로 매칭 (부분 문자열이 아닌)
+            if all(word in journal_lower.split() for word in stored_lower.split()):
+                matches.append((stored_journal, if_value, len(stored_journal)))
+        
+        # 가장 긴 매칭 선택
+        if matches:
+            matches.sort(key=lambda x: x[2], reverse=True)
+            return matches[0][1]
+        
         # 기본값 반환 (IF가 없는 저널)
-        return 5.0
+        return 0.0  # 5.0 대신 0.0으로 변경하여 IF가 없는 저널 명확히 표시
     
     def _summarize_abstract(self, abstract: str) -> str:
         """초록의 간단한 한글 요약 (실제로는 번역 API 사용)"""
