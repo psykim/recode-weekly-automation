@@ -34,6 +34,10 @@ jobs:
           # 보고서 생성
           python scripts/generate_report.py
           
+      - name: 보고서 목록 JSON 업데이트
+        run: |
+          python scripts/update_dashboard_reports.py
+          
       - name: 보고서 업로드
         uses: actions/upload-artifact@v4
         with:
@@ -43,14 +47,19 @@ jobs:
       - name: GitHub Pages에 배포
         run: |
           mkdir -p gh-pages
-          cp -r reports/* gh-pages/
+          mkdir -p gh-pages/reports
+          mkdir -p gh-pages/web
+          
+          # 보고서 파일들 복사
+          cp -r reports/*.html gh-pages/reports/
+          
+          # 웹 파일들 복사 (대시보드, reports.json 등)
+          cp -r web/* gh-pages/web/
+          
+          # 루트에 index.html 생성 (대시보드로 리다이렉트)
           cd gh-pages
           touch .nojekyll
-          echo "<!DOCTYPE html><html><head><title>RECODE WEEKLY</title></head><body><h1>RECODE WEEKLY Reports</h1><ul>" > index.html
-          for file in *.html; do
-            [ "$file" != "index.html" ] && echo "<li><a href='$file'>$file</a></li>" >> index.html
-          done
-          echo "</ul></body></html>" >> index.html
+          echo "<!DOCTYPE html><html><head><meta http-equiv='refresh' content='0; url=web/dashboard.html'><title>RECODE WEEKLY</title></head><body><p>Redirecting to dashboard...</p></body></html>" > index.html
           
       - name: GitHub Pages 배포
         uses: peaceiris/actions-gh-pages@v3
