@@ -602,6 +602,10 @@ class RecodeWeeklyGenerator:
         high_impact_papers = [p for p in papers if p.get('impact_factor', 0) > 30]
         mid_impact_papers = [p for p in papers if 10 <= p.get('impact_factor', 0) <= 30]
         
+        # IF 순으로 정렬 (높은 순)
+        high_impact_papers.sort(key=lambda x: x.get('impact_factor', 0), reverse=True)
+        mid_impact_papers.sort(key=lambda x: x.get('impact_factor', 0), reverse=True)
+        
         # HTML 생성
         html = html_template.format(
             date=self.report_date,
