@@ -10,6 +10,11 @@ import requests
 from datetime import datetime
 from typing import List, Dict
 import time
+import deepl
+from dotenv import load_dotenv
+
+# 환경 변수 로드
+load_dotenv()
 
 class RecodeWeeklyGenerator:
     def __init__(self):
@@ -17,6 +22,19 @@ class RecodeWeeklyGenerator:
         self.report_date = self.current_date.strftime("%Y.%m.%d")
         self.file_timestamp = self.current_date.strftime("%Y%m%d_%H%M%S")
         self.impact_factors = self._load_impact_factors()
+        
+        # DeepL 번역기 초기화
+        api_key = os.getenv('DEEPL_API_KEY')
+        if api_key and api_key != 'YOUR_API_KEY':
+            try:
+                self.translator = deepl.Translator(api_key)
+                print("DeepL API 초기화 성공")
+            except Exception as e:
+                print(f"DeepL API 초기화 실패: {e}")
+                self.translator = None
+        else:
+            print("DeepL API 키가 설정되지 않았습니다. 기본 번역을 사용합니다.")
+            self.translator = None
     
     def _load_impact_factors(self) -> Dict[str, float]:
         """Impact Factor 데이터 로드"""
@@ -205,7 +223,37 @@ class RecodeWeeklyGenerator:
             ]
     
     def _translate_title(self, title: str) -> str:
-        """제목의 간단한 한글 변환 (실제로는 번역 API 사용)"""
+        """논문 제목의 한글 번역"""
+        if self.translator:
+            try:
+                # DeepL API로 번역
+                result = self.translator.translate_text(
+                    title, 
+                    source_lang="EN",
+                    target_lang="KO"
+                )
+                translated_title = result.text
+                
+                # 번역 후처리 - 의학 용어 개선
+                medical_terms = {
+                    "알츠하이머 병": "알츠하이머병",
+                    "치매 증": "치매",
+                    "신경 퇴행성": "신경퇴행성",
+                    "인지 기능": "인지기능",
+                    "베타 아밀로이드": "베타-아밀로이드",
+                    "타우 단백질": "타우 단백질",
+                    "바이오 마커": "바이오마커"
+                }
+                
+                for wrong_term, correct_term in medical_terms.items():
+                    translated_title = translated_title.replace(wrong_term, correct_term)
+                
+                return translated_title
+                
+            except Exception as e:
+                print(f"DeepL 제목 번역 오류: {e}")
+        
+        # DeepL 사용 불가 시 기본 키워드 번역
         translations = {
             "Alzheimer's disease": "알츠하이머병",
             "dementia": "치매",
@@ -310,16 +358,55 @@ class RecodeWeeklyGenerator:
         return 0.0  # 5.0 대신 0.0으로 변경하여 IF가 없는 저널 명확히 표시
     
     def _summarize_abstract(self, abstract: str) -> str:
-        """초록의 간단한 한글 요약 (실제로는 번역 API 사용)"""
+        """초록의 한글 번역"""
         if len(abstract) < 100:
             return "초록이 제공되지 않았습니다."
         
-        # 간단한 요약 생성
-        sentences = abstract.split('. ')[:3]  # 처음 3문장만
+        if self.translator:
+            try:
+                # 초록이 너무 길면 처음 500자만 번역 (비용 절약)
+                text_to_translate = abstract[:500] if len(abstract) > 500 else abstract
+                
+                # DeepL API로 번역
+                result = self.translator.translate_text(
+                    text_to_translate,
+                    source_lang="EN",
+                    target_lang="KO"
+                )
+                translated_text = result.text
+                
+                # 번역 후처리 - 의학 용어 개선
+                medical_terms = {
+                    "알츠하이머 병": "알츠하이머병",
+                    "치매 증": "치매",
+                    "신경 퇴행성": "신경퇴행성",
+                    "단일 클론": "단클론",
+                    "베타 아밀로이드": "베타-아밀로이드",
+                    "타우 단백질": "타우 단백질",
+                    "인지 기능": "인지기능",
+                    "신경 세포": "신경세포",
+                    "미세 아교": "미세아교",
+                    "혈액 뇌 장벽": "혈액-뇌 장벽",
+                    "시냅스 가소성": "시냅스 가소성"
+                }
+                
+                for wrong_term, correct_term in medical_terms.items():
+                    translated_text = translated_text.replace(wrong_term, correct_term)
+                
+                # 길이 조정
+                if len(abstract) > 500:
+                    translated_text += "..."
+                
+                return translated_text
+                
+            except Exception as e:
+                print(f"DeepL 초록 번역 오류: {e}")
+        
+        # DeepL 사용 불가 시 기본 키워드 번역
+        sentences = abstract.split('. ')[:3]
         summary = ". ".join(sentences) + "..."
         
-        # 주요 키워드 한글 변환
-        translations = {
+        basic_translations = {
             "Alzheimer's disease": "알츠하이머병",
             "dementia": "치매",
             "patients": "환자",
@@ -327,12 +414,10 @@ class RecodeWeeklyGenerator:
             "cognitive": "인지",
             "memory": "기억력",
             "brain": "뇌",
-            "study": "연구",
-            "results": "결과",
-            "showed": "보여주었다"
+            "study": "연구"
         }
         
-        for eng, kor in translations.items():
+        for eng, kor in basic_translations.items():
             summary = summary.replace(eng, kor)
         
         return summary
