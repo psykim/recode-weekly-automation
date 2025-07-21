@@ -199,8 +199,8 @@
             background: #c82333;
         }
 
-        .send-btn {
-            background: #007bff;
+        .download-btn {
+            background: #6c757d;
             color: white;
             border: none;
             padding: 8px 16px;
@@ -211,8 +211,8 @@
             text-decoration: none;
         }
 
-        .send-btn:hover {
-            background: #0056b3;
+        .download-btn:hover {
+            background: #5a6268;
         }
 
         .refresh-btn {
@@ -402,7 +402,7 @@
                         </div>
                         <div class="report-actions">
                             <a href="${report.url}" target="_blank" class="view-btn">보기</a>
-                            <button class="send-btn" onclick="sendReport('${report.filename || report.url.split('/').pop()}')">발송</button>
+                            <button class="download-btn" onclick="downloadReport('${report.url}', '${report.filename || report.url.split('/').pop()}')">다운로드</button>
                             <button class="delete-btn" onclick="deleteReport('${report.filename || report.url.split('/').pop()}', ${index})">삭제</button>
                         </div>
                     </div>
@@ -595,23 +595,39 @@
             alert(`"${filename}" 보고서가 삭제되었습니다.\n\n(참고: 브라우저에서만 숨김 처리됩니다. 실제 파일은 서버에 남아있습니다.)`);
         }
 
-        // 보고서 이메일 발송
-        function sendReport(reportFilename) {
-            const workflowUrl = 'https://github.com/psykim/recode-weekly-automation/actions/workflows/send_email.yml';
-            
-            // 발송 안내 메시지
-            const message = `"${reportFilename}" 보고서를 발송하시겠습니까?\n\nGitHub Actions 페이지로 이동합니다.\n"Run workflow"를 클릭하고 파일명을 입력하세요.`;
-            
-            if (confirm(message)) {
-                // 클립보드에 파일명 복사
-                navigator.clipboard.writeText(reportFilename).then(function() {
-                    alert(`파일명이 클립보드에 복사되었습니다: ${reportFilename}\n\nGitHub Actions 페이지에서 붙여넣기(Ctrl+V)하세요.`);
-                    window.open(workflowUrl, '_blank');
-                }).catch(function(err) {
-                    // 클립보드 복사 실패 시 수동으로 복사하도록 안내
-                    prompt('아래 파일명을 복사하여 GitHub Actions에서 사용하세요:', reportFilename);
-                    window.open(workflowUrl, '_blank');
-                });
+        // 보고서 다운로드
+        async function downloadReport(reportUrl, filename) {
+            try {
+                // fetch를 사용하여 파일 내용 가져오기
+                const response = await fetch(reportUrl);
+                if (!response.ok) {
+                    throw new Error('보고서를 다운로드할 수 없습니다.');
+                }
+                
+                // blob으로 변환
+                const blob = await response.blob();
+                
+                // 다운로드 링크 생성
+                const downloadUrl = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = downloadUrl;
+                a.download = filename; // 파일명 설정
+                
+                // 다운로드 실행
+                document.body.appendChild(a);
+                a.click();
+                
+                // 정리
+                window.URL.revokeObjectURL(downloadUrl);
+                document.body.removeChild(a);
+                
+                // 성공 메시지
+                alert(`"${filename}" 보고서가 다운로드되었습니다.`);
+                
+            } catch (error) {
+                console.error('Download error:', error);
+                alert('보고서 다운로드 중 오류가 발생했습니다.\n\n' + error.message);
             }
         }
     </script>
