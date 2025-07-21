@@ -10,7 +10,7 @@ import requests
 from datetime import datetime
 from typing import List, Dict
 import time
-import deepl
+# from google.cloud import translate_v2 as translate  # Removed - using requests directly
 from dotenv import load_dotenv
 
 # 환경 변수 로드
@@ -23,18 +23,12 @@ class RecodeWeeklyGenerator:
         self.file_timestamp = self.current_date.strftime("%Y%m%d_%H%M%S")
         self.impact_factors = self._load_impact_factors()
         
-        # DeepL 번역기 초기화
-        api_key = os.getenv('DEEPL_API_KEY')
-        if api_key and api_key != 'YOUR_API_KEY':
-            try:
-                self.translator = deepl.Translator(api_key)
-                print("DeepL API 초기화 성공")
-            except Exception as e:
-                print(f"DeepL API 초기화 실패: {e}")
-                self.translator = None
+        # Google Translate API 초기화
+        self.google_api_key = os.getenv('GOOGLE_API_KEY')
+        if self.google_api_key:
+            print("Google Translate API 키가 설정되었습니다.")
         else:
-            print("DeepL API 키가 설정되지 않았습니다. 기본 번역을 사용합니다.")
-            self.translator = None
+            print("Google API 키가 설정되지 않았습니다. 기본 번역을 사용합니다.")
     
     def _load_impact_factors(self) -> Dict[str, float]:
         """Impact Factor 데이터 로드"""
@@ -224,36 +218,29 @@ class RecodeWeeklyGenerator:
     
     def _translate_title(self, title: str) -> str:
         """논문 제목의 한글 번역"""
-        if self.translator:
+        if self.google_api_key:
             try:
-                # DeepL API로 번역
-                result = self.translator.translate_text(
-                    title, 
-                    source_lang="EN",
-                    target_lang="KO"
-                )
-                translated_title = result.text
-                
-                # 번역 후처리 - 의학 용어 개선
-                medical_terms = {
-                    "알츠하이머 병": "알츠하이머병",
-                    "치매 증": "치매",
-                    "신경 퇴행성": "신경퇴행성",
-                    "인지 기능": "인지기능",
-                    "베타 아밀로이드": "베타-아밀로이드",
-                    "타우 단백질": "타우 단백질",
-                    "바이오 마커": "바이오마커"
+                # Google Translate API v2 직접 호출
+                url = f"https://translation.googleapis.com/language/translate/v2?key={self.google_api_key}"
+                data = {
+                    'q': title,
+                    'target': 'ko',
+                    'source': 'en',
+                    'format': 'text'
                 }
                 
-                for wrong_term, correct_term in medical_terms.items():
-                    translated_title = translated_title.replace(wrong_term, correct_term)
-                
-                return translated_title
+                response = requests.post(url, json=data)
+                if response.status_code == 200:
+                    result = response.json()
+                    translated_title = result['data']['translations'][0]['translatedText']
+                    return translated_title
+                else:
+                    print(f"Google 제목 번역 오류: {response.status_code} - {response.text}")
                 
             except Exception as e:
-                print(f"DeepL 제목 번역 오류: {e}")
+                print(f"Google 제목 번역 오류: {e}")
         
-        # DeepL 사용 불가 시 기본 키워드 번역
+        # Google Translate 사용 불가 시 기본 키워드 번역
         translations = {
             "Alzheimer's disease": "알츠하이머병",
             "dementia": "치매",
@@ -362,47 +349,37 @@ class RecodeWeeklyGenerator:
         if len(abstract) < 100:
             return "초록이 제공되지 않았습니다."
         
-        if self.translator:
+        if self.google_api_key:
             try:
                 # 초록이 너무 길면 처음 500자만 번역 (비용 절약)
                 text_to_translate = abstract[:500] if len(abstract) > 500 else abstract
                 
-                # DeepL API로 번역
-                result = self.translator.translate_text(
-                    text_to_translate,
-                    source_lang="EN",
-                    target_lang="KO"
-                )
-                translated_text = result.text
-                
-                # 번역 후처리 - 의학 용어 개선
-                medical_terms = {
-                    "알츠하이머 병": "알츠하이머병",
-                    "치매 증": "치매",
-                    "신경 퇴행성": "신경퇴행성",
-                    "단일 클론": "단클론",
-                    "베타 아밀로이드": "베타-아밀로이드",
-                    "타우 단백질": "타우 단백질",
-                    "인지 기능": "인지기능",
-                    "신경 세포": "신경세포",
-                    "미세 아교": "미세아교",
-                    "혈액 뇌 장벽": "혈액-뇌 장벽",
-                    "시냅스 가소성": "시냅스 가소성"
+                # Google Translate API v2 직접 호출
+                url = f"https://translation.googleapis.com/language/translate/v2?key={self.google_api_key}"
+                data = {
+                    'q': text_to_translate,
+                    'target': 'ko',
+                    'source': 'en',
+                    'format': 'text'
                 }
                 
-                for wrong_term, correct_term in medical_terms.items():
-                    translated_text = translated_text.replace(wrong_term, correct_term)
-                
-                # 길이 조정
-                if len(abstract) > 500:
-                    translated_text += "..."
-                
-                return translated_text
+                response = requests.post(url, json=data)
+                if response.status_code == 200:
+                    result = response.json()
+                    translated_text = result['data']['translations'][0]['translatedText']
+                    
+                    # 길이 조정
+                    if len(abstract) > 500:
+                        translated_text += "..."
+                    
+                    return translated_text
+                else:
+                    print(f"Google 초록 번역 오류: {response.status_code} - {response.text}")
                 
             except Exception as e:
-                print(f"DeepL 초록 번역 오류: {e}")
+                print(f"Google 초록 번역 오류: {e}")
         
-        # DeepL 사용 불가 시 기본 키워드 번역
+        # Google Translate 사용 불가 시 기본 키워드 번역
         sentences = abstract.split('. ')[:3]
         summary = ". ".join(sentences) + "..."
         
@@ -748,9 +725,11 @@ class RecodeWeeklyGenerator:
     def save_report(self, html: str) -> str:
         """보고서를 파일로 저장"""
         filename = f"recode_weekly_{self.file_timestamp}.html"
-        filepath = os.path.join("reports", filename)
+        # 프로젝트 루트의 reports 폴더에 저장
+        reports_dir = os.path.join(os.path.dirname(__file__), '..', 'reports')
+        filepath = os.path.join(reports_dir, filename)
         
-        os.makedirs("reports", exist_ok=True)
+        os.makedirs(reports_dir, exist_ok=True)
         
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(html)
