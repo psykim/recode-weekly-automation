@@ -328,16 +328,9 @@
                     <span class="icon">🚀</span>
                     보고서 생성
                 </h2>
-                <p style="margin-bottom: 20px; color: #6c757d;">
-                    새로운 RECODE WEEKLY 보고서를 생성합니다.
-                </p>
                 <button class="generate-btn" onclick="generateReport()">
                     보고서 생성하기
                 </button>
-                <a href="https://github.com/psykim/recode-weekly-automation/actions/workflows/main.yml" 
-                   target="_blank" class="generate-btn" style="background: #6f42c1;">
-                    GitHub Actions에서 실행
-                </a>
                 <div id="generateStatus" class="status" style="display: none;"></div>
             </div>
 
@@ -362,10 +355,6 @@
                     <a href="https://github.com/psykim/recode-weekly-automation/settings/secrets/actions" target="_blank" class="link-item">
                         <span class="link-icon">🔐</span>
                         Secrets 관리
-                    </a>
-                    <a href="manage_recipients.html" class="link-item">
-                        <span class="link-icon">👥</span>
-                        수신자 관리
                     </a>
                     <a href="https://github.com/psykim/recode-weekly-automation/deployments" target="_blank" class="link-item">
                         <span class="link-icon">🚀</span>
@@ -447,9 +436,23 @@
                 if (data.reports && data.reports.length > 0) {
                     data.reports.forEach(report => {
                         const date = new Date(report.date);
+                        
+                        // 파일명에서 시간 추출
+                        let dateTimeStr = date.toLocaleDateString('ko-KR');
+                        if (report.filename) {
+                            const match = report.filename.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
+                            if (match) {
+                                const timeStr = match[2];
+                                const hour = timeStr.substring(0, 2);
+                                const minute = timeStr.substring(2, 4);
+                                const second = timeStr.substring(4, 6);
+                                dateTimeStr += ` ${hour}:${minute}:${second}`;
+                            }
+                        }
+                        
                         reports.push({
                             name: report.title,
-                            date: date.toLocaleDateString('ko-KR'),
+                            date: dateTimeStr,
                             url: `${baseUrl}${report.filename}`,
                             filename: report.filename
                         });
@@ -481,14 +484,20 @@
                     const match = filename.match(/recode_weekly_(\d{8})_(\d{6})\.html/);
                     if (match) {
                         const dateStr = match[1];
+                        const timeStr = match[2];
                         const year = dateStr.substring(0, 4);
                         const month = dateStr.substring(4, 6);
                         const day = dateStr.substring(6, 8);
+                        const hour = timeStr.substring(0, 2);
+                        const minute = timeStr.substring(2, 4);
+                        const second = timeStr.substring(4, 6);
                         const date = new Date(year, month - 1, day);
+                        
+                        const dateTimeStr = `${date.toLocaleDateString('ko-KR')} ${hour}:${minute}:${second}`;
                         
                         reports.push({
                             name: `RECODE WEEKLY ${date.toLocaleDateString('ko-KR')}`,
-                            date: date.toLocaleDateString('ko-KR'),
+                            date: dateTimeStr,
                             url: `${baseUrl}${filename}`,
                             filename: filename
                         });
