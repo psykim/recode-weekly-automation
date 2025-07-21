@@ -215,6 +215,22 @@
             background: #5a6268;
         }
 
+        .email-copy-btn {
+            background: #17a2b8;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .email-copy-btn:hover {
+            background: #138496;
+        }
+
         .refresh-btn {
             background: #17a2b8;
             color: white;
@@ -402,6 +418,7 @@
                         </div>
                         <div class="report-actions">
                             <a href="${report.url}" target="_blank" class="view-btn">보기</a>
+                            <button class="email-copy-btn" onclick="copyForEmail('${report.url}', '${report.filename || report.url.split('/').pop()}')">이메일 복사</button>
                             <button class="download-btn" onclick="downloadReport('${report.url}', '${report.filename || report.url.split('/').pop()}')">다운로드</button>
                             <button class="delete-btn" onclick="deleteReport('${report.filename || report.url.split('/').pop()}', ${index})">삭제</button>
                         </div>
@@ -629,6 +646,50 @@
                           '브라우저의 팝업 차단을 해제하거나,\n' +
                           '"보기" 버튼을 클릭한 후 Ctrl+S로 저장하세요.');
                 }
+            }
+        }
+
+        // 이메일용 HTML 복사
+        async function copyForEmail(reportUrl, filename) {
+            try {
+                // 보고서 HTML 내용 가져오기
+                const response = await fetch(reportUrl);
+                if (!response.ok) {
+                    throw new Error('보고서를 불러올 수 없습니다.');
+                }
+                
+                const htmlContent = await response.text();
+                
+                // 이메일용으로 최적화된 창 열기
+                const emailWindow = window.open('', '_blank', 'width=1000,height=800');
+                
+                if (emailWindow) {
+                    // 새 창에 HTML 내용 표시
+                    emailWindow.document.write(htmlContent);
+                    emailWindow.document.close();
+                    
+                    // 전체 선택 및 복사를 위한 스크립트 추가
+                    setTimeout(() => {
+                        emailWindow.document.body.style.userSelect = 'all';
+                        emailWindow.document.execCommand('selectAll');
+                        
+                        // 사용 안내
+                        alert(`📧 이메일 본문으로 사용하는 방법:\n\n` +
+                              `1. 새로 열린 창의 내용이 자동으로 선택되었습니다\n` +
+                              `2. Ctrl+C (Mac: Cmd+C)로 복사하세요\n` +
+                              `3. 이메일 작성 창에서 Ctrl+V (Mac: Cmd+V)로 붙여넣기\n\n` +
+                              `💡 팁:\n` +
+                              `• Gmail: HTML 형식이 자동으로 유지됩니다\n` +
+                              `• Outlook: 서식 → HTML 선택 후 붙여넣기\n` +
+                              `• 일부 이메일 클라이언트는 이미지가 표시되지 않을 수 있습니다`);
+                    }, 500);
+                } else {
+                    alert('⚠️ 팝업이 차단되었습니다.\n\n브라우저의 팝업 차단을 해제해주세요.');
+                }
+                
+            } catch (error) {
+                console.error('Copy for email error:', error);
+                alert('❌ 이메일 복사 중 오류가 발생했습니다.\n\n' + error.message);
             }
         }
     </script>
