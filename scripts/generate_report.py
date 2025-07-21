@@ -177,8 +177,8 @@ class RecodeWeeklyGenerator:
                     # 한글 제목 (간단한 번역 - 실제로는 번역 API 사용)
                     korean_title = self._translate_title(title)
                     
-                    # 한글 초록 (간단한 요약 - 실제로는 번역 API 사용)
-                    korean_abstract = self._summarize_abstract(abstract_text)
+                    # 한글 초록 (IF에 따라 전체/요약 번역)
+                    korean_abstract = self._summarize_abstract(abstract_text, impact_factor)
                     
                     # 주요 저널만 포함 (Impact Factor 10 이상)
                     if impact_factor >= 10.0:
@@ -344,17 +344,43 @@ class RecodeWeeklyGenerator:
         # 기본값 반환 (IF가 없는 저널)
         return 0.0  # 5.0 대신 0.0으로 변경하여 IF가 없는 저널 명확히 표시
     
-    def _summarize_abstract(self, abstract: str) -> str:
-        """초록의 한글 번역"""
+    def _summarize_abstract(self, abstract: str, impact_factor: float = 0.0) -> str:
+        """초록의 한글 번역 - IF에 따라 전체/요약 번역"""
         if len(abstract) < 100:
             return "초록이 제공되지 않았습니다."
         
         if self.google_api_key:
             try:
-                # Google Translate API v2 직접 호출 - 전체 초록 번역
+                # High Impact 논문(IF > 30)은 전체 초록 번역
+                if impact_factor > 30:
+                    text_to_translate = abstract
+                else:
+                    # 나머지 논문들은 핵심 문장 요약 후 번역
+                    sentences = abstract.split('. ')
+                    # 첫 번째, 마지막, 그리고 "conclusion", "result" 등이 포함된 문장 선택
+                    key_sentences = []
+                    
+                    # 첫 번째 문장 (연구 목적)
+                    if sentences:
+                        key_sentences.append(sentences[0])
+                    
+                    # 결과/결론 관련 문장 찾기
+                    for sentence in sentences[1:]:
+                        if any(keyword in sentence.lower() for keyword in 
+                               ['result', 'conclusion', 'found', 'showed', 'demonstrated', 'significant']):
+                            key_sentences.append(sentence)
+                            break
+                    
+                    # 마지막 문장 (결론)
+                    if len(sentences) > 1 and sentences[-1] not in key_sentences:
+                        key_sentences.append(sentences[-1])
+                    
+                    text_to_translate = '. '.join(key_sentences[:3]) + '.'
+                
+                # Google Translate API v2 직접 호출
                 url = f"https://translation.googleapis.com/language/translate/v2?key={self.google_api_key}"
                 data = {
-                    'q': abstract,
+                    'q': text_to_translate,
                     'target': 'ko',
                     'source': 'en',
                     'format': 'text'
@@ -364,6 +390,11 @@ class RecodeWeeklyGenerator:
                 if response.status_code == 200:
                     result = response.json()
                     translated_text = result['data']['translations'][0]['translatedText']
+                    
+                    # High Impact가 아닌 논문에는 요약 표시 추가
+                    if impact_factor <= 30:
+                        translated_text += " (핵심 내용 요약)"
+                    
                     return translated_text
                 else:
                     print(f"Google 초록 번역 오류: {response.status_code} - {response.text}")
