@@ -190,7 +190,6 @@ class RecodeWeeklyGenerator:
                             "authors": authors_str,
                             "date": year,
                             "korean_abstract": korean_abstract,
-                            "english_abstract": abstract_text[:500] + "..." if len(abstract_text) > 500 else abstract_text,
                             "pubmed_url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else None
                         })
                     
@@ -211,8 +210,7 @@ class RecodeWeeklyGenerator:
                     "impact_factor": 58.7,
                     "authors": "Kim et al.",
                     "date": "2025",
-                    "korean_abstract": "이 연구는 알츠하이머병의 새로운 치료 타겟을 발견했습니다...",
-                    "english_abstract": "This study discovered new therapeutic targets for Alzheimer's disease..."
+                    "korean_abstract": "이 연구는 알츠하이머병의 새로운 치료 타겟을 발견했습니다..."
                 }
             ]
     
@@ -570,26 +568,6 @@ class RecodeWeeklyGenerator:
             margin: 0 0 10px 0;
             color: #2a5298;
         }}
-        .english-abstract {{
-            background: #f0f4f8;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }}
-        details {{
-            margin-top: 15px;
-        }}
-        summary {{
-            cursor: pointer;
-            color: #2a5298;
-            font-weight: bold;
-            padding: 5px 0;
-        }}
-        summary:hover {{
-            text-decoration: underline;
-        }}
         .high-if {{
             border-left: 4px solid #ff6b6b;
         }}
@@ -734,12 +712,6 @@ class RecodeWeeklyGenerator:
                     <h4>📝 한글 번역</h4>
                     <p>{paper['korean_abstract']}</p>
                 </div>
-                <details>
-                    <summary>영문 초록 원문 보기 ▼</summary>
-                    <div class="english-abstract">
-                        <p>{paper['english_abstract']}</p>
-                    </div>
-                </details>
             </div>
             """
         
