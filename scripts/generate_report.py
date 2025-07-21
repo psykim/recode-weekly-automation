@@ -351,13 +351,10 @@ class RecodeWeeklyGenerator:
         
         if self.google_api_key:
             try:
-                # 초록이 너무 길면 처음 500자만 번역 (비용 절약)
-                text_to_translate = abstract[:500] if len(abstract) > 500 else abstract
-                
-                # Google Translate API v2 직접 호출
+                # Google Translate API v2 직접 호출 - 전체 초록 번역
                 url = f"https://translation.googleapis.com/language/translate/v2?key={self.google_api_key}"
                 data = {
-                    'q': text_to_translate,
+                    'q': abstract,
                     'target': 'ko',
                     'source': 'en',
                     'format': 'text'
@@ -367,11 +364,6 @@ class RecodeWeeklyGenerator:
                 if response.status_code == 200:
                     result = response.json()
                     translated_text = result['data']['translations'][0]['translatedText']
-                    
-                    # 길이 조정
-                    if len(abstract) > 500:
-                        translated_text += "..."
-                    
                     return translated_text
                 else:
                     print(f"Google 초록 번역 오류: {response.status_code} - {response.text}")
