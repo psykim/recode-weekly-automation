@@ -3,13 +3,13 @@
     {
       "id": "1",
       "name": "김기웅",
-      "email": "kwk@example.com",
+      "email": "kwkimmd@gmail.com",
       "organization": "개발자",
       "department": "테스트용",
-      "active": false,
+      "active": true,
       "subscribed_date": "2025-07-21",
       "tags": ["developer", "test"],
-      "note": "실제 사용 시 진짜 이메일로 변경하고 active를 true로 설정"
+      "note": "실제 이메일 주소로 변경 완료"
     }
   ],
   "last_updated": "2025-07-21",
