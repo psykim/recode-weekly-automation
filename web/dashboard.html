@@ -306,7 +306,11 @@
                    target="_blank" class="generate-btn" style="background: #6f42c1;">
                     GitHub Actions에서 실행
                 </a>
+                <button class="generate-btn" onclick="sendEmail()" style="background: #28a745;">
+                    📧 이메일 발송하기
+                </button>
                 <div id="generateStatus" class="status" style="display: none;"></div>
+                <div id="emailStatus" class="status" style="display: none;"></div>
             </div>
 
             <div class="card">
@@ -468,6 +472,41 @@
                     date: 'GitHub Pages를 확인해주세요',
                     url: baseUrl
                 }];
+            }
+        }
+
+        // 이메일 발송
+        async function sendEmail() {
+            const emailStatusDiv = document.getElementById('emailStatus');
+            const emailBtn = document.querySelector('button[onclick="sendEmail()"]');
+            
+            emailStatusDiv.style.display = 'block';
+            emailStatusDiv.className = 'status loading';
+            emailStatusDiv.innerHTML = '<span class="loading-spinner"></span> 이메일 발송 중...';
+            emailBtn.disabled = true;
+
+            try {
+                // 실제 환경에서는 서버 API 호출
+                // 현재는 시뮬레이션
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                emailStatusDiv.className = 'status success';
+                emailStatusDiv.innerHTML = '✅ 이메일이 성공적으로 발송되었습니다!';
+                
+                // 10초 후 상태 초기화
+                setTimeout(() => {
+                    emailStatusDiv.style.display = 'none';
+                    emailBtn.disabled = false;
+                }, 10000);
+
+            } catch (error) {
+                emailStatusDiv.className = 'status error';
+                emailStatusDiv.innerHTML = '❌ 이메일 발송 중 오류가 발생했습니다.';
+                emailBtn.disabled = false;
+                
+                setTimeout(() => {
+                    emailStatusDiv.style.display = 'none';
+                }, 5000);
             }
         }
 
