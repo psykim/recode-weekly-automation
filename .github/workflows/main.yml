@@ -1,10 +1,16 @@
 name: RECODE WEEKLY 자동 생성
 
+
 on:
   schedule:
     # 매주 금요일 새벽 0시 (KST = UTC+9이므로 목요일 15:00 UTC)
     - cron: '0 15 * * 4'
   workflow_dispatch:  # 수동 실행 가능
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   generate-report:
@@ -13,43 +19,39 @@ jobs:
     steps:
     - name: 저장소 체크아웃
       uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
+      
     - name: Python 설정
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-    
+        
     - name: 종속성 설치
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    
+        
     - name: 보고서 생성
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       run: |
         cd scripts
         python generate_report.py
-    
+        
     - name: reports.json 업데이트
       run: |
         cd scripts
         python update_dashboard_reports.py
-    
+        
     - name: Git 설정
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-    
+        
     - name: 변경사항 커밋 및 푸시
       run: |
         git add reports/*.html web/reports.json
         git diff --staged --quiet || (git commit -m "새로운 RECODE WEEKLY 보고서 생성 - $(date +'%Y-%m-%d')" && git push)
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
+        
     - name: 완료 메시지
       run: |
         echo "✅ RECODE WEEKLY 보고서가 성공적으로 생성되었습니다!"
