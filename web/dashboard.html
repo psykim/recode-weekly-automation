@@ -231,19 +231,37 @@
             background: #138496;
         }
 
-        .refresh-btn {
+        .nav-btn {
             background: #17a2b8;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 25px;
             cursor: pointer;
-            margin-bottom: 20px;
             transition: background-color 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            min-width: 120px;
+            text-align: center;
         }
 
-        .refresh-btn:hover {
+        .nav-btn:hover {
             background: #138496;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navigation-section {
+            margin-bottom: 30px;
         }
 
         .reports-section {
@@ -322,50 +340,38 @@
             <p>보고서 관리 대시보드</p>
         </div>
 
-        <div class="dashboard">
-            <div class="card">
-                <h2>
-                    <span class="icon">🔗</span>
-                    빠른 링크
-                </h2>
-                <div class="link-grid">
-                    <a href="https://github.com/psykim/recode-weekly-automation/actions" target="_blank" class="link-item">
-                        <span class="link-icon">⚡</span>
-                        GitHub Actions
-                    </a>
-                    <a href="https://psykim.github.io/recode-weekly-automation/" target="_blank" class="link-item">
-                        <span class="link-icon">🌐</span>
-                        GitHub Pages
-                    </a>
-                    <a href="https://github.com/psykim/recode-weekly-automation" target="_blank" class="link-item">
-                        <span class="link-icon">📁</span>
-                        저장소
-                    </a>
-                    <a href="https://github.com/psykim/recode-weekly-automation/settings/secrets/actions" target="_blank" class="link-item">
-                        <span class="link-icon">🔐</span>
-                        Secrets 관리
-                    </a>
-                    <a href="https://github.com/psykim/recode-weekly-automation/deployments" target="_blank" class="link-item">
-                        <span class="link-icon">🚀</span>
-                        배포 상태
-                    </a>
-                </div>
+
+        <div class="navigation-section">
+            <div style="display: flex; gap: 10px; margin-bottom: 20px; align-items: center; flex-wrap: wrap;">
+                <button class="nav-btn" onclick="loadReports()">
+                    목록 새로고침
+                </button>
+                <button class="nav-btn" onclick="generateReport()">
+                    보고서 생성하기
+                </button>
+                <a href="https://github.com/psykim/recode-weekly-automation/actions" target="_blank" class="nav-btn nav-link">
+                    GitHub Actions
+                </a>
+                <a href="https://psykim.github.io/recode-weekly-automation/" target="_blank" class="nav-btn nav-link">
+                    GitHub Pages
+                </a>
+                <a href="https://github.com/psykim/recode-weekly-automation" target="_blank" class="nav-btn nav-link">
+                    저장소
+                </a>
+                <a href="https://github.com/psykim/recode-weekly-automation/settings/secrets/actions" target="_blank" class="nav-btn nav-link">
+                    Secrets 관리
+                </a>
+                <a href="https://github.com/psykim/recode-weekly-automation/deployments" target="_blank" class="nav-btn nav-link">
+                    배포 상태
+                </a>
             </div>
         </div>
-
+        
         <div class="reports-section">
             <h2>
                 <span class="icon">📊</span>
                 생성된 보고서
             </h2>
-            <div style="display: flex; gap: 10px; margin-bottom: 20px; align-items: center;">
-                <button class="refresh-btn" onclick="loadReports()">
-                    목록 새로고침
-                </button>
-                <button class="generate-btn" onclick="generateReport()">
-                    보고서 생성하기
-                </button>
-            </div>
             <div id="generateStatus" class="status" style="display: none;"></div>
             <div id="reportsList" class="reports-list">
                 <div class="no-reports">보고서를 불러오는 중...</div>
