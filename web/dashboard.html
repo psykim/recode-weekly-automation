@@ -199,6 +199,22 @@
             background: #c82333;
         }
 
+        .send-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .send-btn:hover {
+            background: #0056b3;
+        }
+
         .refresh-btn {
             background: #17a2b8;
             color: white;
@@ -306,14 +322,7 @@
                    target="_blank" class="generate-btn" style="background: #6f42c1;">
                     GitHub Actions에서 실행
                 </a>
-                <button class="generate-btn" onclick="sendEmail()" style="background: #28a745;">
-                    📧 이메일 발송하기
-                </button>
-                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
-                    ⚠️ 먼저 <a href="manage_recipients.html" style="color: #2a5298;">수신자 관리</a>에서 실제 이메일 주소를 추가하고 활성화하세요.
-                </p>
                 <div id="generateStatus" class="status" style="display: none;"></div>
-                <div id="emailStatus" class="status" style="display: none;"></div>
             </div>
 
             <div class="card">
@@ -393,6 +402,7 @@
                         </div>
                         <div class="report-actions">
                             <a href="${report.url}" target="_blank" class="view-btn">보기</a>
+                            <button class="send-btn" onclick="sendReport('${report.filename || report.url.split('/').pop()}')">발송</button>
                             <button class="delete-btn" onclick="deleteReport('${report.filename || report.url.split('/').pop()}', ${index})">삭제</button>
                         </div>
                     </div>
@@ -475,41 +485,6 @@
                     date: 'GitHub Pages를 확인해주세요',
                     url: baseUrl
                 }];
-            }
-        }
-
-        // 이메일 발송
-        async function sendEmail() {
-            const emailStatusDiv = document.getElementById('emailStatus');
-            const emailBtn = document.querySelector('button[onclick="sendEmail()"]');
-            
-            emailStatusDiv.style.display = 'block';
-            emailStatusDiv.className = 'status loading';
-            emailStatusDiv.innerHTML = '<span class="loading-spinner"></span> 이메일 발송 중...';
-            emailBtn.disabled = true;
-
-            try {
-                // 실제 환경에서는 서버 API 호출
-                // 현재는 시뮬레이션
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                
-                emailStatusDiv.className = 'status success';
-                emailStatusDiv.innerHTML = '✅ 이메일이 성공적으로 발송되었습니다!';
-                
-                // 10초 후 상태 초기화
-                setTimeout(() => {
-                    emailStatusDiv.style.display = 'none';
-                    emailBtn.disabled = false;
-                }, 10000);
-
-            } catch (error) {
-                emailStatusDiv.className = 'status error';
-                emailStatusDiv.innerHTML = '❌ 이메일 발송 중 오류가 발생했습니다.';
-                emailBtn.disabled = false;
-                
-                setTimeout(() => {
-                    emailStatusDiv.style.display = 'none';
-                }, 5000);
             }
         }
 
@@ -618,6 +593,26 @@
             addDeletedReport(filename);
             
             alert(`"${filename}" 보고서가 삭제되었습니다.\n\n(참고: 브라우저에서만 숨김 처리됩니다. 실제 파일은 서버에 남아있습니다.)`);
+        }
+
+        // 보고서 이메일 발송
+        function sendReport(reportFilename) {
+            const workflowUrl = 'https://github.com/psykim/recode-weekly-automation/actions/workflows/send_email.yml';
+            
+            // 발송 안내 메시지
+            const message = `"${reportFilename}" 보고서를 발송하시겠습니까?\n\nGitHub Actions 페이지로 이동합니다.\n"Run workflow"를 클릭하고 파일명을 입력하세요.`;
+            
+            if (confirm(message)) {
+                // 클립보드에 파일명 복사
+                navigator.clipboard.writeText(reportFilename).then(function() {
+                    alert(`파일명이 클립보드에 복사되었습니다: ${reportFilename}\n\nGitHub Actions 페이지에서 붙여넣기(Ctrl+V)하세요.`);
+                    window.open(workflowUrl, '_blank');
+                }).catch(function(err) {
+                    // 클립보드 복사 실패 시 수동으로 복사하도록 안내
+                    prompt('아래 파일명을 복사하여 GitHub Actions에서 사용하세요:', reportFilename);
+                    window.open(workflowUrl, '_blank');
+                });
+            }
         }
     </script>
 </body>
