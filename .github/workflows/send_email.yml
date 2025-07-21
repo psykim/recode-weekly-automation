@@ -1,0 +1,47 @@
+name: 이메일 발송 (선택한 보고서)
+
+on:
+  workflow_dispatch:
+    inputs:
+      report_filename:
+        description: '발송할 보고서 파일명 (예: recode_weekly_20250721_050256.html)'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 저장소 체크아웃
+      uses: actions/checkout@v3
+      
+    - name: Python 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: 종속성 설치
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: 선택한 보고서 발송
+      env:
+        SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+        SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+        SENDER_NAME: ${{ secrets.SENDER_NAME }}
+        REPORT_FILENAME: ${{ github.event.inputs.report_filename }}
+      run: |
+        cd scripts
+        python send_email_selected.py
+        
+    - name: 완료 메시지
+      run: |
+        echo "✅ 선택한 보고서가 성공적으로 발송되었습니다!"
+        echo "📧 보고서: ${{ github.event.inputs.report_filename }}"
+        echo "📊 이메일이 등록된 수신자들에게 발송되었습니다!"
