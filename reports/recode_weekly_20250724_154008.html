@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2025.07.24</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2025.07.24</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        <p>이번 주에는 해당하는 논문이 없습니다.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Harnessing electroencephalography connectomes for cognitive and clinical neuroscience.</h3>
+                        <div class="korean-title">→ 인지 및 임상 신경과학을 위해 뇌파 연결체를 활용합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.6</span>
+                        <span class="badge journal-badge">Nature biomedical engineering</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yu Zhang, Zhe Sage Chen (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40702171/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌파(EEG) 연결체는 뇌 연결성을 연구하고 건강한 상태와 병적인 상태 모두에서 뇌 기능과 기능 장애에 대한 이해를 증진하는 강력한 도구를 제공합니다. 본 연구에서는 새로운 개념, 새롭게 부상하는 분석 프레임워크, 그리고 EEG 연결체 활용의 중요한 발전 사항을 검토합니다. 또한, 현재 방법론의 한계와 과제를 심도 있게 다루고, 연구의 엄격성과 임상적 타당성 측면에서 중요한 쟁점들을 다룹니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Attenuation of Ca</h3>
+                        <div class="korean-title">→ Ca의 감쇠</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Fan Zeng, Sagun Tiwari, Alaa Chok et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40701282/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Endothelium-specific endoglin triggers astrocyte reactivity via extracellular vesicles in a mouse model of Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 내피세포 특이적 엔도글린은 알츠하이머병 마우스 모델에서 세포외 소포를 통해 성상세포 반응성을 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.5</span>
+                        <span class="badge journal-badge">Molecular neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Pingao Zhang, Chenghuan Song, Jiyun Shi et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40702549/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 잘 알려진 아밀로이드 베타 및 타우 병리 외에도 복잡한 병인을 가진 다면적인 신경퇴행성 질환입니다. 내피세포 특이적 ENG 녹다운 또는 ENG 단일클론 항체 카로툭시맙으로 치료한 결과, APP/PS1 마우스에서 반응성 성상세포가 유의미하게 억제되고, 신경염증이 감소했으며, 인지 기능이 향상되었습니다. 이러한 결과는 AD 발병 기전에서 뇌혈관 기능 장애의 역할을 재정의하고, ENG를 AD의 잠재적 바이오마커이자 유망한 치료 표적으로 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. XCL1: a multifunctional chemokine with metamorphic properties and therapeutic potential after injury to the nervous system - review.</h3>
+                        <div class="korean-title">→ XCL1: 신경계 손상 후 변형 특성과 치료적 잠재력을 지닌 다기능 케모카인 - 리뷰.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 16.6</span>
+                        <span class="badge journal-badge">Biochimica et biophysica acta. Molecular cell research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Agata Ciechanowska, Joanna Mika (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40701393/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>XCR1을 통해 작용하는 XC 모티프 케모카인 리간드 1(XCL1, 림포택틴으로 알려짐)은 화학주성 기능을 가진 분자들을 포함하는 케모카인 계열에 속합니다. 본 리뷰는 새로운 관심 분야를 개괄하고, 기존의 틀과 막다른 길에서 벗어나 향후 연구 방향을 모색하는 것을 목표로 합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Choroid plexus-mediated CSF secretion remains stable in aging rats via high and age-resistant metabolic activity.</h3>
+                        <div class="korean-title">→ 맥락막총을 통한 뇌척수액 분비는 노화된 쥐에서 높고 연령에 따른 저항성 대사 활동을 통해 안정적으로 유지됩니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sara D Lolansen, Eszter O Révész, Søren N Andreassen et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40701965/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>우리 뇌는 맥락총에서 생성되는 뇌척수액(CSF)으로 둘러싸여 있습니다. 이 연구는 뇌 노화에 있어 맥락총 기능의 중요성을 뒷받침하며, 노폐물 제거 장애 및 인지 기능 저하와 관련된 신경퇴행성 질환의 미래 표적으로 이 조직을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Tissue-resident memory CD4</h3>
+                        <div class="korean-title">→ 조직 상주 기억 CD4</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.6</span>
+                        <span class="badge journal-badge">Science translational medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Aurora Pignata, David Frieser, Carmen Gonzalez-Fierro et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40700520/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>T 세포의 중추신경계(CNS) 이동을 막는 것은 재발-완화형 다발성경화증(RRMS)에서는 놀라운 치료 효과를 보이지만, 진행형 다발성경화증(PMS)에서는 효과가 미미합니다. PMS에서 장애가 진행되는 것은 잠복성 국소 염증과 신경퇴행의 상호작용으로 인한 것으로 추정됩니다. 본 연구에서는 조직 상주 기억 CD4의 잠재적인 역할을 조사했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. First-in-human positron emission tomography study of intranasal insulin in aging and MCI.</h3>
+                        <div class="korean-title">→ 노화와 MCI에 대한 비강 인슐린의 인간 최초 양전자 방출 단층촬영 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kiran K Solingapuram Sai, Jennifer M Erichsen, Krishna K Gollapelli et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40703476/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>비강 내 인슐린(INI)은 알츠하이머병 및 기타 질환 치료에 활용될 수 있을 것으로 기대됩니다. 본 연구에서는 새로운 방사성 추적자[ [ 를 사용하여 최초로 인체 양전자단층촬영(PET) 연구를 수행했습니다. 방사화학은 [ [ 비강 내 [ . (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Underlying brain and genetic mechanisms linking historic phone use patterns, visual decline, and dementia risk in middle-aged and older adults.</h3>
+                        <div class="korean-title">→ 중년 및 노년층의 과거 휴대전화 사용 패턴, 시력 저하, 치매 위험을 연결하는 뇌와 유전적 메커니즘.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xiayin Zhang, Yuling Xu, Shan Wang et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40703341/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 연구는 과거 휴대전화 사용, 시력 저하, 그리고 치매 위험 간의 연관성과 그 기저에 있는 생물학적 기전을 규명하고자 하였다. 해마 회백질 부피와 최장기 기억력(LTL)은 과거 휴대전화 사용 기간과 관련이 있었으며, 과거 휴대전화 사용과 치매 간의 관계를 유의미하게 매개하는 것으로 나타났다. 휴대전화 사용 기간 증가와 치매 발생률 감소 사이에는 강한 역상관 관계가 관찰되었으며, 이는 해마 회백질 부피와 최장기 기억력(LTL)의 변화에 의해 매개될 가능성이 있다. 시력 저하와 치매 위험 증가 사이의 명확한 연관성을 고려할 때, 휴대전화 사용은 연령 관련 시력 저하 환자에게 치매 위험을 감소시켜 도움이 될 수 있다. 중년 및 노년층은 사회적 연결성을 강화하는 수단으로 휴대전화를 사용하도록 권장해야 한다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Cognitive function correlates with retinal structural and vascular imaging parameters in Chinese older adults.</h3>
+                        <div class="korean-title">→ 중국 노인의 인지 기능은 망막 구조 및 혈관 영상 매개변수와 상관 관계가 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Manqiao Wang, Limei Chen, Yi Gong et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40703340/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>노인의 인지 상태와 망막 지표 간의 연관성을 조사한다. 망막 얇아짐(평균 망막 두께: . (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Upregulation of adenosine A</h3>
+                        <div class="korean-title">→ 아데노신 A의 상향 조절</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.5</span>
+                        <span class="badge journal-badge">Molecular psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Agathe Launay, Kevin Carvalho, Athénais Genin et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40702259/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>아데노신은 뇌 항상성을 유지하는 보편적인 신경 조절제입니다. G 단백질 결합 아데노신 수용체(AR), 특히 아데노신 수용체(A)의 활성화를 통해 다양한 기능을 수행합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. The Evolution of Alzheimer's Disease: From Mitochondria to Microglia.</h3>
+                        <div class="korean-title">→ 알츠하이머병의 진화: 미토콘드리아에서 미세아교세포로.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.4</span>
+                        <span class="badge journal-badge">Ageing research reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Feng-Ge Yang, Yu-Lin Liang, Xu Wang et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40701395/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 전 세계적으로 가장 흔한 신경퇴행성 질환입니다. 본 연구의 목표는 AD 연구 및 치료에 대한 새로운 관점과 통찰력을 제공하여 환자의 삶의 질과 예후 개선에 기여하는 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Molecular signatures of brain glycolysis dysfunction in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 뇌 해당분해 기능 장애의 분자적 특징.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Diabetes, obesity & metabolism</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Dongdong Jia, Mengzhu Li, Linhan Li et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40698541/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>포도당 대사 장애, 특히 해당분해 정지는 알츠하이머병(AD)과 밀접한 관련이 있지만, AD 뇌에서 나타나는 전신적 변화는 아직 명확하게 규명되지 않았습니다. 기능 연구에서 OVOL2의 발현 억제가 해당분해 유전자 발현을 회복시키고 타우 병리를 완화시켰음이 입증되었으며, 이는 OVOL2가 AD 대사 장애의 상류 조절 인자 후보임을 시사합니다. 종합적으로 볼 때, 해당분해 효소는 AD 진행 과정에서 전신적으로 변화하며, OVOL2는 상류 조절 인자 후보일 가능성이 있으며, GPI, PFKM, LDHA는 잠재적인 진단 및 치료 표적이 될 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Advancing multiple sclerosis management in older adults.</h3>
+                        <div class="korean-title">→ 노령자의 다발성 경화증 관리 발전.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Nature reviews. Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Anneke van der Walt, Eva M M Strijbis, Francesca Bridge et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40702382/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>다발성 경화증(MS)은 일반적으로 초기에서 중년기에 나타나지만 의료의 발전으로 MS를 앓고 있는 많은 사람들이 이제 정상적인 수명을 살고 있으며 현재 MS를 앓고 있는 사람들의 약 절반이 50세 이상입니다. 질병 진행을 모니터링하는 것도 나이가 들면서 더 복잡해지는데, 생리학적 연령 관련 변화가 MRI 소견과 장애 및 인지 측정을 혼동시킬 수 있기 때문입니다. 이 합의 성명서에서 우리는 노화와 MS에 관한 MS 워크숍에서 국제 임상시험자문위원회(IACCT)의 결과를 제시합니다. 우리는 이 분야의 현재 상태를 검토하고 지식 격차를 파악하며 충족되지 않은 요구 영역을 발전시키기 위한 권장 사항을 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. New insights into the 17β-hydroxysteroid dehydrogenase type 10 and amyloid-β 42 derived cytotoxicity relevant to Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병과 관련된 17β-하이드록시스테로이드 탈수소효소 10형 및 아밀로이드 β 42 유래 세포독성에 대한 새로운 통찰력.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Aneta Houfková, Monika Schmidt, Ondřej Benek et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40702546/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
