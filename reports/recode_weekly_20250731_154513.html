@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2025.07.31</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2025.07.31</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">15</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">3</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">12</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Communicating a Diagnosis of Mild Cognitive Impairment or Dementia.</h3>
+                        <div class="korean-title">→ 경도 인지 장애 또는 치매 진단 전달.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 120.7</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kyra O'Brien, Emily A Largent, Jason Karlawish (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40736397/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>JAMA Insights에서는 경미한 인지 장애 또는 치매 진단을 환자와 간병인에게 효과적으로 전달하는 전략을 살펴봅니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Demographic Data Supporting FDA Authorization of AI Devices for Alzheimer Disease and Related Dementias.</h3>
+                        <div class="korean-title">→ 알츠하이머병 및 관련 치매에 대한 AI 기기의 FDA 승인을 뒷받침하는 인구 통계학적 데이터.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 120.7</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Krista Y Chen, Joseph S Ross, Adam B Cohen et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40736371/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>이 코호트 연구에서는 알츠하이머병 및 관련 치매를 치료하기 위해 미국 식품의약국에서 승인한 인공지능 및 머신러닝 장치를 뒷받침하는 데이터의 가용성과 대표성을 조사합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Diffusing protein binders to intrinsically disordered proteins.</h3>
+                        <div class="korean-title">→ 본질적으로 무질서한 단백질에 단백질 결합제를 확산시킵니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Caixuan Liu, Kejia Wu, Hojun Choi et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40739343/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>높은 친화성과 특이성을 지닌 내재적 무질서 단백질(IDP) 및 내재적 무질서 영역(IDR)에 결합하는 단백질은 치료 및 진단 응용 분야에 유용할 수 있습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Blood-Brain barrier disruption in long COVID and cognitive correlates: A cross-sectional MRI study.</h3>
+                        <div class="korean-title">→ 장기 코로나19 환자의 혈액-뇌 장벽 붕괴와 인지 관련성: 단면 MRI 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Leah H Rubin, Wen Shi, Alba Azola et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40738266/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈액-뇌 장벽(BBB) 손상은 장기 코로나(LC)에서 관찰되는 신경정신과적 증상에 기여할 수 있습니다. 연령과 성별을 보정한 후 LC군에서 PS가 유의하게 증가했습니다(B=18.59, SE=6.11, β=0.28, P=0.003). 이는 중증 COVID-19 이후 BBB 변화에 대한 기존 증거를 뒷받침하며, BBB 무결성이 LC에서 신경정신과적 합병증의 장기적인 바이오마커일 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Genotype and microbiome shape immunity in a sex-specific manner in mouse models of Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병 마우스 모델에서 유전형과 미생물군은 성별에 따라 면역에 영향을 미칩니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    John W Bostick, T Jaymie Connerly, Taren Thron et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40738263/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>전임상 연구에서는 마이크로바이옴이 알츠하이머병(AD) 마우스 모델에서 면역 반응과 아밀로이드 베타(Aβ)의 침착 및/또는 제거에 광범위하게 영향을 미치는 것으로 나타났습니다. 그러나 마이크로바이옴이 AD 모델에서 중추 및 말초 면역 프로파일을 형성하는지 여부와 그 방식은 아직 밝혀지지 않았습니다. 또한, 무균 마우스에서 마이크로바이옴이 결핍되면 인지 기능 저하가 증가했으며, 특히 수컷에서 그러했습니다. 이러한 데이터는 면역 활동의 초기 징후와 마이크로바이옴의 영향에서 성적 이형성을 보여주며, 성(性)과 마이크로바이옴이 AD 마우스 모델에서 반응에 어떻게 영향을 미치는지 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Reconstructing Alzheimer's disease one cell type at a time using in vitro tricultures.</h3>
+                        <div class="korean-title">→ 시험관 내 삼중 배양을 이용해 한 번에 한 세포 유형씩 알츠하이머병을 재구성합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.1</span>
+                        <span class="badge journal-badge">Trends in neurosciences</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Tatiana A Giovannucci, Charles Arber, Selina Wray (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40738837/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>최근 연구에서 리시(Lish)와 동료들은 완전 인간 기반 유도만능줄기세포(iPSC) 유래 신경세포, 성상세포, 미세아교세포의 삼중배양 모델을 사용하여 가족성 알츠하이머병(AD)에 대한 비세포 자율적 기여를 규명했습니다. 이 접근법은 초기 질병 기전을 탐구하고, 세포 간 상호작용을 분석하며, 표적 치료 또는 바이오마커 전략 개발을 지원하는 다재다능한 플랫폼을 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Systematic analysis of cellular cross-talk reveals a role for SEMA6D-TREM2 regulating microglial function in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 세포 간 교차 대화에 대한 체계적 분석을 통해 알츠하이머병에서 미세아교세포 기능을 조절하는 SEMA6D-TREM2의 역할이 밝혀졌습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.6</span>
+                        <span class="badge journal-badge">Science translational medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ricardo D'Oliveira Albanus, Gina M Finan, Logan Brase et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40737431/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>막 수용체와 그 리간드를 통해 매개되는 세포 간 교차 신호는 뇌 항상성에 필수적이며, 알츠하이머병(AD)과 같은 신경퇴행성 질환의 발병에 기여할 수 있습니다. 인간 뇌 조직 면역염색을 통해 SEMA6D가 Aβ 플라크 및 TREM2 활성화 미세아교세포와 함께 위치한다는 것을 확인했습니다. 이 가설을 검증하기 위해 . (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Apathy and affective symptoms associated with elevated plasma neurofilament light but not p-tau181 in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 무기력증과 정서적 증상은 플라스마 신경필라멘트 광의 증가와 관련이 있지만, p-tau181의 증가와 관련이 없습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Matthew J Y Kang, Dhamidhu Eratne, Samantha M Loi et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40735049/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>무감각과 정동 신경정신병적 증상(NPS)은 알츠하이머병(AD)에서 흔히 나타나지만, 신경생물학적 원인은 아직 불분명합니다. 경도인지장애(MCI) 및 알츠하이머병 치매 환자에서 혈장 NfL 수치 상승은 무감각, 불안, 우울증과 관련이 있었으며, 무감각은 NfL 증가율의 유의미한 증가와 연관되어 신경퇴행의 가속화를 시사합니다. 무감각과 정동 신경정신병적 증상(NPS)은 임상적 알츠하이머병(AD)에서 매우 흔하게 나타납니다. 무감각, 우울증, 또는 불안은 혈장 신경필라멘트 경쇄(NfL) 수치 상승과 관련이 있었습니다. 무감각은 시간이 지남에 따라 혈장 NfL 수치의 급격한 증가와 관련이 있었습니다. 무감각과 정동 NPS는 혈장 p-tau181 수치와는 관련이 없었습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Amyloid accumulation, brain atrophy, and cognitive decline in emergent Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 급성 알츠하이머병의 경우 아밀로이드 축적, 뇌 위축, 인지 저하가 나타난다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ying Xia, Pierrick Bourgeat, Vincent Doré et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40735048/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>응급 알츠하이머병(AD)은 인지 기능 장애가 없는(CU) 사람들이 역치 미만이지만 증가하는 아밀로이드 베타(Aβ) 수치를 보이는 과도기 단계를 나타냅니다. CU 참가자 65명은 응급 AD를 나타내는 Aβ+로 진행되었으며, Aβ 축적 속도가 더 빠르고 기억력도 미미하게 저하되었습니다. 알츠하이머병(AD)의 응급 단계에 있는 인지 기능 장애가 없는 사람들을 확인했습니다. 응급 AD는 아밀로이드 베타(Aβ) 축적 속도가 더 빠릅니다. 기저 전뇌 또는 해마에서 급격한 용적 감소는 관찰되지 않았습니다. 응급 AD는 또한 기억력의 미미한 저하와 관련이 있습니다. 초기 Aβ 축적은 구조적 위축 이전에 인지 기능을 손상시킬 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Loneliness trajectories and dementia risk: Insights from the HUNT cohort study.</h3>
+                        <div class="korean-title">→ 외로움의 경로와 치매 위험: HUNT 코호트 연구의 통찰력.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ragnhild Holmberg Aunsmo, Bjørn Heine Strand, Sverre Bergh et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40735047/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>외로움은 치매의 위험 요인으로 여겨집니다. 지속적이고 일시적인 외로움은 치매 발병 위험 증가와 관련이 있었습니다. 일시적인 외로움은 치매 발병 위험 증가와 관련이 없었습니다. 인지 기능 평가 11년 전 외로움은 치매와 관련이 있었습니다. 외로움을 줄이는 것이 치매 발병을 줄이거나 지연시킬 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. A wearable spatiotemporal controllable ultrasonic device with amyloid-β disaggregation for continuous Alzheimer's disease therapy.</h3>
+                        <div class="korean-title">→ 지속적인 알츠하이머병 치료를 위한 아밀로이드 베타 분해 기능을 갖춘 착용형 시공간 제어 초음파 장치입니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Faxing Zou, Yibiao Liu, Yong Luo et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40737409/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>고령화 사회로 인해 알츠하이머병(AD) 유병률이 증가함에 따라 효과적인 치료법을 찾는 것이 그 어느 때보다 시급해졌습니다. 이전 연구에서는 연속 초음파가 아밀로이드 단백질을 탈중합하여 AD를 완화할 수 있다는 것이 입증되었습니다. 이 혁신적인 접근법은 AD에 대한 비침습적 개인 맞춤형 치료법의 길을 열어줄 수 있으며, 신경퇴행성 질환의 치료 전략을 혁신할 잠재력을 가지고 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Circulating Biomarkers of Neurodegeneration and Risk of Cognitive Impairment.</h3>
+                        <div class="korean-title">→ 신경 퇴행의 순환 바이오마커와 인지 장애 위험.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Russell P Sawyer, Aleena Bennett, Jessica Blair et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40737567/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈액 기반 바이오마커는 신경퇴행 연구를 위한 널리 이용 가능하고 확장 가능하며 최소 침습적인 대안을 제공합니다. 인구 통계학적 특성과의 모든 상호작용은 인지 장애 발생을 결과로 하는 모델에서 유의미하지 않았습니다. 이러한 바이오마커의 임상 및 연구 적용 가능성에 대한 심도 있는 연구가 필요합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Frequency of Microvascular Pathology and Hippocampal Atrophy on Magnetic Resonance Imaging in a Community Study of Alzheimer's Disease with Blood-Based Biomarkers.</h3>
+                        <div class="korean-title">→ 혈액 기반 바이오마커를 이용한 알츠하이머병 지역 사회 연구에서 자기공명영상에서 나타난 미세혈관병리와 해마 위축의 빈도.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.3</span>
+                        <span class="badge journal-badge">Annals of neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Tamil Iniyan Gunasekaran, Danurys Sanchez, Dolly Reyes-Dumeyer et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40735976/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD) 병태생리의 생전 지표를 나타내는 혈액 기반 알츠하이머병 바이오마커는 진단 정확도를 크게 향상시켰습니다. 두 분류 모두에서, 알츠하이머병 및 기타 치매 환자에 대한 바이오마커 양성 환자는 더 큰 백혈구량, 더 많은 뇌경색, 그리고 더 작은 해마를 보였습니다. ANN NEUROL 2025.. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. The intersection between circulatory microRNAs and biomarkers of neurodegeneration.</h3>
+                        <div class="korean-title">→ 순환계 microRNA와 신경퇴행성 질환의 바이오마커의 교차점.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Amber Yaqub, Rima Mustafa, M Arfan Ikram et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40739583/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>마이크로RNA(miRNA)는 유전자 발현 조절을 포함한 광범위한 생물학적 기능을 가진 작은 비번역 RNA입니다. 591개의 잘 발현된 순환 miRNA의 혈장 농도는 HTG EdgeSeq Whole Transcriptome Assay를 사용하여 측정했으며, t-tau, NfL, Aβ-40, Aβ-42는 Simoa NF-light를 사용하여 분석했습니다. t-tau와 유의미하게 연관된 miRNA 58개, NfL과 연관된 miRNA 96개, Aβ-40과 연관된 miRNA 158개, Aβ-42와 연관된 miRNA 83개를 발견했습니다(모두 FDR(False Discovery Rate) 조정 p값 ≤ 0.05). 이러한 miRNA는 치매 모니터링 및 효과적인 진단 또는 치료 전략 개발에 유용할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Integrated plasma and red blood cell membrane lipidomics analysis unveils novel biomarker panel for Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 통합 혈장 및 적혈구 막 지질체학 분석을 통해 알츠하이머병에 대한 새로운 바이오마커 패널이 밝혀졌습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Dandan He, Yaran Bao, Siyi Yuan et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40739579/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)의 새로운 바이오마커를 발견하는 것은 조기 진단 및 질병 진행 모니터링에 중요합니다. RCM 지질을 혈장 분석에 통합하면 AD 진단이 향상되고, RCM이 아직 미개척된 바이오마커 자원으로서의 잠재력을 드러낼 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
