@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2025.08.21</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2025.08.21</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">11</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">2</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">9</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. SLC45A4 is a pain gene encoding a neuronal polyamine transporter.</h3>
+                        <div class="korean-title">→ SLC45A4는 신경 폴리아민 수송체를 인코딩하는 통증 유전자입니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Steven J Middleton, Sigurbjörn Markússon, Mikael Åkerlund et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40836097/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>폴리아민은 전사, 번역, 세포 신호 전달 및 자가포식에 중요한 역할을 하는 조절 대사산물입니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Cancer-induced nerve injury promotes resistance to anti-PD-1 therapy.</h3>
+                        <div class="korean-title">→ 암으로 인한 신경 손상은 항PD-1 치료에 대한 저항성을 촉진합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Erez N Baruch, Frederico O Gleber-Netto, Priyadharsini Nagarajan et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40836096/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Non-genetic neuromodulation with graphene optoelectronic actuators for disease models, stem cell maturation, and biohybrid robotics.</h3>
+                        <div class="korean-title">→ 질병 모델, 줄기세포 성숙, 바이오하이브리드 로봇공학을 위한 그래핀 광전자 액추에이터를 이용한 비유전적 신경 조절.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Elena Molokanova, Teng Zhou, Pragna Vasupal et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40835596/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>빛은 신경생체공학 기술의 조절 가능한 트리거 역할을 하여, 탁월한 시공간적 정밀도로 뇌 기능을 탐색, 제어 및 향상시킬 수 있습니다. 종단 연구에 GraMOS를 사용한 결과, 반복적인 광학 자극이 hiPSC 유래 뉴런과 뇌 오가노이드의 성숙을 촉진한다는 것을 확인했습니다. 이는 GraMOS가 재생 의학 및 신경발달 연구에 잠재력을 가지고 있음을 보여줍니다. GraMOS는 밀리초에서 수개월에 이르는 시간 척도에 걸쳐 정밀하고 비침습적인 신경 제어를 가능하게 함으로써 신경발달, 질병 치료 및 로봇 공학 분야의 새로운 지평을 열어줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. SCRIPT: Predicting Single-Cell Long-Range Cis-Regulation Based on Pretrained Graph Attention Networks.</h3>
+                        <div class="korean-title">→ 스크립트: 사전 학습된 그래프 어텐션 네트워크를 기반으로 한 단일 세포 장거리 시스 조절 예측.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yu Zhang, Baole Wen, Yifeng Jiao et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40832733/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>단일 세포 시스-조절 관계(CRR)는 전사 조절을 해석하고 질병 관련 비암호화 변이체의 병인 기전을 이해하는 데 필수적입니다. 세포 유형별 크로마틴 접촉 및 CRISPR 교란 데이터를 사용한 검증 결과, SCRIPT는 평균 AUC 0.89를 달성하여 최첨단 방법(AUC: 0.7)보다 훨씬 우수한 성능을 보였습니다. SCRIPT는 기존 계산 방법으로는 발견되지 않았던 분자 유전학적 기전을 밝혀냄으로써 유전자 진단 및 표적 발견을 발전시키는 로드맵을 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. ACE trial design: Equol targeting estrogen receptor-β in vascular and cognitive aging.</h3>
+                        <div class="korean-title">→ ACE 시험 설계: 혈관 및 인지 노화에서 에스트로겐 수용체 β를 표적으로 하는 에쿠올.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Akira Sekikawa, Whitney Wharton, Cristina Murray-Krezan et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40838083/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>장내 미생물군에서 유래된 대두 이소플라본 다이드제인의 대사산물인 에쿠올은 선택적 에스트로겐 수용체 베타(ERβ) 작용제로 작용합니다. 전임상 연구에서 혈관 보호 및 항산화 효과가 입증되었으며, 새로운 증거들이 잠재적인 신경 보호 효과를 시사하고 있습니다. 본 연구에서는 혈관 및 인지 노화에 대한 에스트로겐 수용체 베타(ERβ) 작용제인 에쿠올의 첫 번째 무작위 대조 임상시험을 자세히 설명합니다. 이 연구는 동맥 경직, 백질 병변, 그리고 인지 기능에 대한 에쿠올의 효과를 검증했습니다. 이 다기관 임상시험에는 65세에서 85세 사이의 백인 및 흑인 노인 369명이 참여했습니다. 이 임상시험은 ERβ 경로를 표적으로 하는 새로운 식이 대사산물을 연구했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. The Mobile Toolbox for remote, self-administered cognitive assessment in older adults: associations with in-clinic cognitive testing and Alzheimer's disease biomarkers.</h3>
+                        <div class="korean-title">→ 노인의 원격 자가 관리 인지 평가를 위한 모바일 툴박스: 병원 내 인지 검사 및 알츠하이머병 바이오마커와의 연관성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Roos J Jutten, Jessa E Burling, Elliott Slade et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40836942/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>모바일 툴박스(MTB)와 같은 원격 스마트폰 기반 인지 평가는 알츠하이머병(AD) 임상 시험의 접근성을 높일 수 있습니다. 모바일 툴박스(MTB)는 원격 스마트폰 기반 인지 평가 도구입니다. 본 연구에서는 알츠하이머병(AD) 바이오마커를 가진 중환자실 노인을 대상으로 MTB를 적용했습니다. MTB가 전임상 AD 연구에서 인지 평가를 어떻게 촉진할 수 있는지 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Plasma ceramide mediates the association of peripheral T cells with Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 혈장 세라마이드는 말초 T세포와 알츠하이머병의 연관성을 매개합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.0</span>
+                        <span class="badge journal-badge">Journal of advanced research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yunhong Sun, Lili Xia, Xiaofan Xu et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40835004/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>말초 면역 세포, 특히 T 림프구와 관련된 신경 염증은 알츠하이머병(AD) 진행과 관련이 있는 것으로 알려져 있습니다. 본 연구는 CD4+ EM T 세포와 CD8+ CM T 세포를 AD 관련 신경 염증의 주요 동인으로 확인하고, CD4+ EM T 세포, 세라마이드 대사, 그리고 AD 위험을 연결하는 잠재적인 면역 대사 경로를 밝혀내 조기 진단 및 치료적 개입을 위한 잠재적 표적을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Intravenously injected hPSC-derived pericytes for Alzheimer's disease: neuroprotection and vascular repair via extracellular vesicles.</h3>
+                        <div class="korean-title">→ 알츠하이머병 치료를 위한 정맥 주사 hPSC 유래 주변세포: 세포외 소포를 통한 신경 보호 및 혈관 복구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.0</span>
+                        <span class="badge journal-badge">Molecular therapy : the journal of the American Society of Gene Therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ying Liu, Zhiyuan Ning, Qingyuan Dai et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40836427/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인간 만능줄기세포(hPSC) 유래 혈관주위세포와 세포외소포(EV)를 정맥 주사하면 신경 질환에 대한 유망한 치료 전략이 제시됩니다. 본 연구에서는 hPSC-CNC PC를 정맥 주사하여 노화된 알츠하이머병 마우스의 기억 기능을 향상시키고, 동시에 병적인 축적과 혈액뇌장벽 누출을 감소시키며, EV를 통해 신경 기능적 결과를 개선하는 것을 확인했습니다. 본 연구 결과는 hPSC-CNC PC에서 유래된 EV가 알츠하이머병에 대한 보호 효과를 나타냄을 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Prevalence, Severity, and Progression of Cerebellar Cognitive-Affective Syndrome in Patients With Spinocerebellar Ataxias.</h3>
+                        <div class="korean-title">→ 척추소뇌성 운동실조증 환자에서 소뇌 인지-정서 증후군의 유병률, 심각도 및 진행.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Emilien Petit, Daniel López Domínguez, Cecilia Marelli et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40834401/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>소뇌 인지-정서 증후군(CCAS)은 소뇌 변성으로 인해 발생하지만, 척수소뇌성 실조증(SCA)에서의 유병률은 아직 충분히 연구되지 않았습니다. 3년간의 호전은 연습 효과를 반영하는 것으로 보이며, 이는 척도의 종단적 유용성을 제한할 가능성이 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Functional, Cognitive, Physical, and Vascular Outcomes 9 Years After Lacunar and Mild Cortical Ischemic Stroke.</h3>
+                        <div class="korean-title">→ 공동성 및 경미한 피질 허혈성 뇌졸중 후 9년 동안의 기능적, 인지적, 신체적, 혈관적 결과.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Daniela Jaime Garcia, Stephen D J Makin, Caroline A McHutchison et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40834346/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>경미한 뇌졸중, 특히 열공성 뇌졸중의 결과에 대한 데이터는 부족하거나 단기 추적 관찰에 기반합니다. 경미한 뇌졸중 후 장기적인 예후 개선은 임상 치료를 개선하고 향후 연구 방향을 설정하는 데 중요한 목표로 남아 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Longitudinal association of shorter leukocyte telomere length with CSF biomarker dynamics across early Alzheimer's disease stages in at-risk individuals.</h3>
+                        <div class="korean-title">→ 위험군 개인의 알츠하이머병 초기 단계에서 뇌척수액 바이오마커 역학과 짧은 백혈구 텔로미어 길이의 종단적 연관성을 조사했습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.8</span>
+                        <span class="badge journal-badge">EBioMedicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Blanca Rodríguez-Fernández, Armand González-Escalante, Patricia Genius et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40834628/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>생물학적 노화의 특징인 짧은 텔로미어 길이(TL)는 알츠하이머병(AD) 발병 위험 증가와 관련이 있는 것으로 알려져 있지만, 그 병태생리학적 역할은 아직 명확히 밝혀지지 않았습니다. AARG-19-618265; PI19/00119; LCF/PR/GN17/10300004; TriBEKa-17-519007; # SLT002/16/00201.. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
