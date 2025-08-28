@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2025.08.28</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2025.08.28</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        <p>이번 주에는 해당하는 논문이 없습니다.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Large-scale CSF proteome profiling identifies biomarkers for accurate diagnosis of frontotemporal dementia.</h3>
+                        <div class="korean-title">→ 대규모 뇌척수액 프로테옴 프로파일링을 통해 전두측두형 치매의 정확한 진단을 위한 바이오마커를 식별합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.5</span>
+                        <span class="badge journal-badge">Molecular neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yanaika S Hok-A-Hin, Lisa Vermunt, Carel F W Peeters et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40866991/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Breaking shackles of molecular weight and emission for NIR-II fluorophores by regulating Columb attraction interaction.</h3>
+                        <div class="korean-title">→ 콜럼버스 인력 상호작용을 조절하여 NIR-II 형광체의 분자량과 방출의 족쇄를 끊습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Miantai Ye, Xiaoyu Wang, Jingwen Zou et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40866391/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>두 번째 근적외선(NIR-II) 염료는 생체 내 이미징에 이점을 제공하지만, 여전히 해결해야 할 과제가 있습니다. 가장 큰 문제는 방출 파장과 분자량의 균형을 맞추는 실용적인 전략이 부족하다는 점이며, 특히 저분자량(<500 Da) NIR-II(λ. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Microglial replacement in a Sandhoff disease mouse model reveals myeloid-derived β-hexosaminidase is necessary for neuronal health.</h3>
+                        <div class="korean-title">→ 샌드호프병 마우스 모델에서의 미세아교세포 대체는 골수 유래 β-헥소사미니다제가 신경 건강에 필요하다는 것을 보여줍니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kate I Tsourmas, Claire A Butler, Nellie E Kwang et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40866328/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>리소좀 축적 장애(LSD)는 리소좀 기능 장애를 수반하는 광범위한 질환군으로, 종종 신경퇴행을 초래합니다. 치료적 타당성을 평가하기 위해 Hexb를 치료합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Sequestering sequestosome 1 via S-acylation in autophagy, Huntington disease, and beyond.</h3>
+                        <div class="korean-title">→ 자가포식, 헌팅턴병 등에서 S-아실화를 통한 세퀘스토솜 1의 격리.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.3</span>
+                        <span class="badge journal-badge">Autophagy reports</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Y Alshehabi, F Abrar, D D O Martin (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40873768/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>단백질의 잘못된 위치 지정과 응집은 신경퇴행의 주요 특징입니다. 또한, 헌팅턴병 환자와 마우스 헌팅턴병 모델 모두의 뇌에서 SQSTM1의 S-아실화가 현저히 감소되어 있음을 확인했으며, 이는 헌팅턴병의 자가포식체 내 화물 격리 결함을 초래할 수 있습니다. 중요한 자가포식 요소로서, 본 연구는 SQSTM1의 S-아실화가 신경퇴행에서 더 광범위한 역할을 할 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Impaired MAPT/tau-secretory lysosomes are linked to cognitive vulnerability in Alzheimer patients.</h3>
+                        <div class="korean-title">→ MAPT/타우 분비 리소좀의 손상은 알츠하이머 환자의 인지 취약성과 관련이 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.3</span>
+                        <span class="badge journal-badge">Autophagy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Preeti Sharma, Anuma Pallavi, Ananya Chatterjee et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40873013/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>MAPT/tau 단백질은 프리온과 유사한 방식으로 뇌 영역 간에 전파되어 알츠하이머병(AD)에서 치매의 발병 및 진행을 촉진합니다. 리소좀 세포외배출과 MAPT/tau 섬유의 아밀로이드 생성 핵심을 표적으로 삼는 것은 AD 및 관련 치매에서 MAPT/tau 병리를 완화하고 인지 회복력을 증진하는 유망한 치료적 가능성을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Characterizing clinician communication with patients about lecanemab: A qualitative study of clinicians across seven academic medical centers.</h3>
+                        <div class="korean-title">→ 레카네맙에 관한 환자와 임상의의 의사소통 특성화: 7개 학술 의료 센터의 임상의를 대상으로 한 질적 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Anna L Parks, Ayush Thacker, Daniel Dohan et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40873665/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>항아밀로이드 단일클론 항체(mAb)는 알츠하이머병의 인지 기능 저하를 늦추지만, 드물게 장애를 유발하거나 치명적일 수 있는 아밀로이드 관련 영상 이상(ARIA)을 유발할 수 있습니다. 7개 대학 의료 센터의 27명의 임상의를 대상으로 진행된 이 질적 연구는 임상의들이 알츠하이머병 환자와 항아밀로이드 치료의 위험과 이점에 대해 어떻게 소통하는지, 그리고 치료 결정에 영향을 미칠 수 있는지를 조사했습니다. 임상의들은 사용하는 기법, 위험과 이점을 묘사하는 방식, 그리고 환자의 가치를 반영하는지 여부에 있어 차이를 보였습니다. 그들은 동반 질환, 적격성 기준의 적합성, 사회적 지지 또는 가족 참여 정도를 논의의 틀을 잡는 요소로 언급했으며, 환자의 목표를 논의의 기준으로 삼는 경우는 적었습니다. 임상의들의 전문적인 교육, 개별 진료 방식, 그리고 개인적인 양면성이 대화의 영향을 미쳤습니다. 이러한 결과는 향후 의사소통 및 공동 의사 결정을 개선하기 위한 중재 방안을 제시할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Multilevel white matter degeneration associated cognitive dysfunction in mild cognitive impairment.</h3>
+                        <div class="korean-title">→ 경미한 인지 장애에서는 다단계 백질 변성이 인지 기능 장애와 연관되어 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.5</span>
+                        <span class="badge journal-badge">Molecular psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yu Chen, Tiantian Liu, Li-Zhi Cao et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40866541/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>치매의 전구기인 경도인지장애(MCI)는 인지 기능 장애와 백질(WM) 손상이 특징입니다. 흥미롭게도, 시각 및 현저성 네트워크 간의 구조적 연결체는 백질 미세구조 손상과 언어 수행 저하 사이의 관계에 잠재적인 매개 역할을 했으며, 기억 영역에서도 유사한 양상을 발견했습니다. 본 연구는 다층적 WM 계층 구조 하에서 전구기 치매에서 미세구조 손상과 인지 기능 장애 사이의 관계에 대한 기전적 통찰력을 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Spatial-temporal lipidomics reveals dysregulated lipid metabolism in mouse brain during Alzheimer's disease progression.</h3>
+                        <div class="korean-title">→ 시공간적 지질체학을 통해 알츠하이머병이 진행되는 동안 생쥐 뇌에서 지질 대사가 조절되지 않는다는 사실이 밝혀졌습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.0</span>
+                        <span class="badge journal-badge">Journal of advanced research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hongli Li, Zhihao Zhao, Lemei Zhu et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40865635/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD) 진행 과정에서 공간적 지질체 변화를 추적하는 것은 질병의 근본적인 메커니즘을 규명하는 데 매우 중요합니다. AD 마우스와 야생형(WT) 마우스 간에는 해마(HP)와 시상(TH) 모두에서 뚜렷한 지질체 차이가 관찰되었으며, TH 영역에서 HP보다 더 유의미한 지질 변화가 나타났습니다. 본 연구는 AD 메커니즘에 대한 확장된 공간적, 시간적, 화학적 관점을 제시하여 조기 진단 및 치료 전략을 향상시킬 수 있는 잠재적인 방안을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Gut-brain nexus: Mapping multimodal links to neurodegeneration at biobank scale.</h3>
+                        <div class="korean-title">→ 장-뇌 연결: 바이오뱅크 규모에서 신경 퇴행에 대한 다중 모드 연결 매핑.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Mohammad Shafieinouri, Samantha Hong, Paul Suhwan Lee et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40864721/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)과 파킨슨병(PD)은 유전적 요인과 환경적 요인의 영향을 받습니다. 본 연구는 장-뇌 축과 AD/PD 발병에 관여하는 요인들 간의 상호작용을 밝혀내어, 치료 목표 설정 및 조기 진단의 길을 열어줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Amyloid-β oligomers, curvilinear and annular assemblies, imaged by cryo-ET, cryo-EM, and AFM.</h3>
+                        <div class="korean-title">→ 크라이오-ET, 크라이오-EM, AFM을 통해 촬영한 곡선형 및 고리형 조립체인 아밀로이드 β 올리고머.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ruina Liang, Anum Khursheed, Bogachan Tahirbegi et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40864693/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>아밀로이드 베타(Aβ) 펩타이드의 섬유전 구조는 알츠하이머병 세포독성의 핵심 요소입니다. 패치 클램프 전기생리학을 이용하여 측정한 높은 전도도는 Aβ 고리 구조의 내경과 일치합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Biomolecular phase separation of microtubule-associated protein Tau and its role in the genesis of Brain Disorders.</h3>
+                        <div class="korean-title">→ 미세소관 관련 단백질 타우의 생체분자적 상분리와 뇌 질환 발생에서의 역할.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.4</span>
+                        <span class="badge journal-badge">Ageing research reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Aurgha Kamal Bhandari, Aman Singh Dhami, Rishi Thanavanthan Hemanthlumar et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40865571/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>미세소관 관련 타우(MAP)는 세포골격 안정성에 필수적인 요소입니다. 이러한 분자 군집 현상이나 1차 핵 생성 전 초기 현상은 액체-액체 상 분리(LLPS)에 의해 유발됩니다. 액체-액체 상 분리에서 타우 또는 타우는 다양한 생체 분자와 함께 동적 상호작용 네트워크를 형성하여 동형 및 이형 응축물을 형성하고, 궁극적으로 핵 생성으로 전환되기 전에 공존하는 상들을 형성합니다. 본 리뷰는 타우 상 분리 연구의 중요성과 중요성을 이해하고, 그 안에 숨겨진 새로운 가능성을 이해하기 위한 탄탄한 토대를 과학계에 제공하고자 합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Circulating particles carotenoids are associated with rehabilitation recovery in Parkinson's disease.</h3>
+                        <div class="korean-title">→ 순환 입자 카로티노이드는 파킨슨병 환자의 재활 회복과 관련이 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Redox biology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Alice Gualerzi, Martina Gerli, Aurora Mangolini et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40865269/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>순환 나노입자에는 세포외소포(EV)와 기타 순환 EV 유사 입자가 포함되며, 이는 파킨슨병(PD) 진행과 관련된 병리학적 단백질의 이동과 이 질환을 특징짓는 산화적 손상 생성물의 이동을 매개하는 것으로 알려져 있습니다. 8주간의 집중 재활 전후에 수행된 분석 결과, EV 유사 입자와 관련된 생체분자 및 카로티노이드 함량에 유의미한 변화가 나타났습니다. 또한, 라만 지문과 카로티노이드의 분광학적 특징은 재활의 측정 가능한 바이오마커로 활용될 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Correction: Single-nucleus transcriptomics reveals a distinct microglial state and increased MSR1-mediated phagocytosis as common features across dementia subtypes.</h3>
+                        <div class="korean-title">→ 정정: 단일 핵 전사체 분석 결과, 미세아교세포의 뚜렷한 상태와 MSR1 매개 식세포작용의 증가가 치매 하위 유형 전반에 걸쳐 공통적인 특징으로 나타났습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.2</span>
+                        <span class="badge journal-badge">Genome medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sook-Yoong Chia, Mengwei Li, Zhihong Li et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40866910/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Commentary on "The association between diabetes mellitus and postoperative cognitive dysfunction: a systematic review and meta-analysis".</h3>
+                        <div class="korean-title">→ "당뇨병과 수술 후 인지 기능 장애의 연관성: 체계적 고찰 및 메타 분석"에 대한 논평.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">International journal of surgery (London, England)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yunhui Zhao, Pu Zhang, Xiaoyu Qin et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/40865961/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
