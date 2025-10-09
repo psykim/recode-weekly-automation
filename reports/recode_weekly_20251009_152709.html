@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2025.10.09</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2025.10.09</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">10</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">1</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">9</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. AMPKα2 signals amino acid insufficiency to inhibit protein synthesis.</h3>
+                        <div class="korean-title">→ AMPKα2는 단백질 합성을 억제하기 위해 아미노산 부족 신호를 보냅니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 30.9</span>
+                        <span class="badge journal-badge">Cell metabolism</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yunzi Mao, Mei Cui, Yanfeng Jiang et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41061696/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>AMP 활성화 단백질 키나아제(AMPK) 복합체의 두 촉매 소단위체인 α1과 α2의 기능적 차이는 아직 밝혀지지 않았습니다. 본 연구에서는 AMPKα2가 아미노산 부족 신호를 단백질 합성으로 특이적으로 전달한다는 것을 보고합니다. 100만 명의 중국인 코호트에서 알츠하이머병(AD) 환자의 혈액 샘플에서 아미노산 수치가 낮고 단백질 수치가 높으며, AMPKα 트레오닌 172(p-T172)의 인산화가 감소하는 현상이 관찰되었습니다. α1이 아닌 α2의 손실은 이러한 관찰 결과를 재현하며, 생쥐에서 AD 유사 인지 기능 장애를 유발합니다. 기전적으로, 저아미노산 활성화 일반 조절 비억제성 2(GCN2)는 AMP 및 과당 1,6-비스포스페이트와 무관하게 T172 지점에서 α2를 특이적으로 인산화하여 단백질 합성을 억제합니다. α2-p-T172 손실은 세포와 마우스 뇌에서 단백질 과다 합성 및 AD 병리학적 단백질 응집을 유발합니다. AMPK 활성제인 메트포르민과 5-아미노이미다졸-4-카르복사마이드-1-베타-D-리보푸라노사이드(AICAR), 그리고 분지쇄 아미노산(BCAA) 섭취 또는 단백질 제한은 α2-p-T172 의존적으로 마우스에서 AD 유사 증상을 예방합니다. 본 연구에서는 AMPKα2가 단백질 합성을 위한 특정 아미노산 존재비 검출기임을 확인했습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Impact of APOE on cerebrovascular lipid profile in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 APOE가 뇌혈관 지질 프로필에 미치는 영향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 18.2</span>
+                        <span class="badge journal-badge">Acta neuropathologica</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yasuteru Inoue, Hu Wang, Michael G Heckman et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41060400/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌혈관계 장애는 연령 관련 인지 장애 및 알츠하이머병(AD)의 발병 기전에 상당한 영향을 미칩니다. 또한, 뇌혈관 Aβ40 및 Aβ42 수치는 SM(p=0.0079) 및 세라마이드(CER)(p=0.024)를 포함한 스핑고지질 수치와 연관성을 보였습니다. 이러한 결과를 종합해 볼 때, 뇌혈관 지질체 프로파일은 AD의 발병 기전에 대한 새로운 통찰력을 제공하며, 특정 지질 변화가 AD의 바이오마커 또는 치료 표적으로 활용될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Deletion of murine </h3>
+                        <div class="korean-title">→ 쥐의 삭제</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.6</span>
+                        <span class="badge journal-badge">Science translational medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ligia B Schmitd, Hannah Hafner, Ayobami Ward et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41061042/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>포유류 말초 신경계(PNS)가 손상되면 절단된 축삭은 SARM1에 의존하는 빠른 축삭 사망(월러 변성)을 겪지만 잠재적인 역할은 . (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Polyhalogenated Carbazole Impairs Dopaminergic Neurons through Dysregulation of Liquid-Liquid Phase Separation in Caenorhabditis elegans.</h3>
+                        <div class="korean-title">→ 폴리할로겐화 카바졸은 선충류에서 액체-액체 상 분리의 조절 장애를 통해 도파민 신경 세포를 손상시킵니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yuhang Luo, Hongbo Xu, Pei Peng et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41064882/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>폴리할로겐화 카바졸(PHCZ)은 다양한 천연 및 합성 원료에서 유래하는 신흥 유기 오염물질입니다. PHCZ는 발달 및 남성 생식세포 분화에 영향을 미치는 일반적인 독성 외에도 심각한 도파민성 신경퇴행을 유발할 수 있는 것으로 밝혀졌습니다. PHCZ는 전반적인 단백질 항상성을 교란하고, ER(소포체)에서 접히지 않은 단백질 반응(UPR)을 특이적으로 활성화합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Anti-N-methyl-d-aspartate receptor encephalitis: insights and future treatment directions.</h3>
+                        <div class="korean-title">→ 항-N-메틸-d-아스파르트산 수용체 뇌염: 통찰력과 미래 치료 방향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.8</span>
+                        <span class="badge journal-badge">Trends in molecular medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yoji Hoshina, Tammy L Smith, Melissa A Wright et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41062340/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>항-N-메틸-D-아스파르트산 수용체(NMDAR) 뇌염이 처음 발견된 지 20년이 지난 지금, 발전된 치료법을 통해 합의 기반 진단 기준과 치료 권고안이 마련되었지만, 아직 FDA 승인을 받은 치료법은 없습니다. 본 고찰에서는 이러한 발전 상황을 종합하고, 새롭게 개발 중인 치료법을 중심으로 현재의 치료 접근법을 논의합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Extracellular vesicle-based biosensors for Alzheimer's disease: A new frontier in precision diagnostics.</h3>
+                        <div class="korean-title">→ 알츠하이머병을 위한 세포외 소포 기반 바이오센서: 정밀 진단의 새로운 전선.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.4</span>
+                        <span class="badge journal-badge">Ageing research reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    JinJin Pei, Nishanthi Chella Perumal, Panpan Meng et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41061769/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>가장 흔한 신경퇴행성 질환인 알츠하이머병(AD)은 초기 단계의 무증상성과 신뢰할 수 있는 비침습적 바이오마커의 부족으로 인해 진단에 어려움을 겪고 있습니다. EV 생물학과 첨단 바이오센싱 기술의 통합은 AD 정밀 의학 분야에서 강력한 잠재력을 지닌 새로운 발전이지만, 임상 적용에는 엄격한 검증과 표준화가 필요합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Correction to "Protective Effects of Socioeconomic Status and Lifestyle on Amyloid- and White Matter Hyperintensity-Related Longitudinal Brain Atrophy and Cognitive Decline".</h3>
+                        <div class="korean-title">→ "아밀로이드 및 백질 고강도 신호 관련 종단적 뇌 위축 및 인지 저하에 대한 사회경제적 지위와 생활 방식의 보호 효과"에 대한 정정.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.3</span>
+                        <span class="badge journal-badge">Annals of neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Dario Bachmann, Valerie Treyer (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41059756/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Automated Alzheimer's disease detection using active learning model with reinforcement learning and scope loss function.</h3>
+                        <div class="korean-title">→ 강화 학습과 범위 손실 함수를 갖춘 능동 학습 모델을 사용하여 알츠하이머병을 자동으로 감지합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Npj mental health research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Zhisen He, Vijay Govindarajan, Jing Yang et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41062814/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 만성적이고 치료가 불가능한 뇌 질환으로, 효과적인 관리를 위해서는 조기 발견이 필수적입니다. 이 모델은 OASIS와 ADNI 데이터셋을 기반으로 평가되었으며, 각각 92.044%와 93.685%의 F-측정값을 달성하여 AD 조기 발견에 있어 우수성을 보였습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Nicotine influence on cerebrovascular and neurocognitive function with in utero electronic cigarette exposure.</h3>
+                        <div class="korean-title">→ 자궁 내 전자담배 노출로 인한 니코틴이 뇌혈관 및 신경인지 기능에 미치는 영향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.3</span>
+                        <span class="badge journal-badge">The Journal of physiology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Amber Mills, Deborah Corbin, Duaa Dakhallah et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41064899/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>최근 연구에서는 자궁 내 전자담배(Ecig)에 노출된 자손에서 세동맥 기능 장애가 발견되었지만, 자손의 뇌혈관 및 신경인지 건강에 미치는 장기적인 영향은 잘 알려져 있지 않습니다. 저희는 생후 1개월, 3개월, 6개월, 12개월의 수컷과 암컷 자손을 대상으로 연구를 진행한 결과, 자손의 중대뇌동맥(MCA) 손상 정도가 30W에서 더 컸음을 발견했습니다. 자궁 내 전자담배에 노출된 설치류 자손은 성인이 되어서도 뇌혈관 및 신경인지 기능 장애가 지속되는 것으로 나타났으며, 이는 임신 중 베이핑이 무해하지 않다는 것을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. A neuroimmune cerebral assembloid model to study the pathophysiology of familial Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 가족성 알츠하이머병의 병태생리를 연구하기 위한 신경면역 뇌 조립 모델.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Journal of neuroinflammation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Andrea Becerra-Calixto, Anik Banerjee, Huihui Fan et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41063316/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 전 세계적으로 치매의 주요 원인입니다. 아밀로이드와 타우 단백질의 축적, 신경 세포 사멸, 그리고 신경 염증은 AD 진행과 함께 나타나며, 기억력과 인지 기능 저하를 초래합니다. 결론적으로, 본 신경면역 아셈블로이드 모델은 AD에서 관찰되는 염증 표현형과 아밀로이드 병리를 효과적으로 재현합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
