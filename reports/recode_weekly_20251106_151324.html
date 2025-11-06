@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2025.11.06</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2025.11.06</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">11</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">2</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">9</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Lymphoid gene expression supports neuroprotective microglia function.</h3>
+                        <div class="korean-title">→ 림프구 유전자 발현은 신경 보호 미세아교세포 기능을 뒷받침합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Pinar Ayata, Jessica M Crowley, Matthew F Challman et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41193812/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌의 선천 면역 세포인 미세아교세포는 알츠하이머병(AD)의 진행에 결정적인 역할을 합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. A probabilistic histological atlas of the human brain for MRI segmentation.</h3>
+                        <div class="korean-title">→ MRI 세분화를 위한 인간 뇌의 확률론적 조직학 도해.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Adrià Casamitjana, Matteo Mancini, Eleanor Robinson et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41193801/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인간 신경 영상에서 뇌 지도는 관심 영역(ROI)을 분할하고 공통 좌표 프레임에서 대상을 비교하는 데 필수적입니다. 조직학에서 파생된 최첨단 지도</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Micron-resolution fiber mapping in histology independent of sample preparation.</h3>
+                        <div class="korean-title">→ 샘플 준비와 무관하게 조직학에서 마이크론 해상도의 섬유 매핑이 가능합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Marios Georgiadis, Franca Auf der Heiden, Hamed Abbasi et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41193461/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌의 섬유 네트워크를 매핑하는 것은 뇌의 기능과 기능 장애를 이해하는 데 필수적이지만, 넓은 시야에서 신경 궤적을 분석하는 것은 쉽지 않습니다. 저희의 비용 효율적인 다재다능한 접근 방식은 조직, 종, 질병 및 시료 전처리에 걸쳐 복잡한 섬유 네트워크에 대한 미크론 해상도 연구를 가능하게 하여 신경과학 및 생물의학 연구에 새로운 차원을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Harnessing cervical lymphatic mechanics to enhance amyloid clearance: a paradigm shift in Alzheimer's therapeutics?</h3>
+                        <div class="korean-title">→ 경부 림프계 역학을 활용해 아밀로이드 제거를 강화하는 것은 알츠하이머 치료의 패러다임 전환일까?</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.2</span>
+                        <span class="badge journal-badge">Translational neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Wei Wang, Junhui Lv, Zihao Xu et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41194292/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Beyond Alzheimer's disease-translating biomarker insights across CNS diseases.</h3>
+                        <div class="korean-title">→ 알츠하이머병을 넘어 중추신경계 질환 전반에 걸친 바이오마커 통찰력.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.6</span>
+                        <span class="badge journal-badge">Science translational medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Linda S Brady, Simin Mahinrad, Rebecca M Edelmayer et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41191776/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)에서 바이오마커 식별 및 통합에 대한 수십 년간의 연구는 생물학적 질환 모델, 질환 아형, 그리고 질환 개선 치료법의 발전에 기여해 왔습니다. 본 연구에서는 이러한 연구 결과가 파킨슨병, 헌팅턴병, 다발성 경화증, 그리고 정신병적 질환에 어떻게 적용되어 중추신경계 질환 전반에 걸친 바이오마커 기반 접근법을 뒷받침하는 활용 사례로 활용되고 있는지 설명합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Microvascular Health as a Key Determinant of Organismal Aging.</h3>
+                        <div class="korean-title">→ 미세혈관 건강은 유기체 노화의 주요 결정 요인입니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Mattia Cenciarini, Andrea Uccelli, Francesca Mangili et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41194423/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>노화는 모든 장기계에 영향을 미치는 복잡하고 다면적인 과정이며, 혈관 노화는 유기체 건강 저하에 핵심적인 역할을 합니다. 마지막으로, 동물 모델(예: 파라바이오시스)과 새로운 미세생리학적 시스템을 다중 오믹스 및 인공지능 기반 분석과 결합하여 혈관 회복력을 증진하고 건강 수명을 연장하는 전략을 개발하는 데 어떻게 기여하고 있는지, 그리고 전 세계 고령화 사회의 가장 시급한 생의학적 과제 중 하나를 해결하는 방법을 조명합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Long-term cost-effectiveness of a more accurate diagnostic work-up for dementia.</h3>
+                        <div class="korean-title">→ 치매에 대한 보다 정확한 진단 검사의 장기적 비용 효율성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Pieter J van der Veere, Hana M Broulikova, Jeroen Hoogland et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41195193/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>정확한 치매 진단의 장기적인 임상적 및 경제적 영향에 대한 불확실성을 해소하기 위해, 5년간 기억 클리닉 검사에 아밀로이드 양전자방출단층촬영(PET)을 추가하는 것의 비용 대비 효과를 평가했습니다. 기억 클리닉 검사에서 아밀로이드 PET를 시행한 참가자를 시행하지 않은 참가자와 비교했습니다. 아밀로이드 PET 그룹은 5년간의 추적 관찰 기간 동안 지역사회에서 더 오래 거주하고 생존했습니다. 불확실성 분석 결과, 아밀로이드 PET는 지역사회 거주 기간을 비용 효율적으로 연장할 확률이 76%였습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Blood-based biomarkers for detecting Alzheimer's disease pathology in cognitively impaired individuals within specialized care settings: A systematic review and meta-analysis.</h3>
+                        <div class="korean-title">→ 전문 치료 환경에서 인지 장애가 있는 개인의 알츠하이머병 병리를 탐지하기 위한 혈액 기반 바이오마커: 체계적 고찰 및 메타 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sarah Pahlke, Lara A Kahale, Simin Mahinrad et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41193403/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 체계적 문헌고찰 및 메타분석은 전문 치료 환경에서 인지 장애가 있는 환자의 알츠하이머병(AD) 병리 진단을 위한 혈액 기반 바이오마커(BBM)의 진단 검사 정확도를 평가하는 것을 목표로 합니다. 다양한 검사 전 확률을 고려하여, 양성 또는 음성 검사 결과가 아밀로이드 양성 확률(검사 후 확률)에 얼마나 영향을 미치는지 평가했습니다. 본 연구는 BBM 검사 성능이 검사법 및 플랫폼에 따라 다르다는 점을 강조하며, 임상의와 검사실 책임자는 사용된 특정 검사의 맥락에서 결과를 해석하고 종합적인 임상 평가와 통합할 것을 권고합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Associations between obesity indices and cognitive function: Evidence from a middle-aged observational and Mendelian randomisation study.</h3>
+                        <div class="korean-title">→ 비만 지수와 인지 기능 간의 연관성: 중년 관찰 및 멘델 무작위 연구의 증거.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Diabetes, obesity & metabolism</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sisi Luan, Jinyan Zhang, Pan Luo et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41194606/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>비만과 인지 기능 저하의 연관성을 조사한 임상시험은 다양한 연령대에서 일관되지 않은 결과를 보였습니다. 공변량 보정 후, 체질량지수(BMI)가 가장 높은 삼분위수(T3) 참가자는 가장 낮은 삼분위수(T1) 참가자에 비해 유의미한 인지 기능 저하를 보였습니다. 이러한 연구 결과를 검증하기 위해서는 추가적인 다기관, 다지역 및 대규모 연구가 필요합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. In Vivo Imaging of Blood-Brain Barrier Leakage Using a Contrast Agent in Patients With Cerebral Amyloid Angiopathy: An Exploratory Study.</h3>
+                        <div class="korean-title">→ 뇌 아밀로이드 혈관병증 환자에서 대조제를 사용한 혈액-뇌 장벽 누출의 생체 영상: 탐색 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hilde van den Brink, Mariel G Kozberg, Nazanin Makkinejad et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41191838/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈액-뇌 장벽(BBB) 누출은 뇌 아밀로이드 혈관병증(CAA) 병태생리의 초기 단계일 수 있으며, 출혈에 선행하는 것으로 추정됩니다. 추적 관찰 데이터를 활용한 연구를 통해 이러한 지표가 CAA의 예측 바이오마커 역할을 할 수 있는지 확인해야 합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Greenness and hospital admissions for cause specific mental disorders: multicountry time series study.</h3>
+                        <div class="korean-title">→ 녹색성과 특정 정신 질환으로 인한 병원 입원: 다국가 시계열 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">BMJ (Clinical research ed.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Tingting Ye, Wenzhong Huang, Zhihu Xu et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41193238/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>녹색성 노출과 정신 질환으로 인한 입원 간의 연관성을 조사하고, 다양한 녹색성 개입 시나리오에서 녹색성 관련 입원 건수를 추정하고자 한다. 브라질, 칠레, 태국은 대부분의 질환 범주에서 일관된 보호적 연관성을 보인 반면, 호주와 캐나다에서는 모든 원인의 정신 질환 입원과 몇몇 특정 질환 범주에서 약간의 부정적(즉, 유해한) 연관성이 관찰되었다. 그러나 일부 부정적 연관성이 관찰되었으며, 결과는 상황에 따라 이질적이었다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
