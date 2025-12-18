@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2025.12.18</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2025.12.18</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">19</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">8</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">11</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Valacyclovir and Symptomatic Alzheimer Disease-No Evidence for Benefit.</h3>
+                        <div class="korean-title">→ 발라시클로비르와 증상성 알츠하이머병 - 효능에 대한 증거 없음.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 120.7</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    David S Knopman (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41406173/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Valacyclovir Treatment of Early Symptomatic Alzheimer Disease: Research Summary.</h3>
+                        <div class="korean-title">→ 초기 증상성 알츠하이머병에 대한 발라시클로비르 치료: 연구 요약.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 120.7</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                     (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41405898/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Valacyclovir Treatment of Early Symptomatic Alzheimer Disease: The VALAD Randomized Clinical Trial.</h3>
+                        <div class="korean-title">→ 초기 증상성 알츠하이머병에 대한 발라시클로비르 치료: VALAD 무작위 임상 시험.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 120.7</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    D P Devanand, Thomas Wisniewski, Qolamreza Razlighi et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41405876/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>신경과학적, 역학적, 그리고 전자건강기록 연구는 단순포진바이러스(HSV)가 알츠하이머병(AD)의 잠재적 원인일 수 있음을 시사합니다. 본 연구는 초기 증상성 AD 환자이면서 HSV 항체(HSV-1 또는 HSV-2) 양성인 참가자를 대상으로 발라시클로비르와 위약의 효능 및 부작용을 비교하고자 했습니다. 이 무작위 임상시험에는 AD 가능성이 높거나 AD 관련 생체지표가 양성인 경도인지장애 성인, HSV-1 또는 HSV-2에 대한 혈청 항체 검사(IgG 또는 IgM) 양성, 그리고 미니 정신상태 검사(MMSE) 점수가 18~28점인 환자가 포함되었습니다. 이 임상시험은 기억 장애 전문 미국 외래 진료소 3곳에서 진행되었습니다. 참가자 모집은 2018년 1월부터 2022년 5월까지 이루어졌습니다. 마지막 추적 관찰은 2024년 9월에 이루어졌습니다. 발라시클로비르 4g/일 투여군(n=60) 또는 위약 투여군(n=60)으로 나누었습니다. 1차 평가변수는 78주 시점에서 11개 항목으로 구성된 알츠하이머병 인지 평가 척도(ADAS-Cognitive) 하위척도 점수의 최소제곱평균(LSM) 변화였습니다(범위: 0-70, 점수가 높을수록 인지 기능 저하가 심함). 2차 평가변수는 알츠하이머병 협력 연구-일상생활 활동(ADCS-ADL) 척도 점수의 LSM 변화였습니다. 6개 뇌 영역(내측 안와전두엽, 전측 대상회, 두정엽, 후측 대상회, 측두엽, 전두엽 후엽)에서 18F-플로르베타피르 아밀로이드 양전자 방출 단층촬영(PET) 표준화 섭취 값 비율(SUVR; 높은 값이 아밀로이드 수치를 나타냄)의 최소제곱평균(LSM) 변화; 그리고 4개 뇌 영역(편도체, 해마, 내측두엽, 해마방회)에서 18F-MK-6240 타우 PET 내측 측두엽 SUVR(높은 값이 타우 수치를 나타냄)의 LSM 변화를 측정하였다. 안전성 평가 지표로는 이상반응 발생 빈도를 사용하였다. 총 120명의 참가자(평균 연령 71.4세[표준편차 8.6세], 여성 55%) 중 93명(77.5%)이 임상시험을 완료하였다. 78주 시점에서 11개 항목으로 구성된 ADAS-인지 하위 척도 점수의 LSM 변화는 발라시클로비르 투여군에서 10.86(95% CI, 8.80~12.91)이었고, 위약 투여군에서는 6.92(95% CI, 4.88~8.97)였습니다. 이는 발라시클로비르 투여군에서 위약 투여군보다 인지 기능 악화가 더 컸음을 나타냅니다(두 그룹 간 차이, 3.93[95% CI, 1.03~6.83]; P=0.01). 78주 시점에서 발라시클로비르 투여군의 ADCS-ADL 척도 점수의 최소제곱평균(LSM) 변화는 -13.78(95% CI, -17.00~-10.56)이었고, 위약 투여군은 -10.16(95% CI, -13.37~-6.96)이었습니다(두 그룹 간 차이, -3.62[95% CI, -8.16~0.93]). 78주 시점에서 18F-플로르베타피르 아밀로이드 PET SUVR의 최소제곱평균 변화는 발라시클로비르 투여군에서 0.03(95% CI, -0.04~0.10)이었고, 위약 투여군은 0.01(95% CI, -0.06~0.08)이었습니다(두 그룹 간 차이, 0.02[95% CI, -0.08~0.12]). 78주 시점에서 18F-MK-6240 타우 PET 내측 측두엽 SUVR의 최소제곱평균(LSM) 변화는 발라시클로비르 투여군에서 0.07(95% 신뢰구간, -0.06~0.19)이었고, 위약 투여군에서는 -0.04(95% 신뢰구간, -0.15~0.07)였습니다(두 군 간 차이 0.11[95% 신뢰구간, -0.06~0.28]). 가장 흔한 이상반응은 혈청 크레아티닌 수치 상승(발라시클로비르 투여군 5명[8.3%] vs 위약 투여군 2명[3.3%])과 코로나19 감염(각각 3명[5%] vs 2명[3.3%])이었습니다. 발라시클로비르는 1차 평가변수인 인지 기능 악화에 효과적이지 않았으며, 초기 증상성 알츠하이머병 및 HSV 혈청 양성 환자에게는 투여를 권장하지 않습니다. ClinicalTrials.gov 식별자: NCT03282916.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. How common is Alzheimer's? Blood-test study holds surprises.</h3>
+                        <div class="korean-title">→ 알츠하이머병은 얼마나 흔한 질병일까요? 혈액 검사 연구 결과가 놀라운 사실을 보여줍니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Asher Mullard (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41407958/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Author Correction: Neuroimmune cardiovascular interfaces control atherosclerosis.</h3>
+                        <div class="korean-title">→ 저자 정정: 신경면역 심혈관계 인터페이스가 죽상경화증을 조절합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sarajo K Mohanta, Li Peng, Yuanfang Li et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41407863/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Prevalence of Alzheimer's disease pathology in the community.</h3>
+                        <div class="korean-title">→ 지역사회에서 알츠하이머병 병리의 유병률.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Dag Aarsland, Anita Lenora Sunde, Diego A Tovar-Rios et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41407852/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인지 장애의 주요 원인인 알츠하이머병 신경병리학적 변화(ADNC)의 유병률은 여전히 불확실합니다. 최근 개발된 혈액 기반 바이오마커를 통해 ADNC를 대규모로 평가할 수 있게 되었습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Quantum-dot-based single-molecule Förster resonance energy transfer for investigating the conformations of tau and phosphorylated tau.</h3>
+                        <div class="korean-title">→ 양자점 기반 단일 분자 Förster 공명 에너지 전달을 이용한 타우 및 인산화 타우의 구조 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 56.9</span>
+                        <span class="badge journal-badge">Journal of colloid and interface science</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Meilin Zhu, Zhen Mao, Xinyu Li et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41406720/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>양자점(QD)은 조절 가능한 발광, 높은 양자 수율 및 우수한 광안정성을 바탕으로 생체 분자 상호작용을 측정 가능한 형광 신호로 변환하는 앙상블 측정에서 FRET 공여체 또는 수용체로 널리 활용되어 왔습니다. 그러나 단일 분자 Förster 공명 에너지 전달(smFRET)에서의 양자점 활용은 특히 분자 내 구조적 동역학을 분석하는 데 있어 여전히 제한적입니다. 이러한 한계는 두 가지 고유한 제약에서 비롯됩니다. (1) 양자점의 상당한 유체역학적 반경(5-15 nm)으로 인해 생체 분자 구조와 입체적 간섭이 발생하고, (2) 확률적 생체 접합 방식은 프로브의 방향을 제어하지 못하여 FRET 기반 거리 계산에 불확실성을 초래합니다. 형광 교차 상관 분광법(FCCS)은 용액상 smFRET 측정을 가능하게 함으로써 이러한 한계를 극복하고, smFRET에서 양자점을 활용하기 위한 최적의 환경을 제공합니다. 본 연구에서는 QD 기반 smFRET 시스템을 이용하여 본질적으로 무질서한 타우 단백질의 구조적 변화를 측정하고자 했습니다. 타우 단백질은 N-말단에 His-tag을 부착하여 발현시켰으며, 이를 통해 금속 배위 화학 반응을 이용하여 아연 코팅된 QD에 직접적이고 제어 가능한 방식으로 고정화할 수 있었습니다. 변이 타우 단백질의 C-말단 Cys432는 수용체인 Cy5-말레이미드로 표지하여 이중 표지 FRET 시스템을 구축했습니다. 큰 Förster 거리(R)를 활용하여</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Hypoglycemia induces brain metabolic reprogramming and neurodegeneration via serum response factor and myocardin-related transcription factor-A.</h3>
+                        <div class="korean-title">→ 저혈당증은 혈청 반응 인자와 심근 관련 전사 인자-A를 통해 뇌 대사 재프로그래밍 및 신경 퇴행을 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 52.7</span>
+                        <span class="badge journal-badge">Signal transduction and targeted therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Minjeong Jang, Hyung Jin Choi, Hae-June Lee et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41408035/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>저혈당증은 인슐린이나 다른 혈당 강하제를 투여받는 당뇨병 환자 또는 장기간 금식하는 환자에게서 흔히 발생하며 심각한 뇌 손상을 초래할 수 있는 합병증입니다. 임상적으로 중요한 질환임에도 불구하고, 저혈당증이 신경퇴행을 유발하는 분자적 기전은 아직 명확히 규명되지 않았습니다. 따라서 본 연구에서는 인간 신경세포 및 교세포 배양을 이용한 체외 실험과 저혈당 마우스 모델을 이용한 생체 내 실험을 통해 저혈당증으로 인한 뇌 손상의 분자적 및 세포적 기전을 조사했습니다. 연구 결과, 기아로 유발된 저혈당증은 성상세포 활성화 및 미세아교세포 반응성 증가와 같은 신경퇴행성 특징들을 유발하며, 이는 저혈당 마우스 모델의 뇌에서 관찰되는 특징들과 매우 유사했습니다. 특히 신경세포는 혈청 반응 인자(SRF)와 심근 관련 전사 인자-A(MRTF-A)에 의해 매개되는 적응적 생존 반응을 활성화하여 대사 재프로그래밍 과정을 유도합니다. 이러한 변화를 통해 신경세포는 포도당 결핍 상태에서 세포외 기질 성분을 대체 에너지원으로 사용할 수 있게 됩니다. 그러나 이러한 보상 기전은 요소 회로 부산물의 과도한 축적을 초래하여 결과적으로 신경 손상을 악화시키고 신경교 세포 활성화를 촉진합니다. 포도당 재공급은 시험관 내 및 생체 내 모두에서 SRF/MRTF-A 신호 전달을 비활성화함으로써 이러한 신경 퇴행성 특징을 현저하게 역전시켰습니다. 종합적으로, 본 연구 결과는 포도당 결핍과 SRF/MRTF-A를 통한 가역적 신경 퇴행을 연결하는 신경 세포 내재적 기전을 밝혀냈으며, 이는 저혈당 관련 뇌 손상을 예방하기 위한 잠재적인 표적을 제시합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Phosphorylated tau exhibits antimicrobial activity capable of neutralizing herpes simplex virus 1 infectivity in human neurons.</h3>
+                        <div class="korean-title">→ 인산화된 타우는 인간 신경 세포에서 단순포진 바이러스 1형의 감염성을 중화시킬 수 있는 항균 활성을 나타낸다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 28.0</span>
+                        <span class="badge journal-badge">Nature neuroscience</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    William A Eimer, Alex S Rodriguez, Michael T DeFao et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41408481/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>타우는 미세소관 관련 세포골격 단백질로, 과인산화되어 응집되면 알츠하이머병(AD)을 비롯한 다양한 타우병증을 유발할 수 있습니다. 우리는 이전에 노인성 플라크의 주요 구성 요소인 아밀로이드 베타(Aβ)가 미생물 병원체를 결합하고 포획할 수 있는 항균 펩타이드임을 보여주었습니다. Aβ와 인산화된 타우의 복합적인 항균 작용으로 인해 Aβ 플라크와 신경섬유 엉킴이 형성되고 신경염증이 동반되는 것은 AD 신경병리가 뇌의 미생물 감염에 대한 조직적인 선천 면역 방어 반응으로 진화했을 가능성을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Influence of pneumatic tube system transport on cell count and spectrophotometry in cerebrospinal fluid.</h3>
+                        <div class="korean-title">→ 공압 튜브 시스템을 이용한 이송이 뇌척수액 내 세포 수 및 분광광도 측정에 미치는 영향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 19.5</span>
+                        <span class="badge journal-badge">Scandinavian journal of clinical and laboratory investigation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Marcus Clarin, Joel Simrén, Johanna Svanberg et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41406402/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>공압 튜브 시스템(PTS)은 많은 병원에서 채취한 체액 샘플을 이송하고 검사 소요 시간을 단축하기 위해 일상적으로 사용됩니다. 따라서 이러한 분석을 위해 뇌척수액(CSF)을 이송하는 데에도 PTS를 사용할 수 있을 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Lysophosphatidylcholines are associated with amyloidosis in early stages of Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 리소포스파티딜콜린은 알츠하이머병 초기 단계의 아밀로이드증과 관련이 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 19.4</span>
+                        <span class="badge journal-badge">Nature aging</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Vrinda Kalia, Dolly Reyes-Dumeyer, Saurabh Dubey et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41407938/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈중 대사물질은 알츠하이머병(AD)과 관련된 생화학적 위험 인자를 식별할 수 있습니다. 본 연구 결과는 바이오마커 기반 진단 기준이 APOE-ε4 유전자와 리소포스파타제(lysoPCs) 사이의 연관성을 밝혀냈으며, 리소포스파타제는 신경 보호 효과가 있는 다불포화지방산을 뇌로 운반하는 데 중요한 역할을 하고, 이러한 연관성은 AD와도 관련이 있음을 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Long-term changes in cardiorespiratory fitness and incidence of Alzheimer's disease and related dementias among US Veterans.</h3>
+                        <div class="korean-title">→ 미국 재향군인들의 심폐 기능의 장기적 변화와 알츠하이머병 및 관련 치매 발병률.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Peter Kokkinos, Yan Cheng, Edward Zamrini et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41409742/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병 및 관련 치매(ADRD)는 여전히 주요 질병 및 사망 원인입니다. 반대로, 심폐 기능(CRF)이 2.0 MET 이상 감소하면 중등도 체력 수준의 individuals에서 ADRD 위험이 14% 증가하고, 고강도 체력 수준의 individuals에서는 18% 증가하는 것으로 나타났습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Single-nucleus multiomics reveals the disrupted regulatory programs in three brain regions of sporadic early-onset Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 단일 핵 다중 오믹스 분석을 통해 산발성 조기 발병 알츠하이머병의 세 가지 뇌 영역에서 교란된 조절 프로그램이 밝혀졌습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Andi Liu, Citu Citu, Nitesh Enduru et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41406336/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>산발성 조기 발병 알츠하이머병(sEOAD)은 알츠하이머병(AD)의 중요한 하위 유형이지만 연구가 덜 된 질환입니다. 본 연구에서는 세포 유형별 전사체 변화와 관련된 후보 유전자를 규명하기 위해 포괄적인 분석을 수행했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. A Systematic Review of Multivariate Studies in Cognitive Aging: Introducing the Concept of Cognitive Organization.</h3>
+                        <div class="korean-title">→ 인지 노화에 대한 다변량 연구의 체계적 검토: 인지 조직화 개념 소개.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.4</span>
+                        <span class="badge journal-badge">Ageing research reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    E Garcia-Cabello, A Habich, Y Molina et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41407110/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인지 노화에 대한 연구는 풍부하지만, 인지 기능이 서로 다른 인지 영역과 하위 구성 요소들이 상호 연관되어 명확하게 조직되는지는 여전히 명확히 밝혀지지 않았습니다. 본 연구에서는 여러 연구를 통해 기억, 언어, 실행 기능, 처리 속도라는 네 가지 요소가 인지 기능을 조직한다는 일관된 결과를 얻었습니다. 인지 노화에 대한 이해를 증진시키면 인지 장애 위험이 있는 사람들에게 더욱 정확하고 개인화된 임상 평가 및 중재를 제공할 수 있을 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. High- and Low-Fat Dairy Consumption and Long-Term Risk of Dementia: Evidence From a 25-Year Prospective Cohort Study.</h3>
+                        <div class="korean-title">→ 고지방 및 저지방 유제품 섭취와 장기적인 치매 위험: 25년 전향적 코호트 연구 결과.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yufeng Du, Yan Borné, Jessica Samuelsson et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41406426/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>유제품 섭취와 치매 위험 사이의 연관성은 특히 지방 함량이 다양한 유제품의 경우 여전히 불확실합니다. 고지방 치즈와 고지방 크림의 섭취량이 많을수록 모든 원인에 의한 치매 위험이 낮아지는 역의 상관관계가 발견되었지만, 저지방 치즈, 저지방 크림 및 기타 유제품은 유의미한 연관성을 보이지 않았습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Recent molecular insights and biosensor-based diagnostic technologies for hyperphosphorylated Tau in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 과인산화 타우 단백질에 대한 최근 분자적 통찰과 바이오센서 기반 진단 기술.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Samah Shabana, Hamed I Hamouda, Angyang Shang et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41408566/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>타우 병리는 알츠하이머병(AD)의 특징적인 소견이며, 과인산화 타우(p-Tau)는 조기 진단 및 질병 모니터링을 위한 핵심 바이오마커로 부상하고 있습니다. 다양한 p-Tau 에피토프는 뛰어난 진단 정확도를 입증했으며, 현재 업데이트된 AD 진단 체계의 분자적 기반을 형성하고 있습니다. 이러한 혁신들은 AD 진단을 재정의하고, 조기 개입 및 더욱 효과적인 질병 모니터링을 가능하게 하고 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Development of a humanized anti-fibrin monoclonal antibody for the treatment of neuroinflammatory and retinal diseases.</h3>
+                        <div class="korean-title">→ 신경염증성 질환 및 망막 질환 치료를 위한 인간화 항피브린 단클론 항체 개발.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Journal of neuroinflammation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Aaron B Kantor, Mathias Rickert, Hank Cheng et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41408289/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Deep cervical lymphatic-venous anastomosis in dementia: a clinical and mechanistic evaluation.</h3>
+                        <div class="korean-title">→ 치매 환자에서 심부 경부 림프-정맥 문합술: 임상적 및 기전적 평가.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">International journal of surgery (London, England)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Cong Tang, Xiaoju Zheng, Haijun Li et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41405626/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD) 및 기타 치매는 점진적인 인지 기능 저하를 특징으로 하며, 진행성 단계에서는 효과적인 치료법이 거의 없습니다. dcLVA 시술 후 1주일 이내에 환자의 64.3%에서 MMSE 점수 향상이 나타났으며, 요실금, 감정 조절, 운동 협응력, 식사 독립성에서도 추가적인 기능적 개선이 관찰되었습니다. 이러한 탐색적 연구 결과는 해당 코호트에서 관찰된 수술 후 변화를 설명하지만, 단일군 연구 설계로 인해 인과 관계를 해석할 수는 없습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Alzheimer's and Other Dementias Attributable to Hyperglycaemia and High BMI Worldwide, 1990-2021: GBD 2021 Cross-sectional Analysis and ARIMA Forecasts.</h3>
+                        <div class="korean-title">→ 전 세계 고혈당 및 높은 BMI로 인한 알츠하이머병 및 기타 치매 발생률, 1990-2021: GBD 2021 횡단면 분석 및 ARIMA 예측.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">International journal of surgery (London, England)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Luyuan Chang, Xinyu Liu, Huan Wu et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41405327/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>전 세계적으로 고령화가 가속화됨에 따라 알츠하이머병, 즉 알츠하이머병(AD) 및 비알츠하이머병성 인지 장애가 사회와 가족에 미치는 부담은 지속적으로 증가하고 있다. 본 논문은 분석 결과를 성별, 연령, 사회인구학적 지수(SDI)별로 분류하고 그 결과를 제시한다. 본 연구는 대사 관련 치매에 대한 계층적이고 정밀한 예방 및 관리 전략의 시행, 연령 임계값 기반의 동적 모니터링 시스템 구축, 그리고 자원이 부족한 지역에 적합한 위험 예측 모델 개발이 치매 발병률 증가 추세를 효과적으로 늦출 수 있음을 보여준다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
