@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2025.12.25</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2025.12.25</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">11</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">11</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        <p>이번 주에는 해당하는 논문이 없습니다.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. mGluR4-NPDC1 complex mediates α-synuclein fibril-induced neurodegeneration.</h3>
+                        <div class="korean-title">→ mGluR4-NPDC1 복합체는 α-시누클레인 섬유에 의해 유발되는 신경퇴행을 매개합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Azucena Perez-Canamas, Mingming Chen, Leire Almandoz-Gil et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41444258/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>α-시누클레인(α-syn) 섬유는 파킨슨병에서 축적되어 세포 간 확산을 통해 단백질 접힘 이상을 유발하고 신경퇴행을 촉진합니다. 이형접합체 Grm4, Npdc1 마우스는 흑질 신경세포를 α-syn 섬유로부터 보호하는 것으로 나타나 유전적 상호작용을 입증했습니다. 따라서 세포 표면의 mGluR4-NPDC1 복합체가 α-syn 관련 신경퇴행에 관여합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Proteomic signatures of smoking and their associations with risk of incident diseases and mortality in diverse populations.</h3>
+                        <div class="korean-title">→ 흡연의 단백질체학적 특징과 다양한 인구 집단에서 질병 발생 위험 및 사망 위험과의 연관성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sihao Xiao, Bowen Liu, M Austin Argentieri et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41444232/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>흡연은 질병 발생률과 사망률을 결정하는 가장 중요한 행동적 요인입니다. pSIN은 모든 원인에 의한 사망 위험 및 심혈관계, 신장, 폐, 신경퇴행성 질환, 암을 포함한 18가지 주요 만성 질환 발생 위험과 유의미한 연관성을 보입니다. 이러한 연구 결과는 혈장 단백질체학이 흡연의 생물학적 흔적을 효과적으로 포착하고 흡연 관련 질병 발생률과 사망률을 예측하여, 흡연에 대한 생물학적 반응의 개인적 차이를 보다 세밀하고 분자적 관점에서 평가할 수 있음을 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Multi-omics dissection of SNP-mediated immunometabolic signatures in Alzheimer's disease reveals a novel individual predictive model.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 SNP 매개 면역대사 특징에 대한 다중 오믹스 분석을 통해 새로운 개별 예측 모델이 밝혀졌습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.1</span>
+                        <span class="badge journal-badge">NPJ digital medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ji Wu, Xueyang Wang, Qing Tian et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41444832/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>유전체 전장 연관성 연구(GWAS)는 알츠하이머병(AD)에서 면역 및 대사 경로의 역할을 밝혀냈지만, 이러한 경로가 세포에 미치는 구체적인 영향은 아직 불분명합니다. 본 연구는 알츠하이머병에서 면역대사의 중요한 역할을 강조하는 새로운 증거를 제시하고, 대규모 인구 집단을 대상으로 한 일상적인 선별 검사에 적합한 실용적인 예측 도구를 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. The impact of </h3>
+                        <div class="korean-title">→ 영향</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Rafael Lara Nohmi, Mozania Reis de Matos, Sueli Mieko Oba-Shinjo et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41446782/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>제2형 당뇨병(T2D)은 인지 기능 저하와 관련이 있지만, 그 역할은 아직 명확히 밝혀지지 않았습니다. 본 연구에서는 치매 환자를 제외한 브라질 성인 제2형 당뇨병 환자 883명(중앙 연령 68세)을 대상으로 일차 진료 환경에서 인지 기능을 분석했습니다. 인지 기능은 미니 정신 상태 검사(MMSE)와 를 사용하여 평가했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Association between 24-h time-use composition and brain age: The IGNITE study.</h3>
+                        <div class="korean-title">→ 24시간 시간 활용 구성과 뇌 연령 간의 연관성: IGNITE 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Audrey M Collins, Maddison L Mellow, Lu Wan et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41445670/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>24시간 시간 활용 구성(수면, 좌식 생활, 가벼운 신체 활동, 중강도-고강도 신체 활동[MVPA])과 노년기 뇌 형태 간의 관계는 아직 제대로 이해되지 않고 있습니다. 본 연구에서는 24시간 시간 활용 구성이 뇌 연령과 유의미한 연관성을 보인다는 사실을 발견했습니다(F = 2.72). 이러한 결과는 24시간 시간 활용, 특히 MVPA에 소요되는 시간이 노년기 뇌 구조적 연령과 관련이 있음을 시사합니다. 시간 활용은 노년층의 뇌 연령과 관련이 있으며, MVPA에 더 많은 시간을 할애할수록 뇌 연령이 젊어질 수 있습니다. 시간 활용과 뇌 연령 간의 연관성은 인구통계학적 변이 또는 알츠하이머병에 대한 유전적 위험 요인과는 무관합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. GLP-1 agonists in neurodegeneration: a multimodal biomarker-guided approach.</h3>
+                        <div class="korean-title">→ 신경퇴행성 질환에서 GLP-1 작용제의 효과: 다중 모드 바이오마커 기반 접근법.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.8</span>
+                        <span class="badge journal-badge">Trends in molecular medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jose A Santiago, Jean C Gutierrez-Silva, Wei-Chuan Hsu et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41444101/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>제2형 당뇨병 치료에 널리 사용되는 글루카곤 유사 펩티드-1 수용체 작용제(GLP1-RA)는 알츠하이머병(AD) 및 파킨슨병(PD)에서 유망한 신경 보호 치료제로 부상하고 있습니다. 엑세나티드, 릭시세나티드, 리라글루티드와 같은 약물들은 전임상 및 임상 연구에서 질병 진행을 억제하는 잠재력을 보여주었습니다. 이러한 바이오마커를 디지털 표현형 분석 및 인공지능과 통합하면 신경퇴행성 질환에서 GLP1-RA 연구 및 임상 적용을 발전시키는 데 있어 정밀한 접근 방식을 가능하게 할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. First-in-Class SAM-Competitive G9a Inhibitor FLAV-27 as a Disease-Modifying Therapy for Alzheimer's Disease.</h3>
+                        <div class="korean-title">→ 최초의 SAM 경쟁형 G9a 억제제인 FLAV-27은 알츠하이머병의 질병 진행을 억제하는 치료제로 개발되었습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.0</span>
+                        <span class="badge journal-badge">Molecular therapy : the journal of the American Society of Gene Therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Aina Bellver-Sanchis, David Valle-Garcia, Carla Barbaraci et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41445192/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 후성유전적 조절 장애를 포함한 다인성 병태생리와 관련된 진행성 인지 기능 저하를 특징으로 합니다. 본 연구 결과는 FLAV-27이 알츠하이머병에서 질병 진행을 억제하고 임상적으로 활용 가능한 바이오마커와 연관성을 보이는 유망한 후성유전적 치료제임을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Off-Target RNA Editing Hotspots Caused by Base Editors.</h3>
+                        <div class="korean-title">→ 염기 편집기에 의해 발생하는 표적 외 RNA 편집 핫스팟.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.0</span>
+                        <span class="badge journal-badge">Molecular therapy : the journal of the American Society of Gene Therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Michelle Shmuel-Eidelman, Roni Cohen-Fultheim, Eli Eisenberg et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41445188/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>Cas 단백질 및 가이드 RNA와 융합된 유전자 변형 탈아미노효소로 구성된 염기 편집기는 게놈 및 전사체 내 단일 뉴클레오티드를 정밀하고 프로그래밍 가능한 방식으로 변경할 수 있게 합니다. 본 연구는 이전에 알려지지 않았던 오프타겟 영역을 밝혀냄으로써 염기 편집기의 특이성에 대한 이해를 심화시키고, 정밀도 최적화를 위한 프레임워크를 제공하여 더욱 안전한 차세대 편집 도구 개발을 가속화합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Brain atrophy staging in spinocerebellar ataxia type 3 for clinical prognosis and trial enrichment.</h3>
+                        <div class="korean-title">→ 척수소뇌성 운동실조증 3형의 뇌 위축 단계 분류를 통한 임상 예후 예측 및 임상시험 참여자 선정.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.8</span>
+                        <span class="badge journal-badge">EBioMedicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hannah Baumeister, Philipp Wegner, Mónica Ferreira et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41443080/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>척수소뇌성 운동실조증 3형(SCA3)은 진행성 뇌 위축을 특징으로 하며, 임상 증상이 나타나기 전에 MRI를 통해 국소적인 용적 감소를 확인할 수 있습니다. (국립운동실조재단(NAF)) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Applications of Endovascular Brain-Computer Interface in Patients with Alzheimer's Disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병 환자에서 혈관내 뇌-컴퓨터 인터페이스의 응용.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Research (Washington, D.C.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yuhao Sun, Danyang Chen, Qing Ye et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41446876/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 노인에게 흔히 발생하는 신경퇴행성 질환으로, 인지 기능과 독립적인 생활 능력에 심각한 장애를 초래합니다. 이는 상당한 장애를 야기하고 가족과 사회에 점점 더 큰 부담을 안겨줍니다. 현재 임상에서 사용되는 치료법은 주로 콜린에스테라제 억제제와 기타 약물에 의존하고 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. [Tongdu Xingshen needling improves post-stroke cognitive impairment by regulating glycolysis in rats based on the HIF-1α/PDK1 pathway].</h3>
+                        <div class="korean-title">→ [통두 싱션 침술은 HIF-1α/PDK1 경로를 기반으로 쥐의 해당 과정 조절을 통해 뇌졸중 후 인지 장애를 개선합니다.]</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Zhen ci yan jiu = Acupuncture research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ke-Xin Sun, Yan-Jie Bai, Yan Wang et al. (2025) | <a href="https://pubmed.ncbi.nlm.nih.gov/41443912/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>통두행신(독맥을 소통시키고 정신을 맑게 하는 침술)이 뇌허혈-재관류 손상(CIRI) 쥐에서 저산소 유발 인자-1α/피루브산 탈수소효소 키나제 1(HIF-1α/PDK1) 경로 및 해마 해당 과정 수준에 미치는 영향을 관찰하여 학습 및 기억 능력 향상의 기저 메커니즘을 규명하고자 한다. SD 쥐를 무작위로 가짜 수술군, 모델군, 침술군, 침술 + 억제제 투여군으로 나누었다. (가짜 수술군과 비교했을 때, 모델군의 쥐들은 중심 거리 비율, 플랫폼 횡단 횟수, 새로운 물체 선호도 지수가 유의하게 감소했다.) (통두행신 침술은 CIRI 쥐의 학습 및 기억 기능을 향상시킬 수 있으며, 이는 HIF-1α/PDK1 신호 전달 경로 발현 하향 조절, 해마에서의 혐기성 해당작용 억제, 젖산 축적 감소 및 ATP 생성 증가와 관련이 있을 수 있다.) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
