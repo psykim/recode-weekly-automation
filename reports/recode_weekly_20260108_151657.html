@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.01.08</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.01.08</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">3</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">11</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Mitochondrial transfer from glia to neurons protects against peripheral neuropathy.</h3>
+                        <div class="korean-title">→ 신경교세포에서 뉴런으로의 미토콘드리아 전달은 말초신경병증으로부터 보호 효과를 제공한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jing Xu, Yize Li, Charles Novak et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41501451/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>배측 신경절(DRG)의 일차 감각 신경 세포는 긴 축삭을 가지고 있으며 미토콘드리아에 대한 요구량이 높습니다. 미토콘드리아 기능 장애는 당뇨병 및 항암 화학 요법 후 발생하는 말초 신경병증과 관련이 있는 것으로 알려져 있습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Anticoagulation to prevent ischemic stroke and neurocognitive impairment in atrial fibrillation: the BRAIN-AF randomized clinical trial.</h3>
+                        <div class="korean-title">→ 심방세동 환자의 허혈성 뇌졸중 및 신경인지 장애 예방을 위한 항응고 요법: BRAIN-AF 무작위 임상 시험.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 58.7</span>
+                        <span class="badge journal-badge">Nature medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Léna Rivard, Paul Khairy, Mario Talajic et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41501492/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>심방세동(AF) 환자는 뇌졸중, 인지 장애 및 치매 위험이 증가합니다. 관찰 연구에 따르면 항응고 치료가 혈전색전증 위험이 높은 AF 환자의 인지 기능 저하 위험을 감소시킬 수 있으며, 이는 잠재적인 기전적 연결 고리로 무증상 뇌색전증을 시사합니다. 그러나 뇌졸중 위험이 낮은 AF 환자에서 항응고 치료가 인지 기능 저하를 예방하는지 여부는 아직 불확실합니다. 본 연구에서는 혈전색전증 위험이 낮은 AF 환자(CHA₂)를 대상으로 다기관, 이중맹검, 위약 대조 임상시험을 실시했습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Understanding the link between atrial fibrillation and cognitive decline.</h3>
+                        <div class="korean-title">→ 심방세동과 인지 기능 저하 사이의 연관성을 이해하기.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 58.7</span>
+                        <span class="badge journal-badge">Nature medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Marco Proietti, Giulio Francesco Romiti (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41501489/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Tau condensation on DNA mediates microtubule attachment suggesting a mitotic role for centromere-localized tau.</h3>
+                        <div class="korean-title">→ DNA 상의 타우 응축은 미세소관 부착을 매개하며, 이는 중심체에 위치한 타우가 세포 분열에 중요한 역할을 한다는 것을 시사합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Celine Park, Jaehun Jung, Yuri Hong et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41501063/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>전통적으로 미세소관 안정화 및 병리학적 응집체 형성에 관여하는 것으로 알려진 타우 단백질이 최근 다양한 상황에서 응축체를 형성하는 것이 관찰되었습니다. 또한, 세포 주기 재진입 이상 및 타우 활성이 세포 분열을 방해할 수 있는 상황에서 이러한 모델의 의미에 대해서도 논의합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. An autonomous agentic workflow for clinical detection of cognitive concerns using large language models.</h3>
+                        <div class="korean-title">→ 대규모 언어 모델을 활용한 인지 문제의 임상적 탐지를 위한 자율 에이전트 기반 워크플로우.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.1</span>
+                        <span class="badge journal-badge">NPJ digital medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jiazi Tian, Pedram Fard, Cameron Cagan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41501421/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인지 장애의 조기 발견은 기존 선별 도구와 자원 제약으로 인해 제한적입니다. (0.81) 및 우수한 개선 결과(0.93 대 0.93). 이러한 결과는 자율 에이전트 시스템이 해석 가능성을 유지하면서 전문가 수준의 성능에 근접할 수 있으며 확장 가능한 임상 의사 결정 지원을 제공할 수 있음을 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Restoration of progranulin by engineered hematopoietic stem cell-derived microglia corrects phenotypes of granulin knockout mice.</h3>
+                        <div class="korean-title">→ 유전자 조작된 조혈 줄기세포 유래 미세아교세포에 의한 프로그라눌린 복원은 그라눌린 결핍 생쥐의 표현형을 교정한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.6</span>
+                        <span class="badge journal-badge">Science translational medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yuri Ciervo, Pietro Rigoni, Linda Bucciarelli et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41499653/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>자가 조혈 줄기/전구 세포(HSC) 유전자 치료(GT)는 프로그라눌린(PGRN) 인코딩 유전자 돌연변이로 인한 PGRN 관련 신경퇴행성 질환에 대한 유망한 치료 옵션을 나타냅니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Ultrasound neuromodulation as a novel dementia therapy-Investigation of possible long-term confounds.</h3>
+                        <div class="korean-title">→ 초음파 신경조절을 이용한 치매 치료법의 새로운 적용 가능성 - 장기적인 영향 요인에 대한 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Michael Mitterwallner, Eva Matt, Robert Chen et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41503119/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초음파 신경조절은 알츠하이머병(AD)의 유망한 보조 치료법으로 떠오르고 있지만, 보고된 장기 치료 효과가 진정한 신경조절 기전보다는 잠재적인 교란 요인에 기인한 것인지에 대한 논란이 여전히 남아 있습니다. 공기 또는 골전도음을 통한 청각적 교란 요인이 즉각적인 효과에 미치는 영향은 논의되어 왔지만, 임상 적용에 필수적인 지속적인 치료 결과에 대한 그 관련성은 아직 밝혀지지 않았습니다. 본 연구에서는 기능적 자기공명영상(fMRI)을 이용하여 장기적인 경두개 펄스 자극 효과에 대한 잠재적인 청각적 교란 요인을 평가했습니다. 분석에는 과제 수행 fMRI, 휴식 상태 기능적 연결성, 청각 네트워크 효율성이 포함되었습니다. 장기적인 청각적 효과는 관찰되지 않았습니다. 따라서 청각적 교란 요인은 인지 네트워크 효과의 주요 요인이 아닐 가능성이 높습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Pregnancy and breastfeeding are associated with less later-life cognitive decline in a longitudinal, prospective cohort.</h3>
+                        <div class="korean-title">→ 임신과 모유 수유는 장기적인 전향적 코호트 연구에서 노년기 인지 기능 저하를 줄이는 것과 관련이 있는 것으로 나타났습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Molly M Fox, Jennifer E Bramen, Dayoon Kwon et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41499397/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>암컷 포유류의 뇌는 임신과 수유 기간 동안 구조적, 기능적 변화를 겪도록 진화하여 모성 역할을 수행할 수 있도록 준비되었습니다. 우리는 임신 횟수와 수유 여부를 이분법적으로 설정하여 분석했을 때 동일한 결과를 관찰했습니다. 이러한 결과는 출산율 감소가 미래 세대의 인지 노화에 영향을 미칠 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Preserved muscle function as a protective factor against cognitive decline: Longitudinal results from the FINGER study.</h3>
+                        <div class="korean-title">→ 근육 기능 보존은 인지 기능 저하에 대한 보호 요인으로 작용함: FINGER 연구의 종단적 결과.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Miguel German Borda, Jenni Lehtisalo, Kevin O' Hara-Veintimilla et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41499318/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>근육 기능은 건강한 노화에 필수적입니다. 기저 시점의 높은 의자 앉았다 일어서기 수행 능력, SPPB 점수 및 악력은 전반적인 인지 기능, 기억력 및 실행 기능에서 2년 후 더 긍정적인 변화 양상과 유의미하게 연관되었습니다(p < 0.05). 특히 기억력에서 이러한 연관성이 두드러졌습니다. 근육 건강을 위한 개입은 노화 과정에서 뇌 건강에 영향을 미칩니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Silent yet impaired: Hidden memory processing deficits in asymptomatic individuals with moderate-to-severe white matter hyperintensities.</h3>
+                        <div class="korean-title">→ 침묵 속에 숨겨진 기억 처리 장애: 중등도에서 중증의 백질 과밀도 병변이 있는 무증상 환자에게서 나타나는 숨겨진 기억 처리 결함.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Aonan Li, Lei Liu, Yueyan Bian et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41499281/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>백질 고강도 병변(WMH)은 인지 기능 저하 및 치매와 밀접한 관련이 있지만, 중등도에서 중증의 백질 고강도 병변(msWMH)을 가진 무증상 환자의 인지 기능, 특히 시각 단기 기억(VSTM) 기능이 실제로 온전한지는 아직 불분명합니다. msWMH 환자들은 얼굴 기억 처리 과정 전반(부호화, 유지, 인출)에서 체계적인 결함을 보였으며, 이는 세타파 파워 및 동기화 감소, 알파파 파워 변화, 세타-감마 결합 장애와 관련이 있었습니다. 세타파 활동은 구조-기능 결합을 매개하며, 전임상 연구에서 중재 목표로 활용될 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Association of genetic predisposition to dyslipidemia and physical activity with incident dementia.</h3>
+                        <div class="korean-title">→ 이상지질혈증에 대한 유전적 소인과 신체 활동이 치매 발생에 미치는 연관성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yumei Liang, Siqi Xie, Dandan Sheng et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41499262/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>이상지질혈증에 대한 유전적 소인과 치매 위험 사이의 연관성은 일관성이 없습니다. 신체 활동은 혈관성 치매 위험 감소와 가장 강력한 연관성을 보입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. An epidermal membrane-associated periodic skeleton restricts endocytosis to stabilize neuron-epidermal attachment and preserve axons.</h3>
+                        <div class="korean-title">→ 표피막과 관련된 주기적 골격은 세포내이입을 제한하여 신경세포와 표피 사이의 부착을 안정화하고 축삭을 보호합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sean Coakley, Igor Bonacossa-Pereira, Dat Le et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41499526/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>스펙트린은 축삭 내에서 기계적 탄력성을 제공하기 위해 막에 연관된 주기적인 구조를 형성하는 고도로 보존된 분자입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Early aperiodic EEG changes in preclinical and prodromal Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병의 전임상 및 전구기 단계에서 나타나는 초기 비주기적 뇌파 변화.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Tjaša Mlinarič, Laure Spruyt, Elvira Khachatryan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41501948/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Altered temporal dynamics of prefrontal ERP responses reflecting neural adaptation in patients with amnestic mild cognitive impairment.</h3>
+                        <div class="korean-title">→ 기억상실성 경도인지장애 환자의 신경 적응을 반영하는 전두엽 ERP 반응의 시간적 역동성 변화.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jang-Han Bae, Minho Choi, Kun Ho Lee et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41501935/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>평균 수명 증가에 따라 경도인지장애(MCI)를 포함한 연령 관련 인지 장애는 주요 공중 보건 문제로 대두되고 있으며, 특히 기억상실형 경도인지장애(aMCI)는 알츠하이머병(AD)으로 인한 치매 진행 위험이 가장 높습니다. 사건 관련 전위(ERP), 특히 P200 성분은 잠재적 바이오마커로 연구되어 왔지만, 기존의 전체 평균 접근 방식은 종종 일관성 없는 결과를 나타냅니다. 본 연구 결과는 기울기 기반 시간적 지표가 기억 관련 인지 변화의 비침습적 지표로서 탐색적 잠재력을 지니고 있으며, 신경심리학적 평가를 보완하고 AD 발병 위험이 높은 개인을 조기에 식별하는 데 기여할 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
