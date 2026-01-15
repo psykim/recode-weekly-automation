@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.01.15</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.01.15</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">12</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">12</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        <p>이번 주에는 해당하는 논문이 없습니다.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Plasma platelet-derived growth factor receptor-β decrease correlates with blood-brain barrier damage in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 혈장 내 혈소판 유래 성장 인자 수용체-β의 감소는 알츠하이머병에서 혈뇌 장벽 손상과 상관관계가 있다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.5</span>
+                        <span class="badge journal-badge">Molecular neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jieyin Li, Anqi Li, Chenghui Ye et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41530860/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Group Vs Individual Grief-Focused Cognitive Behavioral Therapy for Older Adults: A Randomized Clinical Trial.</h3>
+                        <div class="korean-title">→ 노년층을 위한 집단 vs. 개인 애도 중심 인지행동치료: 무작위 임상시험</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.1</span>
+                        <span class="badge journal-badge">JAMA psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Katrine Komischke, Paul A Boelen, Fiona Maccallum et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41533372/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>애도 중심 인지행동치료(GF-CBT)는 지속성 애도 장애(PGD) 치료에 효과적인 것으로 알려져 있지만, 다양한 치료 방식의 상대적 효과는 아직 밝혀지지 않았습니다. 의도분석(intention-to-treat) 표본을 대상으로 한 혼합 선형 모델 분석 결과, 두 가지 치료 방식 모두 시간이 지남에 따라 PGD 증상을 통계적으로 유의미하게 크게 감소시키는 것으로 나타났습니다(GF-CBT 그룹: d = 1.74; GF-CBT 개별치료: d = 1.46). 임상시험등록번호: NCT04694807. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Dual Targeting of Tau Kinases and Autophagy by Abemaciclib Independent of CDK4/6 Inhibition.</h3>
+                        <div class="korean-title">→ 아베마시클립은 CDK4/6 억제와는 무관하게 타우 키나아제와 자가포식을 동시에 표적화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jihui Han, June-Hyun Jeong, Dongjoon Lee et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41532696/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 주로 타우 병리에 의해 유발되는 진행성 인지 기능 저하를 특징으로 하지만, 타우를 표적으로 하는 질병 진행 억제 치료법은 여전히 제한적입니다. APP를 사용하여. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Effect of antipsychotic medication use and type on mortality and cardiovascular risks in nursing home patients with dementia.</h3>
+                        <div class="korean-title">→ 치매를 앓고 있는 요양원 환자의 사망률 및 심혈관 질환 위험에 대한 항정신병 약물 사용 및 종류의 영향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hamid R Okhravi, Fang Fang, Melissa P Hunter et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41536850/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>치매를 앓는 요양원 환자에게 항정신병 약물(APM)을 사용하는 것은 흔하지만 위험이 따릅니다. 본 연구는 요양원 치매 환자라는, 비교적 연구 대상이 적은 집단에서 APM 사용의 위험성을 밝히고자 합니다. 요양원 치매 환자의 APM 사용은 사망 위험 증가와 관련이 있으며, 1세대 APM은 2세대 APM보다 사망 위험이 더 높은 것으로 나타났습니다. 전반적으로 APM 사용은 뇌졸중 위험 증가와 연관되어 있지만, 심근경색 위험과 APM 사용 사이에는 유의미한 연관성이 발견되지 않았습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Characterizing Japanese older adults without dementia by amyloid PET status: A comparative study of amyloid-positive and amyloid-negative groups from Japanese trial-ready cohort study.</h3>
+                        <div class="korean-title">→ 일본 노인 중 치매가 없는 사람들의 아밀로이드 PET 검사 결과를 통한 특성 분석: 일본 임상시험 준비 코호트 연구에서 아밀로이드 양성군과 아밀로이드 음성군을 비교 연구함.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Saki Nakashima, Kenichiro Sato, Yoshiki Niimi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41536849/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 연구는 치매가 없는 일본 노인들을 대상으로 아밀로이드 상태에 따른 인구통계학적 및 인지적 차이를 규명하여, 동아시아 인구 집단에서 알츠하이머병(AD) 조기 발견을 위한 자료 부족 문제를 해결하고자 하였다. 치매가 없는 일본 노인들의 아밀로이드 상태에 따른 특성을 비교 분석한 결과, 양전자방출단층촬영(PET) 양성 소견은 인지기능검사(CFI) 음성 소견과 관련이 있었다. 경도인지장애(MCI) 환자에서 PET 양성 소견은 기능적, 인지적, 정서적 저하와 연관되었다. CFI 음성 소견을 보이는 참가자들을 분석함으로써, 다양한 집단에서 알츠하이머병 병리를 조기에 발견하는 데 도움이 될 수 있을 것이다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Structural brain differences associated with panic disorder: an ENIGMA-Anxiety Working Group mega-analysis of 4924 individuals worldwide.</h3>
+                        <div class="korean-title">→ 공황 장애와 관련된 뇌 구조적 차이: ENIGMA-불안 연구 그룹의 전 세계 4924명을 대상으로 한 대규모 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.5</span>
+                        <span class="badge journal-badge">Molecular psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Laura K M Han, Willem B Bruin, Janna Marie Bas-Hoogendam et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41530384/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>공황장애(PD)에 대한 신경해부학적 연구 결과는 일반적으로 재현하기 어렵고, 효과도 일관성이 없습니다. 진단은 연령별로 이루어집니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Multimodal Analysis of the Early Stage of Amyloid Formation via Graphene Liquid Cell Electron Microscopy.</h3>
+                        <div class="korean-title">→ 그래핀 액체 셀 전자 현미경을 이용한 아밀로이드 형성 초기 단계의 다중 모드 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.1</span>
+                        <span class="badge journal-badge">Small (Weinheim an der Bergstrasse, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jungjae Park, Namgyu Noh, Ji Su Park et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41532237/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>아밀로이드 응집의 초기 단계 역학을 규명하는 것은 신경퇴행성 질환의 병리학적 기전을 이해하는 데 매우 중요합니다. 본 연구는 거시적 관찰 기법의 한계를 극복함으로써 아밀로이드 핵형성의 기본 메커니즘에 대한 새로운 통찰력을 제공하고, 단백질 접힘 이상 질환에 대한 심층 연구의 길을 열어줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Dynamic functional network connectivity alterations in obesity.</h3>
+                        <div class="korean-title">→ 비만에서 나타나는 동적 기능 네트워크 연결성의 변화.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Diabetes, obesity & metabolism</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Zhaoyi Chen, Jinkun Wang, Zhijuan Li et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41532333/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>비만은 대사 및 신경 기능 장애를 모두 수반하지만, 뇌 연결성의 시간적 역동성은 아직 명확히 밝혀지지 않았습니다. 대조군과 비교했을 때, 비만 환자는 디폴트 모드 네트워크, 주의력 네트워크, 시각 네트워크 간의 연결성이 강화되었으며, 네트워크 유연성은 감소했습니다. 이는 체류 시간 연장 및 전환 횟수 감소로 나타났습니다. 이러한 동적 연결성 변화는 섭식 행동 및 대사 특성과 밀접하게 관련되어 있으며, 이는 동적 기능적 신경망(dFNC)이 비만에서 손상된 자기 조절을 이해하고 향후 중재 연구를 안내하는 데 유용한 신경 영상 프레임워크를 제공함을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Double cutoff strategies for plasma pTau217 to predict Tau PET positivity across multiple assay platforms: Tau-enriched and Tau-scarce cohorts for cost-effective clinical use.</h3>
+                        <div class="korean-title">→ 다양한 분석 플랫폼에서 타우 PET 양성 여부를 예측하기 위한 혈장 pTau217의 이중 차단 전략: 비용 효율적인 임상 사용을 위한 타우 농축 및 타우 부족 코호트.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Heekyoung Kang, Yuna Gu, Jungah Lee et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41535902/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 연구는 다양한 검사 플랫폼에서 혈장 pTau217에 대한 이중 차단 전략이 단일 차단 전략에 비해 타우 PET 양성 예측 정확도를 향상시키고 비용 효율적인 임상 활용을 뒷받침하는지 평가하는 것을 목표로 했습니다. 단일 차단 전략은 C2N 비율을 제외한 대부분의 검사에서 우수한 정확도(AUC > 0.80)를 보였습니다. 정확도 향상은 미미했지만, 오분류로 인한 비용을 줄이고 확진 PET 검사 활용을 안내하는 데 임상적 유용성이 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Letter to the Editor about mortality from Alzheimer's disease and other dementias and its heterogeneity across states in India: findings from GBD 2021 study.</h3>
+                        <div class="korean-title">→ 알츠하이머병 및 기타 치매로 인한 사망률과 인도 각 주별 사망률의 차이에 관한 독자 투고: GBD 2021 연구 결과.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">International journal of surgery (London, England)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hao Lu, Dianmei Yang, Yan Shi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41532468/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Preoperative blood-brain barrier disruption as a predictor of postoperative cognitive decline after CABG: a focus on brain reserve and long-term outcomes.</h3>
+                        <div class="korean-title">→ 관상동맥우회술 후 수술 후 인지 기능 저하 예측 인자로서 수술 전 혈뇌장벽 파괴: 뇌 기능 예비력 및 장기적 결과에 대한 고찰.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">International journal of surgery (London, England)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Zhang Liu, Weiqin Huang (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41532461/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Ergothioneine attenuates whole-abdominal irradiation-induced multi-organ injury via the gut-heart-brain axis by modulating calcium voltage-gated channel subunit alpha1 C (Cacna1c) expression.</h3>
+                        <div class="korean-title">→ 에르고티오네인은 칼슘 전압 개폐 채널 서브유닛 알파1C(Cacna1c) 발현을 조절함으로써 장-심장-뇌 축을 통해 복부 전체 방사선 조사로 유발되는 다발성 장기 손상을 완화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Molecular biomedicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xudong Ding, Jia Du, Zhaoyu Wang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41530565/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>방사선 치료의 정확한 표적화에도 불구하고, 인접한 정상 조직에 대한 부작용은 불가피합니다. 연구 결과는 방사선 조사가 장 손상뿐만 아니라 원격 효과를 통해 심장 손상 및 인지 기능 장애를 유발한다는 것을 확인했습니다. 본 연구는 EGT가 장내 미생물 조절 및 Cacna1c 조절을 통해 작용하는 새로운 다기관 방사선 보호제임을 밝혀냈으며, 이는 방사선 치료의 안전성과 효능을 향상시키는 데 유용한 전략을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
