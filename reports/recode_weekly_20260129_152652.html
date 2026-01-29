@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.01.29</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.01.29</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">12</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">3</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">9</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Intestinal macrophages modulate synucleinopathy along the gut-brain axis.</h3>
+                        <div class="korean-title">→ 장내 대식세포는 장-뇌 축을 따라 시누클레인병증을 조절합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sebastiaan De Schepper, Viktoras Konstantellos, James A Conway et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41606336/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>최근 연구 결과에 따르면 파킨슨병(PD)은 장신경계(ENS)에서 기원하여 알파-시누클레인(αS) 병리가 뇌로 확산될 수 있다는 가능성이 제기되고 있습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Strategies for blood-brain barrier rejuvenation and repair.</h3>
+                        <div class="korean-title">→ 혈뇌장벽 재생 및 복구를 위한 전략.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature reviews. Drug discovery</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Peter C Searson, William A Banks (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41606102/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈뇌장벽(BBB) 기능 장애는 알츠하이머병과 뇌졸중처럼 의료 부담을 크게 증가시키는 질환을 포함하여 많은 뇌 질환의 특징입니다. 그럼에도 불구하고 BBB의 재생 및 복구는 아직 주류 의학 개념으로 자리 잡지 못했습니다. BBB는 생애 동안 다양한 내인성 및 외인성 요인으로부터 교란과 스트레스를 받는데, 이러한 요인들은 뇌 건강을 증진시키기도 하고 뇌 질환을 유발하기도 합니다. BBB는 중추신경계 항상성 유지에 필수적인 여러 기능을 담당하므로 기능 장애의 기전 또한 다양하며, 따라서 치료 목표 또한 다양합니다. 더욱이, 많은 질병 및 질병 하위 유형에서 공통적인 기전이 나타나므로 BBB 복구를 위한 공통적인 전략을 개발할 가능성이 있습니다. 본 리뷰에서는 BBB를 치료 목표로 간주하고 특정 질병 상태 및 정상적인 노화 과정에서 BBB의 복구 및 보호에 대한 접근법을 논의합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. The Cognitive Foundations of Decline Narratives in Human Societies.</h3>
+                        <div class="korean-title">→ 인간 사회 쇠퇴 서사의 인지적 토대.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Human nature (Hawthorne, N.Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ze Hong (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41604105/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 논문에서는 인간 사회 전반에 만연한 쇠퇴 서사 현상을 고찰한다. 이러한 서사에서는 과거가 풍요, 힘, 장수, 초자연적 능력 등 비범한 황금시대로 이상화되고, 결함 있는 현재와 대비된다. 민족지학적, 역사적, 심리학적 증거를 바탕으로, 본 논문은 이러한 서사의 문화적 발현과 인지적 토대를 탐구한다. 분석 결과, 장밋빛 회고와 서사 과장과 같은 인지적 편향뿐 아니라, 환상적인 믿음을 검증 불가능한 먼 과거에 위치시킴으로써 합리화하는 전략적 시간 거리두기의 역할이 부각된다. 전통 사회의 쇠퇴 서사와 계몽주의 이후 근대 사회의 진보 서사를 비교함으로써, 이러한 서사적 틀이 전통과 변화에 대한 문화적 태도를 어떻게 형성하는지 살펴보고, 문화적 서사가 인간 행동에 미치는 영향을 이해하는 데 있어 더 넓은 함의를 고찰한다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Higher CSF sTREM2 is related to slower hippocampal atrophy and cognitive decline independently of pTau181 levels.</h3>
+                        <div class="korean-title">→ 뇌척수액 sTREM2 수치가 높을수록 pTau181 수치와는 무관하게 해마 위축 및 인지 기능 저하 속도가 느려지는 것과 관련이 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Henry Gilreath Stephenson, Tobey J Betthauser, Erin Jonaitis et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41605308/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>TREM2 의존성 미세아교세포 활성화 증가는 알츠하이머병(AD) 신경병리의 부정적인 영향으로부터 보호하는 것으로 여겨지지만, 전임상 질환 및 노화 맥락에서의 관련 데이터는 부족합니다. 본 연구 결과, sTREM2 수치가 높을수록 pTau181 수치와는 무관하게 해마 위축 및 인지 기능 저하 속도가 느려지는 것으로 나타났습니다. 이러한 결과는 sTREM2로 측정되는 TREM2 의존성 미세아교세포 활성화 증가가 AD뿐만 아니라 더 광범위한 노화 관련 신경퇴행에 대한 미묘한 회복력을 나타낼 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Microglial GPR35 Ameliorates Epileptogenesis and Neuroinflammation via PDGFA Domain 2 Signaling.</h3>
+                        <div class="korean-title">→ 미세아교세포 GPR35는 PDGFA 도메인 2 신호전달을 통해 간질 발생 및 신경염증을 완화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Qi Wang, Tingting Qu, Qibing Sun et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41604576/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>신경염증은 간질 발생 및 간질 환자의 인지 기능 장애의 주요 원인이지만, 이를 표적으로 하는 항염증 치료법은 아직 제한적입니다. 본 연구는 GPR35를 간질에서 염증과 과흥분성의 악순환을 차단할 수 있는 약물 표적으로 규명하여, 발작과 인지 기능 장애를 동시에 완화할 수 있는 이중 치료 전략을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. RIG-I Mediated Neuron-Specific IFN Type 1 Signaling in FUS-ALS Induces Neurodegeneration and Offers New Biomarker-Driven Individualized Treatment Options for (FUS-)ALS.</h3>
+                        <div class="korean-title">→ FUS-ALS에서 RIG-I 매개 뉴런 특이적 IFN 유형 1 신호 전달은 신경 퇴행을 유발하며 (FUS-)ALS에 대한 새로운 바이오마커 기반 맞춤형 치료 옵션을 제공합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Marcel Naumann, Theresa M Wierschin, Stefanie Kretschmer et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41603250/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>최근 연구에서는 ALS 모델에서 선천성 면역 체계의 활성화가 밝혀졌습니다. 이 경로는 만성 DNA 손상과 미토콘드리아 기능 장애로 인해 축적된 세포질 DNA를 cGAS-STING이 감지함으로써 활성화될 수 있으며, 이러한 병리적 특징은 FUS-ALS에서 확인되었습니다. 따라서 본 연구에서는 FUS-ALS에서 선천성 면역 경로를 분석한 결과, FUS에서 인터페론 자극 유전자(ISG)의 상향 조절과 TBK1-IRF3 경로의 활성화가 관찰되었습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Competition Between Liquid-Liquid Crystalline Phase Separation (LLCPS) and Liquid-Liquid Phase Separation (LLPS) in Amyloid Fibril Colloidal Systems.</h3>
+                        <div class="korean-title">→ 아밀로이드 섬유 콜로이드 시스템에서 액체-액체 결정상 분리(LLCPS)와 액체-액체 상 분리(LLPS) 간의 경쟁.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Milad Radiom, Raffaele Mezzenga (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41603224/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>아밀로이드 섬유는 기능성 생물학적 집합체와 병리학적 침전물에서 응축상을 형성하는 단단하고 길쭉한 단백질 응집체입니다. 콜로이드 물리학적 관점에서 이러한 응축상으로 이어지는 두 가지 분리 경로가 있습니다. 하나는 엔트로피와 엔탈피의 균형에 의해 발생하는 액체-액체 상분리(LLPS)이고, 다른 하나는 응축상이 정확한 대칭 규칙을 따르는 네마틱 액체인 본질적으로 엔트로피적인 과정인 액체-액정 상분리(LLCPS)입니다. LLCPS와 LLPS 사이의 경쟁은 생체 내 응축물에서 아밀로이드 섬유의 중간 규모 구조를 밝히고 다상 아밀로이드 기반 재료의 설계 원리를 제시할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. OSBPL6 protects against demyelination and behavioral disorder via promoting cholesterol transport in oligodendrocyte.</h3>
+                        <div class="korean-title">→ OSBPL6는 희소돌기세포에서 콜레스테롤 수송을 촉진함으로써 탈수초화 및 행동 장애를 예방합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.0</span>
+                        <span class="badge journal-badge">Journal of advanced research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Mengni Chang, Kaiqi Zhang, Ye Li et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41605285/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>탈수초화는 주요 우울 장애(MDD)를 포함한 신경정신 질환에서 행동 장애 및 인지 장애와 관련이 있습니다. 지질 대사 관련 신호 전달 경로의 단일 핵 RNA 시퀀싱 분석 결과, 우울증 마우스 모델의 해마 희소돌기세포에서 옥시스테롤 결합 단백질 유사 6(OSBPL6)의 수준이 유의하게 감소된 것으로 나타났습니다. 이러한 결과는 희소돌기세포에서 OSBPL6에 의해 매개되는 콜레스테롤 항상성이 만성 스트레스 유발 뇌 탈수초화 및 행동 장애를 동반한 우울증에 대한 수초 생성을 촉진할 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. 제목 없음</h3>
+                        <div class="korean-title">→ 제목 없음</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Anna K Maaser-Hecker, Jacob C Zellmer, Michelle Kim et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41604486/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD) 위험은 엔도솜 항상성을 조절하는 경로에 수렴하는 유전적 변이에 의해 크게 영향을 받습니다. 이러한 변이 중에는 . (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Association Between Longitudinal Rate of Change in CSF Biomarkers and Subsequent Tau PET Burden in Early Braak Stages.</h3>
+                        <div class="korean-title">→ 초기 Braak 단계에서 뇌척수액 생체지표의 종단적 변화율과 후속 타우 PET 부담 사이의 연관성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Nisha Rani, Abhay Moghekar, Daniel D Callow et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41604611/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)의 뇌척수액(CSF) 및 타우 PET 바이오마커의 변화는 임상 증상이 나타나기 수년 전에 발생합니다. 연구 결과, CSF p-타우 수치가 높을수록 AD 환자의 CSF 타우 및 p-타우 수치가 시간이 지남에 따라 증가하는 것으로 나타났습니다. 이러한 결과는 Braak 병기 I 및 II 하위 영역에서 타우 PET 부담이 CSF 타우 및 p-타우 수치의 시간 경과에 따른 증가와 관련이 있음을 보여주며, AD 진단 및 병기 분류를 위한 주요 바이오마커 간의 관계에 대한 중요한 통찰력을 제공합니다. 다만, 타우 PET는 단일 시점에서만 수집되었기 때문에 PET-CSF 관계의 시간적 변화에 대한 추론에는 한계가 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Diagnostic Performance of the α-Synuclein Seed Amplification Assay for Dementia With Lewy Bodies: A Comparison Across 4 Laboratories.</h3>
+                        <div class="korean-title">→ 루이체 치매 진단을 위한 α-시누클레인 시드 증폭 검사의 진단 성능: 4개 연구소 간 비교.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Rakesh Kumar, Stephanie Gravett, Vesna Jelic et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41604609/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알파-시누클레인(α-syn) 시드 증폭 검사(SAA)는 뇌척수액(CSF) 샘플을 이용한 루이체 치매(DLB) 진단에 유망한 결과를 보여왔습니다. CSF 샘플은 제5의 독립적인 연구소에서 제공받았으며, 해당 연구소는 통계 및 결과 분석 또한 수행했습니다. 본 연구는 4개의 서로 다른 연구소에서 시행한 CSF α-syn SAA 검사의 정확도가 DLB 환자와 건강한 대조군을 구분하는 데 있어 차이가 있음을 보여주는 3등급 근거를 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Disrupted brain angiogenesis and blood-brain barrier function underlie cognitive deficits in offspring of preeclampsia-like pregnancies.</h3>
+                        <div class="korean-title">→ 전자간증 유사 임신에서 태어난 아이의 인지 기능 장애는 뇌 혈관 신생 및 혈뇌 장벽 기능의 교란과 관련이 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.3</span>
+                        <span class="badge journal-badge">The Journal of physiology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Felipe Troncoso, Hermes Sandoval, Esthefanny Escudero-Guevara et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41605635/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>전자간증 임신에서 태어난 아이는 장기적인 신경혈관 및 인지 장애를 겪을 수 있지만, 그 기저 메커니즘은 아직 불분명합니다. 임신 중 전자간증과 유사한 환경에 노출되면 초기 뇌혈관 신생이 손상되고, 염증 및 세포 접합부 메커니즘을 통해 혈뇌장벽(BBB)의 완전성이 파괴되며, 지속적인 인지 기능 장애를 초래하여 장기적인 신경학적 위험과 관련된 성별 특이적 취약성이 나타납니다. 이러한 메커니즘을 이해하는 것은 생애 초기 뇌를 보호하고 전자간증 여성에게서 태어난 아이의 장기적인 신경학적 문제 위험을 줄이기 위한 전략을 개발하는 데 매우 중요합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
