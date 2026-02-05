@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.02.05</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.02.05</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">20</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">4</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">16</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Biofluid biomarkers in Alzheimer's disease and other neurodegenerative dementias.</h3>
+                        <div class="korean-title">→ 알츠하이머병 및 기타 신경퇴행성 치매에서의 생체액 바이오마커.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Henrik Zetterberg, Barbara B Bendlin (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639575/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>생체 유체 기반 바이오마커는 신경퇴행성 질환 연구 및 치료에 혁신을 가져왔으며, 알츠하이머병(AD) 및 기타 신경퇴행성 치매의 분자적 기전에 대한 통찰력을 제공합니다. 본 리뷰는 아밀로이드-β(Aβ) 병리, 타우 병리, 신경퇴행, 신경교세포 반응성, α-시누클레인 병리, TAR DNA 결합 단백질 43(TDP-43) 병리, 시냅스 병태생리 및 뇌혈관 질환 등 신경퇴행성 치매와 관련된 병리 및 과정에 대한 생체 유체 기반 바이오마커의 최근 개발 동향을 업데이트합니다. 오랫동안 사용되어 온 뇌척수액 검사를 보완하는 향상된 기술은 이제 혈액 내 매우 낮은 농도에서도 신경퇴행성 뇌 변화와 관련된 분자를 검출할 수 있도록 합니다. 이는 의료 현장에서 신경퇴행성 질환이 의심되는 환자의 임상 평가를 보완하는 분자 표현형 바이오마커를 활용하여 임상 증상과 뇌에서 진행되는 병태생리학적 과정을 연결하고, 분자 표적 치료의 시작 및 모니터링을 위해 환자를 전문 클리닉으로 의뢰하는 방식을 개선할 것으로 기대됩니다. 알츠하이머병에서 아밀로이드 베타(Aβ) 병리를 해결하기 위한 항Aβ 단클론 항체 사용과 같은 임상적으로 중요한 돌파구는 분자 정보를 기반으로 한 예방 및 치료 분야가 어떻게 발전하고 있는지 보여주는 중요한 개념 증명 사례입니다. 본 리뷰에서는 현재 사용되고 있는 가장 잘 알려진 생체액 기반 바이오마커들을 개괄적으로 살펴보고, 임상 환경에서의 해석 및 적용에 대한 실질적인 지침을 제공합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Immune cells from the gut drive development of Parkinson's disease in the brain.</h3>
+                        <div class="korean-title">→ 장내 면역 세포가 뇌에서 파킨슨병 발병을 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Veerle Baekelandt (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639552/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Parkinson's disease as a somato-cognitive action network disorder.</h3>
+                        <div class="korean-title">→ 파킨슨병은 신체-인지 작용 네트워크 장애이다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jianxun Ren, Wei Zhang, Louisa Dahmani et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639440/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>파킨슨병(PD)은 치료가 불가능한 신경 질환으로, 흔히 수면 장애와 신체 증상으로 서서히 시작되어 전신 운동 및 인지 증상으로 진행됩니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Lactate-driven mitochondrial pretenders hijack hippocampal function after excessive exercise.</h3>
+                        <div class="korean-title">→ 과도한 운동 후 젖산에 의해 유발되는 미토콘드리아 모방체가 해마 기능을 장악한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 30.9</span>
+                        <span class="badge journal-badge">Cell metabolism</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Filip J Larsen (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41638190/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Lipid alterations in hereditary peripheral neuropathies: common mechanisms in disease heterogeneity?</h3>
+                        <div class="korean-title">→ 유전성 말초신경병증에서의 지질 변화: 질병 이질성의 공통 기전은 무엇인가?</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.5</span>
+                        <span class="badge journal-badge">Molecular neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Koen Kuipers, Sam Vanherle, Kirsten Poelmans et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639668/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. A Ketogenic Diet for Treatment-Resistant Depression: A Randomized Clinical Trial.</h3>
+                        <div class="korean-title">→ 치료 저항성 우울증에 대한 케토제닉 식단: 무작위 임상 시험.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.1</span>
+                        <span class="badge journal-badge">JAMA psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Min Gao, Megan Kirk, Heather Knight et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41637092/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>전임상 연구 결과와 사례 보고에 따르면 케토제닉 다이어트(KD)가 우울증 치료에 잠재적인 치료 효과가 있을 수 있지만, 잘 통제된 무작위 임상 시험(RCT)을 통한 근거는 부족합니다. ClinicalTrials.gov 식별자: NCT06091163. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Psychological and Psychosocial Interventions for People With Schizophrenia and Co-Occurring Substance Use Disorders: A Systematic Review and Meta-Analysis.</h3>
+                        <div class="korean-title">→ 정신분열증과 약물 사용 장애가 동반된 사람들을 위한 심리적 및 사회심리적 개입: 체계적 문헌 고찰 및 메타분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.1</span>
+                        <span class="badge journal-badge">JAMA psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Nurul Husna Salahuddin, Emilia Herlitzius, Alexandra Schütz et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41637064/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>물질 사용 장애(SUD)는 조현병 환자에게서 흔히 나타나며, 약 41.7%라는 높은 동반 발생률을 보입니다. 이러한 높은 유병률에도 불구하고, 조현병과 SUD를 모두 가진 환자들은 임상 시험 및 체계적 문헌 검토에서 제외되는 경우가 많습니다. 특히 이 특수 집단은 치료가 어렵고 의료 시스템에 상당한 경제적 부담을 초래합니다. 본 체계적 문헌 검토 및 메타 분석 결과는 현재의 심리적 및 사회심리적 개입이 조현병과 SUD를 동반한 환자의 증상 완화에는 제한적인 효과만 보이며, 니코틴 사용을 제외하고는 물질 사용 감소에는 효과가 없음을 시사합니다. 이는 보다 효과적인 치료 전략 개발의 필요성을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Identification of an engram ensemble mediating memory forgetting in the dentate gyrus.</h3>
+                        <div class="korean-title">→ 치상회에서 기억 망각을 매개하는 엔그램 앙상블의 규명.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.0</span>
+                        <span class="badge journal-badge">Neuron</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Shiqiang Hu, Jianfan Yang, Siqi Yin et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41638201/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>세포 집합체 수준에서 기억 흔적이 어떻게 구성되어 학습된 정보의 부호화뿐만 아니라 기억의 유연성까지 지원하는지는 여전히 불분명합니다. 특히, 알츠하이머병 및 자폐증 쥐 모델에서 관찰되는 기억 이상은 주로 망각 관련 기능 장애와 연관되어 있으며, 이는 망각의 기저 메커니즘이 인지 장애 치료의 주요 목표임을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Aberrant Splicing Signatures Underpin Oligodendrocyte Damage in ALS and Neuron Loss in FTD.</h3>
+                        <div class="korean-title">→ 비정상적인 스플라이싱 패턴은 ALS에서 희소돌기세포 손상 및 FTD에서 신경세포 손실의 근본 원인이다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Chen Du, Yinming Li, Rong Wu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41637622/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>근위축성 측삭 경화증(ALS)과 전두엽 치매(FTD)는 TDP-43 병리를 포함하여 유사한 유전적, 병리학적, 임상적 특징을 공유하는 두 가지 심각한 질환입니다. 본 연구에서는 ALS/FTD 환자의 대규모 벌크 및 단일 핵 RNA 시퀀싱 데이터를 통합 분석하여 ALS에서 FTD보다 더 심각한 희소돌기세포 손상과 더 유의미한 신경세포 손실을 나타내는 발현 및 스플라이싱 변화를 밝혀냈습니다. 이러한 결과는 ALS와 FTD 환자에서 특정한 비정상적인 스플라이싱 특징을 지닌 서로 다른 기능 장애 세포 집단이 존재함을 시사하며, 이는 다양한 세포적 영향을 나타내고 ALS/FTD의 분자 메커니즘에 대한 잠재적 바이오마커 및 통찰력을 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Spatial heterogeneity in microglia-complement crosstalk: Implications for synaptic pruning in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 미세아교세포-보체 상호작용의 공간적 이질성: 알츠하이머병에서의 시냅스 가지치기에 대한 함의.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Qiuyan Ye, Wei Gao, Jiaping Feng et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41641469/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 시냅스 소실을 주요 병리학적 특징으로 하는 신경퇴행성 질환입니다. 이러한 시냅스 상호작용은 AD에서 상당한 공간적 이질성을 보이며, 활성화 패턴과 기능적 발현은 뇌 영역 및 질병 단계에 따라 다양하게 나타납니다. 또한, 서양 의학과 한의학의 현재 치료 전략을 논의하고, AD에서 시냅스 소실에 대한 개입에 있어 이러한 접근법들을 병합하는 것의 잠재적 가치를 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Interconnected pathways: Social determinants of health, infections, and Alzheimer's disease and related dementias.</h3>
+                        <div class="korean-title">→ 상호 연결된 경로: 건강의 사회적 결정 요인, 감염, 그리고 알츠하이머병 및 관련 치매.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Juehyun Shin, Lavinia Alberi, Graciela Muniz-Terrera (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41641365/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>건강의 사회적 결정요인(SDOH), 감염, 그리고 알츠하이머병 및 관련 치매(ADRD)는 복잡한 경로를 통해 서로 연결되어 있습니다. 본 연구에서는 매개, 교란, 그리고 중간 과정을 통한 간접 효과를 포함하여 이 세 가지 개념을 연결하는 다섯 가지 개념 모델을 제시합니다. 건강의 사회적 결정요인(SDOH), 감염, 그리고 알츠하이머병 및 관련 치매(ADRD)는 복잡하고 다방향적인 경로를 통해 상호작용합니다. 통합적인 SDOH-감염-ADRD 연구를 안내하기 위해 다섯 가지 개념 모델을 제안합니다. 감염 확인의 네 가지 접근 방식(자가 보고, 연계, 실험실, 오믹스)을 비교합니다. 감염 측정은 타당성, 시기, 비용, 그리고 접근의 형평성 측면에서 다양합니다. 데이터 소스를 통합하면 생애 주기 전반에 걸친 감염 측정의 정확도를 향상시킬 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Interchangeability of blood-based biomarkers and PET to identify Alzheimer's disease pathology.</h3>
+                        <div class="korean-title">→ 혈액 기반 바이오마커와 PET의 상호 교환 가능성을 통한 알츠하이머병 병리 식별.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jian Wang, Joel B Braunstein, Robin Wolz et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41641094/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈액 바이오마커와 아밀로이드 양전자 방출 단층촬영(PET) 간의 상호 교환 가능성을 확립하면 알츠하이머병에 대한 새로운 아밀로이드 표적 치료법의 혜택을 받을 수 있는 환자를 식별하는 데 도움이 될 수 있습니다. 글로벌 알츠하이머 플랫폼 재단(Global Alzheimer's Platform Foundation)의 바이오-헤르메스(Bio-Hermes) 연구에 참여한 성인 중 경도 인지 장애/경도 치매로 임상 진단을 받고 아밀로이드 PET 평가 및 Aβ42/40 기반 PrecivityAD 검사 결과를 보유한 환자를 대상으로 한 연구 결과는 혈액 바이오마커가 새로운 아밀로이드 표적 치료법의 혜택을 받을 수 있는 환자를 선별하는 데 있어 아밀로이드 PET 기준과 상호 교환 가능할 수 있다는 가설을 뒷받침합니다. 혈장 기반 검사와 아밀로이드 PET 분류의 상호 교환 가능성이 입증되었으며, 알츠하이머병 병리를 가진 환자를 식별하는 데 있어 혈장 기반 바이오마커가 아밀로이드 PET에 비해 비열등함을 확인했습니다. 또한 혈장 기반 검사 분류와 플로르베타피르-PET 전문가의 시각적 판독 결과 간에 높은 일치도를 보였습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Temporal dynamics of white matter hyperintensities related to Alzheimer's disease in adults with Down syndrome.</h3>
+                        <div class="korean-title">→ 다운증후군 성인의 알츠하이머병 관련 백질 고강도 병변의 시간적 변화 양상.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Alejandra O Morcillo-Nieto, Mateus Rozalem-Aranha, Lucia Maure-Blesa et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639041/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>다운증후군(DS) 환자에서 백질 고강도 병변(WMH)은 흔하게 나타나지만, 그 장기적인 변화 양상과 알츠하이머병(AD)과의 연관성은 아직 명확히 밝혀지지 않았습니다. 다운증후군 환자에서 연간 WMH 변화는 40세까지 비교적 안정적이었지만, 이후 변동을 보이며 집단 수준에서 유의미한 감소를 나타냈습니다. 이러한 예상치 못한 감소는 신경퇴행이나 신경염증을 포함한 다양한 기저 병리학적 과정을 반영하는 것일 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Generation and characterization of iPSC-derived microglia for in vitro modeling of stimuli-specific neuroimmune responses.</h3>
+                        <div class="korean-title">→ 자극 특이적 신경면역 반응의 시험관 내 모델링을 위한 iPSC 유래 미세아교세포의 생성 및 특성 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Angela K Haskell, Joshua A Kulas, William E Carter et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639038/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>미세아교세포는 대식세포와 유사한 뇌 상주 면역 세포로, 다수의 알츠하이머병 위험 유전자를 발현하는 것으로 알려져 있습니다. 본 연구에서는 인간 미세아교세포 유사 세포의 자극 및 약물에 대한 생물학적 반응, 특히 전사적 및 기능적 영향을 평가하기 위한 iMG 모델 시스템을 검증했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. APP-C31 pathology as a target in neurodegenerative diseases.</h3>
+                        <div class="korean-title">→ APP-C31 병리는 신경퇴행성 질환 치료의 표적이 될 수 있다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.1</span>
+                        <span class="badge journal-badge">Journal of biomedical science</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    King Chi Yip, Woon Fei Ho, Yang Liu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639863/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병, 파킨슨병, 헌팅턴병 등과 같은 신경퇴행성 질환은 신경세포의 점진적인 손실로 인해 발생하며, 전 세계적으로 많은 사람들에게 영향을 미칩니다. 따라서 APP-C31은 이러한 분자적 손상을 거시적인 기능 장애로 증폭시키는 핵심 매개체일 것으로 추정됩니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. The C3-C3aR axis drives rotenone-induced cognitive damage via synaptic engulfment, dark microglia and PANoptosis.</h3>
+                        <div class="korean-title">→ C3-C3aR 축은 시냅스 포식, 암흑 미세아교세포 및 PANoptosis를 통해 로테논 유발 인지 손상을 유도합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Redox biology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jianing Liu, Liyan Hou, Yu Ma et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41637879/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>파킨슨병(PD)의 흔한 비운동 증상인 인지 장애는 환자의 삶의 질을 저하시키는 주요 요인이지만, 그 병태생리는 아직 불분명합니다. 로테논 노출은 성상세포 C3의 현저한 상향 조절을 유발했으며, C3 결핍은 신경퇴행 및 α-시누클레인 Ser129 인산화를 유의하게 개선하고 인지 기능을 크게 향상시켰습니다. 종합적으로, 본 연구 결과는 C3-C3aR 축이 신경염증, 비정상적인 시냅스 가지치기, 암흑 미세아교세포, 혈뇌장벽 손상 및 신경세포의 PANoptosis를 파킨슨병의 인지 저하와 연결하는 중요한 매개체임을 밝혀냈으며, 이는 파킨슨병 관련 인지 장애를 치료하기 위한 새로운 기전적 통찰력과 잠재적인 치료 표적을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Understanding Neurodegenerative Diseases From the -Omics Perspective: Lessons Learnt.</h3>
+                        <div class="korean-title">→ 오믹스 관점에서 신경퇴행성 질환 이해하기: 얻은 교훈.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.3</span>
+                        <span class="badge journal-badge">Annals of neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Laura Ibanez, Cyril Pottier, Aleksandra Beric et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41636082/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인구 고령화가 진행됨에 따라 특정 신경퇴행성 질환(ND)이 주요 건강 문제로 대두되고 있습니다. 신경퇴행성 질환은 다양한 생물학적 과정을 연결하는 분자 및 단백질 네트워크에 다면발현적 변화를 일으키는 여러 요인의 결과이며, 이는 단백질 조절 장애 및 응집을 유발하여 궁극적으로 신경퇴행으로 이어집니다. (ANN NEUROL 2026) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Neurodevelopmental origins of age-related neurodegenerative diseases.</h3>
+                        <div class="korean-title">→ 연령 관련 신경퇴행성 질환의 신경발달적 기원.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.8</span>
+                        <span class="badge journal-badge">EBioMedicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kim Hei-Man Chow, Ted Abel (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41637937/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병 관련 치매(ADRD)는 인지 기능 저하와 중복되는 병리학적 특징을 보이는 진행성 신경퇴행성 질환입니다. ADRD를 발병 시기가 지연된 신경발달 질환으로 재해석하면 그 병인에 대한 새로운 통찰력을 얻을 수 있으며, 혁신적인 치료 및 예방 접근법을 위한 길을 열어줄 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">15. Sex and APOE ε4 genotype modify risk factor associations with cerebral amyloid angiopathy: a multi-cohort autopsy study.</h3>
+                        <div class="korean-title">→ 성별과 APOE ε4 유전자형은 뇌 아밀로이드 혈관병증의 위험 인자 연관성에 영향을 미칩니다: 다중 코호트 부검 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Liwei Ma, Yihan Wang, Benjamin Goudey et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639906/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">16. Astrocytic CCL5 orchestrates CCR5-positive neuronal necroptosis in subarachnoid hemorrhage.</h3>
+                        <div class="korean-title">→ 성상세포의 CCL5는 지주막하 출혈에서 CCR5 양성 신경세포의 괴사를 조절합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Journal of neuroinflammation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ping Chen, Yu-He Jiang, Si-Qi Xue et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41639749/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>지주막하 출혈(SAH) 후 발생하는 조기 뇌 손상(EBI)은 예후 불량의 주요 요인이지만, 그 분자적 기전은 아직 완전히 밝혀지지 않았습니다. 본 연구에서는 SAH 후, 특히 해마 뉴런에서 CCR5의 발현이 유의미하게 증가하는 것을 확인했습니다. 이러한 결과는 CCL5/CCR5 축이 SAH 환자의 뇌 손상 및 인지 기능 장애를 완화하기 위한 잠재적인 치료 표적이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
