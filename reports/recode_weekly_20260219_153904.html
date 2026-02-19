@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.02.19</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.02.19</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">11</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">11</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        <p>이번 주에는 해당하는 논문이 없습니다.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Subcellular localization as a driver of protein function.</h3>
+                        <div class="korean-title">→ 세포 내 위치는 단백질 기능의 주요 동인이다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 19.1</span>
+                        <span class="badge journal-badge">Nature reviews. Molecular cell biology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Alina Sigaeva, Charlotte Hutchings, Anthony Cesnik et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41709002/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>생물학적 기능은 세포 내 단백질의 시공간적 분포에 따라 달라집니다. 이러한 과제를 해결함으로써 우리는 다양한 생물학적 규모와 맥락에서 단백질 위치와 기능의 역동적인 특성을 연결할 수 있으며, 이는 기초 세포 생물학 및 임상 응용 분야에 큰 영향을 미칠 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Neuropathologic basis of quantitative susceptibility mapping in the substantia nigra: contributions of tau, pigmented neurons, and iron.</h3>
+                        <div class="korean-title">→ 흑질에서의 정량적 자기 감수성 지도 작성의 신경병리학적 기초: 타우, 색소성 신경 세포 및 철의 기여.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 18.2</span>
+                        <span class="badge journal-badge">Acta neuropathologica</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Daisuke Ono, Sravya Kondrakunta, Elijah Mak et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41708563/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>MRI를 이용한 정량적 자기 감수성 매핑(QSM)은 조직의 자기 감수성을 정량화하는데, 이는 철 축적, 미엘린 손실 및 신경 염증과 함께 증가합니다. 매개 분석 결과, 타우 단백질은 흑질 내측핵(VM)의 QSM에 직접적인 영향(0.45, P=0.018)과 철을 매개로 한 간접적인 영향(0.12, P=0.046)을 모두 미치는 것으로 나타났으며, 이 중 80%는 직접적인 영향이었습니다. 이러한 결과는 타우 병리, 색소 신경 세포 밀도 및 철 침착이 흑질의 자기 감수성에 미치는 영향을 강조하고, QSM이 다양한 신경병증에 대한 민감한 바이오마커로 활용될 가능성을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Structural defects in amyloid-β fibrils drive secondary nucleation.</h3>
+                        <div class="korean-title">→ 아밀로이드-β 섬유의 구조적 결함은 이차 핵 생성을 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jing Hu, Tom Scheidt, Dev Thacker et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41708600/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>기존 아밀로이드 섬유 표면에서 단량체 단백질로부터 새로운 아밀로이드 섬유 및 올리고머가 형성되는 것은 알츠하이머병 및 파킨슨병과 같은 여러 질환의 중요한 원인입니다. 본 연구에서는 이차 핵 생성 부위가 드문 성장 결함, 즉 섬유 형성 과정에서 발생하는 섬유 핵 구조의 불규칙성에서 주로 발견되는지 여부를 조사했습니다. 이러한 발견은 이차 핵 생성 부위를 억제하여 아밀로이드 질환의 진행을 막는 것을 목표로 하는 구조 기반 치료제 설계에 중요한 단서를 제공할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Age-related macular degeneration and cerebral amyloid angiopathy have similar pathologies from cholesterol-APOE-amyloid-β-complement mediated inflammation.</h3>
+                        <div class="korean-title">→ 연령 관련 황반변성과 뇌 아밀로이드 혈관병증은 콜레스테롤-APOE-아밀로이드-β-보체 매개 염증으로 인한 유사한 병리를 가지고 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.7</span>
+                        <span class="badge journal-badge">Progress in retinal and eye research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Whitney Stuard Sambhariya, Catherine Bowes Rickman, Patricia A D'Amore et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41708012/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>황반변성(AMD)과 알츠하이머병(AD)은 전 세계 수백만 명의 노인에게 영향을 미치는 신경퇴행성 질환입니다. AMD와 AD 사이의 병태생리학적 연관성에 대한 상당한 연구가 진행되었지만, AMD와 CAA의 병태생물학적 유사점과 차이점에 대해서는 충분히 고찰되지 않았습니다. 본 논의는 이 두 질환의 병태생물학에 대한 새로운 관점과 통찰력을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Multilevel prediction of Alzheimer's disease dementia in the United States: An artificial intelligence analysis.</h3>
+                        <div class="korean-title">→ 미국 내 알츠하이머병 치매의 다단계 예측: 인공지능 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Nicolaas P Pronk, Shuaijie Wang, Colin Woodard et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41710069/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)을 예측하는 변수는 개인 수준의 위험 요인에만 국한되지 않습니다. 최종 모델은 20개의 특징을 유지했으며 75%를 설명했습니다. 이 연구는 상위 요인이 AD 유병률의 중요한 예측 변수이며 인종 및 민족 소수자 지위가 가장 중요한 요인임을 확인했습니다. 정책적 관점에서 AD 유병률을 줄이기 위한 노력은 인종 및 민족적 불평등 해소를 고려해야 합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Redox therapy for neuropsychiatric disorders: Molecular mechanisms and biomarker development.</h3>
+                        <div class="korean-title">→ 신경정신 질환에 대한 산화환원 요법: 분자 메커니즘 및 바이오마커 개발.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kyle W Cuklanz, Abigail Stein, Virginie-Anne Chouinard et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41706891/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. How Are Synaptic Vesicle Exocytosis and Endocytosis Affected in Parkinson Disease?</h3>
+                        <div class="korean-title">→ 파킨슨병에서 시냅스 소포의 세포외 배출과 세포내 유입은 어떻게 영향을 받는가?</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Eduardo Benarroch (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41707185/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>시냅스 소포의 세포외 배출과 세포내 유입은 여러 단백질과 단백질-지질 상호작용의 조화롭고 시의적절한 작용을 포함하는 두 가지 기본적인 과정입니다. 가족성 파킨슨병에 대한 연구는 류신 반복 풍부 키나제 2와 같은 다른 중요한 단백질의 기능 이상 또한 정상적인 시냅스 소포 수송을 저해하고 시냅스 기능 장애 및 이차적인 신경퇴행에 기여한다는 것을 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Systemic inflammation, delirium and clinical progression in mild-moderate Alzheimer disease.</h3>
+                        <div class="korean-title">→ 경증-중등도 알츠하이머병에서의 전신 염증, 섬망 및 임상 진행.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.8</span>
+                        <span class="badge journal-badge">EBioMedicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Adam H Dyer, Helena Dolphin, Laura Morrison et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41708398/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>경미한 전신 염증과 급성 염증 사건 모두 알츠하이머병(AD)의 진행에 기여할 수 있습니다. 그러나 AD에서 전신 염증 바이오마커의 예후적 유용성과 전신 염증 사건이 AD의 임상 경과에 미치는 영향에 대한 연구 결과는 서로 상반됩니다. 본 연구는 유럽 위원회(FP7 보조금; 279093), 미스 재단(MFRG 121/2021), 웰컴 트러스트(227946/Z/23/Z 및 203930/B/16/Z), 영국 보건 연구 위원회(203930/B/16/Z; ECSA-2024-003)의 지원을 받았습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Genetic validation of ABI3 p.Ser209Phe variant and its effects on early brain pathology in asymptomatic elderly individuals.</h3>
+                        <div class="korean-title">→ ABI3 p.Ser209Phe 변이의 유전적 검증 및 무증상 노인의 초기 뇌 병리에 미치는 영향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Mikko Koivumäki, Henna Martiskainen, Mari Takalo et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41709289/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 유전적 요소가 강하며, APOE ε4는 베타-아밀로이드(Aβ) 대사 및 미세아교세포 기능에 영향을 미쳐 가장 잘 알려진 위험 인자입니다. 최근 유전 연구에서는 ABI3와 같은 미세아교세포 유전자도 관련되어 있음이 밝혀졌습니다. 본 연구에서는 8,490개의 ABI3 유전자를 포함하는 FinnGen R12 데이터(50만 명 이상)를 사용했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Inflammatory stimulus enhances synaptic material uptake by adult APP microglia in a microfluidic neuron-microglia co-culture model.</h3>
+                        <div class="korean-title">→ 염증 자극은 미세유체 뉴런-미세아교세포 공동 배양 모델에서 성체 APP 미세아교세포의 시냅스 물질 흡수를 증가시킨다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Journal of neuroinflammation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Dolores Siedlecki-Wullich, Anne-Marie Ayral, Lukas Iohan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41709227/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Potential benefits and concerns of surgical treatment for severe Alzheimer's disease: a decade of experience.</h3>
+                        <div class="korean-title">→ 중증 알츠하이머병에 대한 외과적 치료의 잠재적 이점과 우려 사항: 10년간의 경험.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">International journal of surgery (London, England)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Junpeng Xu, Yanyang Zhang, Zhiqi Mao (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41706630/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
