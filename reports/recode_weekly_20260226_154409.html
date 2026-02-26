@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.02.26</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.02.26</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">7</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">7</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        <p>이번 주에는 해당하는 논문이 없습니다.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Bilingualism was not associated with a cognitive advantage among older Mexican adults.</h3>
+                        <div class="korean-title">→ 멕시코 노년층에서 이중언어 사용은 인지적 이점과 관련이 없는 것으로 나타났습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & Dementia : Diagnosis, Assessment & Disease Monitoring</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Lily Kamalyan, Kayle Karcher, Sarah Petrosyan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41740080/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 연구에서는 멕시코의 도시 또는 농촌 지역에 거주하는 노년층을 대상으로 이중언어 사용이 인지 능력에 이점을 제공하는지 조사했습니다. 연구 결과, 멕시코의 이중언어 사용 성인에게서 인지 능력상의 이점은 나타나지 않았습니다. 따라서 원주민 노년층의 이중언어 사용과 관련된 사회적 요인에 대한 심층적인 연구가 더욱 필요합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Initial real‐world experience with lecanemab prescribing patterns in Japan: The Longevity Improvement & Fair Evidence (LIFE) Study.</h3>
+                        <div class="korean-title">→ 일본에서의 레카네맙 처방 패턴에 대한 초기 실제 경험: 수명 개선 및 공정한 증거(LIFE) 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & Dementia : Diagnosis, Assessment & Disease Monitoring</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kengo Kawaguchi, Megumi Maeda, Futoshi Oda et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41739966/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>항아밀로이드 베타 항체인 레카네맙은 40개국 이상에서 승인되었습니다. 레카네맙은 주로 장기요양시설이 없고 경미한 장애가 있는 환자들에게 처방되었습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Web‐based LAS‐FNAME and blood biomarkers in autosomal dominant Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 상염색체 우성 알츠하이머병에서 웹 기반 LAS-FNAME 및 혈액 바이오마커.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & Dementia : Diagnosis, Assessment & Disease Monitoring</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Christopher Gonzalez Corona, Paula Ospina Lopera, Meredith C. Rowe et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41739893/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 연구는 연관 기억 검사인 웹 기반 라틴 아메리카 스페인어 얼굴-이름 연관 기억 검사(LAS-FNAME)의 수행 능력이 상염색체 우성 알츠하이머병(ADAD)의 혈장 바이오마커와 연관이 있는지 조사했습니다. 웹 기반 라틴 아메리카 스페인어 얼굴-이름 연관 기억 검사(LAS-FNAME)는 프레세닐린 1(presenilin 1)의 기억력 저하를 감지합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Neuropsychiatric symptoms relate to everyday functioning as reported by cognitively unimpaired older adults and their study partners.</h3>
+                        <div class="korean-title">→ 신경정신과적 증상은 인지 기능이 손상되지 않은 노인과 그들의 연구 파트너가 보고한 일상 기능과 관련이 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & Dementia : Diagnosis, Assessment & Disease Monitoring</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Grace J. Ma, Mark A. Dubbelman, Catherine E. Munro et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41739836/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병 초기에는 신경정신학적 증상과 일상생활 기능의 변화가 나타나지만, 이러한 징후들 간의 연관성은 거의 고려되지 않습니다. 본 연구에서는 환자 본인이 보고한 지표와 연구 참여자가 보고한 지표 모두에서 연관성이 관찰되었습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. What can we do to enhance cognitive care in Parkinson's disease?</h3>
+                        <div class="korean-title">→ 파킨슨병 환자의 인지 기능 관리를 향상시키기 위해 우리는 무엇을 할 수 있을까요?</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & Dementia : Diagnosis, Assessment & Disease Monitoring</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Dana Pourzinal, Deborah Brooks, John D. O'Sullivan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41739591/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>파킨슨병(PD) 환자들에게 인지 장애는 중요한 문제입니다. 오랫동안 지속되어 온 회의적인 태도에서 벗어나 인지 관리의 중요성을 강조하는 변화가 일어나고 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Correction to “Polypharmacy and risk of dementia progression in older adults with mild cognitive impairment: A longitudinal cohort study”.</h3>
+                        <div class="korean-title">→ "경도 인지 장애가 있는 노인의 다중 약물 복용과 치매 진행 위험: 종단 코호트 연구" 논문에 대한 정정 사항입니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & Dementia : Translational Research & Clinical Interventions</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                     (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41739386/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Bioenergetic data from a creatine monohydrate pilot trial in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병 환자를 대상으로 한 크레아틴 모노하이드레이트 시범 임상시험에서 얻은 생체 에너지 데이터.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & Dementia : Translational Research & Clinical Interventions</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Matthew K Taylor, Aaron N Smith, In‐Young Choi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41739373/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>크레아틴 일수화물(CrM)은 ATP 완충 작용을 지원하고 미토콘드리아 기능을 조절함으로써 알츠하이머병(AD)에서 나타나는 생체 에너지 기능 장애를 완화할 수 있습니다. 그러나 본 예비 연구는 대조군 부재, 적은 표본 크기, 그리고 비교적 짧은 연구 기간으로 인해 결과 해석에 한계가 있습니다. 알츠하이머병에서 크레아틴 일수화물이 뇌 에너지 대사에 미치는 영향에 대한 추가 연구가 필요합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
