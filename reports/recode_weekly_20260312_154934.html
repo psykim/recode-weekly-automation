@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.03.12</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.03.12</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">17</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">3</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Intestinal interoceptive dysfunction drives age-associated cognitive decline.</h3>
+                        <div class="korean-title">→ 장내 감각 기능 장애는 노화와 관련된 인지 기능 저하를 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Timothy O Cox, Ashwarya S Devason, Alan de Araujo et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41813891/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>노화는 기억 기능의 저하를 동반하며, 그 양상은 인구 집단 내에서 매우 이질적으로 나타납니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Blood phosphorylated tau elevation as a biomarker in immunoglobulin light chain and transthyretin amyloidosis.</h3>
+                        <div class="korean-title">→ 혈중 인산화 타우 수치 상승은 면역글로불린 경쇄 및 트랜스티레틴 아밀로이드증의 생체지표로 작용한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 58.7</span>
+                        <span class="badge journal-badge">Nature medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Stephan A Kaeser, Stephanie A Schultz, Anna Hofmann et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41814005/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈중 인산화 타우(p-tau) 수치 증가는 알츠하이머병의 진단 지표이며, 대뇌 신경망에 아밀로이드-β가 침착되는 것과 관련이 있습니다. 또한, p-tau 수치 증가는 덴마크 아밀로이드 및 프리온 단백질 아밀로이드의 뇌 침착과도 연관되어 있습니다. 본 연구에서는 가장 흔한 유형의 전신성 아밀로이드증인 트랜스티레틴(ATTR) 아밀로이드증과 면역글로불린 경쇄(AL) 아밀로이드증 환자 네 집단의 혈청에서 p-tau를 분석했습니다. 그 결과, AL 및 ATTR 그룹에서 대조군보다 혈청 p-tau181 수치가 높게 나타났습니다. 추가 분석에서는 이러한 효과가 다발성 신경병증(PNP)이 있는 경우와 ATTR 아밀로이드증보다 AL 아밀로이드증에서 더 두드러지게 나타났습니다. 아밀로이드증과 관련이 없는 다른 형태의 PNP 환자에서는 p-tau181 수치 증가가 관찰되지 않았습니다. 무증상(유전적) ATTR의 경우, p-tau181 수치는 증상 발현 예상 연수에 따라 증가했습니다. 한 코호트에서 추가로 측정한 p-tau217 수치도 유사한 증가를 보였으며, p-tau181과 마찬가지로 AL 환자와 ATTR 환자를 대조군과 잘 구분했습니다. 이러한 결과는 혈청 p-tau 수치 상승이 알츠하이머병에만 특이적인 것이 아니며, ATTR 및 AL 아밀로이드증 진단 도구로도 활용될 수 있고, 아밀로이드증 관련 말초신경병증(PNP)을 다른 원인의 PNP와 구별하는 데 유용할 수 있음을 시사합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Factors Affecting Volume Load Management in Patients With Heart Failure: A Path Analysis Using a Multimediation Model.</h3>
+                        <div class="korean-title">→ 심부전 환자의 체액량 관리에 영향을 미치는 요인: 멀티미디어 모델을 이용한 경로 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 38.6</span>
+                        <span class="badge journal-badge">Heart, lung & circulation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Qiuping Wu, Haoyu Pei, Limin Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41813559/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>심부전(HF) 환자의 예후 개선을 위해서는 체액 과다의 효과적인 관리가 필수적이며, 심부전은 종종 악화와 재입원을 동반하는 합병증을 유발합니다. 심리사회적 및 행동적 요인은 체액 상태에 상당한 영향을 미치지만, 이러한 요인과 심부전 환자의 체액 과다를 직접적으로 연관시킨 연구는 아직 부족합니다. 본 연구는 심부전 환자의 체액 과다에 대한 사회적 지지, 인지, 자기효능감, 미래 결과에 대한 고려, 자가 관리의 직간접적 영향을 모델링하여 체액 관리 중재에 대한 지침을 제공하는 것을 목표로 했습니다. 본 연구는 2023년 1월부터 7월까지 중국 충칭의 한 3차 병원에 연속적으로 입원한 심부전 환자 233명을 대상으로 한 횡단 연구입니다. 생체 전기 임피던스 분석으로 체액량 상태를 측정하였고, 루벤 사회 네트워크 척도, 미니 인지 검사, 일반 자기효능감 척도, 미래 결과 고려 척도, 심부전 자가 관리 지수 6.2 버전 행동 척도 등 검증된 척도를 사용하여 심리사회적 및 행동적 변수를 평가하였다. 데이터 분석은 IBM SPSS Statistics 26.0 버전과 AMOS 24.0을 사용하였다. 환자(평균 연령=66.49±12.49세, 여성 43.35%, 뉴욕 심장 협회 3단계 61.8%) 중 71%가 체액 과부하를 경험하였다. 경로 분석 결과, 체액 과부하(부종 지수)는 자가 관리 유지(β=-0.263, p<0.001), 인지(β=-0.202, p<0.001), 자기효능감(β=-0.199, p<0.01)과 직접적이고 음의 상관관계를 보였다. 사회적 지지(β=-0.203; p<0.001), 자가 관리 자신감(β=-0.090; p<0.001), 그리고 미래 결과에 대한 고려(β=-0.057; p<0.001)에서 간접적인 부정적 영향이 관찰되었습니다. 사회적 지지, 인지 기능, 자기 효능감, 미래에 대한 고려, 그리고 자가 관리와 같은 요인들은 심부전 환자의 체액 과부하에 대한 취약성에 중요한 영향을 미칩니다. 이는 심부전 환자의 예후 개선을 위한 다각적인 중재의 필요성을 강조합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Perilesional neuromodulation replaces lost sensorimotor function in persons with spinal cord injury.</h3>
+                        <div class="korean-title">→ 척수 손상 환자의 경우, 병변 주변 신경 조절술을 통해 손실된 감각 운동 기능을 대체할 수 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.6</span>
+                        <span class="badge journal-badge">Nature biomedical engineering</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jonathan S Calvert, Samuel R Parker, Lakshmi N Govindarajan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41813803/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>척수 손상(SCI)은 감각, 운동 및 자율 신경 기능의 영구적인 장애를 초래합니다. 본 연구에서는 운동 기능이 완전히 상실된 만성 척수 손상 환자 3명을 대상으로 병변 주변 전기 자극(EES)을 통해 하지 운동 활성화와 체성 감각 피드백을 동시에 구현한 최초의 인체 적용 결과를 제시합니다. 궁극적으로, 본 연구는 척수 손상 환자의 삶의 질을 향상시킬 수 있는 감각 운동 기능 조절을 위한 병변 주변 EES 프레임워크를 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Rapid and sensitive detection of cancer-derived small extracellular vesicles using Janus particles.</h3>
+                        <div class="korean-title">→ 야누스 입자를 이용한 암 유래 소형 세포외 소포의 신속하고 민감한 검출.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.6</span>
+                        <span class="badge journal-badge">Nature biomedical engineering</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sonu Kumar, John Alex Sinclair, Tiger Shi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41813802/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>작은 세포외 소포를 검출하는 것은 질병 생물학을 이해하고 진단 도구를 개발하는 데 매우 중요하지만, 기존 방법은 분리 과정이 길고 단백질 간섭으로 인해 민감도가 떨어집니다. 소포가 결합할 때, 소포의 크기는 깜빡임 빈도를 크게 변화시키는 반면, 작은 단백질은 신호를 생성하지 않아 선택성을 보장합니다. 24시간이 소요되는 초원심분리와 표면 플라즈몬 공명법을 결합한 기존 방법과 비교했을 때, 본 연구에서 제시하는 방법은 민감도와 동적 범위가 2배 이상 향상되어 임상 및 연구 분야에 빠르고 안정적인 플랫폼을 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Microglia protein profiles in CSF across Alzheimer's disease clinical stages.</h3>
+                        <div class="korean-title">→ 알츠하이머병의 임상 단계별 뇌척수액 내 미세아교세포 단백질 프로필.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 19.4</span>
+                        <span class="badge journal-badge">Nature aging</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Elena-Raluca Blujdea, Pieter van Bokhoven, Pamela V Martino-Adami et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41814022/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>미세아교세포는 알츠하이머병(AD) 병리의 초기 단계부터 진행에 관여하는 것으로 알려져 있으며, 이는 임상적 AD 단계별 뇌척수액(CSF) 미세아교세포 프로파일링이 치료법 개발 및 모니터링에 도움이 될 수 있음을 시사합니다. 본 연구 결과는 AD 병기 분류를 위한 미세아교세포 기반 바이오마커 연구의 잠재력을 강조하며, 임상적 AD 단계별 미세아교세포 역동성과 전사체 특징이 단백질체 프로파일로 어떻게 변환되는지에 대한 통찰력을 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. The emergence of neuropsychiatric symptoms in preclinical Alzheimer's disease: An emotion regulation perspective.</h3>
+                        <div class="korean-title">→ 전임상 알츠하이머병에서 나타나는 신경정신 증상: 감정 조절 관점.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.0</span>
+                        <span class="badge journal-badge">Neuron</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Adam Turnbull, James J Gross, Feng Vankee-Lin (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41812658/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>전임상 알츠하이머병(AD)은 치매로의 진행을 가속화할 수 있는 고통스러운 신경정신 증상(NPS)과 관련이 있습니다. 본 논문에서는 NPS를 개선하고 잠재적으로 치매 진행 속도를 늦추기 위한 중재의 의미에 대해 논의합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Oncology drug repurposing as a blueprint for Alzheimer's therapy.</h3>
+                        <div class="korean-title">→ 항암제 용도 변경을 알츠하이머 치료의 청사진으로 활용하기.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Viswanath Das, Marián Hajdúch (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41816361/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 개인적, 사회적, 경제적으로 상당한 부담을 초래하지만, 현재의 치료법은 임상적 진행 속도를 다소 늦추는 데 그칩니다. 본 연구에서는... (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Sex differences in blood pressure hemodynamics and white matter hyperintensity volume across racial ethnic groups-HABS-HD.</h3>
+                        <div class="korean-title">→ 인종 및 민족 집단별 혈압, 혈역학 및 백질 고강도 병변 부피의 성별 차이 - HABS-HD.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Cellas A Hayes, Anthony Q Briggs, Joshua L Gills (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41816360/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>수축기 혈압(SBP), 이완기 혈압(DBP), 맥압(PP), 평균 동맥압(MAP) 등 특정 혈압 구성 요소가 인종 및 민족 집단 내에서 성별에 따라 백질 과밀도 병변(WMH) 부담과 유사한 연관성을 보이는지는 아직 불분명합니다. 비히스패닉 백인(NHW) 여성은 NHW 남성보다 수축기 혈압(SBP) 및 맥압(PP)과 백질 과밀도 병변(WMH) 간의 연관성이 더 강하게 나타났습니다. 비히스패닉 흑인 참가자에서는 혈압(BP)과 WMH 간의 연관성이 성별에 따라 차이가 없었습니다. 히스패닉 성인에서는 남성이 여성보다 혈압과 WMH 간의 연관성이 더 강했습니다. 항고혈압제 사용은 모든 인종 및 민족 집단에서 더 높은 WMH와 관련이 있었습니다. 혈압 관련 WMH 취약성은 성별, 인종 및 민족적 맥락에 따라 다릅니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Plasma p-tau217 and </h3>
+                        <div class="korean-title">→ 플라즈마 p-tau217 및</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ann M Stowe, Bilal Kahn, Ali Ballesteros et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41809502/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈장 인산화 타우(p-tau)217 수치와 아포리포단백질 E( 우리는 혈장 p-tau217을 측정했는데, 적어도 하나 이상의 질환을 가진 피험자에서 혈장 p-tau217이 57% 더 높았습니다. 혈장 p-tau217은 상승을 나타냈습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Sensory changes in preclinical, prodromal, and clinical Alzheimer's disease and related dementias.</h3>
+                        <div class="korean-title">→ 알츠하이머병 및 관련 치매의 전임상, 전구기 및 임상 단계에서의 감각 변화.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Willa D Brenowitz, Shannon L Risacher (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41809501/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Genetic pathways linking oxytocin-vasotocin hypothalamic subunit architecture with psychiatric and metabolic traits.</h3>
+                        <div class="korean-title">→ 옥시토신-바소토신 시상하부 소단위 구조와 정신 질환 및 대사 특성을 연결하는 유전적 경로.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.5</span>
+                        <span class="badge journal-badge">Molecular psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Alina I Sartorius, Dennis van der Meer, Alexey Shadrin et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41813992/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>신경펩티드인 옥시토신과 바소토신은 주로 시상하부의 전하부, 전상부 및 상관부 하위 영역의 시상상핵과 실방핵에서 생성됩니다. 우리는 전하부 하위 영역과 수축기 혈압 사이에 가장 완전한 중복을 발견했습니다. 이러한 발견은 옥시토신과 바소토신 및 특정 형질과 관련된 시상하부 하위 영역의 유전적 구조를 밝히는 데 도움이 되며, 향후 연구를 위한 새로운 방향을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Indoor aerosols induced blood-brain barrier leakiness and β-amyloid1-42 aggregation.</h3>
+                        <div class="korean-title">→ 실내 에어로졸은 혈뇌장벽 투과성 증가 및 β-아밀로이드1-42 응집을 유발한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.0</span>
+                        <span class="badge journal-badge">Journal of advanced research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jinping Wang, Baoteng Wang, Kunpeng Zhu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41812704/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>미세먼지(PM2.5)와 미생물을 포함하는 실내 에어로졸 노출은 신경퇴행성 질환을 비롯한 다양한 건강 문제와 관련이 있는 것으로 알려져 있습니다. 특히 황색포도상구균(Staphylococcus aureus)은 혈뇌장벽(BBB) 손상과 아밀로이드 베타(Aβ) 병리를 유발하는 두 가지 환경적 요인으로 작용하여 새로운 기전적 통찰력을 제공하고, 알츠하이머병 환자의 실내 에어로졸 관련 건강 위험을 완화하기 위한 전략의 필요성을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Bilayered dissolving microneedles for microemulsion-mediated ocular delivery of brimonidine tartrate in glaucoma therapy.</h3>
+                        <div class="korean-title">→ 녹내장 치료에서 브리모니딘 타르트레이트의 미세유화 매개 안구 전달을 위한 이중층 용해성 미세침.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.9</span>
+                        <span class="badge journal-badge">Journal of biomaterials science. Polymer edition</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Nisha Rajbhar, Harsh P Nijhawan, Khushwant S Yadav (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41811729/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>녹내장은 전 세계적으로 비가역적 실명의 주요 원인이며, 주로 안압 상승과 관련된 진행성 시신경 퇴행이 원인입니다. 기존의 브리모니딘 타르트레이트(BRT) 점안액은 각막 전층에서 빠르게 제거되고 각막 투과성이 제한적이어서 잦은 투여가 필요하고 환자의 순응도가 낮습니다. BRT-ME 제형은 D-최적 설계법을 사용하여 최적화되었으며, 약 34nm의 미세 입자 크기와 96% 이상의 투명도를 나타냈습니다. BRT-ME-BDMN은 장기간에 걸쳐 최소 침습적인 안구 전달을 가능하게 했습니다. BRT-ME-BDMN은 우수한 삽입 능력과 안구 안전성을 보여주었습니다. BRT-ME-BDMN은 24시간 이내에 약물의 96%를 방출하고 안압을 47% 감소시켰습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Persistent microglial activation following neonatal CMV infection mediates neurodegeneration.</h3>
+                        <div class="korean-title">→ 신생아 CMV 감염 후 지속적인 미세아교세포 활성화는 신경퇴행을 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jessica L McCord, Debotri Chatterjee, John Y S Han et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41811959/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인간 거대세포바이러스(HCMV)는 미국에서 가장 흔한 선천성 바이러스 감염을 일으키며, 급성 및 후기 발병 신경병증을 유발하는 것으로 잘 알려져 있습니다. 잘 확립된 신생 마우스(M)CMV 감염 모델을 사용하여, 초기 감염이 바이러스 재활성화 없이도 성체기에 발병하는 신경 세포 손실과 망막 및 뇌의 신경병증을 유발함을 확인했습니다. 따라서, 초기 MCMV 감염은 기능 장애 및 병원성 미세아교세포를 촉진하여 눈과 뇌에서 성체기 신경퇴행을 유발합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Serum Short-Chain Fatty Acid Profiles as Metabolic Signatures of Diabetic Cognitive Impairment: Multinomial Modelling and Internally Validated Multiclass Discrimination.</h3>
+                        <div class="korean-title">→ 당뇨병성 인지 장애의 대사적 특징으로서 혈청 단쇄지방산 프로필: 다항 로지스틱 회귀 분석 및 내부 검증된 다중 클래스 판별.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Diabetes, obesity & metabolism</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jie Zheng, Yu An, Xin Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41816884/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>당뇨병성 인지 장애(DCI)는 제2형 당뇨병(T2DM)의 임상적으로 중요한 합병증이며, 장내 미생물에서 유래한 단쇄지방산(SCFA)은 대사-신경인지 취약성을 반영할 수 있습니다. 특히 아세트산과 같은 SCFA는 다변수 위험 프로파일 내에서 보조적인 바이오마커 역할을 하여 DCI를 조기에 식별하는 데 도움을 줄 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. [A female case of phospholipase A2 group VI-associated neurodegeneration with childhood onset and long-term follow-up until 49 years of age].</h3>
+                        <div class="korean-title">→ [소아기에 발병하여 49세까지 장기 추적 관찰한 포스포리파제 A2 그룹 VI 관련 신경퇴행성 질환을 앓는 여성 환자 사례]</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Rinsho shinkeigaku = Clinical neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Masahiro Mimori, Kyoko Kanazawa, Wakiro Sato et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41813186/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>환자는 39세 여성이었습니다. 우리는 유사한 PLAN 아형에 대한 문헌 검토를 수행하고, 그러한 맥락에서 본 증례의 임상 경과를 논의했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
