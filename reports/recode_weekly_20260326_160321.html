@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.03.26</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.03.26</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">15</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">1</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Oligodendrocyte precursor cells-microglia crosstalk via BMP4 drives microglial neuroprotective response and mitigates Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 희소돌기세포 전구체와 미세아교세포 간의 BMP4 매개 상호작용은 미세아교세포의 신경 보호 반응을 유도하고 알츠하이머병을 완화한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 52.7</span>
+                        <span class="badge journal-badge">Signal transduction and targeted therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Soonbong Baek, Jaemyung Jang, Seungeun Yeo et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41881962/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>희소돌기세포 전구체(OPC)는 신경 손상에 신속하게 반응하여 활성화되고, 수초 항상성을 유지하며 중추신경계(CNS)의 다양한 세포 유형과 상호작용합니다. 그러나 OPC와 CNS 면역계 간의 상호작용에 대한 분자적 기전은 아직 제대로 밝혀지지 않았습니다. 알츠하이머병(AD)에서 미세아교세포는 아밀로이드 병리에 대해 신경 보호 반응을 보입니다. 본 연구에서는 후기 단계 OPC인 분화된 희소돌기세포 전구체(COP)에서 생성되는 Bmp4가 아밀로이드 병리 상황에서 미세아교세포의 신경 보호 프로그램을 조절하는 중요한 신호임을 발견했습니다. 5xFAD 마우스에서 OPC 특이적 Bmp4 유전자 결손은 미세아교세포의 면역 반응을 억제하고 아밀로이드 침착을 악화시켰습니다. 단일 세포 RNA 시퀀싱 분석 결과, COP에서 Bmp4 결핍은 미세아교세포 군집에서 질병 관련 미세아교세포(DAM) 유전자의 발현 감소를 초래하는 것으로 나타났습니다. 기전적으로, Bmp4 의존성 Smad1/5/8 신호전달은 미세아교세포에서 Trem2 발현을 직접적으로 조절했습니다. 5xFAD 마우스에 Bmp4를 발현하는 COP를 보충하면 Trem2⁺ DAM 획득이 증가하여 Aβ 플라크 주변에 유익한 장벽 형성이 촉진되었습니다. 마찬가지로, Sox10 프로모터 구동 AAV-Bmp4를 뇌실내(ICV) 투여하면 알츠하이머병 진행이 효과적으로 완화되었습니다. 종합적으로, 이러한 연구 결과는 알츠하이머병에서 면역 감시를 조절하는 OPC-미세아교세포 상호작용을 밝혀냈으며, COP를 표적으로 하는 Bmp4 발현 증진이 초기 신경 보호 반응을 강화하는 데 유망한 치료법이 될 수 있음을 시사합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Multisite chronic pain and incident multiple sclerosis: A prospective cohort study.</h3>
+                        <div class="korean-title">→ 다발성 만성 통증과 다발성 경화증 발생률: 전향적 코호트 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Fatemeh Vazirian, Jing Tian, Jane Alty et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41881166/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>다발성 경화증(MS) 환자에게는 만성 근골격계 통증이 흔하며, 통증-염증 경로가 신경퇴행에 기여할 수 있습니다. 그러나 만성 통증이 후기 MS 발병과 관련이 있는지는 아직 불분명합니다. 이러한 연관성은 부분적으로 말초 염증에 의해 매개되는 것으로 나타났으며, 이는 만성 통증이 MS의 조기 지표 역할을 할 수 있고, 두 질환이 공통적인 신경면역 과정의 서로 다른 발현 양상일 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Oral wound healing in the elderly: Mechanisms, challenges, and innovations.</h3>
+                        <div class="korean-title">→ 노인의 구강 상처 치유: 기전, 과제 및 혁신.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Periodontology 2000</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ann M Decker, Sandra H Stuhr, Gustavo Avila-Ortiz et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41881503/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>이 글은 노인의 구강 내 상처 치유를 최적화하기 위한 생물학적 기전, 임상적 과제 및 재생 치료 혁신에 대한 최신 지식을 종합적으로 제시합니다. 새로운 치료법의 표준화 및 임상적 검증은 생물학적 통찰력을 환자 치료 결과 개선으로 전환하는 데 필수적입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Tau conformation, distribution and PET imaging correlations in progressive supranuclear palsy.</h3>
+                        <div class="korean-title">→ 진행성 핵상마비에서 타우 단백질의 형태, 분포 및 PET 영상 상관관계.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.2</span>
+                        <span class="badge journal-badge">Translational neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Chong Dong, Jing-Hong Ma, Hong-Wen Qiao et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41882788/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>진행성 핵상마비(PSP)는 병리학적 타우 단백질의 응집을 특징으로 하는 원발성 타우병증입니다. 본 연구에서는 통합적인 관점을 통해 신경병리학적 통찰과 생체 내 PET 소견을 연결하고자 합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. The dynamic impairment of synaptic transmission in the PCx-IL engram circuit contributes to early olfactory memory decline in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ PCx-IL 엔그램 회로에서 시냅스 전달의 역동적인 손상은 알츠하이머병에서 초기 후각 기억 감퇴에 기여합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.5</span>
+                        <span class="badge journal-badge">Molecular psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yan Yan, Da Song, Guangfei Li et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41882255/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>후각 기능 장애는 알츠하이머병(AD)의 조기 진단 및 치료를 위한 유망한 표적으로 떠오르고 있습니다. 본 연구 결과는 해당 회로 내 AMPA 수용체 관련 시냅스 전달의 역동적인 손상을 시사합니다. PCx-IL 기능적 연결성의 손상은 초기 알츠하이머병의 진단 및 치료를 위한 새로운 표적이 될 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Functional and structural basis of a hypermorphic TRPC3 variant.</h3>
+                        <div class="korean-title">→ 과형성 TRPC3 변이체의 기능적 및 구조적 기반.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Briar Bell, Angela M Jaramillo-Granada, Luis O Romero et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41880503/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>소뇌 운동실조증은 소뇌 내 신경 기능 장애로 인한 운동 협조 장애를 특징으로 합니다. TRPC3 과형성 변이체의 형질전환 발현은 . (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Cellular senescence in neurodegenerative diseases: a bibliometric analysis and mechanistic synthesis linking translational pathways to therapeutic implications.</h3>
+                        <div class="korean-title">→ 신경퇴행성 질환에서의 세포 노화: 임상 적용 경로와 치료적 함의를 연결하는 문헌 분석 및 기전적 종합.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.4</span>
+                        <span class="badge journal-badge">Ageing research reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Runjin Zhou, Xiaoling Lin, Jian Lin et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41881396/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>세포 노화는 이제 신경퇴행성 질환(ND)의 핵심적인 발병 원인으로 인식되고 있습니다. 노화 메커니즘을 이해하고 정확한 치료법을 개발하는 것은 새로운 신경퇴행성 질환 치료법을 제시할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Successful Amyloid Removal by Donanemab Treatment in a Female Patient With Alzheimer Disease: A Case Report.</h3>
+                        <div class="korean-title">→ 알츠하이머병을 앓는 여성 환자에서 도나네맙 치료를 통한 아밀로이드 제거 성공 사례 보고.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Moeko Noguchi-Shinohara, Kenjiro Ono (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41881052/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Estradiol ameliorates AD pathology and cognitive deficits by SORLA-mediated APP endosomal trafficking.</h3>
+                        <div class="korean-title">→ 에스트라디올은 SORLA 매개 APP 엔도솜 수송을 통해 알츠하이머병 병리 및 인지 기능 저하를 개선합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Fengting Cao, Jinxi Liu, Hongchun Zuo et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41882703/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Double-edged role of N6-methyladenosine reader YTH structural domain family protein 2 in neurological disorders: Molecular mechanisms and translational prospects.</h3>
+                        <div class="korean-title">→ 신경 질환에서 N6-메틸아데노신 판독기 YTH 구조 도메인 패밀리 단백질 2의 양날의 검과 같은 역할: 분자 메커니즘 및 임상 적용 전망.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.6</span>
+                        <span class="badge journal-badge">World journal of experimental medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yu-Meng Liu, Ming Liu, Hang Yuan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41883454/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>N6-메틸아데노신(m6A)은 진핵생물 전사체에서 가장 흔한 내부 RNA 변형이며, YTH 구조 도메인 패밀리(YTHDF) 2는 RNA 안정성과 회전율을 조절하는 주요 m6A 판독기입니다. 그 활성은 상위 조절 경로에 의해 더욱 구체화됩니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Diabetic ketoacidosis in patients with type 2 diabetes: Risk factors for mortality and adverse outcomes.</h3>
+                        <div class="korean-title">→ 제2형 당뇨병 환자의 당뇨병성 케토산증: 사망 및 불량한 예후에 대한 위험 요인.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.6</span>
+                        <span class="badge journal-badge">World journal of experimental medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Vishnu Chandrabalan, Timothy Howcroft, Mohammed Khalid Alkhalifah et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41883449/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>제2형 당뇨병(T2DM)으로 인한 당뇨병성 케토산증(DKA)은 드물며, 대규모 연구를 기반으로 한 불량한 결과 및 사망률과 관련된 요인은 아직 명확하게 규명되지 않았습니다. 뇌혈관 질환의 존재 [오즈비(OR): 6.75; 나트륨-포도당 공동수송체 2 억제제 사용(OR: 5.8; 95%CI: 1.32-9.62), 만성 폐쇄성 폐질환(OR: 3.6; 95%CI: 2.14-6.44), 높은 국가 조기 경고 점수 2(NEWS2)(OR: 1.14; 95%CI: 0.10-2.18), 그리고 입원 시 낮은 수축기 혈압(OR: -0.18; 95%CI: -0.32~-0.04)은 입원 기간 연장의 유의미한 예측인자였습니다. 이러한 환자군은 퇴원 후 더욱 면밀한 추적 관찰과 보다 적극적인 대사 및 동반 질환 관리가 필요할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Very low-density lipoprotein and the human health.</h3>
+                        <div class="korean-title">→ 초저밀도 지질단백질과 인체 건강.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.6</span>
+                        <span class="badge journal-badge">World journal of experimental medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Alok Bharadwaj, Manas Taneja, Sneha Dubey et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41883448/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>간에서 생성되는 초저밀도 지단백(VLDL)은 아포지단백 B(심혈관 질환 위험 지표), 중성지방, 콜레스테롤을 모두 포함하는 유일한 지단백입니다. VLDL은 동맥경화성 심장 질환의 진행에도 상당한 영향을 미칩니다. 전반적으로, 점점 더 많은 연구 결과들이 VLDL이 다양한 질병에 관여한다는 사실을 보여주고 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Renin-angiotensin system blockade attenuates brain mitochondrial dysfunction, oxidative stress, and neuroinflammation associated with hypertension, metabolic disorders, and aging.</h3>
+                        <div class="korean-title">→ 레닌-안지오텐신 시스템 차단은 고혈압, 대사 장애 및 노화와 관련된 뇌 미토콘드리아 기능 장애, 산화 스트레스 및 신경 염증을 완화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.6</span>
+                        <span class="badge journal-badge">World journal of experimental medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sebastián García Menéndez, Felipe Inserra, Elena Mv de Cavanagh et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41883437/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>노화는 삶의 필연적인 과정이지만, 고정된 생물학적 결과라기보다는 점진적인 기능 장애의 진행을 나타냅니다. 신경염증은 반응성 산소 및 질소 종의 생성 증가로 인해 유발되는 신경교세포 활성화를 특징으로 하는 만성 과정으로, 산화 스트레스를 초래합니다. 본 논문에서는 안지오텐신 수용체 차단제와 ACE2 활성제의 전략적 사용이 혈관성 치매 및 기타 염증성 신경퇴행성 질환의 예방 및 치료에 새로운 지평을 열 수 있는 유망한 도구임을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Neurobiological mechanisms linking vitamin d signaling to cognitive decline and neurodegeneration: Untangling epidemiology, pathophysiology, and evidence.</h3>
+                        <div class="korean-title">→ 비타민 D 신호전달과 인지 기능 저하 및 신경퇴행을 연결하는 신경생물학적 메커니즘: 역학, 병태생리학 및 증거 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.6</span>
+                        <span class="badge journal-badge">World journal of experimental medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Neha Choudhary, Maheen Zahid, Muhammad Ahmad et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41883434/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>치매는 노년층의 장애 및 의존의 주요 원인이며, 유병률은 연령이 증가함에 따라 급격히 증가할 것으로 예상됩니다. 메타분석 결과는 일반적으로 효과가 미미하거나 통계적으로 유의미하지 않으며, 잠재적 이점은 취약 계층에 국한된다는 등 엇갈린 결과를 보여주고 있습니다. 보충제가 치매 진행 양상을 바꿀 수 있는지 여부를 규명하는 것은 시급한 공중 보건 과제입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Meningeal lymphatic dysfunction mediates postoperative sleep deprivation-induced cognitive decline via impaired neuroinflammatory clearance.</h3>
+                        <div class="korean-title">→ 뇌막 림프 기능 장애는 신경 염증 제거 기능 저하를 통해 수술 후 수면 부족으로 인한 인지 기능 저하를 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Journal of neuroinflammation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Binkang Huang, Wei Tu, Han Zhou et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/41882759/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
