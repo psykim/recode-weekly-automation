@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.05.21</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.05.21</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">19</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">1</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">18</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. A deep-learning framework reveals whole-body perturbations at cell level.</h3>
+                        <div class="korean-title">→ 심층 학습 프레임워크가 세포 수준에서 전신 교란을 밝혀냅니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Doris Kaltenecker, Izabela Horvath, Rami Al-Maskari et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162424/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>비만을 비롯한 많은 질병은 신체 전반의 여러 장기 시스템에 영향을 미치는 전신적인 효과를 나타냅니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Lactobacillus plantarum enhances cognition through acetate-modulated microglia function.</h3>
+                        <div class="korean-title">→ 락토바실러스 플란타룸은 아세트산에 의해 조절되는 미세아교세포 기능을 통해 인지 기능을 향상시킵니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Tingyi Zhou, Yi Yue, Juncai Leng et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162806/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>장내 미생물은 면역 및 대사 경로를 통해 인지 기능에 지대한 영향을 미치지만, 특정 균주가 이러한 과정에 어떻게 기여하는지는 아직 불분명합니다. 본 연구는 인지 기능 저하에 대한 프로바이오틱스 및 대사산물 기반 중재를 위한 기전적 틀을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Stage-dependent dynamics of neuroinflammation across the Alzheimer's continuum.</h3>
+                        <div class="korean-title">→ 알츠하이머병 진행 과정 전반에 걸친 신경염증의 단계별 역동성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Rachael Yu, Anastasia Suraev, Lisa Shi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162804/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>신경염증은 알츠하이머병(AD)의 핵심 특징이지만, 신경교세포 반응은 질병 진행에 따라 변화할 수 있습니다. YKL-40 수치가 높을수록 인지적으로 손상되지 않은 개인(HC/SCD)에서 병리가 더 심한 것으로 나타났지만, 이러한 연관성은 MCI에서 점차 약해지고 AD에서는 더욱 약해졌습니다(pTau217: β). (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Abdominal ultrasound attenuates early-stage aberrant proliferation and depressive behavior in AOM/DSS-induced colorectal cancer: regulatory mechanisms of the Wnt/β-catenin pathway and HPA axis.</h3>
+                        <div class="korean-title">→ 복부 초음파는 AOM/DSS 유발 대장암에서 초기 단계의 비정상적인 증식과 억제 행동을 약화시킨다: Wnt/β-catenin 경로 및 HPA 축의 조절 메커니즘.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Feng-Yi Yang, Ruei-Yu Wu, Chi-Ieong Lau et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162802/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>만성 염증은 대장암(CRC) 발생 및 진행을 촉진하는 주요 요인입니다. 이에 저강도 펄스 초음파(LIPUS)를 0.5W/cm² 및 1.0W/cm² 강도로 쥐의 복부 부위에 적용했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Astrocytes reduce microglial activation and enhance adult hippocampal neurogenesis in acute inflammation.</h3>
+                        <div class="korean-title">→ 성상세포는 급성 염증에서 미세아교세포 활성화를 감소시키고 성체 해마 신경세포 생성을 촉진합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Marta Vilademunt, Irmak Çabas, Fabio Grieco et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162801/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>성체 해마 신경생성은 기분 조절 및 기억에 관여하는 주요 신경 가소성 과정이며, 말초로부터의 신호를 전달하는 신경생성 틈새에 의해 엄격하게 조절됩니다. 시험관 내 실험에서, 우리는 성상세포가 분비 인자와 직접적인 막 결합 상호작용을 통해 리포폴리사카라이드(LPS) 염증 자극에 대한 미세아교세포의 반응을 억제한다는 것을 발견했으며, 특히 분비 인자가 가장 강력한 효과를 나타냈습니다. 이러한 결과는 성상세포가 염증 신호에 대한 미세아교세포의 반응을 조절하고, 성상세포 분비체가 강력한 항염증 및 신경생성 촉진제로서 작용할 수 있음을 시사하며, 알츠하이머병 및 기분 장애와 같은 신경 염증 관련 질환에 대한 잠재적인 치료 효과를 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. High cardiorespiratory fitness is associated with younger brain age: the role of systemic inflammation.</h3>
+                        <div class="korean-title">→ 심폐 기능이 좋을수록 뇌 나이가 젊어지는 경향이 있다: 전신 염증의 역할.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jiao Wang, Shuqi Wang, Liying Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162798/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>심폐 기능(CRF)과 뇌 노화 사이의 관계 및 이러한 관계가 전신 염증에 의해 어느 정도 매개되는지를 조사하고자 한다. 높은 CRF는 더 젊은 뇌 연령과 관련이 있으며, 낮은 전신 염증은 이러한 연관성을 부분적으로 매개한다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. A plasma protein signature for cerebral amyloid angiopathy.</h3>
+                        <div class="korean-title">→ 뇌 아밀로이드 혈관병증에 대한 혈장 단백질 특징.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 18.2</span>
+                        <span class="badge journal-badge">Acta neuropathologica</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Alpana Singh, Marisa N Denkinger, Antoine Leuzy et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162487/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌 아밀로이드 혈관병증(CAA)은 뇌막 및 대뇌 피질 혈관벽에 아밀로이드-β(Aβ)가 침착되는 뇌혈관 질환으로, 뇌출혈 위험 증가 및 진행성 인지 기능 저하를 유발합니다. 특히, 알츠하이머병(AD)에 대한 질병 진행 억제 치료 시대에 CAA는 항아밀로이드 치료와 관련된 부작용인 아밀로이드 관련 영상 이상(ARIA)의 중요한 위험 인자입니다. CAA를 정확하게 식별하여 ARIA 위험을 파악하고 치료 결정을 내리는 데 도움이 될 수 있도록 CAA에 대한 바이오마커 개발이 매우 중요합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Evaluation of fully automated ApoE4 proteotyping for </h3>
+                        <div class="korean-title">→ 완전 자동화된 ApoE4 프로테오타이핑 평가</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hans-Wolfgang Klafki, Carlotta Derad, Maike Hoberg et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42164619/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>아포리포단백질 E의 ε4 대립유전자 보유자 ( 우리는 심장 수술을 받는 환자를 대상으로 한 전향적 FINd DElirium RIsk factors (FINDERI) 연구의 479명의 참가자에서 apoE4 프로테오타이핑 정확도를 평가하고 결과를 정량적 중합효소 연쇄 반응(qPCR) 유전자형 분석과 비교했습니다. 이형접합체의 오분류. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Design and baseline findings of the NEODEM prospective cohort on early-onset neurodegenerative dementia.</h3>
+                        <div class="korean-title">→ 조기 발병 신경퇴행성 치매에 대한 NEODEM 전향적 코호트 연구의 설계 및 기본 결과.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sophie Auriacombe, Emmanuelle Durand, Marion Kret et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42164618/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>조기 발병 신경퇴행성 치매(EOD)의 기능적 예후는 여전히 제대로 이해되지 않고 있습니다. 본 논문에서는 기저 BPSD(행동 및 정신 증상) 결과를 제시합니다. 2027년부터 확보될 4년간의 종단 데이터는 기저 요인이 향후 기능 상태, 시설 입소, 이환율 및 사망률에 미치는 영향을 명확히 하는 데 도움이 될 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. White matter hyperintensities in Alzheimer's disease in the era of anti-amyloid therapies.</h3>
+                        <div class="korean-title">→ 항아밀로이드 치료 시대의 알츠하이머병 백질 고강도 병변.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Antoine Garnier-Crussard, Mahsa Dadar, Nicolas Villain et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42164617/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>백질 고강도 병변(WMH)은 알츠하이머병(AD)에서 매우 흔하게 나타나며, 고혈압성 소혈관 질환 및 뇌 아밀로이드 혈관병증을 포함한 여러 혈관 병리와 염증 및 신경퇴행성 과정이 상호작용하여 발생합니다. 본 논문에서는 WMH 표현형을 정밀한 위험-이익 평가 및 ARIA 예측에 통합하기 위한 연구 로드맵을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Reframing Alzheimer's disease as a complex adaptive system: More than an amyloid beta-tau connection.</h3>
+                        <div class="korean-title">→ 알츠하이머병을 복잡한 적응 시스템으로 재해석하기: 아밀로이드 베타-타우 연결 그 이상.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Maurizio Giorelli (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42164259/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 치매의 주요 원인이지만, 아밀로이드 베타와 타우에 초점을 맞춘 단순 모델로는 질병의 다양성과 치료 성공률의 한계를 부분적으로만 설명할 수 있습니다. 질병의 복잡성을 인식하면 중요한 전환점을 조기에 발견하고, 회복력을 강화하며, 개인 맞춤형 치료 계획을 수립할 수 있어, AD 치료를 말기 단계의 단일 표적 치료법에서 정밀 네트워크 의학으로 전환할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Single-subject proteomic signatures in Alzheimer's disease reflect clinical phenotypes and distinguish asymptomatic from symptomatic cases.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 개별 환자의 단백질체학적 특징은 임상 표현형을 반영하며 무증상 사례와 유증상 사례를 구분합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Avijit Podder, Yi Juin Liew, Gregory A Cary et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42164258/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 임상 양상, 신경병리학적 부담, 그리고 기저 분자 과정에서 상당한 개인 간 변이를 보입니다. 아밀로이드 제거와 면역 활성화는 이러한 변이와 밀접하게 관련되어 있습니다. 본 연구 결과는 개별 환자 오믹스 프로파일링을 통해 AD의 임상 및 신경병리학적 변이와 연관된 개별 분자 특징을 규명할 수 있음을 보여줍니다. 분자적 이질성과 질병 표현형을 연결함으로써, INDIGO는 정밀 모델링 및 새로운 치료 표적 발굴을 위한 확장 가능한 프레임워크를 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Intrinsic Capacity evolution during Aging in Mouse and Fish: Longitudinal Perspectives from a Narrative Review.</h3>
+                        <div class="korean-title">→ 생쥐와 물고기의 노화 과정에서 나타나는 내재적 능력의 진화: 서술적 고찰을 통한 종단적 관점.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.4</span>
+                        <span class="badge journal-badge">Ageing research reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    I-Tzu Chen, Wan-Hsuan Lu, Fei-Yuan Hsiao et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162885/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>내재적 능력(IC)은 건강한 노화의 중요한 결정 요인이며, 운동, 인지, 활력, 심리적, 감각적 능력이라는 다섯 가지 필수 기능 영역을 통해 측정됩니다. 연구에 따르면 자발적 활동 및 로타로드 검사를 통해 측정된 운동 능력은 중년기에 초기 저하를 보인 후, 특히 암컷 쥐에서 점진적으로 감소하는 경향을 나타냈습니다. 결론적으로, 본 리뷰의 연구 결과는 쥐와 어류 모델에서 내재적 능력 변화를 규명하는 데 기초를 제공하며, 기전 연구를 촉진하고 내재적 능력에 대한 전임상 모델의 임상적 가치를 향상시키는 데 기여할 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. From discovery to therapeutic development of monoclonal antibodies.</h3>
+                        <div class="korean-title">→ 단일클론 항체의 발견부터 치료제 개발까지.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.5</span>
+                        <span class="badge journal-badge">Journal of controlled release : official journal of the Controlled Release Society</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Satish Rojekar, Amol Gholap, Anusha R Pallapati et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42162621/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>단클론항체(mAb)는 감염성 질환, 만성 질환, 암 등 다양한 질병을 치료하는 강력한 표적 치료제입니다. 생물학적 제제 분야의 최신 발전과 과제를 종합적으로 다룬 이 개요는 학계 연구자와 바이오제약 전문가에게 유용한 지침서가 되어, 단클론항체 개발을 위한 필수적인 지식과 도구를 제공하고 임상적 성공을 향한 치료법 발전을 도모할 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Exploring and Targeting the Connection of Iron and Copper Homeostasis to Neurodegenerative Diseases.</h3>
+                        <div class="korean-title">→ 철분 및 구리 항상성과 신경퇴행성 질환 간의 연관성 탐구 및 표적 치료.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">MedComm</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xin Liu, Lin Jia, Kerong Wu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42164658/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>철(Fe)과 구리(Cu)는 인체 내 여러 중요한 생리적 과정을 조절하는 필수 미량 영양소이며, 특히 중추신경계(CNS)에서의 항상성 유지는 신경 세포의 정상적인 기능에 필수적입니다. 따라서 본 논문은 신경퇴행성 질환 치료에 있어 금속 균형 회복의 중요성을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">15. A clinically feasible framework to estimate tau pathology and clinical-biological discordance in the Alzheimer's disease spectrum.</h3>
+                        <div class="korean-title">→ 알츠하이머병 스펙트럼에서 타우 병리 및 임상-생물학적 불일치를 추정하기 위한 임상적으로 실현 가능한 프레임워크.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jung-Lung Hsu, Shao-Yi Huang, Hsiu-Chuan Wu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42163384/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>타우 양전자 방출 단층촬영(PET)은 알츠하이머병(AD)의 생물학적 병기 설정 및 치료 전략 수립에 매우 중요하며, 특히 타우 부담이 낮을수록 임상적 효과가 큰 항아밀로이드 치료 시대에는 더욱 그러합니다. CL, 연령, MMSE, 그리고 상대적 MTL 부피를 통합한 다변수 모델은 높은 전체 타우 부담(AUC = 0.87)과 신피질 침범(AUC = 0.84)을 잘 판별하는 것으로 나타났습니다. 이 확장 가능한 모델은 자원이 제한된 환경에서 타우 PET를 대체할 수 있는 실용적인 방법을 제공하며, 생물학적 병기 설정, 치료 적격성 평가 및 정밀 치료 결정에 도움이 될 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">16. Correction: Comorbidities predict institutionalization and mortality in biomarker-confirmed alzheimer's disease.</h3>
+                        <div class="korean-title">→ 정정: 동반 질환은 생체 표지자로 확진된 알츠하이머병 환자의 시설 입소 및 사망률을 예측하는 요인입니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xin Xia, Alice Clark, Niels Juul Brogaard et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42163381/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">17. Plasma p-tau217, p-tau181, and Aβ42 predict amyloid PET positivity in cognitively unimpaired adults.</h3>
+                        <div class="korean-title">→ 혈장 p-tau217, p-tau181 및 Aβ42는 인지 기능이 정상인 성인의 아밀로이드 PET 양성 여부를 예측합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Rui Bao, Wanying Shi, Hongbo Bao et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42163294/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인지 기능이 정상인 사람에서 알츠하이머병(AD) 병리를 조기에 발견하는 것은 전임상적 개입에 매우 중요합니다. 혈장 p-tau217은 Aβ PET 검사 결과와 가장 강력한 개별적 연관성(곡선 아래 면적[AUC], 0.85)을 보였습니다. 이러한 결과는 혈액 기반 사전 선별 검사가 잠재적인 선별 접근법이 될 수 있음을 뒷받침하는 동시에, 확정적인 Aβ 상태를 확인해야 할 때는 확증적인 아밀로이드 평가가 여전히 필요함을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">18. The insulin receptor inhibitor BMS-754807 alleviates neuroinflammation and Alzheimer's disease pathologies across human cellular and mouse models.</h3>
+                        <div class="korean-title">→ 인슐린 수용체 억제제인 BMS-754807은 인간 세포 및 마우스 모델에서 신경 염증과 알츠하이머병 병리를 완화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Journal of neuroinflammation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hyun-Ju Lee, Jaewoo Seok, Sora Kang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42163277/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>BMS-754807은 인슐린 유사 성장 인자 1 수용체(IGF-1R)와 인슐린 수용체(IR)의 이중 억제제로, 호르몬 수용체 양성 및 HER2 음성 유방암 치료를 위한 2상 임상 시험 단계에 있습니다. BMS-754807 치료는 BV2 미세아교세포에서 p-IGF-IR(표적) 수치, LPS 유도 염증성 사이토카인 생성, 활성산소종 수치를 유의하게 감소시키고, HO-1 발현을 회복시키며, AKT/STAT3 신호전달을 억제했습니다. 이러한 결과는 IGF-1R의 약리학적 억제가 알츠하이머병을 포함한 신경염증 관련 질환에 대한 잠재적인 치료 접근법이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
