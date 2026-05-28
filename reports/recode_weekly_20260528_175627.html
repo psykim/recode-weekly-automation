@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.05.28</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.05.28</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        <p>이번 주에는 해당하는 논문이 없습니다.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Cholesterol metabolism in neurodegenerative diseases: mechanisms and therapeutic advances.</h3>
+                        <div class="korean-title">→ 신경퇴행성 질환에서의 콜레스테롤 대사: 기전 및 치료 발전.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.5</span>
+                        <span class="badge journal-badge">Molecular neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Dezhen Tu, Yuxiao Zheng, Pingping Ding et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42204590/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>콜레스테롤 대사산물은 중추신경계(CNS)에 풍부하게 존재하며 세포막 유동성, 신호 전달, 세포 간 및 세포 내 소포 수송, 세포 증식/세포 사멸 또는 이동을 조절합니다. 마지막으로, 신경퇴행성 질환을 새로운 관점에서 이해하기 위한 향후 연구 방향을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Lifespan normative modeling of brain microstructure.</h3>
+                        <div class="korean-title">→ 뇌 미세구조의 수명 규범적 모델링.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Julio E Villalón-Reina, Alyssa H Zhu, Leila Nabulsi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42204143/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>대규모 인구 집단을 기반으로 한 뇌 측정치의 표준 모델은 퇴행성 질환, 정신 질환, 신경 발달 장애를 포함한 다양한 질환 환자의 뇌 이상을 감지하는 데 매우 유용할 수 있지만, 뇌 백질(WM) 미세구조에 대한 그러한 모델은 아직 존재하지 않습니다. 본 연구에서 개발한 대규모 모델은 개인 또는 집단에서 질병이 뇌 미세구조에 미치는 영향을 파악하고, 질환 간 비교를 수행하며, 백질 이상에 영향을 미치는 요인을 발견하는 데 공통적인 기준을 제공합니다. 도출된 표준 모델은 커뮤니티에서 공개적으로 이용 가능한 귀중한 자원이며, 향후 데이터 세트가 확장됨에 따라 적용 및 확장이 가능합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Brain maintenance biomarkers from structural and functional interactions in aging and neurodegeneration.</h3>
+                        <div class="korean-title">→ 노화 및 신경퇴행성 질환에서의 구조적, 기능적 상호작용을 통한 뇌 유지 바이오마커.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yumeng Li, Xinyue Zhang, Xin Li et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42204140/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌 기능 유지는 일부 사람들이 노화에도 불구하고 인지적으로 회복력을 유지하는 이유를 설명하는 데 도움이 될 수 있지만, 그 생물학적 근거는 아직 잘 알려져 있지 않습니다. 본 연구 결과는 건강한 노화와 병적인 노화 모두에서 회복력을 나타내는 생물학적 근거를 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Speech-in-Noise Ability and Longitudinal Cortical Thinning in Speech-Processing Networks.</h3>
+                        <div class="korean-title">→ 잡음 속 음성 인식 능력과 음성 처리 네트워크의 종방향 피질 두께 감소.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.9</span>
+                        <span class="badge journal-badge">JAMA otolaryngology-- head & neck surgery</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Julien Zanin, John J McNeil, Gary Rance (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42207546/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>노화성 난청은 치매의 주요 위험 요인 중 하나이지만, 청각 기능 장애와 뇌 노화 및 인지 기능 저하를 연결하는 신경 기전은 아직 명확히 밝혀지지 않았습니다. 연구 시작 시점에서 난청 그룹은 청력 검사 및 소음 속 어음 이해 능력에서 차이를 보였지만, 전반적인 인지 기능에는 차이가 없었습니다. 소음 속 어음 이해 능력은 측정 가능한 인지 기능 저하에 앞서 나타나는 신경 취약성의 초기 행동 지표일 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Beyond fear circuits: multiscale neurobiological architecture of panic disorder.</h3>
+                        <div class="korean-title">→ 공포 회로를 넘어서: 공황 장애의 다중 스케일 신경생물학적 구조.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.5</span>
+                        <span class="badge journal-badge">Molecular psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Katharina A Zientek, Juergen Dukart, Sarah Kreuzer et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42203973/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>공황장애는 반복적인 공황발작과 높은 치료 저항성을 특징으로 하는 흔하고 심각한 질환입니다. 본 연구에서는 기존의 공포 관련 영역에 국한되지 않는 전두엽-해마-뇌간 축에서 활동 증가를 발견했습니다. 이러한 결과는 공황장애가 공포 회로를 넘어 광범위한 신경 변화를 수반함을 시사하며, 향후 기전 및 치료 연구를 위한 잠재적인 분자적, 기능적 표적을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Limited transmission of cervid prions to nonhuman primates provides insights into the zoonotic potential of chronic wasting disease.</h3>
+                        <div class="korean-title">→ 사슴 프리온이 비인간 영장류로 제한적으로 전염되는 사례는 만성 소모성 질병의 인수공통전염병 가능성에 대한 통찰력을 제공합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Samia Hannaoui, Sandra Pritzkow, Wiebke M Jürgens-Wemheuer et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42202024/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>만성 소모성 질병(CWD)은 사슴류에서 확산되고 있는 프리온 질병입니다. 저희 연구 결과는 CWD의 인수공통감염 위험성을 과소평가했던 기존 결론에 이의를 제기하며, 지속적인 감시의 필요성을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. TPM1 drives cytoskeleton-immunometabolism coupling and LGALS9/CD45-mediated neuroinflammatory propagation in retinitis pigmentosa.</h3>
+                        <div class="korean-title">→ TPM1은 망막색소변성증에서 세포골격-면역대사 연관성 및 LGALS9/CD45 매개 신경염증 확산을 유도합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Rong Li, Jun-Qi Fan, Bin Lin (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42202020/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>가장 흔한 유전성 망막 퇴행성 질환인 망막색소변성증(RP)은 진행성 광수용체 손실을 특징으로 하며, 현재까지 질병 진행을 억제하는 승인된 치료법은 없습니다. 유전자 절제술은... (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. State-specific inhibition of NMDA receptors by memantine provides insight into NMDAR channel blocker tolerability.</h3>
+                        <div class="korean-title">→ 메만틴에 의한 NMDA 수용체의 상태별 억제는 NMDAR 채널 차단제의 내약성에 대한 통찰력을 제공합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Matthew B Phillips, Nadya V Povysheva, Elizabeth G Neureiter et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42201999/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. FOXO family and neurodegenerative diseases: Mechanisms of action and therapeutic potential.</h3>
+                        <div class="korean-title">→ FOXO 패밀리와 신경퇴행성 질환: 작용 기전 및 치료 잠재력.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Redox biology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Zhengxiang Lv, Xiaodong Liu, Zhiwei Zhou et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42202637/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>신경퇴행성 질환(NDD)은 효과적인 질병 진행 억제 치료법이 부족합니다. 단일 경로 또는 질병에 초점을 맞춘 기존 연구들과 달리, 본 연구는 동형 단백질 특이적, 단계별, 세포 유형별 FOXO 기능을 통합적인 계층적 틀로 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Frequency- and Network-Specific Changes in Functional Connectivity Reflect Pathophysiological Mechanisms across Parkinson's Disease Stages.</h3>
+                        <div class="korean-title">→ 기능적 연결성의 주파수 및 네트워크별 변화는 파킨슨병 단계별 병태생리학적 기전을 반영합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.3</span>
+                        <span class="badge journal-badge">Annals of neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Matteo Conti, Valentina D'Onofrio, Luca Lorenzon et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42204598/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>파킨슨병(PD)은 점차 대규모 뇌 네트워크 장애로 개념화되고 있지만, 주파수 특이적 기능적 연결성이 질병 단계에 따라 어떻게 재구성되는지는 여전히 제대로 이해되지 않고 있습니다. 베타 대역 감각운동 네트워크는 운동완서의 심각도와 평행하게 점진적인 과잉 연결성을 보였습니다. (ANN NEUROL 2026) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Seven tesla MRI reveals amygdala and hippocampal subfield atrophy in dementia with Lewy bodies.</h3>
+                        <div class="korean-title">→ 7테슬라 MRI는 루이체 치매에서 편도체와 해마 하위 영역의 위축을 보여줍니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Elizabeth McKiernan, Peter Swann, Elijah Mak et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42204616/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>7T-DLB 연구는 루이체 치매(DLB)에서 개별 해마 및 편도체 하위 영역의 위축이 나타나는지, 그리고 이전에 이미 위축이 확인된 알츠하이머병(AD)에서도 나타나는지 조사했습니다. 탐색적 분석에서는 하위 영역 부피와 시각 환각 점수 간의 연관성을 조사했으며, 41명의 참가자(DLB=13, AD=17, 대조군=11) 하위 집단에서는 혈장 ptau-217 농도와의 연관성도 조사했습니다. 해마 하위 영역 13개 중 4개(분자층, 치상핵, 전치상핵, 내측후각피질)와 편도체 하위 영역 9개 중 5개(부기저핵, 중심핵, 내측핵, 피질핵, 전방 편도체 영역)가 대조군에 비해 DLB 환자에서 유의하게 작았습니다(p < 0.05). (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. T1-weighted/T2-weighted ratio reflects microstructural changes in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ T1 강조영상/T2 강조영상 비율은 알츠하이머병의 미세구조적 변화를 반영합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    N Reijner, M Riscado Ramos, E Jacobs et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42204559/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>T1 강조영상/T2 강조영상 비율(T1w/T2w 비율)은 노화 및 질병이 발생한 뇌의 미엘린 함량을 측정하는 비교적 간단한 신경영상 기법으로 여겨져 왔습니다. 또한, 생전 및 사후 T1w/T2w 비율 간에 높은 상관관계(r = 0.85)가 확인되었습니다. 따라서 T1w/T2w 비율은 알츠하이머병에서 미엘린 특이적 마커는 아니지만, 기존의 알츠하이머병 병리 바이오마커와 함께 해석할 경우 장기적인 미세구조 변화를 추적하는 데 유용한 신경영상 도구가 될 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Mitochondrial dysfunction in neurodegenerative disorders: mechanisms and therapeutic advances.</h3>
+                        <div class="korean-title">→ 신경퇴행성 질환에서의 미토콘드리아 기능 장애: 기전 및 치료법의 발전.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Molecular biomedicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yan Tong, Jing Na He, Linbin Zhou et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42204067/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>미토콘드리아 기능 장애는 알츠하이머병, 파킨슨병, 유전성 시신경병증, 미토콘드리아성 운동실조증 등 광범위한 신경퇴행성 질환의 핵심 병리 기전입니다. 본 논문에서는 이러한 기전적 토대를 바탕으로, 주요 신경퇴행성 질환에서 공통적으로 나타나는 병리학적 원리를 살펴보고, 중요한 기전 및 치료적 통찰력을 제공하는 대표적인 미토콘드리아성 시신경병증 모델을 논의합니다. 마지막으로, 임상 적용에 있어 지속적인 과제를 제시하고, 신경퇴행성 질환에서 미토콘드리아 기능 장애에 대한 효과적이고 기전 중심적인 병용 요법 개발에 필수적인 향후 핵심 방향을 제안합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Cannabidiol alleviates chemotherapy-induced cognitive decline and neuropathology.</h3>
+                        <div class="korean-title">→ 칸나비디올은 항암화학요법으로 인한 인지 기능 저하 및 신경병증을 완화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Cancer letters</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Shreya Madan, Sanad M El-Khatib, Asrita Prathigudupu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42202974/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>항암화학요법은 암 생존자들에게 장기적인 인지 장애를 유발하여 삶의 질에 부정적인 영향을 미치는 경우가 많습니다. 독소루비신(아드리아마이신®, ADR)과 사이클로포스파미드(CYP)로 치료받은 유방암 환자를 대상으로 한 임상 연구에서 신경퇴행성 및 신경염증성 특징과 관련된 유의미한 항암화학요법 관련 인지 장애(CRCI)를 발견했습니다. 요컨대, 이 데이터는 미충족 의료 수요인 CRCI를 완화하기 위한 임상 적용 가능한 접근법에 대한 전임상적 근거를 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
