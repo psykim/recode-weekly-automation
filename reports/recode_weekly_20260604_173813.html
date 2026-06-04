@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.06.04</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.06.04</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">15</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">2</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">13</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. LASER couples damage sensing to ESCRT assembly for lysosome repair.</h3>
+                        <div class="korean-title">→ LASER는 손상 감지 기능을 ESCRT 조립체와 결합하여 리소좀 복구를 수행합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Claire S Goul, Aakriti Jain, Samira Yitiz et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42236937/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>리소좀 막의 완전성은 세포 생존에 필수적이지만, 손상 감지가 복구와 시공간적으로 어떻게 연결되는지는 아직 제대로 이해되지 않고 있습니다. 엔도솜 분류 복합체 수송에 필요한 단백질(ESCRT) I-III의 모집 및 조립은 막 손상을 신속하게 복구하지만, ESCRT-I이 손상된 리소좀 막을 어떻게 인식하는지는 불분명합니다. 본 연구에서는 손상에 민감한 유전적 배경에서 게놈 전체 CRISPRi 스크리닝을 활용하여, 손상된 리소좀에서 칼슘이 방출될 때 신속하게 형성되는 다성분 단백질 복합체인 LC3/GABARAP 보조 ESCRT 모집 촉진인자(LASER)를 확인했습니다. LASER의 핵심에는 소포체 출구 부위에 존재하는 단백질인 TFG가 있으며, 이 단백질은 리소좀 인지질에 접합된 ATG8 계열 단백질(LC3 및 GABARAP)에 결합하여 손상된 리소좀으로 이동합니다. ATG8에 결합된 TFG는 올리고머 어셈블리를 형성하여, 보존된 모티프 인식과 결합 친화도에 의한 상호작용을 통해 필수 ESCRT-I 소단위인 TSG101을 직접 모집합니다. TFG가 TSG101에 결합하면 ESCRT-I-II-III의 순차적인 중합이 촉진되고 막 복구가 이루어집니다. 유전성 경직성 하반신마비를 유발하는 TFG 돌연변이는 올리고머 형성을 방해하고 리소좀 ESCRT 모집 및 막 재봉합을 손상시켜, TFG 관련 신경퇴행성 질환의 주요 원인으로 결함 있는 복구를 시사합니다. 따라서 LASER는 손상된 리소좀에서 ESCRT 중합을 촉진하고 손상 감지와 막 복구를 연결합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Consensus meta-analysis of genome-wide association studies for Alzheimer's disease and related dementias.</h3>
+                        <div class="korean-title">→ 알츠하이머병 및 관련 치매에 대한 게놈 전체 연관성 연구의 합의 메타 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 38.3</span>
+                        <span class="badge journal-badge">Nature genetics</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                     (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237039/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD) 및 관련 치매(ADRD)의 유전적 구조를 더 잘 규명하기 위해, 유럽계 조상을 대상으로 한 128,681명의 ADRD 환자 또는 대리 환자와 849,833명의 (대리) 대조군을 대상으로 게놈 전체 연관성 연구(GWAS)에 대한 메타분석을 수행했습니다. 그 결과, ADRD 위험과 관련된 91개의 유전자 좌위를 확인했으며, 이 중 16개는 새로운 유전자 좌위이고 56개는 임상적으로 진단된 AD 환자에서만 특이적으로 검출되었습니다. 또한, 추가적인 외부 검증이 필요한 18개의 유전자 좌위(이 중 15개는 새로운 유전자 좌위) 목록을 제시합니다. APOE 유전자를 제외한 ADRD 관련 유전자 좌위의 효과를 결합한 다유전자 점수는 비AD 병리보다는 AD 병리와 주로 연관되었습니다. 이 점수의 하위 10분위수에 속하는 사람들은 중간 점수 그룹에 속하는 사람들에 비해 사망 시 Braak 신경섬유 엉킴 4단계 이상 및 중등도-중증 신경돌기 아밀로이드 플라크 병리를 나타낼 위험이 두 배 증가했습니다. 결론적으로, 본 연구는 임상적으로 진단된 알츠하이머병 위험과 관련된 다수의 유전자 좌위를 검증했지만, 다른 유전자 좌위가 알츠하이머병의 임상 진단에 미치는 영향과 각 유전자 좌위가 알츠하이머병 병리에 미치는 영향을 확인하기 위해서는 추가적인 연구가 필요합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Single-cell multi-omic atlas and morphogen screening informs midbrain and hindbrain organoid engineering.</h3>
+                        <div class="korean-title">→ 단일 세포 다중 오믹스 아틀라스 및 형태형성인자 스크리닝을 통해 중뇌 및 후뇌 오가노이드 공학에 대한 정보를 얻을 수 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 28.0</span>
+                        <span class="badge journal-badge">Nature neuroscience</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Nadezhda Azbukina, Zhisong He, Hsiu-Chuan Lin et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237030/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>신경관의 패턴 형성은 운동 조절, 감각 입력 처리 및 인지 기능 통합을 담당하는 중뇌와 후뇌 구조를 확립합니다. 다중 오믹스 아틀라스와 형태형성인자 스크리닝을 통해 후뇌의 다양한 신경 세포 유형으로의 영역별 전구 세포 분화를 유도하는 형태형성인자-조절 유전자 관계를 밝혀냈습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Glial cells in chronic inflammation: diversity, dysfunction and therapeutic targeting.</h3>
+                        <div class="korean-title">→ 만성 염증에서의 신경교세포: 다양성, 기능 장애 및 치료적 표적.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 27.6</span>
+                        <span class="badge journal-badge">Nature reviews. Immunology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hong-Gyun Lee, Joseph M Rone, Joon-Hyuk Lee et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42236914/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>다발성 경화증(MS)은 중추신경계(CNS)의 만성 염증성 질환입니다. 본 리뷰에서는 MS 및 일반적인 염증에서 신경교세포의 다양성, 기능 및 조절에 대한 최근 연구 결과를 요약하고, CNS 내 면역세포 및 비면역세포와의 상호작용을 중점적으로 다루며, 신경교세포의 치료적 조절을 위한 잠재적 전략에 대해 논의합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. AETA peptide contributes to Alzheimer's disease signature of synapse dysfunction.</h3>
+                        <div class="korean-title">→ AETA 펩타이드는 시냅스 기능 장애라는 알츠하이머병의 특징적인 증상에 기여합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 18.2</span>
+                        <span class="badge journal-badge">Acta neuropathologica</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jade Dunot, Carine Gandin, Marin Truchi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237024/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>치매의 주요 원인인 알츠하이머병(AD)은 명백한 인지 기능 저하에 앞서 나타나는 초기 시냅스 기능 장애가 특징입니다. 사후 인체 해마 및 전두엽 피질 조직 분석 결과, AD 환자, 특히 여성 환자에서 AETA 수치가 유의미하게 증가한 것으로 나타났습니다. 따라서 AETA 신호 전달 경로를 표적으로 삼는 것은 AD에서 시냅스 및 인지 기능 저하를 예방하거나 완화하는 새로운 치료법 개발에 도움이 될 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Insulin resistance alters cortical inhibitory neurons and microglia to exacerbate Alzheimer's knock-in mouse phenotypes.</h3>
+                        <div class="korean-title">→ 인슐린 저항성은 대뇌 피질 억제 신경 세포와 미세아교세포를 변화시켜 알츠하이머병 유전자 삽입 마우스의 표현형을 악화시킨다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.5</span>
+                        <span class="badge journal-badge">Molecular neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    LaShae Nicholson, Si Jie Tang, Tejaswini Karra et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237401/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>대사 기능 장애는 알츠하이머병(AD)의 위험 증가 및 진행에 기여하지만, 손상된 인슐린 신호 전달과 전신적인 대사 스트레스가 뇌 기능 장애로 이어지는 세포 메커니즘은 아직 완전히 규명되지 않았습니다. 본 연구는 전신적인 인슐린 대사 기능 장애와 알츠하이머병에서 나타나는 대뇌 피질 회로 취약성을 연결하는 세포 프로그램을 규명합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Pathophysiology and Treatment of Type 1 Diabetes in Older Adults.</h3>
+                        <div class="korean-title">→ 고령자의 제1형 당뇨병의 병태생리 및 치료.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 16.6</span>
+                        <span class="badge journal-badge">Diabetes care</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Alessandra Petrelli, Nicholas J Thomas, Suzy V Hope et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237872/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>이 글은 연령과 제1형 당뇨병이 어떻게 상호작용하여 임상 발병 및 치료에 영향을 미치는지 조명하고, 특히 노년기에 제1형 당뇨병을 분류하고 관리하는 데 있어 맞춤형 전략의 필요성을 강조합니다. 앞으로 성인을 제1형 당뇨병 발병 전 선별검사 및 예방 노력에 통합하는 것은 예측 정확도를 높이고 오분류를 줄이며 질병 진행을 억제하는 치료법을 안내하는 데 필수적입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Cryptic splicing in synaptic and membrane excitability genes links TDP-43 loss to neuronal dysfunction.</h3>
+                        <div class="korean-title">→ 시냅스 및 막 흥분성 유전자에서의 숨겨진 스플라이싱은 TDP-43 결핍과 신경 기능 장애를 연결합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.6</span>
+                        <span class="badge journal-badge">Science translational medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Caiwei Guo, Kuchuan Chen, Sarat Vatsavayai et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42234776/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>TAR DNA 결합 단백질 43(TDP-43) 병리는 근위축성 측삭 경화증(ALS) 및 전두엽 치매(FTD)를 포함한 여러 신경퇴행성 질환의 특징적인 병리학적 소견입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Reticulophagy limits Alzheimer's disease pathology through FAM134B-dependent APP clearance.</h3>
+                        <div class="korean-title">→ 세망포식은 FAM134B 의존성 APP 제거를 통해 알츠하이머병 병리를 제한합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.3</span>
+                        <span class="badge journal-badge">Autophagy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yuting Zhang, Jun Sun, Yixian Cui (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237481/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>선택적 자가포식은 손상된 막과 응집되기 쉬운 단백질의 수용체 매개 분해를 통해 세포소기관 및 단백질 항상성을 유지합니다. 알츠하이머병 환자 샘플과 5XFAD 마우스에서 FAM134B의 후성유전적 억제는 TFEB/TFE3 의존성 전사를 제한하여 소포체 회전율 저하, APP 축적 및 아밀로이드 병리 악화를 초래합니다. 이러한 연구 결과는 소포체 자가포식 기능 장애가 알츠하이머병의 상위 병원성 기전임을 밝히고, FAM134B 매개 소포체 회전율 조절이 아밀로이드 생성 APP 축적을 억제하는 잠재적인 치료 전략이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Influence of Cardiometabolic and Alzheimer Disease Genetics on Cognitive-Related Outcomes in a Diverse Population.</h3>
+                        <div class="korean-title">→ 다양한 인구 집단에서 심혈대사 질환 및 알츠하이머병 유전학이 인지 관련 결과에 미치는 영향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Daeeun Kim, Katelyn McInerney, Chaitali Dagli et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42234953/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>노년기 치매는 유전적 요인이 강합니다. 본 연구에서는 최신 게놈 전체 연관성 연구에서 얻은 주요 게놈 전체 유의미한 유전적 변이를 이용하여 알츠하이머병 및 관련 치매(ADRD)와 뇌졸중, 관상동맥 질환, 정맥혈전색전증, 제2형 당뇨병, 심방세동, 혈압(수축기 혈압, 이완기 혈압, 맥압), 혈중 지질 수치(고밀도 지단백 콜레스테롤, 저밀도 지단백 콜레스테롤, 트리글리세리드)를 포함한 선천성 치매(CMD)에 대한 다발성 위험 점수(PRS)를 구축했습니다. CMD PRS의 경우, 맥압 PRS와 이완기 치매(DCCD) 사이에 유의미한 연관성을 확인했습니다(위험비[HR] 1.16, 95% CI 1.06-1.28). 맥압 PRS가 높을수록 DCCD 위험이 증가하는 것으로 나타났으며, 이는 CMD와 치매 사이에 공통적인 유전적 기반이 있음을 뒷받침합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Plasma Amyloid Beta and Tau Associations with Cerebral Amyloid Angiopathy Presence and Severity.</h3>
+                        <div class="korean-title">→ 혈장 아밀로이드 베타 및 타우와 뇌 아밀로이드 혈관병증의 존재 및 중증도와의 연관성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.3</span>
+                        <span class="badge journal-badge">Annals of neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Francesco Bax, Lei Liu, Thijs Wijnzen van Harten et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237156/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 연구의 목적은 혈장 아밀로이드 베타(Aβ) Aβ37, Aβ40, Aβ42 및 p-tau217이 뇌 아밀로이드 혈관병증(CAA) 환자에서 대조군과 차이를 보이는지, 그리고 CAA의 특정 자기공명영상(MRI) 표지자와 연관성이 있는지를 확인하는 것이었다. (ANN NEUROL 2026) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Alzheimer's disease and cerebrovascular biomarkers in relation to odor identification in a naturalistic clinical cohort.</h3>
+                        <div class="korean-title">→ 자연주의적 임상 코호트에서 후각 식별과 관련된 알츠하이머병 및 뇌혈관 생체지표.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Javier Oltra, Zuzana Ištvánfyová, Grégoria Kalpouzos et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237406/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>후각 기능 장애, 특히 냄새 식별(OID) 장애는 알츠하이머병(AD)과 연관되어 있으며, 이는 후각 뇌 회로의 국소 단백질병증 및 위축 때문일 가능성이 높습니다. 자유 OID는 총 OID에 비해 일화 기억 및 생체 지표와 더 광범위하고 강력한 연관성을 보였습니다. 치매 단계에서 기억 장애를 동반한 내측 측두엽 위축은 후각 기능 장애의 주요 상관관계일 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Neuronal overexpression of Nrf2 reduces dystrophic neurites in 5XFAD Alzheimer's disease model mice.</h3>
+                        <div class="korean-title">→ 신경세포에서 Nrf2가 과발현되면 5XFAD 알츠하이머병 모델 마우스에서 퇴행성 신경돌기가 감소합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Katherine R Sadleir, Karen P Gomez, Sidhanth Chandra et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237182/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD) 뇌의 특징적인 병변은 베타-아밀로이드 단백질로 구성된 아밀로이드 플라크와 과인산화되어 응집된 타우 단백질로 구성된 신경섬유 엉킴이며, 이 둘 모두 신경 세포 기능 장애와 손실을 유발합니다. Nrf2가 퇴행성 신경돌기를 감소시키는 기전을 더 자세히 연구하면 뇌 아밀로이드 축적으로 인한 신경돌기 손상을 제한할 수 있는 치료 전략으로 이어질 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. BIN1 gain-of-function in the presynaptic compartment leads to isoform-specific synaptotoxicity.</h3>
+                        <div class="korean-title">→ 시냅스 전 구획에서 BIN1의 기능 항진은 동형 특이적 시냅스 독성을 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Erwan Lambert, Carla Gelle, Valentin Leclerc et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237143/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 강한 유전적 소인과 인지 기능 저하와 연관된 초기 시냅스 손실과 관련이 있습니다. 이러한 결과는 BIN1iso1이 알츠하이머병에서 시냅스 기능을 보존하기 위한 치료 전략의 잠재적 표적임을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Neuronal toll-like receptor-4 regulation of matrix metalloproteinase-9 activity mediates dentate circuit dysfunction after traumatic brain injury.</h3>
+                        <div class="korean-title">→ 신경세포의 톨유사수용체-4(TLR-4)에 의한 기질 금속단백분해효소-9(MMP-9) 활성 조절은 외상성 뇌손상 후 치상회 회로 기능 장애를 매개한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.1</span>
+                        <span class="badge journal-badge">Journal of neuroinflammation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Deepak Subramanian, Erick M Contreras, Laura Dovek et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42237180/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>외상성 뇌손상(TBI)에 의해 활성화되는 신경염증 경로는 장기적인 신경 기능 장애의 중요한 매개체이며 유망한 치료 표적입니다. 이러한 결과들을 종합하면, 새로운 TLR4-MMP-9 축이 TBI 후 초기 치상회 회로 기능 장애 및 행동 결함의 핵심 원인임을 밝혀냈습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
