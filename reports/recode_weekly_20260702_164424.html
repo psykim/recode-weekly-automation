@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.07.02</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.07.02</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">19</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">4</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">15</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Circular RNA guides exon skipping in DMD.</h3>
+                        <div class="korean-title">→ 원형 RNA는 DMD에서 엑손 스키핑을 유도합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature reviews. Drug discovery</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    M Teresa Villanueva (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42387187/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Competing programs shape cortical sensorimotor-association axis development.</h3>
+                        <div class="korean-title">→ 경쟁하는 프로그램들이 대뇌 피질의 감각운동-연관 축 발달에 영향을 미친다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jeremiah Tsyporin, Menglei Zhang, Cai Qi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42386980/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>대뇌 피질은 감각운동-연합(S-A) 축을 따라 조직되어 있으며, 한쪽 끝에는 특정 감각 양식에 특화된 일차 감각운동 영역이, 다른 쪽 끝에는 추상적 인지를 지원하는 분산 네트워크를 형성하는 다감각 연합 영역이 자리 잡고 있습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Restoring cortical disinhibition improves Huntington's disease phenotypes.</h3>
+                        <div class="korean-title">→ 대뇌 피질 억제 해제를 회복시키면 헌팅턴병 증상이 개선됩니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sonja Blumenstock, David Arakelyan, Nicholas Del Grosso et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42386967/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Blood-based circular RNAs for early diagnosis of Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 혈액 기반 원형 RNA를 이용한 알츠하이머병 조기 진단.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 58.7</span>
+                        <span class="badge journal-badge">Nature medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Bridget Phillips, Jessie Sanford, Vaibhav A Janve et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42387213/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>임상 증상 발현 전 알츠하이머병(AD)을 조기에 발견하는 것은 새로운 치료법 개발에 매우 중요합니다. 원형 RNA(circRNA)는 뇌에 풍부하게 존재하는 매우 안정적인 비코딩 RNA로, 혈뇌장벽을 통과할 수 있습니다. 본 연구에서는 AD 환자 1,221명과 건강한 대조군 1,221명의 혈액 데이터를 분석하여 AD 상태와 관련된 34개의 circRNA를 확인했습니다. 이 34개의 circRNA를 포함한 예측 모델은 생체지표(아밀로이드-β 및 타우)로 확인된 AD 상태를 분류하는 데 있어 혈장 인산화 타우-217(pTau217)과 유사한 예측력을 보였으며, Knight-Alzheimer Disease Research Center(n=551: AD 환자 76명, 인지 기능 정상인 475명) 및 전임상 A4 코호트(n=1,767)의 독립적인 샘플에서도 재현성을 확인했습니다. 혈액 circRNA를 이용한 바이오마커 확진 상태 분류(곡선 아래 면적(AUC) = 0.945)는 혈장 pTau217(AUC = 0.877)보다 예측 능력이 우수했으며, 통합 모델(circRNA+pTau217 AUC = 0.977)에서는 예측 능력이 더욱 향상되었습니다. 이 모델은 알츠하이머병에 대한 높은 특이성을 보였지만, 파킨슨병, 전두엽 치매 및 기타 신경퇴행성 질환에 대해서는 낮은 예측력을 나타냈습니다. 나이트-알츠하이머병 연구센터 발견 코호트에서 이러한 circRNA(위험비 = 2.92)는 증상성 알츠하이머병으로의 진행을 예측하는 데 있어 pTau217(위험비 = 1.81) 및 아밀로이드-양전자방출단층촬영보다 우수한 성능을 보였습니다. 더 큰 규모의 코호트에서 검증이 필요하지만, 이러한 결과는 혈액 내 순환 RNA가 알츠하이머병 진단 및 질병 진행의 잠재적 바이오마커가 될 수 있음을 시사합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Author Correction: Spinal cord Tau pathology induces tactile deficits and cognitive impairment in Alzheimer's disease via dysregulation of CCK neurons.</h3>
+                        <div class="korean-title">→ 저자 정정: 척수 타우 병리는 CCK 뉴런의 기능 장애를 통해 알츠하이머병에서 촉각 결손 및 인지 장애를 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 28.0</span>
+                        <span class="badge journal-badge">Nature neuroscience</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yang Zhou, Wen-Lian Li, Zhi-Qiang Liu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42386951/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Hippocampal C5a-C5aR1 axis drives age-related memory decline via collapsing synaptic chloride homeostasis.</h3>
+                        <div class="korean-title">→ 해마의 C5a-C5aR1 축은 시냅스 염화물 항상성 붕괴를 통해 연령 관련 기억력 감퇴를 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Wenying Liu, Wei Qin, Ying Li et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42385960/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>해마는 뇌 노화 및 이와 관련된 신경 염증에 매우 취약하며, 이는 해마 가소성을 저해하는 주요 요인입니다. 본 연구 결과는 C5a-C5aR1 경로가 노화 과정에서 비정상적으로 활성화됨을 밝혀냈습니다. 이러한 결과는 C5aR1이 노화된 뇌에서 시냅스 퇴화를 완화하고 기억 기능을 보존하는 데 유망한 치료 표적이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Publisher Correction: Current knowledge and challenges of sepsis-associated encephalopathy.</h3>
+                        <div class="korean-title">→ 출판사 정정: 패혈증 관련 뇌병증에 대한 현재의 지식과 과제.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 21.2</span>
+                        <span class="badge journal-badge">Intensive care medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Manu Shankar-Hari, Sarah Benghanem, Lena Bourhy et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42390594/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Plasma proteomic profiles of Alzheimer's disease and neurodegeneration in African cohorts.</h3>
+                        <div class="korean-title">→ 아프리카 코호트에서 알츠하이머병 및 신경퇴행성 질환의 혈장 단백질체 프로파일.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ilaria Pola, Tolulope Akinyemi, Kubra Tan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42386726/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병 및 관련 치매(ADRD)는 특히 저소득 및 중소득 국가에서 공중 보건에 대한 부담이 점점 커지고 있습니다. 동반 질환은 단백질 수치와 유의미한 상관관계를 보이며, 혈장 바이오마커 수치는 성별에 따라 차이가 있습니다. 이러한 연구 결과는 아프리카 인구에서 ADRD 진단에 체액 바이오마커가 유용함을 뒷받침합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Elevated sclerostin levels in cerebrospinal fluid are associated with cognitive impairment in the Alzheimer's disease continuum.</h3>
+                        <div class="korean-title">→ 뇌척수액 내 스클레로스틴 수치 증가는 알츠하이머병 진행 과정에서 인지 장애와 관련이 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Patrizia Pignataro, Manuela Dicarlo, Daniele Urso et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42388896/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뼈에서 추출한 스클레로스틴은 알츠하이머병(AD) 환자와 AD 마우스 모델 모두에서 인지 기능을 저하시킵니다. 본 연구 결과는 스클레로스틴이 모든 인지 영역에 부정적인 영향을 미치며, 특히 AD 전구기 단계에서 두드러지게 나타남을 보여주어, 질병 초기 단계의 인지 기능 저하를 예측하는 바이오마커로서의 가능성을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. FTLD-TDP versus LATE-NC: Experience of a Brain Bank specializing in FTLD-TDP.</h3>
+                        <div class="korean-title">→ FTLD-TDP와 LATE-NC 비교: FTLD-TDP 전문 뇌은행의 경험.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    D Luke Fischer, Salvatore Spina, Bruce L Miller et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42388895/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>43kDa의 전사 활성 반응 DNA 결합 단백질(TDP-43)을 동반한 전두측엽 퇴행(FTLD-TDP)과 변연계 우세형 연령 관련 TDP-43 뇌병증 신경병리학적 변화(LATE-NC) 사이의 유사성은 이들이 별개의 질환인지 아니면 단일 질병 스펙트럼인지에 대한 의문을 제기합니다. FTLD-TDP의 임상병리학적 자료를 활용한 결과(FTLD-TDP A형 사례는 발병 및 사망 연령이 더 어리고, 질병 지속 기간이 더 짧으며, 유전적 원인이 빈번하게 나타남) 이러한 전반적인 결과는 FTLD-TDP와 LATE-NC가 별개의 진단 질환임을 뒷받침합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Meeting report for the Second International Conference on Unconventional Animal Models of Alzheimer's Disease and Aging (UAMAA 2026).</h3>
+                        <div class="korean-title">→ 제2회 알츠하이머병 및 노화의 비전통적 동물 모델 국제 학술대회(UAMAA 2026) 회의 보고서.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jane Alshami, Ginny Wu, B Maximiliano Garduño et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42388534/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>제2회 알츠하이머병 및 노화의 비전통적 동물 모델 국제 학술대회(UAMAA 2026)가 2026년 2월 9일부터 11일까지 캘리포니아주 어바인에서 개최되었습니다. 이 회의에는 유전체학, 시스템 신경과학, 비교 생물학 및 병리학 분야의 저명한 연구자들이 모여 데구(Degu)를 포함한 자연 발생적 및 유전자 조작적 모델에 대해 논의했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Cerebrovascular reactivity and plasma p-tau181 in Alzheimer's disease: Insights into APOE-related vascular phenotypes.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 뇌혈관 반응성과 혈장 p-tau181: APOE 관련 혈관 표현형에 대한 통찰.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Martina Gaia Di Donna, Maria Rosaria Bagnato, Chiara Giuseppina Bonomi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42388533/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈관 기능 장애는 알츠하이머병(AD)의 주요 원인으로 점점 더 중요하게 인식되고 있습니다. BHI는 대조군에 비해 두 AD 그룹 모두에서 유의하게 감소했습니다. (본 연구 결과는 CVR 손상이 모든 AD 유전자형에서 나타나지만, APOE ε3 보유자에서 AD 병리 및 혈관-대사 기능 장애와 더 강하게 연관되어 있음을 시사합니다. CVR은 AD에서 인지 기능 저하에 대한 초기 혈관 기여도를 나타내는 비침습적 바이오마커가 될 수 있습니다.) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Multimorbidity burden and patterns associated with DeepBrainNet-derived brain-age gap in dementia-free older adults: A community-based study.</h3>
+                        <div class="korean-title">→ 치매가 없는 노인에서 DeepBrainNet으로 측정한 뇌 연령 차이와 관련된 다중 질환 부담 및 양상: 지역사회 기반 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xinyu Liu, Ming Mao, Cuicui Liu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42387260/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>최근 연구 결과들은 만성 질환과 뇌 구조적 지표 사이의 연관성을 보여주고 있지만, 다중 질환 패턴과 뇌 연령 차이 사이의 관계는 명확하지 않습니다. 본 연구에서는 만성 질환의 수, 다중 질환, 그리고 심혈대사 다중 질환이 뇌 연령 차이 증가와 유의미한 상관관계를 보였습니다(p < 0.05). 다중 질환의 전반적인 부담과 심혈대사 패턴은 치매가 없는 노인에서 뇌 노화의 진행과 관련이 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Correlates and predictors of self-efficacy among dementia caregivers: D-CARE findings.</h3>
+                        <div class="korean-title">→ 치매 환자 간병인의 자기효능감 관련 요인 및 예측 변수: D-CARE 연구 결과.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    David B Reuben, Alan B Stevens, Thomas M Gill et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42386685/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>치매 환자 보호자의 자기효능감(CSE)이 높을수록 치매 환자(PLWD)에게 상당한 이점이 있을 수 있습니다. 기준선 데이터를 이용한 횡단면 다중 회귀 분석 결과, 치매 환자와 함께 거주하지 않는 경우, 우울증 점수가 높은 경우, 치매 환자의 행동 증상으로 인한 스트레스가 많은 경우, 보호자의 부담이 큰 경우, 그리고 치매 환자의 기본적인 일상생활 활동 수행 능력이 높은 경우 등 여러 요인이 낮은 CSE와 유의미하게 관련되어 있는 것으로 나타났습니다. (ClinicalTrials.gov, NCT03786471, https://clinicaltrials.gov/) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. What should convince a clinician of disease modification in Alzheimer's disease clinical trials?</h3>
+                        <div class="korean-title">→ 알츠하이머병 임상시험에서 질병 진행 억제 효과를 임상의가 확신하게 하려면 무엇이 필요할까요?</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jemma Hazan, Kathy Y Liu, Robert Howard (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42386684/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>도나네맙과 레카네맙과 같은 아밀로이드 수치 저하 항체 치료제의 규제 승인 후 임상시험 연장 데이터가 최근 발표됨에 따라, 임상의들은 질병 경과 변화 효과에 대한 연구진과 제약회사의 주장을 검증하기 위해 임상시험 설계와 분석 방법을 비판적으로 평가해야 할 필요성이 대두되었습니다. 본 논문에서는 질병 경과 변화 효과에 대한 주장을 평가하는 데 있어 어려운 점들을 살펴보고, 평가 프레임워크를 제시하며, 이러한 주장을 검증하거나 뒷받침하는 데 사용된 다양한 임상시험 설계 및 분석 접근법을 검토하고, 연구 평가를 위한 실용적인 체크리스트를 제안합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Primary cilia-extracellular vesicle crosstalk in Alzheimer's disease: Emerging mechanisms and biomarker potential.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 일차 섬모-세포외 소포 상호작용: 새로운 메커니즘 및 바이오마커로서의 잠재력.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia : the journal of the Alzheimer's Association</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Vishal Singh Guleria, Charisse N Winston (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42386680/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 인지 기능 저하와 시냅스 기능 장애를 특징으로 하는 신경퇴행성 질환입니다. 본 리뷰는 AD 발병 기전에서 PC의 다면적인 역할에 대한 증거를 종합하고, PC가 조기 바이오마커로서의 잠재력을 지니는지 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Shared genetic architecture of schizophrenia and Alzheimer's disease and related dementias implicates 16p11.2 and lifespan brain vulnerability.</h3>
+                        <div class="korean-title">→ 정신분열증과 알츠하이머병 및 관련 치매의 공통적인 유전적 구조는 16p11.2와 평생에 걸친 뇌 취약성과 관련이 있습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.5</span>
+                        <span class="badge journal-badge">Molecular psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yu Chen, Lei Cheng, Qi Wang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42387103/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>정신분열증(SCZ)과 치매 위험 증가 사이의 연관성을 보여주는 역학적 및 임상적 관찰과 알츠하이머병 및 관련 치매(ADRD)에서 정신병이 발생하는 현상은 두 질환의 동반 발생에 공통적인 유전적 소인이 기여할 수 있음을 시사합니다. 본 연구에서는 SCZ와 ADRD 간의 유의미한 국소적 유전적 상관관계(P < 2.0 × 10⁻⁵)와 교차 특성 다유전자 풍부화를 확인했으며, 결합 거짓 발견율(conjFDR) < 0.05에서 39개의 유전체 위치가 공동으로 연관되어 있음을 확인했습니다. 이러한 결과는 SCZ와 ADRD 간의 부분적인 유전적, 조절적, 전사체적, 발달적, 영상학적 증거를 종합적으로 제시하며, 특히 16p11.2 영역과 신경 발달, 시냅스 및 축삭 구조, 수초화 관련 미세 구조, 그리고 노년기 뇌 취약성과 관련된 생물학적 과정을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Amylin at the crossroads of type 2 diabetes and neurodegenerative diseases.</h3>
+                        <div class="korean-title">→ 아밀린은 제2형 당뇨병과 신경퇴행성 질환의 교차점에 서 있다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.4</span>
+                        <span class="badge journal-badge">Ageing research reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Inés López Del Castillo, Jesus Garcia-Martin, Antonia Gutierrez et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42386071/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>제2형 당뇨병(T2D)은 전통적으로 인슐린 저항성과 췌장 β세포 기능 부전을 중심으로 하는 대사 질환으로 여겨져 왔습니다. T2D의 예상되는 규모를 고려할 때, 조기 발견과 중년기 개입을 통해 IAPP-신경퇴행성 축을 표적으로 삼는 것은 대사 및 인지 기능 저하가 복합적으로 미치는 사회경제적 영향을 완화하는 데 필수적입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">15. γ-radiation reduces phosphorylated-tau in rhesus macaque brains: potential implications for Alzheimer's disease and other tauopathies.</h3>
+                        <div class="korean-title">→ 감마선 조사는 붉은털원숭이 뇌에서 인산화 타우 단백질을 감소시킨다: 이는 알츠하이머병 및 기타 타우병증에 대한 잠재적 의미를 지닌다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Erin K Murphy, Kathleen Hatch, Stephen Y Wise et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42387631/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>다양한 방사선원(방사선 치료 장비, 우주 여행, 핵 사고 등)으로부터의 방사선 노출이 뇌에 미치는 영향을 이해하는 것이 매우 중요함에도 불구하고, 비인간 영장류(NHP) 뇌에 대한 감마선의 영향 연구는 제한적입니다. 본 연구에서 방사선에 노출된 NHP 뇌를 분석한 결과는 새롭고, 전신 감마선 조사가 신경조직학적 손상 없이 조사 후 몇 주 만에 가용성 pTau 수치를 유의미하게 변화시킨다는 것을 보여줍니다. 이러한 결과는 알츠하이머병을 포함한 타우병증의 진행을 조절하기 위한 감마선 기반 전략 개발에 대한 흥미로운 새로운 가능성을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
