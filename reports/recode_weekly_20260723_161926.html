@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.07.23</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.07.23</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">10</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">1</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">9</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Retraction notice to "Exposure to ambient fine particles and neuropsychiatric symptoms in cognitive disorder: A repeated measure analysis from the CREDOS (Clinical Research Center for Dementia of South Korea) study" [Sci. Total Environ. 668 (2019) 411-418].</h3>
+                        <div class="korean-title">→ "주변 미세먼지 노출과 인지 장애의 신경정신 증상: CREDOS(대한민국 치매 임상연구센터) 연구의 반복 측정 분석" [Sci. Total Environ. 668(2019) 411-418]에 대한 철회 공지.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 45.8</span>
+                        <span class="badge journal-badge">The Science of the total environment</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hyewon Lee, Jae Myeong Kang, Woojae Myung et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42486743/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Functional analysis of late-onset Alzheimer's disease risk genes in Caenorhabditis elegans identifies regulators of neuronal aging.</h3>
+                        <div class="korean-title">→ 예쁜꼬마선충에서 후기 발병 알츠하이머병 위험 유전자의 기능 분석을 통해 신경 노화 조절자를 규명하였다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.2</span>
+                        <span class="badge journal-badge">Translational neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Swapnil G Waghmare, Meera M Krishna, Emily C Maccoux et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42487135/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. The proteomic and metabolomic signature of inherited chromosomally integrated HHV-6 and its role in all-cause dementia and mortality risk: The UK Biobank study.</h3>
+                        <div class="korean-title">→ 유전적으로 염색체에 통합된 HHV-6의 단백질체 및 대사체 특징과 모든 원인에 의한 치매 및 사망 위험에서의 역할: 영국 바이오뱅크 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    May A Beydoun, Minkyo Song, Choa Yun et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42483205/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>염색체에 통합된 유전성 인간 헤르페스바이러스 6형(iciHHV-6)과 치매 발생 및 사망률 간의 연관성을 조사하고, 보균 상태와 관련된 단백질체 및 대사체 지표를 규명하며, 이러한 생체지표가 치매 및 사망 위험과 관련이 있는지 평가하고자 하였다. iciHHV-6는 특히 여성과 유전적으로 취약한 individuals에서 치매 위험 증가와 관련이 있었으며, 신경면역 및 대사 생체지표 프로필은 뇌 노화 및 사망 위험과 관련될 가능성이 있는 것으로 나타났다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Cognitive dysfunction in Parkinson's disease: Hippocampal vulnerability and redox-driven mechanisms.</h3>
+                        <div class="korean-title">→ 파킨슨병에서의 인지 기능 장애: 해마의 취약성과 산화환원 반응에 의한 기전.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Redox biology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ana Rita Curto, Ana Alexandra Silva, Mariana Bernardo Fiadeiro et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42485748/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인지 기능 장애는 파킨슨병(PD)의 가장 심각한 비운동 증상 중 하나로, 경도 인지 장애에서 파킨슨병 치매로 진행됩니다. 본 리뷰는 분자, 세포 및 시스템 수준의 연구 결과를 통합하여 산화환원 조절 장애, 특히 NOX 의존성 신호 전달이 파킨슨병에서 인지 기능 저하를 유발하는 핵심 기전임을 밝히고, 산화환원 경로를 표적으로 하는 새로운 치료 전략들을 논의하며, NOX 조절이 파킨슨병 관련 인지 장애의 진행을 변화시킬 수 있는 유망한 접근법임을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Closer Association of Liver Stiffness Than Liver Fat Content With Imaging-Derived Neurovascular Coupling in a Metabolic Dysfunction-Associated Steatotic Liver Disease Cohort.</h3>
+                        <div class="korean-title">→ 대사 기능 장애 관련 지방간 질환 코호트에서 간 지방 함량보다 간 경직도가 영상으로 측정된 신경혈관 연결과 더 밀접한 관련이 있다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Diabetes, obesity & metabolism</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Zhuoru Jiang, Futao Chen, Hailong Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42483871/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>대사 기능 장애 관련 지방간 질환(MASLD)은 인지 기능 저하와 점점 더 연관되고 있지만, 영상 기반 신경혈관 연접(NVC)과 관련된 간 인자는 아직 불분명합니다. 건강한 대조군(HC) 및 간 경직도가 낮은 환자(MASLD_low)와 비교했을 때, 간 경직도가 높은 환자(MASLD_high)는 전반적인 뇌혈류-재관류 결합이 감소하고 뇌혈류/재관류 비율이 변화했으며, 이러한 변화는 주로 양측 상측두극/상측두회(TPOsup)에 국한되었습니다. 이러한 결과는 가설을 제시하는 것이며, 향후 종단 연구를 통해 검증될 필요가 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Alzheimer's disease risk prediction via perceptual deformable attention generative adversarial network with large foundation models.</h3>
+                        <div class="korean-title">→ 대규모 기반 모델을 사용하는 지각 변형 가능 주의 생성적 적대 신경망을 통한 알츠하이머병 위험 예측.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Medical image analysis</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Zhaoxu Xing, Zhengliang Liu, Da-Fang Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42485924/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD) 발병 위험을 예측하는 것은 조기 개입에 매우 중요합니다. 이를 위해 먼저 대규모 기초 모델을 활용하여 고품질 특징을 자동으로 구축합니다. PDAT-GAN의 코드는 다음 링크에서 확인할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Associations of Alzheimer Disease and Related Dementia Neuropathologies With Timely Diagnosis of Dementia in Healthcare Settings.</h3>
+                        <div class="korean-title">→ 의료 환경에서 치매의 조기 진단과 관련된 알츠하이머병 및 관련 치매 신경병리학적 특징의 연관성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yi Chen, Annie Chen, Melinda C Power et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42485607/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>치매를 조기에 진단하면 치료 및 계획 수립에 귀중한 시간을 확보할 수 있지만, 진단이 제대로 이루어지지 않는 경우가 흔합니다. 중등도/중증 혈관 병리(OR = 0.94, 95% CI 0.55-1.59)와 신피질 루이체 병리(OR = 1.00, 95% CI 0.64-1.55)는 조기 진단과 유의미한 연관성을 보이지 않았습니다. 주로 백인이며 교육 수준이 높은 표본을 대상으로 한 본 연구 결과는 더 광범위한 인구 집단을 대상으로 재현 연구가 필요하지만, 치매의 조기 진단과 관련된 생물학적 요인을 이해하는 데 중요한 첫걸음입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. How Good Are Clinicians at Diagnosing Different Dementia-Related Neuropathologies?</h3>
+                        <div class="korean-title">→ 임상의들은 다양한 치매 관련 신경병증을 얼마나 잘 진단할 수 있을까요?</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Klaus P Ebmeier (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42485606/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. SIRT Family: Biological Functions and Therapeutic Targets.</h3>
+                        <div class="korean-title">→ SIRT 패밀리: 생물학적 기능 및 치료 표적.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">MedComm</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jia-Yi Wang, Feng-Li Jiang, Fang-Yuan Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42488706/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Personalized non-invasive combined magnetic and electrical stimulation of the default mode network in mild AD patients (CMES-AD): a multicentric randomized sham-controlled trial protocol.</h3>
+                        <div class="korean-title">→ 경증 알츠하이머병 환자에서 디폴트 모드 네트워크에 대한 맞춤형 비침습적 자기 및 전기 자극 병용 요법(CMES-AD): 다기관 무작위 위약 대조 시험 프로토콜.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sonia Bonnì, Romina Esposito, Lucia Mencarelli et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42482244/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD) 환자는 일화 기억에 관여하는 핵심 뇌 네트워크인 디폴트 모드 네트워크(DMN)에서 초기 변화를 보이며, 이 네트워크의 중심 부위는 전두엽 피질(precuneus)입니다. (임상시험 등록번호: NCT07075770, 2025년 7월 10일) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
