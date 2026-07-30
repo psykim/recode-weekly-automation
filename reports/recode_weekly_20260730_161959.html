@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.07.30</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.07.30</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">22</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">22</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        <p>이번 주에는 해당하는 논문이 없습니다.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Mitochondrial accumulation and lysosomal dysfunction result in mitochondrial plaques in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 미토콘드리아 축적과 리소좀 기능 장애는 알츠하이머병에서 미토콘드리아 플라크를 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 28.0</span>
+                        <span class="badge journal-badge">Nature neuroscience</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xiuli Dan, Deborah L Croteau, Wenlong Liu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42527552/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>미토콘드리아 자가포식 기능 장애는 알츠하이머병(AD) 병리의 핵심 요소로 제시되고 있지만, 직접적인 생체 내 증거와 기전적 통찰은 아직 부족합니다. 그러나 리소좀 기능 장애로 인해 미토콘드리아 자가포식을 통한 분해가 불완전하게 진행되어 중성 및 산성 미토콘드리아가 축적됩니다. 이러한 연구 결과는 미토콘드리아 자가포식체(MPs)를 AD의 새로운 병리학적 실체로 규정합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. cGAS-mediated type I IFN signaling contributes to disease progression in drug-refractory epilepsy.</h3>
+                        <div class="korean-title">→ cGAS 매개 제1형 IFN 신호전달은 약물 불응성 간질의 질병 진행에 기여한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 28.0</span>
+                        <span class="badge journal-badge">Nature neuroscience</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yige Huang, Li Fan, Man Ying Wong et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42527551/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>간질은 흔한 신경계 질환으로, 환자의 3분의 1은 항간질 약물에 반응하지 않아 약물 불응성 간질(DRE)로 진행됩니다. 이러한 연구 결과는 cGAS 매개 신경면역 신호전달이 드라벳 증후군의 발작 병리에 기여한다는 것을 밝혀냈으며, 이 경로가 잠재적인 치료 표적이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. IL-1β/IL-1R1 signaling mediates sleep deprivation-induced memory consolidation impairment and is a target for cognitive enhancement in male mice.</h3>
+                        <div class="korean-title">→ IL-1β/IL-1R1 신호전달은 수면 부족으로 인한 기억력 강화 장애를 매개하며, 수컷 쥐의 인지 기능 향상을 위한 표적이다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 26.3</span>
+                        <span class="badge journal-badge">Brain, behavior, and immunity</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xinghe Wang, Mengqiu Deng, Dan Yu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42526664/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>수면은 기억력 강화에 중요한 역할을 하지만, 수면 부족과 인지 기능 저하를 연결하는 정확한 분자 메커니즘은 아직 불분명합니다. 본 연구 결과는 IL-1β/IL-1R1 신호전달 경로가 수면 부족으로 인한 기억력 저하의 핵심 매개체임을 밝혀냈으며, 이 경로가 수면 부족 상황에서 인지 회복력을 향상시키는 데 유망한 치료 표적이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Retinal proteome changes mirror brain pathology and reveal synaptic and cytoskeletal dysfunction in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 망막 단백질체 변화는 뇌 병리를 반영하며 알츠하이머병에서 시냅스 및 세포골격 기능 장애를 드러냅니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 18.2</span>
+                        <span class="badge journal-badge">Acta neuropathologica</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jessica Santiago, Dovilė Pocevičiūtė, Teo Sällberg et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42525245/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>시각 기능 장애는 알츠하이머병의 중요한 특징으로 점점 더 인식되고 있으며, 여러 연구에서 상당한 망막 변화가 보고되었습니다. 특히, 단백질의 87%가 망막과 해마 모두에서 검출되었으며, 두 조직에서 공통적으로 발현량이 차이가 나는 64개의 단백질이 확인되었고, 그중 일부는 조직 간 강한 상관관계를 보였습니다. 이러한 단백질들이 뇌 병리와 유사하다는 점은 망막이 뇌 질환을 평가하는 데 유용한 창구가 될 수 있음을 더욱 뒷받침합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Intranasal drug delivery to the brain for neurodegenerative diseases: Current efforts and challenges in delivery platforms and modeling.</h3>
+                        <div class="korean-title">→ 신경퇴행성 질환 치료를 위한 비강 내 약물 전달: 전달 플랫폼 및 모델링 분야의 현재 노력과 과제.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.6</span>
+                        <span class="badge journal-badge">Advanced drug delivery reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Katherine Y Bang, Ross Walenga, Steven Chopski et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42526715/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>파킨슨병(PD)과 알츠하이머병(AD)과 같은 신경퇴행성 질환은 고령화 사회에서 전 세계적으로 심각한 문제로 대두되고 있습니다. 전산 유체 역학(CFD) 기반 약물 전달 모델링과 생리학적 기반 약물 동태학(PBPK) 모델링을 포함한 정교한 비강 약물 전달 모델링 개발 노력은 비강 약물 전달 연구를 발전시키고 신경퇴행성 질환에 대한 임상적으로 유용한 비강 플랫폼 개발 가능성을 높이는 데 기여하고 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Transaldolase 1 contributes to pentose phosphate pathway disruption and synaptic dysfunction in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 트랜스알돌라제 1은 알츠하이머병에서 펜토스 인산 경로의 파괴와 시냅스 기능 장애에 기여합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.2</span>
+                        <span class="badge journal-badge">Translational neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xiaoyu Hu, Ying Yu, Haorui Luo et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42527927/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 인지 기능 저하와 시냅스 기능 장애를 특징으로 하는 진행성 신경퇴행성 질환입니다. AD에서는 펜토스 인산 경로(PPP)를 통한 물질 흐름이 현저히 감소하지만, 그 기저 메커니즘은 아직 명확히 밝혀지지 않았습니다. 본 연구 결과는 TALDO1이 AD에서 손상된 PPP의 핵심 조절자임을 밝혀냈으며, 이는 신경 세포의 대사 항상성과 기능을 회복하기 위한 유망한 치료 표적이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Transcriptional regulation of disease-relevant microglial activation programs.</h3>
+                        <div class="korean-title">→ 질병 관련 미세아교세포 활성화 프로그램의 전사 조절.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.0</span>
+                        <span class="badge journal-badge">Neuron</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Amanda McQuade, Reet Mishra, Venus Hagan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42526428/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌의 선천성 면역 세포인 미세아교세포는 건강과 질병에 관련된 다양한 활성화 상태를 나타낼 수 있습니다. DNMT1 유전자 억제는 광범위한 DNA 메틸화 손실을 초래하여 인터페론 신호 전달의 음성 조절자를 활성화시킵니다. 이러한 연구 결과는 미세아교세포 활성화를 조절하여 특정 활성화 상태를 선택적으로 강화하고, 그 기능적 결과를 규명하며, 향후 치료법 개발에 도움이 될 수 있는 틀을 제공합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Gap Junctions Form Bridges between Bench Studies and Clinical Ophthalmology.</h3>
+                        <div class="korean-title">→ 갭 접합은 기초 연구와 임상 안과학을 연결하는 다리 역할을 합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.7</span>
+                        <span class="badge journal-badge">Progress in retinal and eye research</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Gergely Szarka, Tamás Kovács-Öller, Gyula Hoffmann et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42526791/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>망막 신경퇴행성 질환에서, 주요 표적 세포의 초기 퇴행 이후에는 흔히 주변 세포들, 즉 초기에는 영향을 받지 않았던 세포들까지 퇴행하는 현상인 '방관자 효과'가 나타납니다. 본 리뷰에서는 세포 간극연접(GJ) 매개 소통에 대한 현재까지의 연구 결과를 종합하고, 망막 신경 보호에서의 임상적 유용성을 탐구합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Innovative Test Strip-Based Colorimetric Sensors Integrated With Affinity Chromatography: Acetylcholinesterase Inhibitor Screening Breakthrough in Lycium Barbarum Leaves.</h3>
+                        <div class="korean-title">→ 친화성 크로마토그래피와 통합된 혁신적인 테스트 스트립 기반 비색 센서: 구기자 잎에서 아세틸콜린에스테라제 억제제 스크리닝의 획기적인 발전.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yuping Sa, Hui Yuan, Jingui Ma et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42524884/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>현재 알츠하이머 치료제는 효과가 제한적이어서 다중 표적 치료의 필요성이 강조됩니다. 이러한 전략을 적용하여 구기자 잎에서 클로로겐산, N-아세틸-N'-카페오일푸트레신(NANCP), N-카페오일푸트레신(NCP)의 세 가지 강력한 억제제를 확인했으며, 이들의 IC 값은 다음과 같습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Pharmacodynamic and stage-dependent therapeutic efficacy of SFRP1 neutralization in a mouse model of Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병 마우스 모델에서 SFRP1 중화의 약동학적 및 단계별 치료 효과.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Pablo Miaja, Marcos Martinez-Baños, María Jesús Martin-Bermejo et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42524328/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 초기 시냅스 기능 장애에 이어 아밀로이드 베타(Aβ) 축적, 신경 염증 및 인지 기능 저하가 진행되는 특징을 보입니다. α-SFRP1의 약물 동태 및 표적 결합은 비오틴화 또는 지르코늄-89 표지된 α-SFRP1을 사용하여 수컷 및 암컷 APP/PS1 마우스 그룹에서 평가되었습니다. 이러한 결과들을 종합해 볼 때, SFRP1은 AD에서 여전히 중요한 치료 표적이지만, 제한된 뇌 노출과 좁은 치료 범위로 인해 효과적인 조절이 제한적이라는 것을 알 수 있습니다. 이는 조기 개입의 중요성을 강조하고, 개선된 뇌 표적 전달 전략에 대한 연구의 필요성을 제기합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Precision medicine targeting ferroptosis in cerebrovascular diseases.</h3>
+                        <div class="korean-title">→ 뇌혈관 질환에서 페로프토시스를 표적으로 하는 정밀 의학.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.8</span>
+                        <span class="badge journal-badge">Trends in molecular medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Liang Cao, Rui Zhang, Yanjun Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42527221/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>철분 과다 축적에 의한 세포 사멸(페롭토시스)은 뇌혈관 질환(CVD)에서 이차적인 뇌 손상의 주요 원인으로 밝혀졌습니다. 그러나 현재의 치료 전략은 CVD를 획일적인 질환으로 간주하여 병태생리학적 이질성을 간과하는 경향이 있어 항페롭토시스 치료법의 임상 적용이 정체되어 있습니다. 본 연구에서는 철분 과다 축적부터 지질 취약성에 이르기까지 CVD 아형별 특이적 기전을 분석함으로써, CVD에 대한 패러다임 전환의 필요성을 강조합니다. 즉, 정밀 의학의 발전을 위해서는 획일적인 페롭토시스 억제가 아닌, 기전별로 분류되고 상황에 맞는 맞춤형 치료법이 필요하다는 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Irisin upregulation as a contributory mechanism for the therapeutic benefits of SGLT-2 inhibitors.</h3>
+                        <div class="korean-title">→ SGLT-2 억제제의 치료 효과에 기여하는 기전으로서 이리신 발현 증가.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Pharmacology & therapeutics</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Natalia Motzko Noto, Kaitlin Martin, Sebastian Fidelia et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42526646/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈당 관리를 위해 다양한 약리학적 및 비약리학적 중재법이 제시되어 왔으며, 그중에는 나트륨-포도당 공동수송체-2(SGLT-2) 억제제와 운동이 있습니다. 여러 연구에서 이러한 약물들이 심혈관계 사망률 감소, 심부전으로 인한 입원 감소, 신장 질환 진행 속도 감소, 인지 기능 저하 감소, 활성산소 생성 감소, 아밀로이드 베타(Aβ) 생성 진행 억제 등 심장, 신경 및 신장 보호 효과를 나타낸다는 것이 입증되었습니다. 현재까지의 연구 결과는 대부분 전임상 연구 및 연관성 연구에 기반하고 있지만, 본 연구는 혈중 이리신이 SGLT-2 억제제 유도 조직 보호의 매개체이자 바이오마커 역할을 할 수 있다는 검증 가능한 기전 모델을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Direct single-molecule visualization of Hsp90-mediated relief of an Hsp70-folding block.</h3>
+                        <div class="korean-title">→ Hsp90에 의한 Hsp70 접힘 차단 해제 과정을 단일 분자 수준에서 직접 시각화했습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Nicholas R Marzano, Bailey Skewes, Shannon McMahon et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42525750/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>열충격 단백질 70(Hsp70)과 Hsp90은 다양한 기질 단백질의 접힘을 돕기 위해 협력하는 필수 분자 샤페론이지만, 이들의 활동이 어떻게 조율되어 기질 단백질을 재구성하는지는 아직 불분명합니다. 이를 규명하기 위해, 우리는 단일 분자 형광 공명 에너지 전달(FRET)과 전반사 형광 현미경(TIRF)을 결합하여 반딧불이 루시페라제 단백질이 기질 단백질과 순차적으로 결합하는 동안 각각의 변화를 관찰했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Lineage-Tailored Vesicles from Human Retinal Ganglion-Like Cells Drive Metabolic Homeostasis and Bioenergetic Recovery in Glaucoma.</h3>
+                        <div class="korean-title">→ 인간 망막 신경절 유사 세포에서 유래한 계통 맞춤형 소포체가 녹내장에서 대사 항상성 및 생체 에너지 회복을 촉진합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.0</span>
+                        <span class="badge journal-badge">Molecular therapy : the journal of the American Society of Gene Therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sandeep Kumar Vishwakarma, Mallikarjuna Rao Gedda, Stanislav I Tomarev (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42528139/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>망막 신경절 세포(RGC)는 높은 생체 에너지 요구량을 나타내므로 녹내장성 신경퇴행성 질환에서 미토콘드리아 기능 장애 및 대사 붕괴에 취약합니다. RGLC 유래 소포체(RGLC-sEV)는 강력한 신경 보호 효과를 제공하여 신경 세포 생존율을 유의하게 향상시키고, 신경돌기 구조를 보존하며, 손상 후 미토콘드리아 스트레스를 완화했습니다. 종합적으로, 본 연구 결과는 계통 특이적 RGLC-sEV가 녹내장성 신경퇴행성 질환에서 대사 네트워크를 재구성하고 생체 에너지 항상성을 회복시킬 수 있는 강력하고 세포 특이적인 치료 후보 물질임을 입증하며, 시신경병증에 대한 신경 보호 치료로서의 잠재력을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">15. Reply to 'Low-field MRI for equitable epilepsy diagnosis in resource-limited settings'.</h3>
+                        <div class="korean-title">→ '자원이 제한된 환경에서 공평한 간질 진단을 위한 저자기장 MRI'에 대한 답변.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Nature reviews. Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Tavia E Evans, Joshua Harper, Aram Salehi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42527587/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">16. Are Sleep Stages Related to the Risk of Dementia?</h3>
+                        <div class="korean-title">→ 수면 단계는 치매 위험과 관련이 있을까요?</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Maria Jose Abenza-Abildúa, Ambrosio Miralles-Martinez (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42525905/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">17. Association of Sleep Variables With Cognitive Performance and the Risk of Dementia in the Sleep and Dementia Consortium.</h3>
+                        <div class="korean-title">→ 수면 및 치매 컨소시엄에서 수면 변수와 인지 기능 및 치매 위험 간의 연관성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Stephanie Yiallourou, Crystal Wiedner, Qiong Yang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42525904/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>수면은 다차원적이며, 어떤 측면이 인지 기능 및 치매 위험과 가장 관련이 깊은지는 아직 불분명합니다. 통합 인지 분석에는 5,958명의 참가자(평균 ± 표준편차 연령 70 ± 11세, 여성 32%)가 포함되었으며, 결과는 통계적으로 유의미한 것으로 간주되었습니다. 이러한 종합 지표는 수면과 뇌 건강 간의 관계에 대한 추가 연구에 유용한 지침을 제공할 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">18. Natural History of Adult-Onset Myotonic Dystrophy Type 1: Longitudinal Changes in Radiologic, Clinical, and Patient-Reported Outcomes.</h3>
+                        <div class="korean-title">→ 성인 발병형 1형 근긴장성 이영양증의 자연 경과: 방사선학적, 임상적 및 환자 보고 결과의 종단적 변화.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Louise Iterbeke, Lotte Huysmans, Kobe Bamps et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42525903/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>성인 발병 근긴장성 이영양증 1형(DM1)은 말단 근육 약화와 근긴장을 특징으로 하는 진행성 다계통 질환입니다. 기저 PDFF(%)는 말단 근육 약화가 있는 환자에서 유의하게 더 높았습니다(31.8% vs 5.9%). PDFF(%)는 성인 발병 DM1에 대한 민감하고 객관적인 결과 측정 지표로, 6개월 간격의 변화를 감지합니다. MFM32, MRC 합산 점수, DM1-ActivC 및 INQoL은 12~24개월에 걸쳐 의미 있는 악화를 보여주며, 이는 향후 성인 발병 DM1 임상 시험에서 qMRI와 함께 결과 지표로 사용하는 것을 뒷받침합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">19. Association of Sugar Restriction in Utero Through Age 2 Years on Dementia Risk Later in Life.</h3>
+                        <div class="korean-title">→ 태아기부터 2세까지의 당분 섭취 제한이 후년의 치매 위험에 미치는 영향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.8</span>
+                        <span class="badge journal-badge">Neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jiazhen Zheng, Gregory Y H Lip, Zhuoni Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42525901/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>유아기의 과도한 당분 섭취는 장기적인 뇌 건강에 영향을 미칠 수 있지만, 치매와의 관련성에 대한 증거는 제한적입니다. 이러한 결과는 유아기 당분 섭취 감소가 치매 예방을 위한 잠재적인 전략이 될 수 있음을 뒷받침합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">20. Toward a Behavioral Reserve Model in Amyotrophic Lateral Sclerosis.</h3>
+                        <div class="korean-title">→ 근위축성 측삭 경화증의 행동 예비력 모델 구축을 위하여.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.3</span>
+                        <span class="badge journal-badge">Annals of neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Francesca Palumbo, Barbara Iazzolino, Cristina Moglia et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42528478/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>근위축성 측삭 경화증(ALS)에서 행동 장애는 흔하며 자율성, 간병 부담 및 예후에 큰 영향을 미치지만, 취약성을 예측하는 요인은 아직 불분명합니다. 발병 전 행동 조절 능력은 모든 FrSBe 모델에서 행동 장애와 가장 강력한 연관성을 보였습니다. (ANN NEUROL 2026) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">21. Structural Inequities in Dental Care Use Across Dementia Progression: The Roles of Race/Ethnicity and Education.</h3>
+                        <div class="korean-title">→ 치매 진행 과정에 따른 치과 진료 이용의 구조적 불평등: 인종/민족 및 교육의 역할.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Research on aging</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ruotong Liu, Xiang Qi, Huabin Luo et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42527316/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>노년기 치과 진료 이용은 노화 과정 전반에 걸쳐 나타나는 건강 요구 변화, 의료 접근성 문제, 그리고 사회적 불평등을 반영할 수 있습니다. 이러한 연구 결과는 구강 건강 관리 접근성을 보다 광범위한 노화 관련 불평등의 일부로 살펴보고, 치매 노인을 위한 연속적인 치료 과정에 치과 진료를 공평하게 통합하는 것이 중요함을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">22. Antihistamines for atopic dermatitis (eczema): systematic review and network meta-analysis of randomised trials.</h3>
+                        <div class="korean-title">→ 아토피 피부염(습진)에 대한 항히스타민제: 무작위 임상시험에 대한 체계적 검토 및 네트워크 메타분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">BMJ (Clinical research ed.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Alexandro W L Chu, Aaron Wen, Gordon H Guyatt et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42526949/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>아토피 피부염(습진) 관리에 있어 경구 항히스타민제 병용 투여의 이점과 부작용을 체계적으로 분석하고자 하였다. 위약과 비교했을 때, 1세대 또는 2세대 H1 항히스타민제를 병용 투여하면 아토피 피부염 증상(평균 차이 -1.87, 95% 신뢰구간 -3.47~-0.27)과 가려움증(-0.89, -1.41~-0.37)이 약간 감소하는 것으로 나타났다. (PROSPERO CRD42022345643) (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
