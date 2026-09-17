@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.09.17</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.09.17</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">20</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">6</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">14</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Efficacy and safety of rozanolixizumab in severe fibromyalgia: a phase 2A randomised, double-blind, placebo-controlled, multicentre trial.</h3>
+                        <div class="korean-title">→ 중증 섬유근통에서 로자놀릭시주맙의 효능 및 안전성: 2A상 무작위 배정, 이중맹검, 위약 대조, 다기관 임상시험.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 202.7</span>
+                        <span class="badge journal-badge">The Lancet. Rheumatology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Andreas Goebel, Paul Meisner, Gustaf Rydevik et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42748952/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>섬유근통은 전신 통증, 피로, 수면 장애 및 인지 기능 장애를 특징으로 하는 만성 질환입니다. 병원성 IgG 자가항체가 심각한 증상에 기여할 수 있다는 증거가 있습니다. 로자놀릭시주맙은 신생아 Fc 수용체를 표적으로 하여 IgG 농도를 감소시킵니다. 본 연구는 중증 섬유근통 환자에서 로자놀릭시주맙의 효능과 안전성을 평가했습니다. 이 2A상, 다기관, 무작위 배정, 이중맹검, 위약 대조 연구는 영국 북서부 7개 기관에서 중증 섬유근통을 가진 성인(18~70세)을 대상으로 진행되었습니다(간단 통증 척도-단축형[BPI-SF] 간섭 점수 ≥6; 10일 평균 일일 통증 수치 척도 점수 ≥6~<10). 연구는 스크리닝 기간, 2주간의 단일맹검 위약 투여 기간, 이후 두 차례의 12주간 이중맹검 치료 기간, 그리고 2주간의 단일맹검 위약 투여 종료 기간으로 구성되었습니다. 그리고 5주간의 안전성 추적 관찰이 진행되었습니다. 참가자들은 로자놀릭시주맙 560mg을 24주 동안 주 1회 투여하는 군(로자놀릭시주맙-로자놀릭시주맙), 12주 동안 위약을 투여한 후 12주 동안 로자놀릭시주맙을 투여하는 군(위약-로자놀릭시주맙), 또는 24주 동안 위약을 투여하는 군(위약-위약)으로 1:1:1 비율로 무작위 배정되었으며, 모든 약물은 피하 주입으로 투여되었습니다. 1차 평가변수는 12주 후 기저치 대비 BPI-SF 간섭 점수의 평균 변화였습니다. 치료 관련 이상반응을 평가했습니다. 섬유근통 경험이 있는 사람들이 연구 자문 및 연구 자료 검토에 참여했습니다. 이 임상시험은 ClinicalTrials.gov에 NCT05643794로 등록되어 있습니다. 2022년 12월 21일부터 2024년 7월 9일 사이에 165명의 참가자를 대상으로 스크리닝을 실시했으며, 그중 63명(남성 8명[13%], 여성 55명[87%], 평균 연령 47세[사분위 범위 38-55], 백인 60명[95%])이 무작위로 배정되었습니다. 로자놀릭시주맙-로자놀릭시주맙 투여군 22명, 위약-로자놀릭시주맙 투여군 20명, 위약-위약 투여군 21명입니다. 63명 중 55명(87%)이 연구의 모든 단계를 완료했습니다. 1차 평가변수는 사전에 설정된 단측 10% α 수준을 충족했으며, 로자놀릭시주맙 투여군에서 위약 투여군 대비 기저치 대비 더 큰 개선 효과가 관찰되었습니다(최소제곱평균차 -0.5, 80% 신뢰구간 -1.0~-0.1; p=0.065). 그러나 양측 5% α 수준에서는 유의미한 차이가 없었습니다(95% 신뢰구간 -1.2~0.2; p=0.13). 치료 기간 동안 로자놀릭시주맙 투여군에서 중대한 치료 관련 이상반응은 보고되지 않았습니다. 연구 전체에서 가장 흔한 치료 관련 이상반응은 두통으로, 로자놀릭시주맙 투여군에서 22명 중 9명(41%)과 37명 중 11명(30%)이 보고한 반면, 위약 투여군에서는 41명 중 17명(41%)과 20명 중 3명(15%)이 보고했습니다(이중맹검 치료 첫 12주 및 두 번째 12주 기준). 로자놀릭시주맙은 이 중증 섬유근통 환자군에서 광범위한 효능을 입증하지 못했습니다. BPI-SF 점수는 개선되었지만, 이는 그룹 수준에서 유의미한 차이가 아니었습니다. 병원성 자가항체를 가진 환자를 선별할 수 없었던 점이 환자 간 이질성에 기여했을 수 있습니다. IgG 감소가 중증 섬유근통 환자 하위군에 유익한지 여부를 판단하기 위해서는 반응 예측 인자가 필요합니다. UCB.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Revascularization in Asymptomatic Carotid Artery Stenosis With Hemodynamic Impairment and Cognitive Outcomes: The CREST-H Substudy of the CREST-2 Randomized Clinical Trial.</h3>
+                        <div class="korean-title">→ 혈역학적 장애 및 인지 기능 저하를 동반한 무증상 경동맥 협착증 환자의 혈관재개통술: CREST-2 무작위 임상시험의 CREST-H 하위 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 120.7</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Randolph S Marshall, Ronald M Lazar, James F Meschia et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42747834/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>무증상 내경동맥(ICA) 협착증 환자에서 뇌 혈류 역학 장애는 인지 기능 저하와 관련이 있습니다. 이러한 환자에서 혈관재개통술이 인지 장애에 효과적인 치료법인지는 불확실합니다. 본 연구는 고등급 무증상 ICA 협착증에 대한 혈관재개통술의 인지 기능 개선 효과가 기저 뇌 혈류 역학 장애 정도에 따라 달라지는지 확인하기 위해 수행되었습니다. 이 하위 연구는 다기관 3상 무작위 임상시험의 일환으로 진행되었습니다. 2018년 1월부터 2024년 7월까지 북미 61개 기관에서 치매가 없고 중학교 2학년 이상의 학력을 소지한 35~86세 성인 중 70% 이상의 일측성 무증상 ICA 협착증을 가진 환자를 모집했습니다(최종 추적 관찰은 2025년 7월). CREST-2 연구에 참여한 2485명 중 607명을 선별하여 최종적으로 392명이 등록되었습니다. 기저 혈역학적 장애는 자기공명영상(MRI) 또는 컴퓨터 단층촬영 관류 영상(CT perfusion imaging)을 통해 평가했으며, 이는 협착된 동맥과 같은 쪽 반구에서 반대쪽 반구로의 정맥 조영제 최고 도달 시간(TTP) 차이를 기준으로 정의했습니다. 경동맥 재관류술(동맥내막절제술 또는 스텐트 삽입술)과 집중적인 약물 치료(IMM)를 병행한 군과 IMM 단독 군으로 나누었습니다. 주요 결과 변수는 5가지 인지 검사를 기반으로 1년간 측정한 종합 인지 z 점수의 차이였습니다. 주요 분석에서는 기저 인지 기능이 저하된 환자(인지 z 점수 ≤-1.0 SD)에서 치료군(재관류술 vs. IMM 단독)과 기저 혈역학적 장애 정도 간의 상호작용을 검정했습니다. 등록된 392명의 참가자(평균 연령 71세, 여성 125명[32%]) 중 61명은 기저 영상 자료가 누락되었고, 40명은 인지 검사 자료 또는 기타 공변량 데이터가 누락되어 제외되었으며, 최종적으로 291명의 완전한 데이터가 분석에 포함되었습니다. 기저 시점에서 51명의 환자가 인지 기능 저하를 보였습니다(혈관재개술군 25명, IMM 단독군 26명). TTP는 양측 대뇌반구 간 지연이 없는 경우부터 2초 이상 지연되는 경우까지 다양했습니다. 평균(표준편차) 인지 z 점수는 혈관재개술군에서 기저 시점 -1.36(0.51), 1년 후 -1.17(0.47)이었고, IMM 단독군에서는 기저 시점 -1.34(0.83), 1년 후 -1.01(0.97)이었습니다. 1차 분석 결과, 치료군과 혈역학적 상태 간의 상호작용 및 기타 공변량을 보정했을 때, 1년 동안 치료군 간 인지 기능에 유의미한 차이가 없었습니다(보정된 인지 z 점수 차이, -0.15 SD [95% CI, -0.54~0.24]). 상호작용은 유의미하지 않았습니다(β 추정치 = 0.018 [95% CI, -0.025~0.061]; P = 0.40). 무작위 임상시험의 하위 연구인 본 연구에서는 기저 인지 기능 저하 환자군에서 뇌 혈류 역학 상태에 따른 재관류술과 IMM 단독 요법 간의 1년 동안의 인지 기능 개선 효과 차이가 관찰되지 않았습니다. 이는 재관류술이 만성 무증상 경동맥 협착증에서 뇌 혈류를 회복시켜 인지 기능 장애를 개선하지 못한다는 것을 시사합니다. ClinicalTrials.gov 식별자: NCT03121209.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Revascularization in Asymptomatic Carotid Artery Stenosis With Hemodynamic Impairment and Cognitive Outcomes: Research Summary.</h3>
+                        <div class="korean-title">→ 무증상 경동맥 협착증 환자의 혈역학적 장애 및 인지 기능 저하에 대한 혈관재개통술: 연구 요약.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 120.7</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                     (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42747821/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Map of brain 'microproteins' could offer new clues to Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 뇌 '미세단백질' 지도가 알츠하이머병에 대한 새로운 단서를 제공할 수 있다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Miryam Naddaf (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42749769/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Inflection points and transitions in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 알츠하이머병의 변곡점과 전환점.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Bart De Strooper, Eric Karran (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42749285/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병은 아밀로이드-β 축적에서 타우 병리 및 신경퇴행으로 이어지는 선형적인 연쇄 반응으로 널리 묘사됩니다. 그러나 본 연구에서는 알츠하이머병이 생물학적 변곡점을 중심으로 조직된 개별적인 분자, 세포 및 네트워크 단계를 거쳐 진행된다고 제안합니다. 이러한 임계점에서 스트레스에 의한 항상성 상실은 세포 행동에 질적인 변화를 일으켜 질병 진행 양상을 바꿉니다. 이러한 변화된 상태는 국소 조직 영역으로 확산되고, 뇌 전체에 모자이크처럼 축적되며, 인지 기능을 조절하는 취약한 정보 처리 영역을 점진적으로 활성화시킵니다. 아밀로이드 관련 타우 인산화의 유도는 아밀로이드가 지배적인 조직 상태와 신경 세포의 타우 스트레스 반응이 나타나는 영역을 구분하는 중요한 변곡점입니다. 이러한 틀은 병리와 증상 사이의 불일치를 해소하고, 가족성 및 산발성 알츠하이머병의 공통적인 구조를 명확히 하며, 알츠하이머병을 생물학적 임계점, 시기 및 항상성 회복력의 점진적인 침식에 의해 형성되는 질환으로 재정립하는 데 도움을 줍니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Sex-specific biological aging clocks across organs and omics.</h3>
+                        <div class="korean-title">→ 성별에 따른 생물학적 노화 시계의 장기 및 오믹스 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 58.7</span>
+                        <span class="badge journal-badge">Nature medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Zhiyuan Song, Derek Feng, Naowal Azraf Rahman et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42749890/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>성별은 노화, 신경 발달 및 알츠하이머병(AD)과 같은 신경퇴행성 질환에 차별적인 영향을 미칩니다. 그러나 대부분의 생물학적 노화 시계(인공지능으로 예측한 나이에서 실제 나이를 뺀 값)는 성별이 혼합된 샘플을 사용하여 학습되었으며, 암묵적으로 성별 불변성을 가정합니다. 본 연구에서는 15개 장기 시스템에 걸쳐 38개의 성별 특이적 생물학적 노화 시계를 개발했습니다. 먼저 성별에 따른 건강한 정상 참조값을 구축하는 데 있어 성별 계층화 학습의 중요성을 입증하고, 여성과 남성 시계 간의 뚜렷한 차이를 밝혀냈습니다. 주요 유전적 매개변수와 멘델 무작위화 분석 결과는 장기별 노화 취약성과 심혈대사, 내분비 및 정신 특성과의 관계가 여성과 남성에서 다르게 나타남을 시사합니다. 단백질체 분석을 통해 여성과 남성의 생물학적 노화를 차별적으로 추적하는 장기별로 구별되는 시냅스, 면역, 혈관 및 대사 네트워크를 확인했습니다. 종단적 생존 분석에서 성별 특이적 노화 시계는 성별 및 장기에 따라 전신 질환과 모든 원인에 의한 사망률을 예측합니다. 추가 분석에서는 전임상 알츠하이머병 임상 시험 동안 뇌 노화 시계와 인지 기능 저하 궤적 간의 성별 의존적 연관성이 밝혀졌습니다. 성별에 따른 노화 시계는 성별에 적합한 정상 기준에 따라 생물학적 연령을 정의하고, 통합 모델에서 가려질 수 있는 성별 의존적 유전적, 분자적, 임상적 특징을 드러냄으로써 차별화된 가치를 제공할 수 있습니다. 한편, 인간의 노화와 질병은 여성과 남성 간에 근본적인 생물학적 유사성을 공유하기 때문에 성별 통합 및 성별 상호작용 접근법 또한 여전히 유용합니다. 이러한 연구 결과는 노화, 알츠하이머병 및 전신 건강에서 성별 특이적 생물학적 노화 특징을 밝히고, 명시적으로 성별을 구분한 모델링 접근법의 필요성을 강조합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Cholesterol maintains the degradative capacity of lysosomes during clearance and recycling of dysfunctional mitochondria.</h3>
+                        <div class="korean-title">→ 콜레스테롤은 기능 장애가 있는 미토콘드리아를 제거하고 재활용하는 과정에서 리소좀의 분해 능력을 유지시켜 줍니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Haoning Yang, Koji Matsuhisa, Meng Wei et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42749740/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>기능 장애가 있는 미토콘드리아를 리소좀의 강력한 이화 작용을 통해 효율적으로 제거하고 재활용하는 것은 세포 건강에 필수적입니다. 그 결과 소포체(ER)에서 콜레스테롤이 유출되면 스테롤 조절 요소 결합 단백질 2(SREBP-2)가 활성화되어 콜레스테롤 생성이 증가합니다. 이러한 연구 결과는 기능 장애가 있는 미토콘드리아의 제거 및 재활용을 촉진하는 핵심적인 포스포이노시티드 조절 콜레스테롤 수송 경로를 밝혀냈으며, 이 과정의 장애는 신경퇴행과 밀접하게 관련되어 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. From mouth to brain: Linking periodontal and peri-implant dysbiosis to systemic inflammation and neuropathology.</h3>
+                        <div class="korean-title">→ 구강에서 뇌까지: 치주 및 임플란트 주위 미생물 불균형과 전신 염증 및 신경병증의 연관성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Periodontology 2000</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Emilio A Cafferata, Frank Schwarz, Jaime Díaz-Zúñiga et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42748133/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인체 미생물총의 불균형과 숙주 면역 반응의 조절 이상이 신경퇴행성 질환 발병에 중요한 역할을 할 수 있다는 증거가 점차 늘어나고 있습니다. 치주 및 임플란트 주위 미생물 불균형을 표적으로 삼고 면역 불균형을 회복시키는 효과적인 관리 전략은 건강한 노화를 촉진하고 신경병증성 질환을 예방하는 새로운 길을 열어줄 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Temporal Trajectories of the Tau Aggregate Interactome Reveal Stage-Specific Vulnerabilities in Alzheimer's Disease.</h3>
+                        <div class="korean-title">→ 타우 응집체 상호작용체의 시간적 궤적을 분석한 결과, 알츠하이머병의 단계별 취약성이 드러났다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Dorothea Böken, Paula Beltran Lobo, Yunzhao Wu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42750204/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>타우 응집은 알츠하이머병의 핵심적인 병리학적 특징이지만, 단량체에서부터 작은 용해성 응집체, 그리고 성숙한 섬유에 이르기까지 다양한 형태의 타우가 세포 환경과 어떻게 상호작용하는지는 아직 제대로 이해되지 않고 있습니다. 이러한 연구 결과들은 단백질 상호작용에 의해 형성되는 타우 병리의 시간적 변화 양상을 보여주는 틀을 제시하고, 질병의 여러 단계에 걸쳐 연구할 만한 잠재적인 치료 개입 지점을 밝혀냅니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Time to diagnosis in FTLD-associated syndromes in Latin America.</h3>
+                        <div class="korean-title">→ 라틴 아메리카에서 FTLD 관련 증후군의 진단까지 걸리는 시간.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Nahuel Magrath-Guimet, Florentina Morello-Garcia, Loana De Los Santos et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42746372/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>전두엽측두엽변성(FTLD)은 주로 젊은 환자에게 발생하기 때문에 진단까지의 시간이 특히 중요합니다. 유전적 보인자는 발병 시기는 더 빨랐지만 진단까지의 시간은 유사했습니다. 전두엽측두엽변성(FTLD) 증후군 전반에 걸쳐 평균 진단 시간은 여전히 높습니다. 라틴 아메리카에서 FTLD의 진단 지연은 평균 약 3년입니다. 발병 연령이 어릴수록 진단까지의 시간이 더 길어집니다. 전형적인 전두엽측두엽 치매 표현형에서 진단 지연이 가장 길게 나타납니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Effects of long-term daily supplementation with vitamin D3 and marine omega-3 fatty acids on change in ADRD biomarkers: A secondary analysis of a randomized clinical trial.</h3>
+                        <div class="korean-title">→ 비타민 D3와 해양 오메가-3 지방산의 장기간 일일 보충이 알츠하이머병 및 관련 치매(ADRD) 생체지표 변화에 미치는 영향: 무작위 임상시험의 이차 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Chirag M Vyas, Beth L Ostaszewski, Amirah K Anderson et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42746141/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>비타민 D3와 오메가-3 보충제는 성별이나 인종에 따라 차이가 있을 수 있지만, 알츠하이머병 및 관련 치매(ADRD)의 진행 속도를 늦출 수 있습니다. 그러나 ADRD 관련 생체지표에 미치는 영향은 아직 알려지지 않았습니다. 위약과 비교했을 때, 비타민 D3와 오메가-3 모두 4년 동안 ADRD 생체지표를 유의미하게 감소시키지 못했습니다. ClinicalTrials.gov 식별자: c (VITAL); NCT01696435 (VITAL-DEP). (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Effect of choline supplementation in presymptomatic </h3>
+                        <div class="korean-title">→ 증상 발현 전 단계에서 콜린 보충의 효과</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (New York, N. Y.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    William J Ray, Yaima L Lightfoot, Ronnie T Trinh et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42746101/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>조기 진단 바이오마커의 등장으로 알츠하이머병(AD) 발병을 지연시키는 예방 전략을 시험해 볼 수 있게 되었습니다. 비록 본 연구는 바이오마커의 효능을 평가하기 위한 충분한 검정력을 갖추지는 못했지만, 치료 종료 시점에 뇌척수액(CSF) 내 신경섬유 경쇄(NfL) 수치가 감소했으며, CSF 내 포스포세린-181 타우(pTau181)/아밀로이드 베타(Aβ)42 및 혈장 pTau217 수치도 유사한 경향을 보였습니다. 이러한 결과는 위험군을 대상으로 한 콜린의 무작위 위약 대조 임상시험을 뒷받침하며, 체액 바이오마커와 오믹스 기술이 AD 예방 연구의 위험을 줄이는 데 어떻게 기여할 수 있는지를 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. P-tau181 is longitudinally associated with a proxy measure of mild behavioral impairment among frail older adults: Insights from COGFRAIL.</h3>
+                        <div class="korean-title">→ P-tau181은 허약한 노인에서 경미한 행동 장애의 대리 측정치와 장기적으로 연관되어 있습니다: COGFRAIL 연구 결과를 통해 얻은 통찰.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Federico Bellelli, Emmanuel González, Alberta Peluso et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42745934/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>횡단 연구에서는 알츠하이머병(AD) 발병기전이 경도행동장애(MBI)와 연관되어 있음을 보여주지만, 종단 연구에 대한 근거는 아직 제한적입니다. 가장 높은 3분위 그룹의 참가자들은 가장 낮은 3분위 그룹에 비해 NPI-Q에서 파생된 MBI 영역의 수와 전반적인 심각도에서 더 큰 진행을 보였습니다. 연속 분석에서도 유사하지만 통계적으로 유의미하지 않은 경향이 나타났습니다. 아밀로이드 및 타우 병리는 인지 장애뿐만 아니라 행동 장애에도 기여할 수 있으며, 이는 MBI가 기저 AD 병리를 반영한다는 가설을 뒷받침하고 신경정신 질환 진행 위험이 높은 개인을 식별하는 데 도움이 될 수 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Imaging for anti-amyloid therapy eligibility: Comparing GRE and SWI in detecting microhemorrhages and superficial siderosis.</h3>
+                        <div class="korean-title">→ 항아밀로이드 치료 적격성 평가를 위한 영상 검사: 미세 출혈 및 표면 철침착증 진단에서 GRE와 SWI 비교.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.0</span>
+                        <span class="badge journal-badge">Alzheimer's & dementia (Amsterdam, Netherlands)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jeremy N Ford, Suely Fazio Ferraciolli, Odette Ganem Chagui et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42745918/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>레카네맙과 같은 항아밀로이드 치료제는 4개 이상의 그레이디언트 리콜 에코(GRE) 영상에서 미세출혈이 발견되거나 표면 철침착증(SS)이 있는 환자를 배제하기 위해 자기공명영상(MRI) 검사가 필요합니다. SWI는 GRE보다 더 많은 배제적 출혈 소견을 식별하고 재현성이 더 높습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Targeting C/EBPβ/ Calbindin 1 pathway bolsters the neural resilience to tau pathology and improves tau-impaired episodic memory.</h3>
+                        <div class="korean-title">→ C/EBPβ/칼빈딘 1 경로를 표적으로 삼으면 타우 병리에 대한 신경 회복력이 강화되고 타우로 인해 손상된 일화 기억력이 향상됩니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.5</span>
+                        <span class="badge journal-badge">Molecular psychiatry</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jiale Liu, Fuqiang Zhang, Tongkai Zhong et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42749775/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>세포 내 타우 단백질 축적은 알츠하이머병(AD)의 특징적인 소견이며, 삽화 기억 상실과 밀접하게 관련되어 있습니다. 이전 연구에서 우리는 복측 해마의 칼빈딘1이 높은 민감성을 보인다는 점을 강조했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Induction of ferroptotic and amyloidogenic signatures linked to Alzheimer's disease by chemically distinct air pollutants.</h3>
+                        <div class="korean-title">→ 화학적으로 서로 다른 대기 오염 물질에 의한 알츠하이머병 관련 페로프토시스 및 아밀로이드 생성 특징 유도.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.9</span>
+                        <span class="badge journal-badge">Redox biology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kristina Shkirkova, Naomi S Sta Maria, Herbert Anson et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42748655/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>대기 오염(AirP) 노출은 알츠하이머병(AD) 발병 위험 증가와 관련이 있지만, AirP는 화학적으로 이질적이어서 공통적인 병원성 요인을 규명하기 어렵습니다. 이러한 전사적 변화는 글루타티온 합성 장애, 페리틴 매개 철 저장 및 헴 대사 변화, 그리고 지질 래프트 항산화 방어 기전의 선택적 손상을 동반했으며, 그 결과 WTC 분진에 노출된 경우 지질 래프트 내 4-하이드록시노네날(HNE)이 40% 증가했고, DEP에서도 유사한 경향이 나타났습니다. 또한 인지질 과산화물 해독 능력은 최소 65% 감소했으며, 두 오염원 모두에서 응집성 Aβ42 펩타이드는 36% 증가했습니다. 이러한 결과는 금속 관련 산화 메커니즘이 화학적으로 구별되는 형태의 AirP를 페로프토시스 취약성, 아밀로이드 생성 과정, 그리고 AD 관련 병리와 연결하는 수렴 경로임을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Alzheimer's Co-Pathology Burden on Basal Forebrain Atrophy and Cognitive Impairment in Dementia with Lewy Bodies: A Cross-Sectional Pilot Study.</h3>
+                        <div class="korean-title">→ 루이체 치매에서 알츠하이머병 동반병리가 기저 전뇌 위축 및 인지 장애에 미치는 영향: 횡단면 파일럿 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.3</span>
+                        <span class="badge journal-badge">Annals of neurology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Daniele Urso, Thomas Giannelli, Benedetta Tafuri et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42747246/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>루이체 치매(DLB)는 알츠하이머병(AD) 다음으로 두 번째로 흔한 신경퇴행성 치매이며, 두 질환 간에 병리학적 중복이 상당합니다. DLB 환자는 건강 대조군(HC)에 비해 유의미한 뇌엽 위축을 보였습니다(p < 0.001). ANN NEUROL 2026. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Gut microbiota dysbiosis shapes brain T-cell immunity in accelerated aging.</h3>
+                        <div class="korean-title">→ 장내 미생물 불균형은 가속 노화 과정에서 뇌 T세포 면역에 영향을 미칩니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.0</span>
+                        <span class="badge journal-badge">Gut microbes</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Laura Peschke, Tinh Thi Nguyen, Jefferson Antônio Leite et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42750596/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>장내 미생물, 면역 체계 및 중추 신경계 사이의 양방향 소통, 즉 장-뇌 축은 뇌 건강 유지에 중요한 역할을 합니다. 여러 박테리아 속이 어린 SAMP8 마우스에서 풍부도 변화를 보였으며, 그중 일부만이 . (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Enhancing Alzheimer's disease diagnosis in primary care through targeted screening of people at risk of developing dementia - study design and feasibility assessment of the PREDEM primary care study.</h3>
+                        <div class="korean-title">→ 치매 발병 위험이 있는 사람들을 대상으로 한 선별 검사를 통해 일차 진료 환경에서 알츠하이머병 진단을 향상시키는 방안 - PREDEM 일차 진료 연구의 연구 설계 및 타당성 평가.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.7</span>
+                        <span class="badge journal-badge">Alzheimer's research & therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sandar Aye, Signe Åhrberg, Axel C Carlsson et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42745326/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)으로 인한 인지 장애를 조기에 발견하는 것은 질병 진행을 억제하는 치료법이 개발됨에 따라 점점 더 중요해지고 있습니다. 스웨덴어를 모국어로 사용하지 않는 사람들(32%)은 언어 매개 과제에서 유의미하게 낮은 수행 능력을 보였습니다. 주요 프로토콜 개선 사항에는 주관적인 기억력 저하 호소 요건 삭제, 모든 인지 검사의 일차 의료기관 내 실시, 그리고 인지 검사 배터리 최적화가 포함됩니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Cerebral blood flow and metabolism under conditions of simulated avalanche burial in humans: The triple H syndrome.</h3>
+                        <div class="korean-title">→ 인간에서 모의 눈사태 매몰 조건 하에서의 뇌 혈류 및 대사: 삼중 H 증후군.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 10.3</span>
+                        <span class="badge journal-badge">The Journal of physiology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Connor A Howe, Jay M J R Carr, Ryan L Hoiland et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42748044/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>눈사태 매몰은 개인을 저체온증, 고탄산혈증 및 저산소증의 복합적인 상황에 노출시킵니다. 14명의 참가자(여성 6명)에서 요골 동맥과 내경정맥에 카테터를 삽입하여 혈액 가스, 혈관 내압, 신경혈관 손상 바이오마커(타우, 신경섬유소 경쇄(Nf-L) 및 신경교 섬유성 산성 단백질(GFAP))를 측정했으며, 이중 초음파를 사용하여 전체 뇌혈류량(CBF)과 뇌산소전달량(CDO)을 정량화했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
