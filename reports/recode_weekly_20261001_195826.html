@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.10.01</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.10.01</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">10</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">4</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">6</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Prion-like transmission of human tau strains in the mouse brain.</h3>
+                        <div class="korean-title">→ 인간 타우 변종이 쥐의 뇌에서 프리온과 유사한 방식으로 전파된다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sofia Lövestam, Aki Shimozawa, Airi Tarutani et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816607/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>대부분의 신경퇴행성 질환은 프리온과 유사한 기전을 통해 뇌 전체로 퍼져나가는 것으로 여겨지는데, 이 기전에서는 섬유질 단백질 덩어리가 주형에 의한 시딩을 통해 자가 증식합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Harmful tau spreads like self-propagating prion proteins.</h3>
+                        <div class="korean-title">→ 유해한 타우 단백질은 자가 증식하는 프리온 단백질처럼 퍼져나갑니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 64.8</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kayleigh Mason-Chalmers, Jose A Rodriguez (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816571/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Cell differentiation-related signaling pathways: biological functions, diseases and therapeutic targets.</h3>
+                        <div class="korean-title">→ 세포 분화 관련 신호 전달 경로: 생물학적 기능, 질병 및 치료 표적.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 52.7</span>
+                        <span class="badge journal-badge">Signal transduction and targeted therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ze Xiang, Jiarui Li, Yunyang Xu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816476/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>줄기세포가 특수 기능을 획득하는 과정인 세포 분화는 배아 발달, 조직 항상성 유지 및 재생의 핵심입니다. 이 과정은 Wnt, Notch, Hedgehog, TGF-β, Hippo 등 진화적으로 보존된 신호 전달 경로에 의해 조절되며, 이러한 경로들은 세포 외부 신호와 내재적인 유전적 프로그램을 통합하여 세포 운명을 결정합니다. 본 논문에서는 리간드-수용체 상호작용에서부터 하위 단계의 전사 조절에 이르기까지 이러한 경로들의 분자적 구조를 포괄적으로 살펴봅니다. 또한, 후성유전적 변형, 비코딩 RNA, 피드백 루프, 경로 간 상호작용과 같은 다층적인 조절 메커니즘을 통해 신호 전달 결과를 미세하게 조정하여 세포 운명 결정에 시공간적 정확성을 확보하는 방식을 강조합니다. 더 나아가, 조직 특이적인 맥락과 이러한 경로들 간의 상호작용이 다양한 장기 및 질병 환경에서 어떻게 서로 다른 분화 결과를 초래하는지 논의합니다. 이러한 신호전달 경로의 조절 이상은 다양한 병리적 상태를 유발하며, 암에서의 무분별한 세포 증식, 심혈관 질환에서의 부적응적 재형성, 신경퇴행성 질환에서의 신경세포 손실, 대사 불균형, 소화 기능 장애, 호흡기 및 자가면역 질환에서의 만성 염증, 그리고 골격계 질환 등을 초래합니다. 이러한 경로들의 임상적 중요성을 반영하여, 본 리뷰에서는 정상적인 세포 기능을 회복하기 위해 이러한 경로들을 표적으로 하는 소분자 억제제, 단클론 항체, 유전자 기반 전략, 그리고 경로 조절 화합물을 포함한 최근의 치료법 발전 사항들을 요약합니다. 특히 전임상 연구 결과와 임상 적용의 차이점 및 경로 표적 치료법의 임상 적용에 대한 과제들을 중점적으로 다룹니다. 종합적으로, 본 리뷰는 건강과 질병에서 분화 관련 신호전달의 핵심적인 역할을 강조하고, 치료적 개입을 위한 새로운 기회들을 제시합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Single-cell profiling and genetic regulation of alternative polyadenylation in the human brain.</h3>
+                        <div class="korean-title">→ 인간 뇌에서 단일 세포 프로파일링 및 대체 폴리아데닐화의 유전적 조절.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 38.3</span>
+                        <span class="badge journal-badge">Nature genetics</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jiuhong Nan, Carles A Boix, Shaohui Shi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816601/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>대체 폴리아데닐화(APA)는 mRNA의 운명을 조절하는 데 핵심적인 역할을 하며 뇌와 뉴런에서 높은 변이성을 보인다. 그러나 뇌의 APA 조절은 세포 유형 수준에서 아직 규명되지 않았으며, 뇌 세포 유형별 APA의 유전적 조절 기전과 유전 질환에 대한 기여도는 불분명한 상태였다. 본 연구에서는 알츠하이머병(AD) 환자와 비환자를 포함한 379명의 사후 뇌에서 추출한 200만 개의 세포를 이용하여 노화된 인간 뇌의 APA 단일 세포 아틀라스를 구축했다. APA는 AD에서 유전자 조절 변화를 이해하는 데 독립적인 기전적 층위를 제공한다. APA 변이를 보이는 유전자는 발현 변화를 보이는 유전자와는 다르지만, 미세아교세포 활성화 및 뉴런의 미세소관 수송을 포함한 유사한 경로로 수렴하는 경우가 많다. 또한, APA 변이와 전장 유전체 시퀀싱 데이터를 통합하여 4,288개 유전자에 대한 세포 유형별 3' 비번역 영역 양적 형질 유전자좌(3'aQTL)를 식별했다. 본 연구에서는 3'aQTL이 eQTL보다 pQTL과 우선적으로 공동 위치함을 발견했습니다. 17가지 뇌 특성 및 질병에 걸쳐 3'aQTL에 의존하는 168개의 GWAS 유전자좌를 확인했으며, 이 중 17.5%만이 eQTL과 공유됩니다. 여기에는 알츠하이머병 관련 PLEKHA1 및 APOC2, 정신분열증 관련 PAK6 및 AP3B2, 양극성 장애 관련 NDUFA13, 다양한 뇌 특성 관련 MTCH2, 그리고 파킨슨병에서 가장 중요한 유전자좌인 SNCA가 포함됩니다. 3' 비번역 영역 선택이 세포 내 SNCA mRNA 위치를 변화시킨다는 것을 보여주었으며, 이는 SNCA 위험 유전자좌가 뉴런과 희소돌기세포에서 eQTL에 독립적인 방식으로 작용한다는 관찰 결과와 일치합니다. 본 연구 결과는 APA의 시스 및 트랜스 조절을 조사하고 이 핵심 전사 후 조절층이 질병 유전성에 기여하는 방식을 이해하기 위한 세포 유형별 기반을 제공합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Programmable DNA protonuclei reveal environmental context on protein phase separation.</h3>
+                        <div class="korean-title">→ 프로그래밍 가능한 DNA 원핵은 단백질 상 분리에 대한 환경적 맥락을 밝혀낸다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Johann Fritzen, Avik Samanta, Nele S Kuhr et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816535/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>세포 환경에서 단백질 상 분리를 이해하는 것은 여전히 중요한 과제입니다. 시험관 내 실험은 혼잡도, 다중 모드 상호작용, 세포질 또는 핵의 동적 특성과 같은 환경적 맥락의 영향을 제대로 포착하지 못하는 경우가 많기 때문입니다. PN 플랫폼은 시험관 실험 및 복잡한 세포 환경을 보완하고 제어 가능한 조건에서 핵 응축물을 분석할 수 있도록 해줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Fyn kinase: a key mechanistic regulator and therapeutic target in tauopathy and neurodegenerative diseases.</h3>
+                        <div class="korean-title">→ 핀 키나아제: 타우병증 및 신경퇴행성 질환의 핵심 기전 조절자이자 치료 표적.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.2</span>
+                        <span class="badge journal-badge">Translational neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Haiwen Wang, Xing Fan, Jianchao Ping et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816892/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>시냅스 기능 장애와 병리학적 타우의 세포 내 축적은 알츠하이머병(AD) 및 관련 타우병증의 공통적인 특징이지만, 이러한 현상과 광범위한 신경퇴행을 연결하는 분자 메커니즘은 아직 완전히 밝혀지지 않았습니다. 마지막으로, 본 연구에서는 Fyn을 치료 표적으로 활용할 가능성을 평가하고, 질병 진행을 효과적으로 억제하기 위해서는 병리학적 신호전달과 생리학적 기능을 선택적으로 분리하는 전략이 필요함을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Microglia-derived extracellular vesicle content as a biomarker for early detection of Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 미세아교세포 유래 세포외 소포 내용물은 알츠하이머병의 조기 진단을 위한 바이오마커로 활용될 수 있다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.2</span>
+                        <span class="badge journal-badge">Translational neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Amber L Woudstra, Linda Holtman, Erwin A van Vliet (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816862/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 아밀로이드 베타 응집, 타우 병리, 시냅스 기능 장애 및 신경 세포 손실을 특징으로 하는 진행성 신경퇴행성 질환입니다. 이러한 발전은 알츠하이머병뿐만 아니라 더 광범위한 신경퇴행성 및 신경염증성 질환에도 적용될 가능성을 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. A Neutrophil Membrane-Encapsulated Pd/hCeO</h3>
+                        <div class="korean-title">→ 호중구 막으로 캡슐화된 Pd/hCeO</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Lili Huang, Jiahui Cheng, Huan Xu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816949/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>수술 전후 신경인지 장애(PND)는 마취 및 수술 후 고령 환자에게 흔히 발생하는 심각한 합병증으로, 고령화 사회에서 임상적 부담이 점점 커지고 있습니다. 높은 발생률에도 불구하고, PND에 대한 효과적인 치료법은 아직 개발되지 않았습니다. 본 연구에서는 동종 고접착성 호중구 막으로 캡슐화된 Pd/hCeO 기반의 PCN 생체모방 나노효소 플랫폼을 개발했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Redox-Mitochondrial Crosstalk in Neurotoxicity: Regulated Cell Death Pathways and Neuroprotective Strategies.</h3>
+                        <div class="korean-title">→ 신경독성에서의 산화환원-미토콘드리아 상호작용: 조절된 세포 사멸 경로 및 신경 보호 전략.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.4</span>
+                        <span class="badge journal-badge">Ageing research reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Kunal Bhattacharya, Nongmaithem Randhoni Chanu, Pukar Khanal et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42815584/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>신경독성은 환경 화학물질, 질병 관련 내인성 스트레스 요인 및 신경 항상성을 교란하는 기타 노출을 포함한 유해 자극으로 인해 중추 또는 말초 신경계가 손상되는 것을 의미합니다. 마지막으로, 본 리뷰는 이러한 메커니즘을 신경퇴행성 질환, 급성 신경 손상 및 환경 또는 화학적 신경독소와 연관시키고, 산화환원 불균형, 미토콘드리아 안정성 및 세포사멸 관련 신호전달을 표적으로 하는 신경보호 전략을 요약합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. 제목 없음</h3>
+                        <div class="korean-title">→ 제목 없음</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.0</span>
+                        <span class="badge journal-badge">Gut microbes</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Xianxi Ye, Qingpeng Cai, Yulong Li et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42816131/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>장-뇌 대사 축의 조절 장애는 당뇨병 관련 인지 저하(DACD)의 진행과 관련이 있는 것으로 알려져 있지만, 그 기저 메커니즘은 아직 largely 알려져 있지 않습니다. 본 연구에서는 의 낮은 풍부도를 확인했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+</body>
+</html>
