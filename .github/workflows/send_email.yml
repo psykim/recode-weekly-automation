@@ -17,12 +17,12 @@ jobs:
     
     steps:
     - name: 저장소 체크아웃
-      uses: actions/checkout@v3
+      uses: actions/checkout@v5
       
     - name: Python 설정
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
-        python-version: '3.9'
+        python-version: '3.12'
         
     - name: 종속성 설치
       run: |

@@ -17,12 +17,12 @@ jobs:
     
     steps:
     - name: 저장소 체크아웃
-      uses: actions/checkout@v3
+      uses: actions/checkout@v5
       
     - name: Python 설정
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
-        python-version: '3.9'
+        python-version: '3.12'
         
     - name: 종속성 설치
       run: |
@@ -64,5 +64,5 @@ jobs:
     - name: 완료 메시지
       run: |
         echo "✅ RECODE WEEKLY 보고서가 성공적으로 생성되었습니다!"
-        echo "📧 이메일이 등록된 수신자들에게 발송되었습니다!"
+        echo "📧 이메일 발송까지 성공했습니다(실패하면 앞 단계에서 멈춥니다)."
         echo "📊 보고서 확인: https://psykim.github.io/recode-weekly-automation/"

@@ -199,7 +199,7 @@ RECODE WEEKLY 팀 드림
         
         if not recipients:
             print("수신자가 없습니다.")
-            return
+            return 0, 0
         
         print(f"총 {len(recipients)}명의 수신자에게 이메일을 발송합니다.")
         
@@ -209,6 +209,7 @@ RECODE WEEKLY 팀 드림
                 success_count += 1
         
         print(f"\n발송 완료: {success_count}/{len(recipients)} 성공")
+        return success_count, len(recipients)
 
 
 def main():
@@ -240,7 +241,12 @@ def main():
         sys.exit(1)
     
     sender = EmailSender()
-    sender.send_to_all(report_path)
+    ok, total = sender.send_to_all(report_path)
+    # 실패를 숨기지 않는다 — 한 명이라도 못 받으면 Actions 단계를 실패로 끝낸다(2026-10-18).
+    # 예전에는 0/1 이어도 '성공'으로 끝나 석 달 넘게 발송 실패를 몰랐다.
+    if ok < total:
+        print(f"::error::이메일 발송 실패 {total - ok}/{total}건 — SMTP 설정(앱 비밀번호)을 확인하세요.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
