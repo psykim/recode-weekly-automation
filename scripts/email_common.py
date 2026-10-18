@@ -6,7 +6,7 @@
 
 수신자: GitHub Secret RECIPIENTS_JSON(비공개)이 있으면 그것만 쓴다. 저장소는 공개라
 멤버 이메일을 database/recipients.json 에 넣으면 안 된다(2026-10-18).
-형식: [{"name": "홍길동", "email": "a@b.c"}, ...] 또는 {"recipients": [...]}
+형식: [{"email": "a@b.c"}, ...] 또는 {"recipients": [...]}. 인사는 실명 없이 모두 '선생님, 안녕하세요.'(2026-10-18 사용자 결정)
 """
 
 import json
@@ -84,7 +84,6 @@ class EmailSender:
         meta = report_meta(report_path)
         date = meta.get("date") or report_date_of(report_path)
         online = PAGES + os.path.basename(report_path)
-        name = recipient.get('name') or '선생'
         note = meta.get("editor_note") or ""
         highlights = meta.get("highlights") or []
 
@@ -110,7 +109,7 @@ class EmailSender:
     <div style="font-size:14px;opacity:.9;">{escape(date)} · 주간 논문 브리핑</div>
   </div>
   <div style="background:#fff;padding:24px;border-radius:10px;margin-top:12px;">
-    <p style="margin:0 0 14px;">{escape(name)}님, 안녕하세요.</p>
+    <p style="margin:0 0 14px;">선생님, 안녕하세요.</p>
     <p style="margin:0 0 14px;color:#555;font-size:14px;">{escape(INTRO)}</p>
     {f'<h3 style="margin:22px 0 10px;font-size:16px;color:#1e3c72;">✍️ 이번 호 에디터 노트</h3>{note_html}' if note_html else ''}
     {f'<h3 style="margin:22px 0 10px;font-size:16px;color:#1e3c72;">📌 이번 주 하이라이트</h3><ol style="padding-left:20px;margin:0;">{hl_html}</ol>' if hl_html else ''}
@@ -126,7 +125,7 @@ class EmailSender:
 </div></body></html>"""
 
         text_body = "\n".join([
-            f"RECODE WEEKLY {date}", "", f"{name}님, 안녕하세요.", "", INTRO, "",
+            f"RECODE WEEKLY {date}", "", "선생님, 안녕하세요.", "", INTRO, "",
             *(["[이번 호 에디터 노트]", note, ""] if note else []),
             *(["[이번 주 하이라이트]"] + [f"- {h.get('title_ko') or h['title']} ({h['journal']}, IF {h['if']:g})" for h in highlights[:3]] + [""] if highlights else []),
             f"이번 호 전체 보기: {online}", "", "분당서울대학교병원 치매극복연구센터 · recode.re.kr",
