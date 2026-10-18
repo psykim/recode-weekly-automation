@@ -1,17 +1,6 @@
 {
+  "_note": "실제 수신자 명단은 GitHub Secret RECIPIENTS_JSON 에 있다(공개 저장소라 여기에 실제 주소를 두지 않는다). 이 파일은 형식 예시이며, Secret 이 없을 때만 읽힌다.",
   "recipients": [
-    {
-      "id": "1",
-      "name": "김기웅",
-      "email": "kwkimmd@gmail.com",
-      "organization": "개발자",
-      "department": "테스트용",
-      "active": true,
-      "subscribed_date": "2025-07-21",
-      "tags": ["developer", "test"],
-      "note": "실제 이메일 주소로 변경 완료"
-    }
-  ],
-  "last_updated": "2025-07-21",
-  "total_count": 1
+    {"name": "홍길동", "email": "name@example.com", "active": false}
+  ]
 }

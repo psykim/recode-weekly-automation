@@ -61,6 +61,10 @@ class EmailSender:
             raise ValueError("이메일 설정이 누락되었습니다. 환경 변수를 확인해주세요.")
 
     def load_recipients(self) -> list:
+        # 수동 실행에서 '시험 발송'을 고르면 보내는 사람 주소로만 보낸다
+        if os.environ.get('TEST_ONLY', '').lower() == 'true':
+            print("시험 발송 — 보내는 사람 주소로만")
+            return [{"name": "", "email": self.sender_email}]
         raw = os.environ.get('RECIPIENTS_JSON', '').strip()
         if raw:
             data = json.loads(raw)

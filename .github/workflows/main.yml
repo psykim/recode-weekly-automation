@@ -5,6 +5,11 @@ on:
     # 매주 금요일 새벽 0시 (KST = UTC+9이므로 목요일 15:00 UTC)
     - cron: '0 15 * * 4'
   workflow_dispatch: # 수동 실행 가능
+    inputs:
+      test_only:
+        description: '시험 발송 — 보내는 사람(관리자)에게만'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -59,6 +64,7 @@ jobs:
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
         SENDER_NAME: ${{ secrets.SENDER_NAME }}
+        TEST_ONLY: ${{ github.event.inputs.test_only }}
         RECIPIENTS_JSON: ${{ secrets.RECIPIENTS_JSON }}     # 비공개 수신자 명단 — 없으면 database/recipients.json
       run: |
         cd scripts
