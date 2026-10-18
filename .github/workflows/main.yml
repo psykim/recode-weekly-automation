@@ -32,6 +32,7 @@ jobs:
     - name: 보고서 생성
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}   # 선택 — 없으면 키 없이 조회
       run: |
         cd scripts
         python generate_report.py

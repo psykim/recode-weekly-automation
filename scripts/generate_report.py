@@ -129,6 +129,11 @@ class RecodeWeeklyGenerator:
                     journal = text(article.find('.//Journal/Title')) or "Unknown Journal"
                     keywords = [text(k) for k in article.findall('.//KeywordList/Keyword')]
                     mesh = [text(m) for m in article.findall('.//MeshHeading/DescriptorName')]
+                    ids = {x.get('IdType'): text(x) for x in article.findall('./PubmedData/ArticleIdList/ArticleId')}
+                    # PMC 공개 예정일(엠바고면 미래 날짜) — 'YYYY-MM-DD'
+                    rel = next((d for d in article.findall('./PubmedData/History/PubMedPubDate')
+                                if d.get('PubStatus') == 'pmc-release'), None)
+                    pmc_release = "-".join(f"{int(text(rel.find(k)) or 1):02d}" for k in ('Year', 'Month', 'Day')) if rel is not None else None
                     issns = [text(x) for x in article.findall('.//Journal/ISSN')] + \
                             [text(x) for x in article.findall('.//MedlineJournalInfo/ISSNLinking')]
 
@@ -158,6 +163,7 @@ class RecodeWeeklyGenerator:
                         "title": title, "journal": journal, "impact_factor": impact_factor,
                         "authors": authors_str, "date": year, "abstract": abstract_text,
                         "pubmed_url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else None,
+                        "pmid": pmid, "doi": ids.get('doi'), "pmcid": ids.get('pmc'), "pmc_release": pmc_release,
                     })
                 except Exception as e:
                     print(f"논문 파싱 오류: {e}")
@@ -167,6 +173,8 @@ class RecodeWeeklyGenerator:
         print(f"관련 없음 {n_irrelevant}편 · IF {self.MIN_IF:g} 미만 {n_low_if}편 제외 → 게재 {len(candidates)}편 "
               f"(자세히 {min(len(candidates), self.DETAILED)} + 목록 {max(0, len(candidates) - self.DETAILED)})")
 
+        self._attach_fulltext(candidates)
+
         # 번역은 자세히 볼 논문에만(번역 사용량을 예전 수준으로 유지)
         for idx, p in enumerate(candidates):
             p["detailed"] = idx < self.DETAILED
@@ -175,6 +183,56 @@ class RecodeWeeklyGenerator:
                 p["korean_abstract"] = self._summarize_abstract(p["abstract"], p["impact_factor"])
         return candidates
     
+    def _attach_fulltext(self, papers: List[Dict]) -> None:
+        """원문 링크 — 무료(PMC 또는 OpenAlex oa_url)면 fulltext_url+is_oa, 아니면 출판사 DOI 페이지.
+
+        OpenAlex 는 키 없이도 되지만 같은 IP 와 하루 예산을 나눠 쓰므로, OPENALEX_API_KEY(선택, GitHub Secret)가
+        있으면 붙인다. 조회가 실패해도 보고서는 만들고 DOI 링크로 대신한다.
+        """
+        # PMC 번호가 있어도 엠바고(PubMed 의 pmc-release 가 미래)면 아직 못 연다
+        today = self.current_date.strftime("%Y-%m-%d")
+        embargoed = [p for p in papers if p.get("pmcid") and (p.get("pmc_release") or "") > today]
+        for p in embargoed:
+            p["pmcid"] = None
+        if embargoed:
+            print(f"PMC 엠바고 {len(embargoed)}편 — 공개 전이라 PMC 링크를 쓰지 않음")
+        for p in papers:
+            p["is_oa"] = bool(p.get("pmcid"))
+            p["fulltext_url"] = (f"https://pmc.ncbi.nlm.nih.gov/articles/{p['pmcid']}/" if p.get("pmcid")
+                                 else (f"https://doi.org/{p['doi']}" if p.get("doi") else None))
+        todo = [p for p in papers if not p["is_oa"] and p.get("pmid")]
+        found = 0
+        for i in range(0, len(todo), 50):
+            chunk = {p["pmid"]: p for p in todo[i:i + 50]}
+            params = {"filter": "pmid:" + "|".join(chunk), "per-page": 50, "select": "ids,open_access"}
+            if os.getenv("OPENALEX_API_KEY"):
+                params["api_key"] = os.getenv("OPENALEX_API_KEY")
+            try:
+                r = requests.get("https://api.openalex.org/works", params=params, timeout=60)
+                r.raise_for_status()
+                for w in r.json().get("results", []):
+                    pmid = (w.get("ids", {}).get("pmid") or "").rstrip("/").split("/")[-1]
+                    oa = w.get("open_access") or {}
+                    url = oa.get("oa_url") or ""
+                    # PubMed 초록 페이지를 '무료 원문'으로 주는 경우가 있어 제외
+                    if pmid in chunk and oa.get("is_oa") and url and "pubmed.ncbi.nlm.nih.gov" not in url:
+                        chunk[pmid]["is_oa"], chunk[pmid]["fulltext_url"] = True, url
+                        found += 1
+            except Exception as e:
+                print(f"OpenAlex 조회 실패 — 출판사 링크로 대신: {e}")
+        print(f"무료 원문: {sum(p['is_oa'] for p in papers)}/{len(papers)}편 (PMC {sum(bool(p.get('pmcid')) for p in papers)}, OpenAlex {found})")
+
+    def _links_html(self, p: Dict) -> str:
+        """PubMed · 원문 링크를 나란히 (메일에서도 보이게 인라인 스타일)"""
+        style = 'style="color: #2a5298; text-decoration: none;"'
+        links = []
+        if p.get("pubmed_url"):
+            links.append(f'<a href="{p["pubmed_url"]}" target="_blank" {style}>📄 PubMed</a>')
+        if p.get("fulltext_url"):
+            label = "🔓 무료 원문" if p.get("is_oa") else "🔗 출판사 원문"
+            links.append(f'<a href="{escape(p["fulltext_url"])}" target="_blank" {style}>{label}</a>')
+        return " · ".join(links)
+
     def _translate_title(self, title: str) -> str:
         """논문 제목의 한글 번역"""
         if self.google_api_key:
@@ -659,10 +717,8 @@ class RecodeWeeklyGenerator:
         html = ''
         for idx, paper in enumerate(papers, 1):
             # PubMed 링크 생성
-            pubmed_link = ''
-            if paper.get('pubmed_url'):
-                pubmed_link = f' | <a href="{paper["pubmed_url"]}" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed 원문 보기</a>'
-            
+            links = self._links_html(paper)
+            pubmed_link = f' | {links}' if links else ''
             html += f"""
             <div class="paper {category}-if">
                 <div class="paper-header">
@@ -693,8 +749,8 @@ class RecodeWeeklyGenerator:
             return '<p>이번 주에는 해당하는 논문이 없습니다.</p>'
         items = []
         for p in papers:
-            link = f' · <a href="{p["pubmed_url"]}" target="_blank" style="color: #2a5298; text-decoration: none;">PubMed</a>' \
-                if p.get('pubmed_url') else ''
+            links = self._links_html(p)
+            link = f' · {links}' if links else ''
             items.append(
                 f'<li style="margin: 0 0 10px; line-height: 1.5;">{escape(p["title"])}<br>'
                 f'<span style="color: #666; font-size: 13px;">{escape(p["journal"])} · IF {p["impact_factor"]:g}{link}</span></li>')
