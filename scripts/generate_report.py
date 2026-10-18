@@ -5,6 +5,8 @@ RECODE WEEKLY 보고서 생성 스크립트
 """
 
 import os
+import re
+from html import escape
 import json
 import requests
 from datetime import datetime
@@ -21,7 +23,8 @@ class RecodeWeeklyGenerator:
         self.current_date = datetime.now()
         self.report_date = self.current_date.strftime("%Y.%m.%d")
         self.file_timestamp = self.current_date.strftime("%Y%m%d_%H%M%S")
-        self.impact_factors = self._load_impact_factors()
+        self.impact_factors = self._load_impact_factors()   # 옛 이름 기반 표 — 이제 선별에는 쓰지 않는다
+        self.jcr_issn = self._load_jcr_issn()
         
         # Google Translate API 초기화
         self.google_api_key = os.getenv('GOOGLE_API_KEY')
@@ -30,6 +33,14 @@ class RecodeWeeklyGenerator:
         else:
             print("Google API 키가 설정되지 않았습니다. 기본 번역을 사용합니다.")
     
+    def _load_jcr_issn(self) -> Dict[str, float]:
+        """JCR ISSN·eISSN → JIF 표 (scripts/build_jcr_issn.py 가 엑셀에서 만든다)"""
+        path = os.path.join(os.path.dirname(__file__), '..', 'data', 'jcr2025_issn.json')
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        print(f"JCR IF 표: {data.get('source')} · {len(data['issn'])}개 ISSN")
+        return data['issn']
+
     def _load_impact_factors(self) -> Dict[str, float]:
         """Impact Factor 데이터 로드"""
         if_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'impact_factors.json')
@@ -59,160 +70,110 @@ class RecodeWeeklyGenerator:
             "Alzheimer's & Dementia": 14.0
         }
         
+    # ── 검색·선별 기준 (2026-10-18 개정) ──────────────────────────────────────
+    # 예전에는 꼬리표 없는 검색어(소속·초록 한 줄 언급까지 걸림) + 새로 들어온 순 100편만 + 저널 이름
+    # 부분 일치 IF 라서 metalloprotease·spatial transcriptomics 같은 무관한 논문이 실렸다.
+    SEARCH_TIAB = ['dementia', 'alzheimer*', '"cognitive impairment"', '"cognitive decline"',
+                   '"cognitive dysfunction"', 'neurodegenerat*', 'frontotemporal', '"lewy body"',
+                   'tauopath*', '"amyloid beta"', '"amyloid-beta"', '"mild cognitive"']
+    SEARCH_MESH = ['"Dementia"[Mesh]', '"Cognitive Dysfunction"[Mesh]', '"Neurodegenerative Diseases"[Mesh]',
+                   '"Amyloid beta-Peptides"[Mesh]', '"tau Proteins"[Mesh]']
+    # 제목·저자 키워드·MeSH 중 하나에 있어야 싣는다(초록에서 지나가듯 언급한 논문은 뺀다). 범위: 치매·인지·신경퇴행
+    RELEVANT = re.compile(r"dementi|alzheimer|cognit|neurodegenerat|amyloid[- ]?(beta|β)|\bAβ|\btau\b|tauopath|"
+                          r"lewy|frontotemporal|mild cognitive|delirium|brain ag(e|ing)|synuclein|parkinson", re.I)
+    MIN_IF = 10.0
+    DETAILED = 20          # IF 상위 20편만 번역·요약, 나머지는 목록
+
+    def _is_relevant(self, title: str, keywords: List[str], mesh: List[str]) -> bool:
+        return any(self.RELEVANT.search(t) for t in [title, *keywords, *mesh])
+
+    def _if_by_issn(self, issns: List[str]) -> float:
+        return max([self.jcr_issn.get(x.strip().upper(), 0.0) for x in issns if x] + [0.0])
+
     def fetch_papers(self) -> List[Dict]:
         """
-        PubMed API를 사용하여 최근 1주일간의 치매 관련 논문 검색
+        PubMed 에서 최근 7일 치매·인지·신경퇴행 논문을 모두 찾아, 관련성·IF(JCR, ISSN 일치)로 거른다.
+        IF 순 상위 DETAILED 편은 detailed=True(번역·요약), 나머지는 목록용.
         """
-        import urllib.parse
         from datetime import timedelta
-        
-        # 검색 기간 설정 (지난 7일)
+        import xml.etree.ElementTree as ET
+
         end_date = self.current_date
         start_date = end_date - timedelta(days=7)
-        
-        # 날짜 포맷
-        date_start = start_date.strftime("%Y/%m/%d")
-        date_end = end_date.strftime("%Y/%m/%d")
-        
-        # 검색어 설정 - 치매 관련 주요 키워드
-        search_terms = [
-            "dementia",
-            "Alzheimer's disease", 
-            "cognitive impairment",
-            "neurodegeneration",
-            "tau protein",
-            "amyloid beta",
-            "cognitive decline",
-            "frontotemporal dementia",
-            "vascular dementia",
-            "Lewy body dementia"
-        ]
-        
-        # 주요 저널 필터
-        major_journals = [
-            "Nature",
-            "Science", 
-            "Cell",
-            "Nature Medicine",
-            "Nature Neuroscience",
-            "Lancet",
-            "Lancet Neurology",
-            "JAMA",
-            "JAMA Neurology",
-            "New England Journal of Medicine",
-            "Neuron",
-            "Brain",
-            "Alzheimer's & Dementia"
-        ]
-        
-        # 검색 쿼리 구성 - 저널 필터 없이 더 넓게 검색
-        search_query = f'({" OR ".join(search_terms)}) AND ("{date_start}"[PDAT]:"{date_end}"[PDAT])'
-        
-        # PubMed API 호출
+        window = f'("{start_date:%Y/%m/%d}"[PDAT]:"{end_date:%Y/%m/%d}"[PDAT])'
+        query = '(' + ' OR '.join([t + '[tiab]' for t in self.SEARCH_TIAB] + self.SEARCH_MESH) + ') AND ' + window
         base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
-        
-        # 1. 검색하여 논문 ID 목록 가져오기
-        search_url = f"{base_url}esearch.fcgi?db=pubmed&term={urllib.parse.quote(search_query)}&retmax=100&retmode=json"
-        
+
         try:
-            response = requests.get(search_url)
-            search_results = response.json()
-            
-            id_list = search_results.get('esearchresult', {}).get('idlist', [])
-            
-            if not id_list:
-                print(f"검색 결과가 없습니다. 검색어: {search_query}")
-                return []
-            
-            print(f"검색된 논문 수: {len(id_list)}")
-            
-            # 2. 논문 상세 정보 가져오기
-            fetch_url = f"{base_url}efetch.fcgi?db=pubmed&id={','.join(id_list)}&retmode=xml"
-            response = requests.get(fetch_url)
-            
-            # XML 파싱
-            import xml.etree.ElementTree as ET
-            root = ET.fromstring(response.text)
-            
-            papers = []
-            for i, article in enumerate(root.findall('.//PubmedArticle')):
+            r = requests.get(base_url + "esearch.fcgi", timeout=60,
+                             params=dict(db="pubmed", term=query, retmax=10000, retmode="json"))
+            r.raise_for_status()
+            id_list = r.json().get('esearchresult', {}).get('idlist', [])
+        except Exception as e:
+            raise RuntimeError(f"PubMed 검색 실패: {e}")      # 예전처럼 가짜 예시 논문으로 보고서를 만들지 않는다
+        print(f"검색된 논문 수: {len(id_list)}")
+        if not id_list:
+            return []
+
+        candidates = []
+        n_irrelevant = n_low_if = 0
+        for i in range(0, len(id_list), 200):
+            r = requests.post(base_url + "efetch.fcgi", timeout=120,
+                              data=dict(db="pubmed", id=",".join(id_list[i:i + 200]), retmode="xml"))
+            r.raise_for_status()
+            for article in ET.fromstring(r.content).findall('.//PubmedArticle'):
                 try:
-                    # PubMed ID
-                    pmid = id_list[i] if i < len(id_list) else None
-                    
-                    # 제목
-                    title = article.find('.//ArticleTitle').text or "제목 없음"
-                    
-                    # 저널명
-                    journal = article.find('.//Journal/Title').text or "Unknown Journal"
-                    
-                    # 저자
+                    text = lambda el: "".join(el.itertext()).strip() if el is not None else ""
+                    pmid = text(article.find('.//MedlineCitation/PMID'))
+                    title = text(article.find('.//ArticleTitle')) or "제목 없음"
+                    journal = text(article.find('.//Journal/Title')) or "Unknown Journal"
+                    keywords = [text(k) for k in article.findall('.//KeywordList/Keyword')]
+                    mesh = [text(m) for m in article.findall('.//MeshHeading/DescriptorName')]
+                    issns = [text(x) for x in article.findall('.//Journal/ISSN')] + \
+                            [text(x) for x in article.findall('.//MedlineJournalInfo/ISSNLinking')]
+
+                    if not self._is_relevant(title, keywords, mesh):
+                        n_irrelevant += 1
+                        continue
+                    impact_factor = self._if_by_issn(issns)
+                    if impact_factor < self.MIN_IF:
+                        n_low_if += 1
+                        continue
+
                     authors = []
-                    for author in article.findall('.//Author'):
-                        last_name = author.find('LastName')
-                        fore_name = author.find('ForeName')
-                        if last_name is not None:
-                            name = last_name.text
-                            if fore_name is not None:
-                                name = f"{fore_name.text} {name}"
-                            authors.append(name)
-                    authors_str = ", ".join(authors[:3])
-                    if len(authors) > 3:
-                        authors_str += " et al."
-                    
-                    # 출판일
-                    pub_date = article.find('.//PubDate')
-                    year = pub_date.find('Year').text if pub_date.find('Year') is not None else "2025"
-                    
-                    # 초록
-                    abstract_parts = []
-                    for abstract in article.findall('.//AbstractText'):
-                        if abstract.text:
-                            abstract_parts.append(abstract.text)
-                    abstract_text = " ".join(abstract_parts) if abstract_parts else "No abstract available"
-                    
-                    # 저널명에서 IF 찾기
-                    impact_factor = self._get_impact_factor(journal)
-                    
-                    # 한글 제목 (간단한 번역 - 실제로는 번역 API 사용)
-                    korean_title = self._translate_title(title)
-                    
-                    # 한글 초록 (IF에 따라 전체/요약 번역)
-                    korean_abstract = self._summarize_abstract(abstract_text, impact_factor)
-                    
-                    # 주요 저널만 포함 (Impact Factor 10 이상)
-                    if impact_factor >= 10.0:
-                        papers.append({
-                            "title": title,
-                            "korean_title": korean_title,
-                            "journal": journal,
-                            "impact_factor": impact_factor,
-                            "authors": authors_str,
-                            "date": year,
-                            "korean_abstract": korean_abstract,
-                            "pubmed_url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else None
-                        })
-                    
+                    for author in article.findall('.//AuthorList/Author'):
+                        last, fore = author.find('LastName'), author.find('ForeName')
+                        if last is not None:
+                            authors.append(f"{fore.text} {last.text}" if fore is not None else last.text)
+                    authors_str = ", ".join(authors[:3]) + (" et al." if len(authors) > 3 else "")
+
+                    pub_date = article.find('.//Journal/JournalIssue/PubDate')
+                    year = text(pub_date.find('Year')) if pub_date is not None and pub_date.find('Year') is not None \
+                        else (text(pub_date.find('MedlineDate'))[:4] if pub_date is not None and pub_date.find('MedlineDate') is not None
+                              else str(self.current_date.year))
+                    abstract_text = " ".join(text(a) for a in article.findall('.//AbstractText') if text(a)) \
+                        or "No abstract available"
+
+                    candidates.append({
+                        "title": title, "journal": journal, "impact_factor": impact_factor,
+                        "authors": authors_str, "date": year, "abstract": abstract_text,
+                        "pubmed_url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else None,
+                    })
                 except Exception as e:
                     print(f"논문 파싱 오류: {e}")
-                    continue
-            
-            return papers
-            
-        except Exception as e:
-            print(f"PubMed API 오류: {e}")
-            # 오류 시 예시 데이터 반환
-            return [
-                {
-                    "title": "Recent advances in Alzheimer's disease research",
-                    "korean_title": "알츠하이머병 연구의 최근 진전",
-                    "journal": "Nature Medicine",
-                    "impact_factor": 58.7,
-                    "authors": "Kim et al.",
-                    "date": "2025",
-                    "korean_abstract": "이 연구는 알츠하이머병의 새로운 치료 타겟을 발견했습니다..."
-                }
-            ]
+            time.sleep(0.4)   # NCBI: 키 없이 초당 3회 이하
+
+        candidates.sort(key=lambda p: p['impact_factor'], reverse=True)
+        print(f"관련 없음 {n_irrelevant}편 · IF {self.MIN_IF:g} 미만 {n_low_if}편 제외 → 게재 {len(candidates)}편 "
+              f"(자세히 {min(len(candidates), self.DETAILED)} + 목록 {max(0, len(candidates) - self.DETAILED)})")
+
+        # 번역은 자세히 볼 논문에만(번역 사용량을 예전 수준으로 유지)
+        for idx, p in enumerate(candidates):
+            p["detailed"] = idx < self.DETAILED
+            if p["detailed"]:
+                p["korean_title"] = self._translate_title(p["title"])
+                p["korean_abstract"] = self._summarize_abstract(p["abstract"], p["impact_factor"])
+        return candidates
     
     def _translate_title(self, title: str) -> str:
         """논문 제목의 한글 번역"""
@@ -647,6 +608,11 @@ class RecodeWeeklyGenerator:
         {mid_impact_papers}
     </section>
 
+    <section class="section">
+        <h2 class="section-title">📚 그 밖의 논문 (IF 10 이상)</h2>
+        {other_papers}
+    </section>
+
     <div class="footer">
         <p>
             <strong>RECODE WEEKLY</strong><br>
@@ -662,8 +628,11 @@ class RecodeWeeklyGenerator:
 </html>"""
         
         # 논문 통계 계산
-        high_impact_papers = [p for p in papers if p.get('impact_factor', 0) > 30]
-        mid_impact_papers = [p for p in papers if 10 <= p.get('impact_factor', 0) <= 30]
+        # 자세히 볼 논문(IF 상위 DETAILED 편)만 High/주목 섹션에, 나머지는 '그 밖의 논문' 목록에
+        detailed = [p for p in papers if p.get('detailed', True)]
+        others = [p for p in papers if not p.get('detailed', True)]
+        high_impact_papers = [p for p in detailed if p.get('impact_factor', 0) > 30]
+        mid_impact_papers = [p for p in detailed if p.get('impact_factor', 0) <= 30]
         
         # IF 순으로 정렬 (높은 순)
         high_impact_papers.sort(key=lambda x: x.get('impact_factor', 0), reverse=True)
@@ -676,7 +645,8 @@ class RecodeWeeklyGenerator:
             high_impact=len(high_impact_papers),
             mid_impact=len(mid_impact_papers),
             high_impact_papers=self._format_papers(high_impact_papers, 'high'),
-            mid_impact_papers=self._format_papers(mid_impact_papers, 'mid')
+            mid_impact_papers=self._format_papers(mid_impact_papers, 'mid'),
+            other_papers=self._format_brief(others)
         )
         
         return html
@@ -717,6 +687,19 @@ class RecodeWeeklyGenerator:
         
         return html
     
+    def _format_brief(self, papers: List[Dict]) -> str:
+        """'그 밖의 논문' — 번역 없이 제목·저널·IF·PubMed 링크만 (메일에서도 보이게 인라인 스타일)"""
+        if not papers:
+            return '<p>이번 주에는 해당하는 논문이 없습니다.</p>'
+        items = []
+        for p in papers:
+            link = f' · <a href="{p["pubmed_url"]}" target="_blank" style="color: #2a5298; text-decoration: none;">PubMed</a>' \
+                if p.get('pubmed_url') else ''
+            items.append(
+                f'<li style="margin: 0 0 10px; line-height: 1.5;">{escape(p["title"])}<br>'
+                f'<span style="color: #666; font-size: 13px;">{escape(p["journal"])} · IF {p["impact_factor"]:g}{link}</span></li>')
+        return '<ol style="padding-left: 22px; margin: 0;">' + ''.join(items) + '</ol>'
+
     def save_report(self, html: str) -> str:
         """보고서를 파일로 저장"""
         filename = f"recode_weekly_{self.file_timestamp}.html"
