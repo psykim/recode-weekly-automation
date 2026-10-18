@@ -35,6 +35,7 @@ jobs:
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
         SENDER_NAME: ${{ secrets.SENDER_NAME }}
+        RECIPIENTS_JSON: ${{ secrets.RECIPIENTS_JSON }}     # 비공개 수신자 명단 — 없으면 database/recipients.json
         REPORT_FILENAME: ${{ github.event.inputs.report_filename }}
       run: |
         cd scripts

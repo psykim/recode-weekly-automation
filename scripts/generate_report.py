@@ -233,6 +233,61 @@ class RecodeWeeklyGenerator:
             links.append(f'<a href="{escape(p["fulltext_url"])}" target="_blank" {style}>{label}</a>')
         return " · ".join(links)
 
+    GEMINI_MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]   # RECODE 영상 파이프라인과 같은 계열
+
+    def _editor_note(self, papers: List[Dict]) -> tuple:
+        """이번 호 에디터 노트(잡지형 3–5문장) → (글, 출처). GEMINI_API_KEY 가 없거나 실패하면 틀 문장."""
+        top = [p for p in papers if p.get("detailed")][:8]
+        if not top:
+            return "", "none"
+        key = os.getenv("GEMINI_API_KEY")
+        if key:
+            listing = "\n".join(
+                f"{i}. [{p['journal']}, IF {p['impact_factor']:g}] {p['title']}\n   한글 제목: {p.get('korean_title') or ''}\n"
+                f"   초록 일부: {(p.get('abstract') or '')[:700]}" for i, p in enumerate(top, 1))
+            prompt = (
+                "당신은 분당서울대학교병원 치매극복연구센터가 연구자·임상의에게 매주 보내는 논문 브리핑 'RECODE WEEKLY'의 편집자입니다.\n"
+                f"이번 호에는 치매·인지·신경퇴행 분야 고IF 논문 {len(papers)}편이 실렸고, 그중 상위 논문은 아래와 같습니다.\n\n"
+                f"{listing}\n\n"
+                "이번 호를 소개하는 '에디터 노트'를 한국어로 써 주세요.\n"
+                "- 잡지 편집자의 서문처럼, 이번 주 흐름을 한두 개의 주제로 묶어 3–5문장(350–550자)으로\n"
+                "- 가장 눈에 띄는 논문 2–3편을 내용으로 짚되(저널명은 써도 좋음), 위 정보에 없는 수치·결론을 지어내지 말 것\n"
+                "- 과장·광고 문구, 의학적 권고, 인사말·서명, 제목·머리표·마크다운 없이 문단 1–2개의 평문만"
+            )
+            for model in self.GEMINI_MODELS:
+                try:
+                    r = requests.post(
+                        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                        headers={"x-goog-api-key": key, "Content-Type": "application/json"}, timeout=120,
+                        json={"contents": [{"parts": [{"text": prompt}]}],
+                              "generationConfig": {"temperature": 0.6, "maxOutputTokens": 4096}})
+                    r.raise_for_status()
+                    parts = r.json()["candidates"][0]["content"]["parts"]
+                    text = "".join(x.get("text", "") for x in parts if not x.get("thought")).strip()
+                    text = re.sub(r"[*#_`>]+", "", text).strip()
+                    if 120 <= len(text) <= 1200:
+                        print(f"에디터 노트: {model} · {len(text)}자")
+                        return text, model
+                    print(f"에디터 노트 길이 이상({model}, {len(text)}자) — 다음 방법으로")
+                except Exception as e:
+                    print(f"에디터 노트 생성 실패({model}): {e}")
+        # 틀 문장 — 키가 없거나 모두 실패했을 때
+        a = top[0]
+        rest = ", ".join(f"{p['journal']}의 '{p.get('korean_title') or p['title']}'" for p in top[1:3])
+        text = (f"이번 호에는 지난 한 주 치매·인지·신경퇴행 분야에서 IF 10 이상 학술지에 실린 논문 {len(papers)}편을 모았습니다. "
+                f"가장 먼저 소개할 논문은 {a['journal']}(IF {a['impact_factor']:g})에 실린 '{a.get('korean_title') or a['title']}'입니다."
+                + (f" 이어서 {rest}도 함께 살펴보시기 바랍니다." if rest else ""))
+        print("에디터 노트: 틀 문장 사용")
+        return text, "template"
+
+    def _meta(self, papers: List[Dict], note: str, source: str) -> Dict:
+        """메일(email_common.py)이 읽는 보고서 메타 — 보고서 HTML 의 <script id="recode-meta"> 에 들어간다"""
+        hl = [{"title": p["title"], "title_ko": p.get("korean_title"), "journal": p["journal"],
+               "if": p["impact_factor"], "pubmed": p.get("pubmed_url"), "fulltext": p.get("fulltext_url"),
+               "is_oa": p.get("is_oa", False)} for p in papers if p.get("detailed")][:3]
+        return {"date": self.report_date, "total": len(papers), "editor_note": note,
+                "editor_source": source, "highlights": hl}
+
     def _translate_title(self, title: str) -> str:
         """논문 제목의 한글 번역"""
         if self.google_api_key:
@@ -656,6 +711,8 @@ class RecodeWeeklyGenerator:
         </div>
     </div>
 
+    {editor_note_section}
+
     <section class="section">
         <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
         {high_impact_papers}
@@ -682,6 +739,7 @@ class RecodeWeeklyGenerator:
             <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
         </p>
     </div>
+    <script type="application/json" id="recode-meta">{meta_json}</script>
 </body>
 </html>"""
         
@@ -704,7 +762,14 @@ class RecodeWeeklyGenerator:
             mid_impact=len(mid_impact_papers),
             high_impact_papers=self._format_papers(high_impact_papers, 'high'),
             mid_impact_papers=self._format_papers(mid_impact_papers, 'mid'),
-            other_papers=self._format_brief(others)
+            other_papers=self._format_brief(others),
+            editor_note_section=(
+                '<section class="section"><h2 class="section-title">✍️ 이번 호 에디터 노트</h2>'
+                + "".join(f'<p style="line-height: 1.8; margin: 0 0 12px;">{escape(x)}</p>'
+                          for x in self.editor_note.split("\n") if x.strip())
+                + '</section>') if self.editor_note else '',
+            meta_json=json.dumps(self._meta(papers, self.editor_note, self.editor_source),
+                                 ensure_ascii=False).replace("</", "<\\/")
         )
         
         return html
@@ -778,7 +843,10 @@ class RecodeWeeklyGenerator:
         print("논문 데이터 수집 중...")
         papers = self.fetch_papers()
         
-        # 2. HTML 보고서 생성
+        # 2. 에디터 노트 (보고서 맨 위와 메일 본문에 쓰인다)
+        self.editor_note, self.editor_source = self._editor_note(papers)
+
+        # 3. HTML 보고서 생성
         print("HTML 보고서 생성 중...")
         html = self.generate_html(papers)
         

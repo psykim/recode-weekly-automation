@@ -33,6 +33,7 @@ jobs:
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}   # 선택 — 없으면 키 없이 조회
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}       # 에디터 노트 — 없으면 틀 문장
       run: |
         cd scripts
         python generate_report.py
@@ -58,6 +59,7 @@ jobs:
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
         SENDER_NAME: ${{ secrets.SENDER_NAME }}
+        RECIPIENTS_JSON: ${{ secrets.RECIPIENTS_JSON }}     # 비공개 수신자 명단 — 없으면 database/recipients.json
       run: |
         cd scripts
         python send_email.py
