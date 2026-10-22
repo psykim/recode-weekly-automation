@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.10.22</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.10.22</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">31</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">5</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">15</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section"><h2 class="section-title">✍️ 이번 호 에디터 노트</h2><p style="line-height: 1.8; margin: 0 0 12px;">이번 호에서는 조기 진단 및 항체 치료제 도입에 따른 임상적 쟁점과 함께, 신경퇴행 과정에서 지질 대사가 미치는 분자 기전을 규명한 연구들이 두드러집니다. JAMA Viewpoint는 무증상 성인을 대상으로 한 알츠하이머병 바이오마커 검사의 불확실한 예후 예측 가치와 고용·보험 등 사회심리적 파장을 짚었으며, Annual Review of Pathology는 2세대 아밀로이드-β 표적 면역요법의 임상적 성과와 ARIA를 비롯한 안전성 과제를 종합적으로 정리했습니다. 아울러 기초 연구 분야에서는 Cell Stem Cell에 게재된 연구가 CRISPR 스크리닝을 통해 Wnt 신호전달과 GSK3B가 APOE4 희소돌기세포의 지질 축적을 조절함을 규명했습니다. 바이오마커와 표적 치료의 임상 적용을 둘러싼 신중론부터 세포 수준의 대사 병인 규명까지, 기초와 임상을 잇는 유의미한 최신 흐름을 살펴보시기 바랍니다.</p></section>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Testing for Alzheimer Disease in Asymptomatic Adults.</h3>
+                        <div class="korean-title">→ 무증상 성인의 알츠하이머병 검사.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 55.0</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Gayatri Devi (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42895756/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1001/jama.2026.18839" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>이 논평에서는 무증상 개인에서 알츠하이머병 바이오마커 검사의 불확실한 예후적 가치를 논하고, 이러한 검사에서 양성 결과가 나올 경우 발생할 수 있는 보험, 고용, 재정 및 심리적 파급 효과에 대해 경고합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. NFL Player Death Records May Underreport Neurodegenerative Disease.</h3>
+                        <div class="korean-title">→ NFL 선수 사망 기록에 신경퇴행성 질환 관련 질병 발생률이 과소 보고되었을 가능성이 있다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 55.0</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Samantha Anderer (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42789272/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1001/jama.2026.14730" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Idiopathic Normal Pressure Hydrocephalus: A Review.</h3>
+                        <div class="korean-title">→ 특발성 정상압 수두증: 개요.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 55.0</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    S Farzad Maroufi, Sevil Yasar, Abhay Moghekar et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42734938/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1001/jama.2026.15519" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>특발성 정상압 수두증(iNPH)은 뇌실 확장을 특징으로 하는 진행성 신경 질환으로, 일반적으로 보행 장애와 관련이 있으며, 노년층에서는 종종 배뇨 장애 및 인지 기능 저하를 동반합니다. iNPH의 유병률은 65세 이상에서 약 1~4%, 80세 이상에서 6~8%입니다. iNPH는 뇌척수액(CSF) 순환, 혈관 기능 장애 및 백질 손상 간의 상호작용이 관여하는 다인성 질환입니다. 이차성 정상압 수두증과는 달리, iNPH는 지주막하 출혈과 같은 알려진 선행 사건 없이 발생합니다. iNPH 환자의 85~95%에서 보행 장애(넓은 보폭, 느린 걸음걸이, 방향 전환 장애 등)가 나타나며, 이는 종종 가장 초기 증상입니다. 특발성 정상압 수두증(iNPH) 환자의 약 75~90%에서 배뇨 장애가 나타나며, 흔히 절박뇨, 야뇨증, 절박성 요실금 또는 소변 누출 등이 포함됩니다. 인지 장애는 iNPH 환자의 60~80%에서 보고되며, 주로 주의력, 정보 처리 속도, 작업 기억, 언어 유창성 및 인지 유연성 저하와 관련이 있습니다. iNPH는 주로 특징적인 임상 소견과 뇌실 및 지주막하 공간 확장을 보여주는 신경 영상 검사(일반적으로 뇌 자기공명영상)를 통해 진단됩니다. 이러한 신경 영상 소견은 진단에 필수적이지만, 치료 반응과 확실한 연관성을 보이지는 않습니다. 증상 지속 기간이 짧고 질병이 덜 진행된 경우 예후가 더 좋기 때문에 정상압 수두증의 조기 진단이 중요합니다. iNPH 진단을 위해 평가받는 환자는 진단을 확정하고 션트 반응성을 예측하기 위해 30~50mL의 뇌척수액을 제거하는 대량 요추 천자를 시행해야 합니다. 션트 반응성은 배액 후 몇 시간 이내에 나타나는 객관적인 보행 측정치의 개선으로 평가됩니다. 입원 환경에서 수일에 걸쳐 200~300mL의 뇌척수액을 제거하는 장기간 요추 배액술은 예후 예측 정확도가 높으며, 임상적으로 의심이 높고 요추 천자 검사에서 음성 또는 불확실한 임상 반응을 보이는 환자에게 시행할 수 있습니다. 특발성 정상압 수두증(iNPH)의 치료는 뇌척수액 배액을 위한 션트 삽입술이며, 가장 흔하게는 뇌실복강 션트를 사용하지만 뇌실심방 션트 및 요추복강 션트도 유사한 효과를 보일 수 있습니다. 션트 삽입 후 약 75~80%의 환자에서 보행 속도가 개선되고, 약 50~70%에서 인지 기능 및 배뇨 기능이 개선됩니다. 션트의 합병증으로는 과배액 및 저배액(10~30%)으로 인한 체위성 두통 및 경막하 삼출, iNPH 증상의 재발 또는 악화, 션트 기능 장애(10~20%), 션트 감염(<1~2%) 등이 있습니다. 특발성 정상압 수두증(iNPH)은 65세 이상 성인의 약 1~4%에서 발생하며 보행 장애, 인지 기능 저하 및 배뇨 장애와 관련이 있습니다. 션트 수술을 받은 iNPH 환자의 약 70~90%에서 증상이 호전됩니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Memory stays strong in old age when this brain enzyme is active.</h3>
+                        <div class="korean-title">→ 이 뇌 효소가 활성화되면 노년에도 기억력이 강하게 유지됩니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 48.5</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Asher Mullard (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42897275/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1038/d41586-026-03303-9" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Amyloid-β Immunotherapy in Alzheimer's Disease: Challenges and Opportunities.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 아밀로이드-β 면역요법: 도전과 기회.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 34.5</span>
+                        <span class="badge journal-badge">Annual review of pathology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Saki Nakashima, Kenichiro Sato, Yoshiki Niimi et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42887030/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1146/annurev-pathmechdis-032025-030232" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>수동적 항아밀로이드-β 면역요법은 반복적인 3상 임상시험 실패에서 벗어나, 바이오마커로 정의된 초기 알츠하이머병에서 임상적으로 재현 가능하지만 다소 미미한 진행 속도 저하 효과를 보이고 있습니다. 본 논문에서는 1세대 항체 치료제의 실패에서 얻은 교훈, 즉 불충분한 표적 결합, 후기 임상시험 등록, 그리고 제한적인 결과 민감도를 검토합니다. 이어서 아밀로이드-β 종류 선택성, 플라크 제거 속도, 그리고 지속성을 중점적으로 다룬 2세대 제제(아두카누맙, 레카네맙, 도나네맙)를 비교하고, 새롭게 등장하는 약물 전달 혁신에 대해 논의합니다. 안전성 측면에서는 아밀로이드 관련 영상 이상이 주요 관심사이며, 이는 뇌혈관 아밀로이드 취약성을 반영하는 것으로 추정됩니다. 따라서 시기적절한 기저 자기공명영상(MRI) 검사, APOE 유전자 정보를 활용한 상담, 그리고 증상 발현 시 평가를 병행하는 표준화된 초기 MRI 감시가 필요합니다. 상염색체 우성 및 산발성 전임상 단계 환자군을 대상으로 한 예방 임상시험 결과를 요약하고, 타우 표적 치료제와의 병용 또는 순차적 요법의 전망을 살펴봅니다. 마지막으로, 우리는 바이오마커 기반 구현에 초점을 맞춥니다. 혈액 기반 사전 검사, 확진 경로, 생물학적 반응 모니터링, 완치 또는 중단을 위한 치료 개념과 더불어 의료 시스템 준비 상태, 형평성 및 예산 영향과 관련된 미해결 문제들을 다룹니다. 실제 안전성 및 유효성 근거를 생성하기 위해 레지스트리 기반 학습의 중요성을 강조합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Genome-wide CRISPR screen reveals that Wnt signaling regulates lipid accumulation in APOE4 oligodendrocytes.</h3>
+                        <div class="korean-title">→ 게놈 전체에 걸친 CRISPR 스크리닝을 통해 Wnt 신호전달이 APOE4 희소돌기세포의 지질 축적을 조절한다는 사실이 밝혀졌습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 20.4</span>
+                        <span class="badge journal-badge">Cell stem cell</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Leyla Anne Akay, Anna Bright, Daiyun Dong et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42880287/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.stem.2026.09.012" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>APOE4는 후기 발병 알츠하이머병의 가장 강력한 유전적 위험 인자이지만, APOE 변이와 질병 위험을 연결하는 세포 메커니즘은 아직 불분명합니다. 우리는 이전에 APOE4 발현이 희소돌기세포에서 지질 방울 축적을 유발하여 수초화를 감소시킨다는 사실을 발견했지만, 그 기저 메커니즘은 알려지지 않았습니다. 이러한 연구 결과들을 종합하여 Wnt/GSK3B 신호전달 경로가 APOE4에 의해 유발되는 희소돌기세포 지질 대사 및 수초화 장애와 연결되는 기전적 틀을 제시하며, GSK3B가 APOE4 관련 알츠하이머병의 잠재적 치료 표적이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Dysregulated cholesterol trafficking through ABCA1 drives neurodegeneration in Parkinson's disease.</h3>
+                        <div class="korean-title">→ ABCA1을 통한 콜레스테롤 이동의 조절 장애는 파킨슨병에서 신경퇴행을 유발합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 20.0</span>
+                        <span class="badge journal-badge">Nature neuroscience</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Feng-Xia Ma, Xin-Xin Zhao, Xiao-Xin Wang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42901980/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1038/s41593-026-02487-7" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌 콜레스테롤 조절 장애는 파킨슨병(PD)과 관련이 있지만, 콜레스테롤 합성을 표적으로 하는 치료법은 효과가 제한적이었습니다. 본 연구 결과는 파킨슨병 발병 기저에 있는 ABCA1 의존성 콜레스테롤 경로를 규명하고, ABCA1 억제가 잠재적인 질병 조절 전략이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. An aging-sensitive secreted phospholipase confers neuroprotection and cognitive resilience.</h3>
+                        <div class="korean-title">→ 노화에 민감한 분비형 포스포리파아제는 신경 보호 및 인지 회복력을 부여합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 20.0</span>
+                        <span class="badge journal-badge">Nature neuroscience</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Cinzia Vicidomini, Travis D Goode, Ruilin Yu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42881225/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1038/s41593-026-02465-z" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>인지 예비력 이론은 노화 과정에서 발생하는 보상 메커니즘이 인지 기능 저하를 늦추고 알츠하이머병 발병 위험을 낮춘다고 주장합니다. 본 연구 결과는 PLA2G2F가 노화 관련 인지 기능 저하에 대응하여 지질 항상성을 유지하는 보상적 신경 보호 신호임을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Exercise promotes lipophagy and mitigates cognitive impairment in Alzheimer's disease through downregulating microglial TMEM9.</h3>
+                        <div class="korean-title">→ 운동은 지방분해를 촉진하고 미세아교세포의 TMEM9 발현을 억제함으로써 알츠하이머병 환자의 인지 기능 저하를 완화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.2</span>
+                        <span class="badge journal-badge">Translational neurodegeneration</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Liying Zhang, Shiyin Li, Xiaomeng Ma et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42897611/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13679003/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>자가포식-리소좀 기능 장애는 지질 방울(LD) 축적에 기여하며, 이는 알츠하이머병(AD)의 병리학적 진행을 촉진합니다. 본 연구 결과는 운동으로 유도되는 TMEM9 억제가 지질 항상성을 표적으로 하는 새로운 치료 전략으로서 AD 진행을 억제하는 데 효과적임을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Apolipoprotein E4 and immune dysfunction in Alzheimer's disease: mechanisms and therapeutic implications.</h3>
+                        <div class="korean-title">→ 알츠하이머병에서 아폴리포단백질 E4와 면역 기능 장애: 기전 및 치료적 함의.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.1</span>
+                        <span class="badge journal-badge">Trends in neurosciences</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Hao Shi, Yang Zhao, Wei Zhu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42893889/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.tins.2026.09.009" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>최근 연구 결과에 따르면 아포리포단백질 E4(APOE4)는 뇌-말초 면역 상호작용의 조절자 역할을 하며, 부적응적인 미세아교세포 상태와 말초 면역 재구성을 연결하여 자가 강화적인 신경면역 고리를 형성함으로써 알츠하이머병의 진행을 가속화할 수 있습니다. 본 리뷰에서는 APOE4에 의해 유발되는 중추 및 말초 면역 기능 장애에 대한 증거를 종합하고, APOE4 면역 축을 표적으로 하는 치료 가능성을 논의하며, 정밀 치료를 위한 원인, 단계별 특이성 및 표적 가능한 면역 병소를 규명하기 위해 인간 유래의 종단적, 다조직 연구가 필요함을 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. More than just accuracy: A pathway-level framework for implementing blood and digital biomarkers for Alzheimer's disease care.</h3>
+                        <div class="korean-title">→ 정확성 그 이상: 알츠하이머병 치료를 위한 혈액 및 디지털 바이오마커 구현을 위한 경로 수준 프레임워크.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.0</span>
+                        <span class="badge journal-badge">Neuron</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Robert Perneczky, Michael Schöll, Boris-Stephan Rauchmann et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42901167/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.neuron.2026.09.006" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈액 바이오마커는 확장 가능하고 최소 침습적인 병리학적 평가를 가능하게 함으로써 알츠하이머병 진단에 혁신을 가져오고 있습니다. 본 리뷰에서는 정확도뿐 아니라 사용 맥락, 후속 결정, 윤리적 측면, 거버넌스 및 시판 후 모니터링을 포함한 결합된 혈액-디지털 워크플로우 평가 방법을 정의하고, 궁극적으로 바이오마커 혁신을 환자와 의료 시스템에 실질적인 이점으로 전환하는 것을 목표로 합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Parvalbumin cell state dynamics regulate gamma oscillations and are disrupted in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 파르발부민 세포 상태 역학은 감마 진동을 조절하며, 알츠하이머병에서는 이 기능에 이상이 생긴다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.0</span>
+                        <span class="badge journal-badge">Neuron</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Keran Ma, Kyerl Park, Patrick S Honma et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42880289/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13673016/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>감마 진동은 인지 처리 과정에 필수적이지만, 이를 생성하는 세포 및 회로 역학은 아직 제대로 규명되지 않았습니다. 본 연구에서는 깨어 있는 쥐에서 칼슘 이미징과 뇌피질전도 기록을 동시에 수행하는 방법을 확립하여, 자발적인 감마 진동이 파르발부민(PV) 신경세포 상태 간의 역동적인 전이와 관련되어 있음을 발견했습니다. 이러한 결과는 역동적인 PV 세포 상태가 감마 진동의 핵심적인 특징임을 밝히고, PV 세포 상태의 교란이 알츠하이머병에서 신경망 기능 장애를 일으키는 회로 기전임을 규명합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. AKAP1 Protects Retinal Ganglion Cells and Preserves Vision by Improving Mitochondrial and Synaptic Health in Glaucomatous Neurodegeneration.</h3>
+                        <div class="korean-title">→ AKAP1은 녹내장성 신경퇴행에서 미토콘드리아 및 시냅스 건강을 개선하여 망막 신경절 세포를 보호하고 시력을 보존합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Tonking Bastola, Keun-Young Kim, Ziyao Shen et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42893477/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13676990/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>녹내장은 비가역적 실명의 주요 원인으로, 망막 신경절 세포(RGC)의 점진적인 소실을 특징으로 하며 효과적인 신경 보호 치료법이 부족합니다. 본 연구 결과는 AKAP1이 미토콘드리아 및 시냅스 항상성의 조절자 후보임을 밝히고, AAV2-AKAP1 유전자 치료가 녹내장 환자의 시력 보존을 위한 유망한 신경 보호 전략임을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. Molecular Signatures of HIV-Induced Neuroinflammation and Neurodegeneration in Human Cerebral Organoids: Identification of Therapeutic Targets for NeuroHIV.</h3>
+                        <div class="korean-title">→ 인간 대뇌 오가노이드에서 HIV 유발 신경염증 및 신경퇴행의 분자적 특징: 신경 HIV 치료를 위한 치료 표적 식별.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Karthick Chennakesavan, Malaroviyam Samikkannu, Shreyan Gupta et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42893406/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13676815/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>HIV 관련 신경 합병증은 복합 항레트로바이러스 요법(cART)을 통한 효과적인 바이러스 억제에도 불구하고 HIV 감염인(PWH)에게 여전히 주요 문제로 남아 있으며, 이는 HIV 관련 신경 퇴행을 유발하는 기전이 아직 완전히 규명되지 않았음을 시사합니다. 본 연구는 또한 IL-17A 신호 전달과 미세아교세포 재구성 사이의 잠재적인 기전적 연관성을 밝혀내어, HIV 감염인을 위한 중추신경계 표적 치료법 개발을 위한 실질적인 틀을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Compartmentalized coenzyme A and ferroptosis vulnerability in PKAN and CoPAN.</h3>
+                        <div class="korean-title">→ PKAN 및 CoPAN에서 구획화된 코엔자임 A 및 페롭토시스 취약성.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.8</span>
+                        <span class="badge journal-badge">Trends in molecular medicine</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Chao-Chieh Lin, Jen-Tsan Chi (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42897072/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.molmed.2026.09.016" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>세포 전체의 대사물질 양이 보존된 것처럼 보이더라도 국소적인 항산화 방어 기전이 실패하면 페로프토시스 취약성이 발생할 수 있습니다. 이는 검증 가능하며, 환자 유래 모델에서 직접 검증이 필요하고, 질병 관련 변수로서 미토콘드리아 CoA 가용성과 총 세포 CoA를 구분합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. Modeling human neurodegeneration with iPSCs: opportunities, limitations, and the challenge of aging.</h3>
+                        <div class="korean-title">→ 유도만능줄기세포를 이용한 인간 신경퇴행성 질환 모델링: 기회, 한계, 그리고 노화라는 과제.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.6</span>
+                        <span class="badge journal-badge">The Journal of clinical investigation</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Shijie Wang, Lisa Elia, Weiyi Liu et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42878089/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13668611/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>대부분의 신경퇴행성 질환은 단일 원인 돌연변이보다는 노화 및 환경적 요인과 상호작용하는 다유전자 위험 변이의 환자 특이적 조합을 반영합니다. 본 연구에서는 모델 시스템을 생물학적 질문에 맞춰 적용하는 프레임워크를 제안하여, 질환 기전 이해 및 치료법 개발을 개선하고자 합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. Unilateral vs Bilateral Hippocampal Avoidance During WBRT With Memantine for Brain Metastases: A Randomized Single-Blind Phase 2 Clinical Trial.</h3>
+                        <div class="korean-title">→ 뇌 전이암에 대한 메만틴 병용 전뇌 방사선 치료 시 해마의 단측 회피와 양측 회피의 효과 비교: 무작위 단일맹검 2상 임상 시험.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 13.4</span>
+                        <span class="badge journal-badge">Neuro-oncology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Wen-Chi Yang, Ya-Fang Chen, Chi-Cheng Yang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42886534/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1093/neuonc/noag261" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>해마를 제외한 전뇌 방사선 치료(HA-WBRT)와 메만틴 병용 요법은 인지 기능 저하를 감소시키지만 완전히 제거하지는 못합니다. 이러한 편측 치료 접근법은 양측 뇌를 모두 보호할 수 없는 환자들에게도 기억력 보호 치료를 제공할 수 있을 것입니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">13. Noninvasive ultrashort wave neuromodulation enhances glymphatic clearance to alleviate traumatic brain edema and Alzheimer's pathology.</h3>
+                        <div class="korean-title">→ 비침습적 초단파 신경조절은 림프관 청소 기능을 향상시켜 외상성 뇌부종 및 알츠하이머병 병리를 완화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jinwei Liu, Chuang Xu, Huaqiang Ruan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42886802/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13674484/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>뇌 림프계는 뇌의 노폐물을 제거하지만, 그 기능을 향상시키는 전략은 아직 명확히 밝혀지지 않았습니다. 본 연구 결과는 초음파 세척(USW)이 뇌 림프계의 노폐물 제거 기능을 향상시키는 비침습적 신경 조절 전략임을 입증하며, 뇌 림프계 기능 장애를 특징으로 하는 신경 질환에 대한 치료 가능성을 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">14. Mitochondrial carbonic anhydrase-VB inhibition rescues brain endothelial stress and memory in Alzheimer's disease models.</h3>
+                        <div class="korean-title">→ 미토콘드리아 탄산무수효소-VB 억제는 알츠하이머병 모델에서 뇌 내피세포 스트레스와 기억력을 회복시킨다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Nicole L Lemon, Elisa Canepa, Rafael Vázquez-Torres et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42873864/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13665925/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 효과적인 치료법이 없는 심각한 신경퇴행성 질환으로, 뇌 실질 및 혈관에 응집된 아밀로이드-β(Aβ)와 과인산화된 타우 단백질이 축적되는 것이 특징입니다. 놀랍게도, CA-V 억제는 3xTg AD 마우스의 뇌에서 카스파제 활성화 및 내피세포 활성화를 완화시켜 기억 기능을 보존하는 효과를 나타냈습니다. 본 연구 결과는 선택적 CA-V 억제가 AD로 인한 뇌혈관 병리, 신경염증 및 인지 장애에 대한 효과적이고 유망한 치료 전략임을 보여줍니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">15. Managing inappropriate sexual behaviour in people with dementia.</h3>
+                        <div class="korean-title">→ 치매 환자의 부적절한 성행동 관리.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 11.3</span>
+                        <span class="badge journal-badge">CMAJ : Canadian Medical Association journal = journal de l'Association medicale canadienne</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Natasha E Lane, Dallas Seitz, Jennifer A Watt (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42896881/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13679988/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📚 그 밖의 논문 (IF 10 이상)</h2>
+        <ol style="padding-left: 22px; margin: 0;"><li style="margin: 0 0 10px; line-height: 1.5;">An interstitial fluid-like NICHE-chip for neural stem cell niche modeling and nanoscale neurotrophic delivery.<br><span style="color: #666; font-size: 13px;">Nano convergence · IF 11 · <a href="https://pubmed.ncbi.nlm.nih.gov/42900421/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13683289/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Escherichia coli hns and methylglyoxal link gut microbial metabolism to host neuronal gene regulation in Parkinson&#x27;s disease.<br><span style="color: #666; font-size: 13px;">Gut microbes · IF 11 · <a href="https://pubmed.ncbi.nlm.nih.gov/42878179/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13679328/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Cerebrospinal fluid amyloid and neurodegeneration biomarkers in the diagnosis and prognosis of amyotrophic lateral sclerosis: a multicohort observational study.<br><span style="color: #666; font-size: 13px;">EBioMedicine · IF 10.8 · <a href="https://pubmed.ncbi.nlm.nih.gov/42901819/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.ebiom.2026.106511" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Cerebrospinal fluid and dural accumulation of α-synuclein impairs CNS clearance in Parkinson&#x27;s disease.<br><span style="color: #666; font-size: 13px;">The Journal of experimental medicine · IF 10.6 · <a href="https://pubmed.ncbi.nlm.nih.gov/42900184/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13682444/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Microbiota-regulated TCDCA associates with Parkinson&#x27;s disease severity and promotes BBB dysfunction through VSMC TGR5 signaling in mice.<br><span style="color: #666; font-size: 13px;">Cell reports. Medicine · IF 10.6 · <a href="https://pubmed.ncbi.nlm.nih.gov/42854697/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.xcrm.2026.103098" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Anti-HDGFL2 cryptic protein antibodies provide a sensitive readout of TDP-43 pathology and clinical disease features.<br><span style="color: #666; font-size: 13px;">Cell reports. Medicine · IF 10.6 · <a href="https://pubmed.ncbi.nlm.nih.gov/42854693/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.xcrm.2026.103105" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Regional brain aging signatures predict mortality through neurovascular immune mechanisms.<br><span style="color: #666; font-size: 13px;">Cell reports. Medicine · IF 10.6 · <a href="https://pubmed.ncbi.nlm.nih.gov/42843341/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.xcrm.2026.103096" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">From patient cells to patient therapy: Twenty years of iPSC-based translation in neurodegenerative disease.<br><span style="color: #666; font-size: 13px;">Cell reports. Medicine · IF 10.6 · <a href="https://pubmed.ncbi.nlm.nih.gov/42826718/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.xcrm.2026.103104" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Dysregulated Metal Homeostasis in Alzheimer&#x27;s Disease: From Pathological Modulators to Therapeutic Targets.<br><span style="color: #666; font-size: 13px;">Pharmacological research · IF 10.5 · <a href="https://pubmed.ncbi.nlm.nih.gov/42892457/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.phrs.2026.109690" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Screening molecular recognition element-based SWCNT optical sensors for the inflammatory cytokine TNF-α.<br><span style="color: #666; font-size: 13px;">Biosensors &amp; bioelectronics · IF 10.5 · <a href="https://pubmed.ncbi.nlm.nih.gov/42217399/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13296883/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Docosahexaenoic acid remodels lipid composition of lipid rafts and mitochondrial function in ApoE4/4 mouse brain: a multi-omic investigation.<br><span style="color: #666; font-size: 13px;">Molecular biomedicine · IF 10.1 · <a href="https://pubmed.ncbi.nlm.nih.gov/42879058/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13672281/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li></ol>
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+    <script type="application/json" id="recode-meta">{"date": "2026.10.22", "total": 31, "editor_note": "이번 호에서는 조기 진단 및 항체 치료제 도입에 따른 임상적 쟁점과 함께, 신경퇴행 과정에서 지질 대사가 미치는 분자 기전을 규명한 연구들이 두드러집니다. JAMA Viewpoint는 무증상 성인을 대상으로 한 알츠하이머병 바이오마커 검사의 불확실한 예후 예측 가치와 고용·보험 등 사회심리적 파장을 짚었으며, Annual Review of Pathology는 2세대 아밀로이드-β 표적 면역요법의 임상적 성과와 ARIA를 비롯한 안전성 과제를 종합적으로 정리했습니다. 아울러 기초 연구 분야에서는 Cell Stem Cell에 게재된 연구가 CRISPR 스크리닝을 통해 Wnt 신호전달과 GSK3B가 APOE4 희소돌기세포의 지질 축적을 조절함을 규명했습니다. 바이오마커와 표적 치료의 임상 적용을 둘러싼 신중론부터 세포 수준의 대사 병인 규명까지, 기초와 임상을 잇는 유의미한 최신 흐름을 살펴보시기 바랍니다.", "editor_source": "gemini-3.8-flash", "highlights": [{"title": "Testing for Alzheimer Disease in Asymptomatic Adults.", "title_ko": "무증상 성인의 알츠하이머병 검사.", "journal": "JAMA", "if": 55.0, "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42895756/", "fulltext": "https://doi.org/10.1001/jama.2026.18839", "is_oa": false}, {"title": "NFL Player Death Records May Underreport Neurodegenerative Disease.", "title_ko": "NFL 선수 사망 기록에 신경퇴행성 질환 관련 질병 발생률이 과소 보고되었을 가능성이 있다.", "journal": "JAMA", "if": 55.0, "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42789272/", "fulltext": "https://doi.org/10.1001/jama.2026.14730", "is_oa": false}, {"title": "Idiopathic Normal Pressure Hydrocephalus: A Review.", "title_ko": "특발성 정상압 수두증: 개요.", "journal": "JAMA", "if": 55.0, "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42734938/", "fulltext": "https://doi.org/10.1001/jama.2026.15519", "is_oa": false}]}</script>
+</body>
+</html>
