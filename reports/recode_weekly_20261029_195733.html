@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECODE WEEKLY - 2026.10.29</title>
+    <style>
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 240px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .paper {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .paper-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin: 0 0 10px 0;
+        }
+        .korean-title {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .if-badge {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+        .journal-badge {
+            background: #fff0f5;
+            color: #d1208a;
+        }
+        .meta-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 10px 0;
+        }
+        .korean-abstract {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .korean-abstract h4 {
+            margin: 0 0 10px 0;
+            color: #2a5298;
+        }
+        .high-if {
+            border-left: 4px solid #ff6b6b;
+        }
+        .mid-if {
+            border-left: 4px solid #4ecdc4;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg class="logo-bg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- RECODE 로고 SVG -->
+            <g transform="translate(0, -30)">
+                <circle cx="80" cy="120" r="45" fill="white" opacity="0.3"/>
+                <rect x="45" y="90" width="70" height="60" rx="10" fill="white" opacity="0.3"/>
+                <circle cx="80" cy="100" r="15" fill="white" opacity="0.5"/>
+                <circle cx="65" cy="125" r="8" fill="white" opacity="0.5"/>
+                <circle cx="95" cy="125" r="8" fill="white" opacity="0.5"/>
+                <path d="M60 140 Q80 150 100 140" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="170" font-family="Arial Black, sans-serif" font-size="85" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-2">
+                <tspan opacity="0.35">RE</tspan><tspan opacity="1">CO</tspan><tspan opacity="0.35">DE</tspan>
+            </text>
+            
+            <g transform="translate(700, -30)">
+                <rect x="0" y="85" width="50" height="70" rx="8" fill="white" opacity="0.3"/>
+                <circle cx="25" cy="95" r="4" fill="white" opacity="0.5"/>
+                <rect x="10" y="105" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="115" width="30" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="125" width="20" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="135" width="25" height="3" rx="1.5" fill="white" opacity="0.5"/>
+                <rect x="10" y="145" width="15" height="3" rx="1.5" fill="white" opacity="0.5"/>
+            </g>
+            
+            <text x="400" y="250" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" letter-spacing="3" opacity="0.5" font-weight="600">
+                RESEARCH CENTER FOR OVERCOMING DEMENTIA
+            </text>
+        </svg>
+        <h1>RECODE WEEKLY</h1>
+        <div class="subtitle">분당서울대학교병원 치매극복연구센터 | 2026.10.29</div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">34</div>
+            <div>이번 주 논문</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">8</div>
+            <div>High Impact</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">12</div>
+            <div>주목할 논문</div>
+        </div>
+    </div>
+
+    <section class="section"><h2 class="section-title">✍️ 이번 호 에디터 노트</h2><p style="line-height: 1.8; margin: 0 0 12px;">이번 호에는 지난 한 주 치매·인지·신경퇴행 분야에서 IF 10 이상 학술지에 실린 논문 34편을 모았습니다. 가장 먼저 소개할 논문은 JAMA(IF 55)에 실린 &#x27;고령 의사들의 인지 기능 저하 문제 해결 방안.&#x27;입니다. 이어서 JAMA의 &#x27;무증상 경동맥 협착증의 혈관재개통술: CREST-2 무작위 임상시험의 인지적 결과.&#x27;, JAMA의 &#x27;혈역학적 장애 및 인지 기능 저하를 동반한 무증상 경동맥 협착증 환자의 혈관재개통술: CREST-2 무작위 임상시험의 CREST-H 하위 연구.&#x27;도 함께 살펴보시기 바랍니다.</p></section>
+
+    <section class="section">
+        <h2 class="section-title">🔥 High Impact Papers (IF > 30)</h2>
+        
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Addressing Cognitive Decline Among Aging Physicians.</h3>
+                        <div class="korean-title">→ 고령 의사들의 인지 기능 저하 문제 해결 방안.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 55.0</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Samantha Anderer (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42826037/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1001/jama.2026.20011" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Revascularization of Asymptomatic Carotid Artery Stenosis: Cognitive Results of the CREST-2 Randomized Trials.</h3>
+                        <div class="korean-title">→ 무증상 경동맥 협착증의 혈관재개통술: CREST-2 무작위 임상시험의 인지적 결과.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 55.0</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Ronald M Lazar, James F Meschia, Lloyd J Edwards et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42747844/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1001/jama.2026.14703" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>연구에 따르면 무증상 경동맥 협착증은 인지 기능 저하와 관련이 있습니다. 경동맥 재혈관술이 인지 기능 개선으로 이어지는지는 불분명합니다. 본 연구는 경동맥 재혈관술이 인지 기능을 개선하는지 여부를 확인하기 위해 수행되었습니다. 본 연구는 35세 이상이며 무증상 경동맥 협착증이 70% 이상인 환자를 대상으로 한 CREST-2 무작위 임상시험의 사전 정의된 인지 기능 이차 결과 변수를 분석했습니다. 환자 등록은 2014년 12월부터 2024년 7월까지 진행되었고, 추적 관찰은 2025년 7월에 종료되었습니다. 치료 전과 이후 4년 동안 매년 5가지 인지 기능 검사를 시행했습니다. 146개 임상시험 기관에서 수집된 인지 기능 검사 결과는 치료군을 알지 못하는 상태에서 전화로 중앙 평가되었습니다. 두 건의 임상시험에서는 경동맥 스텐트 삽입술과 집중 약물 치료(CAS + IMM)를 IMM 단독 요법과 비교했고, 또 다른 두 건의 임상시험에서는 경동맥 내막절제술과 IMM 병용 요법(CEA + IMM)을 IMM 단독 요법과 비교했습니다. 학습, 기억, 실행 기능, 주의력 및 처리 속도를 평가하는 5가지 인지 검사를 모든 환자에게 시행하고, 선형 혼합 모델을 사용하여 조정 전 및 조정 후 평균 z 점수를 분석했습니다. 치료군 간의 최소 임상적으로 중요한 차이는 0.50 표준편차였습니다. 사전 정의된 1차 분석은 4년 시점의 완전 조정된 복합 z 점수였습니다. 2차 분석에서는 개별 검사 및 검사 간격별 결과를 평가했습니다. 미국 연구 참여 환자 2366명 중 2165명(91.5%)이 인지 평가에 참여했으며, CAS 시험에 1078명(CAS + IMM 병용군 529명, IMM 단독군 549명), CEA 시험에 1087명(CEA + IMM 병용군 543명, IMM 단독군 544명)이 참여했습니다. 평균 연령은 70.1세(표준편차 7.7)였고, 여성은 37.8%였습니다. 기준선 측정 후 평균 2.24년(표준편차 1.09년)의 추적 관찰 기간 동안 총 4954건의 검사가 실시되었습니다. CAS 시험(CAS + IMM, 0.22 [95% CI, 0.13~0.30] 대 IMM 단독, 0.18 [95% CI, 0.09~0.27]; 그룹 간 차이, 0.03 [95% CI, -0.09~0.15])과 CEA 시험(CEA + IMM, 0.25 [95% CI, 0.17~0.33] 대 IMM, 0.23 [95% CI, 0.15~0.32]; 그룹 간 차이, 0.02 [95% CI, -0.09~0.14]) 모두에서 4년 시점의 완전 조정 추정 복합 z 점수에 치료 관련 차이가 없었습니다. 개별 인지 기능 검사에서도 재관류술 + 약물 치료와 IMM 단독 간에 유의미한 차이가 없었습니다. 중증 무증상 경동맥 협착증 환자에서 경동맥 스텐트 삽입술(CAS) 또는 경동맥 내막 절제술(CEA)에 혈관 내 피질하 억제제(IMM)를 병용한 재관류술은 IMM 단독 요법에 비해 최대 4년의 추적 관찰 기간 동안 인지 기능을 유의미하게 개선시키지 못했다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Revascularization in Asymptomatic Carotid Artery Stenosis With Hemodynamic Impairment and Cognitive Outcomes: The CREST-H Substudy of the CREST-2 Randomized Clinical Trial.</h3>
+                        <div class="korean-title">→ 혈역학적 장애 및 인지 기능 저하를 동반한 무증상 경동맥 협착증 환자의 혈관재개통술: CREST-2 무작위 임상시험의 CREST-H 하위 연구.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 55.0</span>
+                        <span class="badge journal-badge">JAMA</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Randolph S Marshall, Ronald M Lazar, James F Meschia et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42747834/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1001/jama.2026.13384" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>무증상 내경동맥(ICA) 협착증 환자에서 뇌 혈류 역학 장애는 인지 기능 저하와 관련이 있습니다. 이러한 환자에서 혈관재개통술이 인지 장애에 효과적인 치료법인지는 불확실합니다. 본 연구는 고등급 무증상 ICA 협착증에 대한 혈관재개통술의 인지 기능 개선 효과가 기저 뇌 혈류 역학 장애 정도에 따라 달라지는지 확인하기 위해 수행되었습니다. 이 하위 연구는 다기관 3상 무작위 임상시험의 일환으로 진행되었습니다. 2018년 1월부터 2024년 7월까지 북미 61개 기관에서 치매가 없고 중학교 2학년 이상의 학력을 소지한 35~86세 성인 중 70% 이상의 일측성 무증상 ICA 협착증을 가진 환자를 모집했습니다(최종 추적 관찰은 2025년 7월). CREST-2 연구에 참여한 2485명 중 607명을 선별하여 최종적으로 392명이 등록되었습니다. 기저 혈역학적 장애는 자기공명영상(MRI) 또는 컴퓨터 단층촬영 관류 영상(CT perfusion imaging)을 통해 평가했으며, 이는 협착된 동맥과 같은 쪽 반구에서 반대쪽 반구로의 정맥 조영제 최고 도달 시간(TTP) 차이를 기준으로 정의했습니다. 경동맥 재관류술(동맥내막절제술 또는 스텐트 삽입술)과 집중적인 약물 치료(IMM)를 병행한 군과 IMM 단독 군으로 나누었습니다. 주요 결과 변수는 5가지 인지 검사를 기반으로 1년간 측정한 종합 인지 z 점수의 차이였습니다. 주요 분석에서는 기저 인지 기능이 저하된 환자(인지 z 점수 ≤-1.0 SD)에서 치료군(재관류술 vs. IMM 단독)과 기저 혈역학적 장애 정도 간의 상호작용을 검정했습니다. 등록된 392명의 참가자(평균 연령 71세, 여성 125명[32%]) 중 61명은 기저 영상 자료가 누락되었고, 40명은 인지 검사 자료 또는 기타 공변량 데이터가 누락되어 제외되었으며, 최종적으로 291명의 완전한 데이터가 분석에 포함되었습니다. 기저 시점에서 51명의 환자가 인지 기능 저하를 보였습니다(혈관재개술군 25명, IMM 단독군 26명). TTP는 양측 대뇌반구 간 지연이 없는 경우부터 2초 이상 지연되는 경우까지 다양했습니다. 평균(표준편차) 인지 z 점수는 혈관재개술군에서 기저 시점 -1.36(0.51), 1년 후 -1.17(0.47)이었고, IMM 단독군에서는 기저 시점 -1.34(0.83), 1년 후 -1.01(0.97)이었습니다. 1차 분석 결과, 치료군과 혈역학적 상태 간의 상호작용 및 기타 공변량을 보정했을 때, 1년 동안 치료군 간 인지 기능에 유의미한 차이가 없었습니다(보정된 인지 z 점수 차이, -0.15 SD [95% CI, -0.54~0.24]). 상호작용은 유의미하지 않았습니다(β 추정치 = 0.018 [95% CI, -0.025~0.061]; P = 0.40). 무작위 임상시험의 하위 연구인 본 연구에서는 기저 인지 기능 저하 환자군에서 뇌 혈류 역학 상태에 따른 재관류술과 IMM 단독 요법 간의 1년 동안의 인지 기능 개선 효과 차이가 관찰되지 않았습니다. 이는 재관류술이 만성 무증상 경동맥 협착증에서 뇌 혈류를 회복시켜 인지 기능 장애를 개선하지 못한다는 것을 시사합니다. ClinicalTrials.gov 식별자: NCT03121209.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Synaptic transmission and plasticity: molecular mechanisms, biological functions and therapeutic opportunities in neurodegenerative diseases.</h3>
+                        <div class="korean-title">→ 시냅스 전달 및 가소성: 신경퇴행성 질환에서의 분자 메커니즘, 생물학적 기능 및 치료 기회.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 52.7</span>
+                        <span class="badge journal-badge">Signal transduction and targeted therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jianxu Sun, Ge Gao, Sitong Wang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42951886/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1038/s41392-026-02776-4" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>시냅스 전달 장애와 신경 세포 손실은 신경퇴행성 질환(NDD)의 특징적인 소견입니다. 현재까지 NDD를 치료하거나 예방할 수 있는 효과적인 치료법이 없다는 점은 시냅스 손실 및 장애의 기저 메커니즘을 이해하고 새로운 치료법을 개발하는 것이 매우 중요하다는 것을 보여줍니다. 시냅스 전달은 시냅스 전 뉴런과 시냅스 후 뉴런 사이의 복잡한 소통 과정입니다. 다양한 신경전달물질에 의해 활성화되는 여러 시냅스 후 수용체는 수용체 관련 보조 소단위에 의해 조절되는 다양한 하위 신호 전달 경로를 시작합니다. 또한, 신경교세포-뉴런 상호작용과 다양한 신경펩티드도 다양한 시냅스 기능을 조절할 수 있습니다. 본 리뷰에서는 먼저 NDD에서 글루타메이트성, GABA성, 콜린성 및 도파민성 뉴런의 시냅스 전달에 대한 시냅스 전 및 시냅스 후 조절 메커니즘을 요약합니다. 이어서, 신경 항상성 유지에 있어 미세아교세포와 성상세포의 근본적인 역할을 강조하고, 신경교세포와 신경세포 간의 상호작용이 신경퇴행성 질환의 병리학적 과정 전반에 걸쳐 시냅스와 신경 기능에 미치는 영향, 그리고 노화가 신경퇴행성 질환에서 시냅스 기능 장애를 가속화하는 방식에 대해 논의합니다. 또한, 시냅스 완전성을 보존하거나 복원하는 것을 목표로 하는 치료 전략, 즉 가소성 증진, 신경전달물질 신호 전달 미세 조정, 또는 면역 경로 표적화 접근법을 중점적으로 다룹니다. 마지막으로, 각 치료법 유형별 연구 현황을 평가하고, 신경퇴행성 질환에 대한 효과적인 시냅스 표적 치료법 개발에 있어 주요 장애물과 기회를 살펴봅니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Spatiotemporally resolved single-nucleus transcriptomics reveals cellular and regional vulnerability in the midbrain in Parkinson's disease.</h3>
+                        <div class="korean-title">→ 시공간적으로 해상도가 높은 단일 핵 전사체 분석을 통해 파킨슨병 환자의 중뇌에서 세포 및 영역별 취약성이 밝혀졌습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 52.7</span>
+                        <span class="badge journal-badge">Signal transduction and targeted therapy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sooyeon Yoo, Kwanghoon Lee, Junseo Seo et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42928249/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13696728/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>파킨슨병(PD)은 임상적으로나 생물학적으로 이질적이며, 인종적 차이가 병인에 영향을 미칠 수 있습니다. 그러나 동아시아 인구 집단의 단일 핵 전사체 데이터는 아직 제한적입니다. 본 연구에서는 병리학적으로 확진된 한국인을 대상으로 PD 연속체, 대조군, 우발적 루이체병(iLBD), 그리고 진행성 PD에 걸쳐 인간 흑질(SN)의 공간적으로 해상도가 높은 단일 핵 전사체 아틀라스를 제시합니다. 통합 분석 결과, 복측외측 흑질에서 초기 α-시누클레인 응집, 도파민성 신경세포의 아형 선택적 취약성, 그리고 배측내측 흑질과 복측피개영역의 상대적 보존이 관찰되었습니다. 성상세포와 미세아교세포의 궤적 및 유전자 조절 네트워크 분석은 서로 다른 분자 프로그램에 의해 유도되는 시공간적으로 구별되는 질병 관련 아교세포 반응을 보여주었습니다. 또한, 서로 다른 취약성과 재형성을 보이는 두 개의 전사적으로 구별되는 혈관 공간 클러스터를 확인했습니다. α-시누클레인 양성 영역에 대한 공간적 리간드-수용체 분석 결과, 세포외 기질 재구성 및 시냅스 접착을 포함한 초기 병리와 관련된 세포 간 신호 전달 현상이 밝혀졌으며, 이는 초기 루이체 치매(iLBD) 환자에서 두드러지게 나타났지만 진행성 파킨슨병(PD) 환자에서는 크게 감소했습니다. MAGMA를 이용한 PD 게놈 전체 연관 연구와의 통합 분석을 통해 유전적 위험, 공간적으로 해상도가 높은 세포 상태 프로그램, 그리고 유사 시간으로 추론된 미세아교세포 역동성 간의 연관성이 인종에 따라 다르게 나타남을 확인했습니다. 본 연구는 동아시아 PD 코호트에서 얻은 최초의 고해상도 공간 매핑 단일 핵 전사체 자료를 제공하며, 선택적 도파민 취약성의 기저에 있을 수 있는 중뇌 세포 간 및 미세 환경의 초기 교란을 밝히고 인종 정보를 기반으로 한 치료 전략 개발에 도움을 줄 수 있습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Alzheimer's disease genetics converges on microglial and neuronal dysregulation.</h3>
+                        <div class="korean-title">→ 알츠하이머병의 유전적 특징은 미세아교세포와 신경세포의 기능 장애에 집중됩니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 48.5</span>
+                        <span class="badge journal-badge">Nature</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Emil Uffelmann, Douglas P Wightman, Shahram Bahrami et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42951976/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1038/s41586-026-11206-y" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)은 치매의 가장 흔한 원인으로, 전 세계 환자 수는 2050년까지 1억 5300만 명에 이를 것으로 예상됩니다.<sup>1</sup> AD는 유전성이 매우 높으며, 쌍둥이 연구를 기반으로 한 유전율 추정치는 60~80%에 달합니다.<sup>2</sup> AD와 관련된 유전자 좌위는 1,200개로 예측되지만, 최근 두 연구에서는 약 80개의 유전자 좌위만이 AD와 연관되어 있는 것으로 나타났습니다.<sup>3,5</sup> 낮은 단일 염기 다형성(SNP) 기반 유전율 추정치는 추가적인 일반 변이 위험 요인이 거의 남아 있지 않다는 주장을 제기했습니다.<sup>6</sup> 본 연구에서는 다양한 인종 배경을 가진 109,479명의 환자, 74,141명의 대리 환자, 2,131,799명의 대조군 및 499,708명의 대리 대조군 데이터를 분석하여, 다인종 분석에서 118개의 유전자 좌위를, 인종별 분석에서 추가로 9개의 유전자 좌위를 확인했으며, 이 중 48개는 새로운 유전자 좌위입니다. 본 연구에서는 새로운 알츠하이머병 위험 유전자를 식별하고, 잠재적 약물 표적의 우선순위를 정했으며, 대조군과 비교했을 때 환자군에서 미세아교세포의 발현이 증가하고 신경세포의 발현이 감소된 유전자들이 알츠하이머병 관련 유전적 위험과 밀접하게 관련되어 있음을 발견했습니다. 또한, 다유전자 예측을 개선하고 단일염기다형성(SNP)의 유전율을 16%로 추정했는데, 이는 기존 추정치보다 거의 3배 높은 수치입니다. 이러한 연구 결과는 알츠하이머병에 대한 일반 변이의 기여도가 상당히 과소평가되어 왔음을 보여주고, 새로운 분자 및 세포 메커니즘과 향후 약물 개발 연구를 위한 구체적인 표적을 제시합니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. AD-Smart: Alzheimer's trial will test diabetes and ADHD drugs on patients.</h3>
+                        <div class="korean-title">→ AD-Smart: 알츠하이머 임상시험에서는 당뇨병 및 ADHD 치료제를 환자에게 투여하여 효과를 검증할 예정입니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 42.7</span>
+                        <span class="badge journal-badge">BMJ (Clinical research ed.)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Gareth Iacobucci (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42914149/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1136/bmj-2026-101219" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper high-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Multimodal spatial transcriptomics redefines cortical pathology in Huntington's disease.</h3>
+                        <div class="korean-title">→ 다중 모드 공간 전사체학은 헌팅턴병의 대뇌 피질 병리를 재정의합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 42.5</span>
+                        <span class="badge journal-badge">Cell</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Sonia Vazquez-Sanchez, Olatz Arnold-Garcia, Carlos Chillon-Marinas et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42950818/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.cell.2026.09.064" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>헌팅턴병(HD)은 헌팅틴 유전자(HTT)의 CAG 반복 서열 확장에 의해 발생하지만, 체세포 반복 불안정성과 HTT 봉입체가 인간 뇌에서 선택적인 세포 손실과 어떻게 관련되는지는 아직 불분명합니다. 본 연구에서는 세포 소기관 수준의 해상도로 전사 프로그램을 정의하고, 체세포 CAG 반복 서열 길이와 HTT 봉입체를 포함한 8가지 병리학적 지표를 손상되지 않은 뇌 조직 절편의 모든 세포에서 분석할 수 있는 다중 모드 공간 전사체학 접근법을 개발했습니다. 대조군과 HD 환자의 대뇌 피질에서 428,173개의 세포를 영상화한 결과, 5-6층(L5-6) 근접 투사 뉴런과 6b층 심부 흥분성 뉴런이 선택적으로 취약하며, 이들 뉴런은 50% 이상의 손실을 겪는데, 이는 큰 체세포 반복 서열 확장(>450 ± 55 CAG)과 밀접하게 관련되어 있음을 확인했습니다. 핵내 봉입체는 중간 정도의 체세포 반복 서열 확장(250-350 CAG)에서 가장 흔하게 나타났으며, 체세포 반복 서열 확장 단독으로는 설명할 수 없는 더 광범위한 전사 변화와 연관되어 있었습니다. 이 데이터는 포괄적인 자료를 제공하고 다양한 세포 유형에서 반복 확장과 단백질 병리를 연결하는 일반적인 틀을 구축합니다.</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📊 주목할 만한 논문들</h2>
+        
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">1. Cytokine circuits in CNS homeostasis and disease.</h3>
+                        <div class="korean-title">→ 중추신경계 항상성 및 질병에서의 사이토카인 회로.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 27.6</span>
+                        <span class="badge journal-badge">Nature immunology</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Burkhard Becher, Donatella De Feo, Melanie Greter (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42919972/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1038/s41590-026-02684-3" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>사이토카인은 중추신경계(CNS)의 완전성을 조절하는 데 중요한 역할을 하며, 면역 전달 물질일 뿐만 아니라 신경교 세포와 신경 세포, 미세아교세포 및 경계부대식세포와 같은 상주 대식세포, 그리고 침투하는 백혈구 간의 상호작용을 조율하는 신호 전달체로도 작용합니다. 본 연구에서는 핵심 모듈에 초점을 맞춰 사이토카인 조절의 광범위한 원리와 다양한 상황에서 사이토카인 불균형이 어떻게 신경 질환으로 이어질 수 있는지를 강조합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">2. Sodium oligomannate remodels gut redox adaptation and promotes microbiota-derived indole-3-propionic acid production to alleviate Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 올리고만네이트나트륨은 장내 산화환원 적응을 개선하고 장내 미생물로부터 생성되는 인돌-3-프로피온산 생성을 촉진하여 알츠하이머병을 완화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 25.8</span>
+                        <span class="badge journal-badge">Gut</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Deqiang Zhang, Heling Chu, Yu Zhang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42919656/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://gut.bmj.com/content/gutjnl/early/2026/10/23/gutjnl-2026-339603.full.pdf" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">3. Microglial NUS1 deficiency drives dopaminergic neurodegeneration through intercellular iron dysregulation in Parkinson's disease models.</h3>
+                        <div class="korean-title">→ 미세아교세포의 NUS1 결핍은 파킨슨병 모델에서 세포 간 철분 조절 장애를 통해 도파민성 신경퇴행을 유발한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 20.0</span>
+                        <span class="badge journal-badge">Nature neuroscience</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Lele Liu, Yan Hong, Xiying Wang et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42934350/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1038/s41593-026-02499-3" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>흑색질 치밀부에서 도파민성 신경세포가 선택적으로 소실되는 것은 파킨슨병(PD)의 특징적인 소견이지만, 그 기저 메커니즘은 아직 불분명합니다. 본 연구 결과는 세포 간 철 항상성 교란이 파킨슨병의 병리학적 원인임을 밝히고, LCN2-SLC22A17 축이 잠재적인 치료 표적이 될 수 있음을 시사합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">4. Engineering human brain microphysiological systems for alzheimer's disease (AD) and chronic traumatic encephalopathy (CTE) modeling and drug testing: translational promise, limitations, and future directions.</h3>
+                        <div class="korean-title">→ 알츠하이머병(AD) 및 만성 외상성 뇌병증(CTE) 모델링 및 약물 테스트를 위한 인간 뇌 미세생리 시스템 설계: 임상 적용 가능성, 한계 및 향후 방향.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 17.6</span>
+                        <span class="badge journal-badge">Advanced drug delivery reviews</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Yeoheung Yun, Satarupa Jena, Hailey Egido-Betancourt et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42950990/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.addr.2026.115982" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>본 리뷰에서는 질병 재현에 있어 새롭게 부상하는 인간 뇌 미세생리 시스템(HBMPS)의 역할과 알츠하이머병(AD) 및 만성 외상성 뇌병증(CTE)에 대한 임상 적용 가능성 및 한계를 평가합니다. 각 활용 사례에 대해, 연구 진행, 재설계 또는 중단/진행 결정을 뒷받침하는 데 필요한 정량적 수송, 노출-반응, 약동학, 안전성 및 재현성 관련 근거를 제시합니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">5. Tau isoform mapping across tissues and biofluids reveals a signature distinguishing Alzheimer's disease from amyotrophic lateral sclerosis.</h3>
+                        <div class="korean-title">→ 다양한 조직과 체액에서 타우 동형 단백질을 분석한 결과, 알츠하이머병과 근위축성 측삭경화증을 구분하는 특징이 밝혀졌습니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.7</span>
+                        <span class="badge journal-badge">Nature communications</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Samir Abu-Rumeileh, Henning Großkopf, Arthur Guthknecht et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42918778/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13691104/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>혈중 인산화 타우 217(p-tau217)은 알츠하이머병(AD) 병리를 정확하게 감지하지만, 근위축성 측삭경화증(ALS)에서도 수치가 상승하는데, 이는 근육에서 방출된 말초(큰) 타우를 반영하는 것으로 추정된다. BD-타우 종류를 선택적으로 검출하면 말초 타우의 영향을 줄여 혈액 AD 바이오마커의 특이성을 향상시킬 수 있다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">6. Trait-linked brainstem circuit resilience balances tau pathology-induced cellular vulnerability in Alzheimer's disease.</h3>
+                        <div class="korean-title">→ 특성과 연관된 뇌간 회로의 회복력은 알츠하이머병에서 타우 병리로 인한 세포 취약성의 균형을 유지한다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 15.0</span>
+                        <span class="badge journal-badge">Neuron</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jie-Qun Zheng, Hong-Wei Fan, Chengye Yao et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42945962/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.neuron.2026.10.002" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>알츠하이머병(AD)에서 타우 병리는 인지 기능 저하와 상관관계가 있지만, 일부 환자는 인지 기능을 유지함으로써 회복력을 보인다. 이러한 연구 결과는 회복력이 세포 취약성의 균형을 맞추는 특성 연관 회로 가소성에 의해 가능해지는 능동적인 상태임을 밝혀내고, 조기 개입을 위한 다단계 목표를 제시한다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">7. Correction: Plasma Biomarker Effects of Oral Valiltramiprosate/ALZ-801 in Early Alzheimer's Disease from Phase 3 and Phase 2 Trials: Analysis of Core Biomarkers and Correlations with Clinical and Neuroimaging Outcomes.</h3>
+                        <div class="korean-title">→ 정정: 3상 및 2상 임상시험에서 얻은 초기 알츠하이머병 환자를 대상으로 한 경구용 발릴트라미프로세이트/ALZ-801의 혈장 바이오마커 효과 분석: 핵심 바이오마커 분석 및 임상 및 신경영상 결과와의 상관관계.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.4</span>
+                        <span class="badge journal-badge">Drugs</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    John A Hey, Susan Abushakra, Aidan Power et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42909823/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://link.springer.com/content/pdf/10.1007/s40265-026-02407-w.pdf" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>초록이 제공되지 않았습니다.</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">8. Survey of the human proteostasis network: the autophagy-lysosome pathway.</h3>
+                        <div class="korean-title">→ 인간 단백질 항상성 네트워크에 대한 조사: 자가포식-리소좀 경로.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.3</span>
+                        <span class="badge journal-badge">Autophagy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Evan T Powers, Suzanne Elsasser, Ee Phie Tan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42949363/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1080/15548627.2026.2741038" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>건강하고 기능적인 프로테옴을 갖는 상태를 단백질 항상성 또는 프로테오스타시스라고 합니다. (ATG4A, ATG5); BNIP: BCL2 상호작용 단백질; BORC: BLOC-1 관련 복합체; CALCOCO: 칼슘 결합 및 코일형 도메인; CAPN: 칼페인; CMA: 샤페론 매개 자가포식; CTS: 카텝신; DNM1L: 다이나민 1 유사 단백질; ER: 소포체; FIS1: 미토콘드리아 분열 1; FOXO: 포크헤드 박스 O; FUNDC: FUN14 도메인 함유 단백질; GAA: 알파 글루코시다아제; GABARAP: GABA A형 수용체 관련 단백질; HDAC: 히스톤 탈아세틸화효소; HIF: 저산소 유도 인자; HOPS: 동형 융합 및 단백질 분류; LAMP1: 리소좀 관련 막 단백질 1; LC3: MAP1LC3의 약어; LIR: LC3 상호작용 영역; MAP1LC3: 미세소관 관련 단백질 1 경쇄 3; MFN2: 미토퓨신 2; MITF: 멜라닌세포 유도 전사 인자; MTOR: 라파마이신 키나아제의 기계적 표적; MTORC1: 라파마이신 키나아제 복합체 1의 기계적 표적; NBR1: NBR1 자가포식 화물 수용체; PE: 포스파티딜에탄올아민; PIK3C2: 포스파티딜이노시톨-4-인산 3-키나아제 촉매 소단위 2형; PINK1: PTEN 유도 키나아제 1; PLD1: 포스포리파아제 D1; PRKN: 파킨 RBR E3 유비퀴틴 리가아제; PtdIns: 포스파티딜이노시톨; PtdIns3P: 포스파티딜이노시톨-3-인산; PtdIns3KC2: II형 포스파티딜이노시톨 3-키나아제; PtdIns3K: III형 포스파티딜이노시톨 3-키나아제; PN: 프로테오스타시스 네트워크; RETREG: 레티큘로파지 조절자; SMPD1: 스핑고미엘린 포스포디에스테라제 1; SNARE: 가용성 N-에틸말레이미드 민감성 인자 부착 단백질 수용체; SQSTM1: 세퀘스토솜 1; TAX1BP1: Tax1 결합 단백질 1; TFE3: IGHM 증강인자 3에 결합하는 전사 인자; TFEB: 전사 인자 EB; TSC: TSC 복합체 소단위; ULK: unc-51 유사 자가포식 활성화 키나아제; UPS: 유비퀴틴-프로테아좀 시스템; UVRAG: 자외선 저항성 관련; VCP: 발로신 함유 단백질; WIPI: WD 반복 도메인, 포스포이노시티드 상호작용. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">9. SSH1 knockdown increases autophagosome formation through ATG9A recruitment and promotes tau protein degradation.</h3>
+                        <div class="korean-title">→ SSH1 발현 억제는 ATG9A 모집을 통해 자가포식체 형성을 증가시키고 타우 단백질 분해를 촉진합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.3</span>
+                        <span class="badge journal-badge">Autophagy</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Morgan C Stephens, Richard I Han, Alma M Perez et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42912487/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://www.tandfonline.com/doi/pdf/10.1080/15548627.2026.2752745?needAccess=true" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>MAPT/타우 단백질의 병리학적 축적은 알츠하이머병(AD) 및 관련 타우병증의 특징적인 소견이며, 이는 MAPT/타우 제거를 조절하는 약물 표적을 발굴할 필요성을 강조합니다. 본 연구는 생체 내 기능 스크리닝과 인간 세포를 이용한 기전 연구를 통합하여, ATG9A 의존성 소포 형성 단계에서 자가포식을 억제하는 약물 표적 인산화효소인 SSH1을 규명했습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">10. Single-Cell Dissection of Microglial Dysfunction in Diabetes-Associated Neurodegenerative Vulnerability.</h3>
+                        <div class="korean-title">→ 당뇨병 관련 신경퇴행성 질환 취약성에서 미세아교세포 기능 장애의 단일 세포 분석.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 14.1</span>
+                        <span class="badge journal-badge">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jizhou Zhang, Tsz Kwan Yau, Joyce Tse et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42949627/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13715674/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>제2형 당뇨병과 신경퇴행성 질환 위험 증가를 연결하는 분자 메커니즘은 아직 명확하게 규명되지 않았습니다. 이러한 연구 결과들은 미세아교세포의 상태와 당뇨병 및 신경퇴행성 질환 취약성을 연결할 수 있는 조절 경로 후보들을 밝혀냈습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">11. An oxidized ribonucleotide 8-oxoGTP drives neuroinflammation and accelerates cognitive decline.</h3>
+                        <div class="korean-title">→ 산화된 리보뉴클레오티드인 8-oxoGTP는 신경 염증을 유발하고 인지 기능 저하를 가속화합니다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Jin Li, Zhen-He Wang, Jia-Xin Pan et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42950057/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1126/sciadv.aee0110" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>산화 스트레스는 노화의 특징이자 신경퇴행성 질환의 주요 원인입니다. 본 연구 결과는 뉴클레오티드 산화와 노화 관련 신경퇴행성 과정을 연결하는, 이전에 알려지지 않았던 메커니즘을 밝혀냈습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+            <div class="paper mid-if">
+                <div class="paper-header">
+                    <div style="flex: 1;">
+                        <h3 class="paper-title">12. BCG vaccination mitigates tau pathology and restores cognitive function in PS19 mice.</h3>
+                        <div class="korean-title">→ BCG 백신 접종은 PS19 마우스에서 타우 병리를 완화하고 인지 기능을 회복시킨다.</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge if-badge">IF 12.5</span>
+                        <span class="badge journal-badge">Science advances</span>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    Somnath Shee, Meixiang Huang, Meghraj Singh Baghel et al. (2026) | <a href="https://pubmed.ncbi.nlm.nih.gov/42905846/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13686014/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a>
+                </div>
+                <div class="korean-abstract">
+                    <h4>📝 한글 번역</h4>
+                    <p>비근육침습성 방광암 환자를 대상으로 한 후향적 연구에서 바실러스 칼메트-게랭(BCG) 접종군에서 대조군에 비해 알츠하이머병 발병률이 유의미하게 감소(12~78%)한 것으로 보고되었습니다. 본 연구에서는 BCG 투여가 해마의 인산화 타우 단백질과 미세아교세포증을 감소시키는 반면 신경세포 표지자는 보존하는 것을 확인했습니다. BCG는 안전하고 쉽게 이용 가능한 치료법으로, 치매 예방제로 고려해볼 만한 가치가 있습니다. (핵심 내용 요약)</p>
+                </div>
+            </div>
+            
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📚 그 밖의 논문 (IF 10 이상)</h2>
+        <ol style="padding-left: 22px; margin: 0;"><li style="margin: 0 0 10px; line-height: 1.5;">Cognitive reserve reconsidered: Asymmetry across proxies challenges a domain-general mechanism.<br><span style="color: #666; font-size: 13px;">Ageing research reviews · IF 12.4 · <a href="https://pubmed.ncbi.nlm.nih.gov/42926022/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.arr.2026.103428" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Neurodegeneration in sub-Saharan Africa: Intersections of biological ageing, genomic diversity and the lifetime exposome.<br><span style="color: #666; font-size: 13px;">Ageing research reviews · IF 12.4 · <a href="https://pubmed.ncbi.nlm.nih.gov/42918426/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.arr.2026.103429" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Receptor-specific ER-phagy in neurodegenerative diseases: Molecular mechanisms and emerging therapeutic opportunities.<br><span style="color: #666; font-size: 13px;">Ageing research reviews · IF 12.4 · <a href="https://pubmed.ncbi.nlm.nih.gov/42914032/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.arr.2026.103426" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Glial lipid reprogramming in brain aging: Lipid identity, organelle stress, and redox vulnerability.<br><span style="color: #666; font-size: 13px;">Redox biology · IF 11.9 · <a href="https://pubmed.ncbi.nlm.nih.gov/42927732/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://www.sciencedirect.com/science/article/pii/S2213231726004520/pdf" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">4DLoG: Generative modeling of neurodegenerative brain anatomy with 4D longitudinal diffusion model.<br><span style="color: #666; font-size: 13px;">Medical image analysis · IF 11.8 · <a href="https://pubmed.ncbi.nlm.nih.gov/42950384/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1016/j.media.2026.104368" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">The amygdaloid complex: from morphology to neurodegeneration.<br><span style="color: #666; font-size: 13px;">Brain : a journal of neurology · IF 11.7 · <a href="https://pubmed.ncbi.nlm.nih.gov/42953982/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1093/brain/awag382" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Cerebellar subregions support social cognition in early behavioural variant frontotemporal dementia.<br><span style="color: #666; font-size: 13px;">Brain : a journal of neurology · IF 11.7 · <a href="https://pubmed.ncbi.nlm.nih.gov/42953980/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1093/brain/awag381" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">The TBK1-OTUB2-IRF3 signalling complex promotes neuroinflammation and neurodegeneration.<br><span style="color: #666; font-size: 13px;">Brain : a journal of neurology · IF 11.7 · <a href="https://pubmed.ncbi.nlm.nih.gov/42953977/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1093/brain/awag378" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Alzheimer&#x27;s pathology mediates arteriolosclerosis and cerebral amyloid angiopathy associations with cognition.<br><span style="color: #666; font-size: 13px;">Brain : a journal of neurology · IF 11.7 · <a href="https://pubmed.ncbi.nlm.nih.gov/42953974/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1093/brain/awag380" target="_blank" style="color: #2a5298; text-decoration: none;">🔗 출판사 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">TMEM106B risk converges on C-terminal fragment homeostasis: genetics, mechanisms and therapy.<br><span style="color: #666; font-size: 13px;">Brain : a journal of neurology · IF 11.7 · <a href="https://pubmed.ncbi.nlm.nih.gov/42910644/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://doi.org/10.1093/brain/awag367" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Neurodegenerative Diseases: Epidemiology, Risk Factors, Classification, Pathophysiology, Clinical Features, Diagnosis, and Therapeutic Strategies.<br><span style="color: #666; font-size: 13px;">MedComm · IF 10.7 · <a href="https://pubmed.ncbi.nlm.nih.gov/42921272/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13693915/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Alzheimer&#x27;s genetic risk factor CASS4 controls microglial focal adhesion biology and amyloidosis.<br><span style="color: #666; font-size: 13px;">The Journal of experimental medicine · IF 10.6 · <a href="https://pubmed.ncbi.nlm.nih.gov/42944718/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13712264/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">Parkinson&#x27;s at the brain border.<br><span style="color: #666; font-size: 13px;">The Journal of experimental medicine · IF 10.6 · <a href="https://pubmed.ncbi.nlm.nih.gov/42911264/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://rupress.org/jem/article-pdf/223/11/e20261409/2042785/jem_20261409.pdf" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li><li style="margin: 0 0 10px; line-height: 1.5;">The sirtuin family: from mechanisms to therapy.<br><span style="color: #666; font-size: 13px;">Molecular biomedicine · IF 10.1 · <a href="https://pubmed.ncbi.nlm.nih.gov/42909727/" target="_blank" style="color: #2a5298; text-decoration: none;">📄 PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13694524/" target="_blank" style="color: #2a5298; text-decoration: none;">🔓 무료 원문</a></span></li></ol>
+    </section>
+
+    <div class="footer">
+        <p>
+            <strong>RECODE WEEKLY</strong><br>
+            분당서울대학교병원 치매극복연구센터 주간 논문 리뷰<br>
+            Research Center for Overcoming Dementia, Seoul National University Bundang Hospital<br>
+            <br>
+            📧 문의: recode@snubh.org | 🌐 https://recode.snubh.org<br>
+            <br>
+            <em>이 뉴스레터는 매주 금요일 발행됩니다.</em>
+        </p>
+    </div>
+    <script type="application/json" id="recode-meta">{"date": "2026.10.29", "total": 34, "editor_note": "이번 호에는 지난 한 주 치매·인지·신경퇴행 분야에서 IF 10 이상 학술지에 실린 논문 34편을 모았습니다. 가장 먼저 소개할 논문은 JAMA(IF 55)에 실린 '고령 의사들의 인지 기능 저하 문제 해결 방안.'입니다. 이어서 JAMA의 '무증상 경동맥 협착증의 혈관재개통술: CREST-2 무작위 임상시험의 인지적 결과.', JAMA의 '혈역학적 장애 및 인지 기능 저하를 동반한 무증상 경동맥 협착증 환자의 혈관재개통술: CREST-2 무작위 임상시험의 CREST-H 하위 연구.'도 함께 살펴보시기 바랍니다.", "editor_source": "template", "highlights": [{"title": "Addressing Cognitive Decline Among Aging Physicians.", "title_ko": "고령 의사들의 인지 기능 저하 문제 해결 방안.", "journal": "JAMA", "if": 55.0, "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42826037/", "fulltext": "https://doi.org/10.1001/jama.2026.20011", "is_oa": false}, {"title": "Revascularization of Asymptomatic Carotid Artery Stenosis: Cognitive Results of the CREST-2 Randomized Trials.", "title_ko": "무증상 경동맥 협착증의 혈관재개통술: CREST-2 무작위 임상시험의 인지적 결과.", "journal": "JAMA", "if": 55.0, "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42747844/", "fulltext": "https://doi.org/10.1001/jama.2026.14703", "is_oa": false}, {"title": "Revascularization in Asymptomatic Carotid Artery Stenosis With Hemodynamic Impairment and Cognitive Outcomes: The CREST-H Substudy of the CREST-2 Randomized Clinical Trial.", "title_ko": "혈역학적 장애 및 인지 기능 저하를 동반한 무증상 경동맥 협착증 환자의 혈관재개통술: CREST-2 무작위 임상시험의 CREST-H 하위 연구.", "journal": "JAMA", "if": 55.0, "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42747834/", "fulltext": "https://doi.org/10.1001/jama.2026.13384", "is_oa": false}]}</script>
+</body>
+</html>
