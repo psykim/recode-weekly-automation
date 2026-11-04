@@ -48,6 +48,11 @@ jobs:
         cd scripts
         python update_dashboard_reports.py
         
+    - name: 홈페이지 TRENDS 자료 생성
+      # recode.re.kr/TRENDS 가 읽는 JSON — 에디터 노트와 서지·링크만 담는다(번역 초록은 넣지 않는다).
+      run: |
+        python scripts/build_trends.py --reports reports --index web/reports.json --out web/trends
+
     - name: Git 설정
       run: |
         git config --global user.name 'github-actions[bot]'
@@ -55,7 +60,7 @@ jobs:
         
     - name: 변경사항 커밋 및 푸시
       run: |
-        git add reports/*.html web/reports.json
+        git add reports/*.html web/reports.json web/trends
         git diff --staged --quiet || (git commit -m "새로운 RECODE WEEKLY 보고서 생성 - $(date +'%Y-%m-%d')" && git push)
         
     - name: 이메일 발송
